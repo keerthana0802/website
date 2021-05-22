@@ -1,0 +1,27 @@
+.primary-button {
+  color: #fff;
+  background: linear-gradient(90deg, #f3705b 0%, #fcb444 100%);
+  box-shadow: 0px 2px 6px rgba(91, 22, 170, 0.12), 0px 4px 14px #eeeeee,
+    inset 1px 0px 3px rgba(255, 255, 255, 0.5);
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  &.version-1 {
+    padding: 1.5rem 4rem;
+    justify-content: center;
+    font-weight: 600;
+  }
+  &.version-2 {
+    padding: 1.5rem 0 1.5rem 2.8rem;
+    justify-content: space-between;
+    position: relative;
+    font-size: 36px;
+    font-weight: 600;
+    img {
+      position: absolute;
+      width: 6rem;
+      right: 0.5rem;
+    }
+  }
+}
