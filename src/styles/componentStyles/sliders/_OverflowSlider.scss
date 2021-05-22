@@ -1,0 +1,37 @@
+.overflow-slider {
+  &__wrapper {
+    overflow-x: hidden;
+    position: relative;
+  }
+  display: flex;
+  align-items: center;
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
+    backdrop-filter: blur(50px);
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10rem;
+    img {
+      width: 2.5rem;
+    }
+    &--prev {
+      left: -5rem;
+      img {
+        transform: rotate(180deg) translateX(-2rem);
+      }
+    }
+    &--next {
+      right: -5rem;
+      img {
+        transform: translateX(-2rem);
+      }
+    }
+  }
+}

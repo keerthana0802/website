@@ -4,12 +4,23 @@
     rgba(255, 130, 205, 0.2) -59.43%,
     rgba(255, 253, 201, 0.4) 100%
   );
+  // height: 500vh;
   .spark-layout {
     &-navbar {
       display: flex;
       padding: 0 7rem;
       align-items: center;
       justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      &.navbar-scrolling {
+        background-color: rgba(255, 255, 255, 0.9);
+        // filter: drop-shadow(50px 60px 100px rgba(255, 255, 255, 0));
+        // backdrop-filter: blur(80px);
+      }
       &__left {
       }
       &__right {
@@ -20,7 +31,7 @@
           padding-inline-start: 0;
           &-item {
             font-size: 1.6rem;
-            color: #666;
+            color: #333;
             margin-left: 4.8rem;
             &:first-child {
               margin-left: 0;

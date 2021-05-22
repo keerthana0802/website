@@ -4,7 +4,7 @@ import PrimaryButton from "../components/buttons/PrimaryButton";
 function NavFooterLayout({ children }) {
   return (
     <div className="nav-footer-layout">
-      <nav className="spark-layout-navbar">
+      <nav className="spark-layout-navbar navbar-scrolling">
         <div className="spark-layout-navbar__left">
           <img src={logo} alt="Spark Studio" />
         </div>

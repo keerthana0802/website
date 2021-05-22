@@ -1,0 +1,34 @@
+.section-header {
+  // background: rgba(248, 255, 230, 0.46);
+  //
+  // transform: rotate(-180deg);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    // background: url("../../../assets/sectionHeaderBackground.svg") center
+    //   center/cover no-repeat;
+    background: rgba(248, 255, 230, 0.8);
+    filter: blur(50px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 15rem;
+  &__top {
+    z-index: 2;
+    font-size: 7.2rem;
+    color: #333;
+  }
+  &__bottom {
+    z-index: 2;
+    font-size: 2.6rem;
+    color: #666;
+  }
+}
