@@ -1,0 +1,88 @@
+.homepage-showcase {
+  &__wrapper {
+    min-height: 120vh;
+    margin-top: 4rem;
+    position: relative;
+    &::before {
+      content: "";
+      background: url("../../assets/Confetti.svg");
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+  }
+  &__elements {
+    max-width: 940px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 4rem;
+    .showcase-single-element {
+      border-radius: 6.6rem;
+      box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      overflow: hidden;
+      img {
+        width: 130%;
+        object-fit: cover;
+      }
+      &--video {
+        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 13;
+          height: 10rem;
+          width: 10rem;
+          background-color: red;
+          background: url("../../assets/playButton.svg") center center/cover;
+        }
+      }
+    }
+    &--one {
+      height: 410px;
+      width: 410px;
+
+      left: 0;
+      top: 0;
+      z-index: 5;
+    }
+    &--two {
+      height: 290px;
+      width: 290px;
+
+      right: 10rem;
+      top: 5rem;
+      z-index: 3;
+    }
+    &--three {
+      height: 240px;
+      width: 240px;
+
+      top: 35rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &--four {
+      height: 290px;
+      width: 290px;
+
+      right: 0;
+      top: 30rem;
+      z-index: 4;
+    }
+    &--five {
+      height: 290px;
+      width: 290px;
+
+      left: 20rem;
+      top: 45rem;
+      z-index: 5;
+    }
+  }
+}

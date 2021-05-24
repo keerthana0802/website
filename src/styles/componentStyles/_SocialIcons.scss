@@ -1,0 +1,15 @@
+.twitter,
+.instagram,
+.facebook {
+  width: 2rem;
+  fill: rgb(96, 98, 100);
+  cursor: pointer;
+  transition: all 0.15s linear;
+  &:hover {
+    transition: all 0.15s linear;
+    fill: rgb(56, 192, 192);
+  }
+}
+.facebook {
+  width: 1.8rem;
+}

@@ -2,11 +2,17 @@
 @import "./baseReset";
 // ! Components
 @import "./componentStyles/buttons/PrimaryButton";
+@import "./componentStyles/SocialIcons";
 @import "./componentStyles/banners/HomepageBanner";
 @import "./componentStyles/headers/HomepageSectionHeader.scss";
 @import "./componentStyles/sliders/OverflowSlider.scss";
 @import "./componentStyles/HomepageCourses.scss";
 @import "./componentStyles/cards/HomepageCourseCard";
+@import "./componentStyles/HomepageShowcase";
+@import "./componentStyles/HomepageCallback";
+@import "./componentStyles/modals/BookingModal";
+@import "./componentStyles/modals/VideoShowcaseModal";
+@import "./componentStyles/sliders/TestimonialSlider";
 // ! Containers
 @import "./containerStyles/NavFooterLayout";
 // ! Pages

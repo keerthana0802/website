@@ -1,0 +1,56 @@
+.single-slide {
+  position: relative;
+  &__background {
+    width: 100vw;
+  }
+  &__content {
+    position: absolute;
+    color: #000e6d;
+    font-size: 3rem;
+    font-weight: 600;
+    width: 80rem;
+    top: 30%;
+    left: 20%;
+  }
+  &__source {
+    position: absolute;
+    font-size: 3rem;
+    color: #fff;
+    bottom: 30%;
+    left: 20%;
+  }
+}
+.testimonial-slider {
+  &__wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+  display: flex;
+  align-items: center;
+  width: 300%;
+  &__dots {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 15%;
+    left: 20.2%;
+    .single-dot {
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: #4f4fff;
+      border-radius: 2rem;
+    }
+    .active-dot {
+      background-color: #fff;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 2rem;
+      position: absolute;
+      left: -0.5rem;
+      //   top: 2rem;
+    }
+    .single-dot + .single-dot {
+      margin-left: 2rem;
+    }
+  }
+}

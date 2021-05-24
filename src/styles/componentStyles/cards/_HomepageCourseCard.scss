@@ -14,8 +14,8 @@
     &--liner {
       text-align: left;
       font-size: 1.2rem;
-      filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
-      backdrop-filter: blur(70px);
+      // filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
+      // backdrop-filter: blur(70px);
       padding: 0.3rem 0 0.3rem 2rem;
     }
   }
@@ -27,8 +27,8 @@
     width: 98%;
     height: 98%;
     justify-self: center;
-    filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
-    backdrop-filter: blur(70px);
+    // filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
+    // backdrop-filter: blur(70px);
     border-radius: 0 0 4.8rem 4.8rem;
     padding: 2rem 1rem;
     &--title {
@@ -47,8 +47,8 @@
       .course-tag {
         font-size: 1.4rem;
         padding: 0.3rem 0.5rem 0.3rem 2rem;
-        filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
-        backdrop-filter: blur(70px);
+        // filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
+        // backdrop-filter: blur(70px);
         border: 2px solid rgba(255, 255, 255, 1);
         position: relative;
         border-radius: 3rem;
