@@ -18,13 +18,14 @@ function HomepageExpertsSection() {
           trigger: imageGridWRapperRef.current,
           start: "top top",
           toggleActions: "play none none none",
-          scrub: true,
+          scrub: 1,
           pin: imageGridWRapperRef.current,
           anticipatePin: 1,
+          ease: "ease-in",
         },
       })
-      .set(squareRef.current, { scale: 3.5, top: 0 })
-      .to(squareRef.current, { scale: 1 }, 0.001);
+      .set(squareRef.current, { scale: 3.5, ease: "ease-out" })
+      .to(squareRef.current, { scale: 1, ease: "ease-out" }, 0.001);
   }, []);
   // ! Function to render the cards
   const renderCards = () => {
