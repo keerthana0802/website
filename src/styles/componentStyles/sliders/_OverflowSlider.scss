@@ -23,12 +23,14 @@
     }
     &--prev {
       left: -5rem;
+      cursor: pointer;
       img {
         transform: rotate(180deg) translateX(-2rem);
       }
     }
     &--next {
       right: -5rem;
+      cursor: pointer;
       img {
         transform: translateX(-2rem);
       }

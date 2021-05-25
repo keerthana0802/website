@@ -52,13 +52,7 @@
       }
     }
   }
-  .dummy-slide {
-    height: 450px;
-    width: 400px;
-    margin: 2rem;
-    background-color: limegreen;
-    * {
-      flex: 1;
-    }
+  .primary-button {
+    margin: 4rem auto;
   }
 }

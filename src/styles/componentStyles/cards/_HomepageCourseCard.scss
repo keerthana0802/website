@@ -1,22 +1,23 @@
 .homepage-course-card {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  width: 470px;
-  height: 560px;
+  width: 316px;
+  height: 394px;
   margin: 0 2rem;
-  border-radius: 4.8rem;
-  background: linear-gradient(to right, #fdce4c78, #fff);
+  border-radius: 3rem;
+  background-color: red;
   &__top {
+    width: 100%;
     img {
       width: 100%;
-      border-radius: 4.8rem 4.8rem 0 0;
+      border-radius: 3rem 3rem 0 0;
     }
     &--liner {
       text-align: left;
-      font-size: 1.2rem;
+      font-size: 1rem;
       // filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
       // backdrop-filter: blur(70px);
-      padding: 0.3rem 0 0.3rem 2rem;
+      padding: 0.3rem 0 0.3rem 1rem;
     }
   }
   &__bottom {
@@ -24,19 +25,18 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    width: 98%;
-    height: 98%;
+
     justify-self: center;
     // filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
     // backdrop-filter: blur(70px);
     border-radius: 0 0 4.8rem 4.8rem;
     padding: 2rem 1rem;
     &--title {
-      font-size: 3.6rem;
+      font-size: 2.2rem;
       font-weight: 600;
     }
     &--content {
-      font-size: 2rem;
+      font-size: 1.4rem;
       font-weight: 400;
     }
     &--tags {
@@ -45,10 +45,8 @@
       justify-content: space-evenly;
       width: 100%;
       .course-tag {
-        font-size: 1.4rem;
+        font-size: 1rem;
         padding: 0.3rem 0.5rem 0.3rem 2rem;
-        // filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
-        // backdrop-filter: blur(70px);
         border: 2px solid rgba(255, 255, 255, 1);
         position: relative;
         border-radius: 3rem;

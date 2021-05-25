@@ -6,6 +6,7 @@ import thumbnail from "../assets/thumbnail.png";
 import thumbnail2 from "../assets/thumbnail2.png";
 import thumbnail3 from "../assets/thumbnail3.png";
 import play from "../assets/playButton.svg";
+import PrimaryButton from "./buttons/PrimaryButton";
 function HomepageShowcase() {
   // ! state for modal
   const [showModal, setShowModal] = useState(false);
@@ -60,6 +61,7 @@ function HomepageShowcase() {
           <img src={thumbnail2} alt="picture" />
         </div>
       </div>
+      <PrimaryButton buttonText="Book a free trial" version="version-2" />
       {showModal ? (
         <VideoShowcaseModal
           modalCloseFunction={modalClose}

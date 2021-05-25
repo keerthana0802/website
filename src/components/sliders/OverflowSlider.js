@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import nextArrow from "../../assets/nextArrow.svg";
-function OverflowSlider({ children, cardWidth }) {
+function OverflowSlider({ children, cardWidth, paddingLeft }) {
   // ! Ref for the actual slider
   const sliderRef = useRef(null);
   const screenWidthRef = useRef(null);
@@ -43,26 +43,33 @@ function OverflowSlider({ children, cardWidth }) {
       // ! For the first card
       gsap.to(sliderRef.current, {
         x: `+=${
-          cardWidth * children.length - screenWidthRef.current - remaining
+          cardWidth * children.length -
+          screenWidthRef.current -
+          remaining +
+          paddingLeft
         }`,
         duration: 0.3,
         ease: "ease-in",
       });
       setRemaining(
-        (remaining) => cardWidth * children.length - screenWidthRef.current
+        (remaining) =>
+          cardWidth * children.length - screenWidthRef.current + paddingLeft
       );
     }
   };
   useEffect(() => {
     sliderRef.current.style.width = `${cardWidth * 7}px`;
     screenWidthRef.current = window.innerWidth;
-    setRemaining(cardWidth * children.length - window.innerWidth);
+    setRemaining(cardWidth * children.length - window.innerWidth + paddingLeft);
   }, []);
   useEffect(() => {
     console.log(remaining);
   }, [remaining]);
   return (
-    <div className="overflow-slider__wrapper">
+    <div
+      className="overflow-slider__wrapper"
+      style={{ paddingLeft: `${paddingLeft}px` }}
+    >
       <div
         className="overflow-slider"
         ref={sliderRef}
@@ -70,12 +77,16 @@ function OverflowSlider({ children, cardWidth }) {
       >
         {children}
       </div>
-      <button
-        onClick={movePrev}
-        className="overflow-slider__button overflow-slider__button--prev"
-      >
-        <img src={nextArrow} alt="" />
-      </button>
+      {remaining ===
+      cardWidth * children.length - window.innerWidth + paddingLeft ? null : (
+        <button
+          onClick={movePrev}
+          className="overflow-slider__button overflow-slider__button--prev"
+        >
+          <img src={nextArrow} alt="" />
+        </button>
+      )}
+
       <button
         onClick={moveNext}
         className="overflow-slider__button overflow-slider__button--next"

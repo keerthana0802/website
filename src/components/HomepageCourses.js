@@ -5,6 +5,9 @@ import OverflowSlider from "./sliders/OverflowSlider";
 import cardsData from "../store/staticData/HomepageCourseCards.json";
 import blue from "../assets/blueCard.png";
 import yellow from "../assets/yellowCard.png";
+// ! JSON with aage filter data
+import ageFilterData from "../store/staticData/AgeFilterForCourses.json";
+import PrimaryButton from "./buttons/PrimaryButton";
 function HomepageCourses() {
   const imageSelector = (color) => {
     switch (color) {
@@ -40,7 +43,7 @@ function HomepageCourses() {
           </li>
         </ul>
       </div>
-      <OverflowSlider cardWidth={490}>
+      <OverflowSlider cardWidth={356} paddingLeft={50}>
         {cardsData.map((course, index) => {
           return (
             <HomepageCourseCard
@@ -53,14 +56,8 @@ function HomepageCourses() {
             />
           );
         })}
-        {/* <div className="dummy-slide">1</div>
-        <div className="dummy-slide">2</div>
-        <div className="dummy-slide">3</div>
-        <div className="dummy-slide">4</div>
-        <div className="dummy-slide">5</div>
-        <div className="dummy-slide">6</div>
-        <div className="dummy-slide">7</div> */}
       </OverflowSlider>
+      <PrimaryButton buttonText="Book a free trial" version="version-2" />
     </div>
   );
 }

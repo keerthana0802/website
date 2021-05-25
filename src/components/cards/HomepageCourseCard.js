@@ -1,5 +1,5 @@
 import React from "react";
-
+import yellowCard from "../../assets/yellowCourseCard.svg";
 function HomepageCourseCard({
   courseImage,
   courseName,
@@ -8,7 +8,10 @@ function HomepageCourseCard({
   courseTags,
 }) {
   return (
-    <div className="homepage-course-card">
+    <div
+      className="homepage-course-card"
+      style={{ background: `url(${yellowCard}) 25% 20%` }}
+    >
       <div className="homepage-course-card__top">
         <img src={courseImage} alt="" />
         <h1 className="homepage-course-card__top--liner">{courseLiner}</h1>

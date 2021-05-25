@@ -1,6 +1,6 @@
 .homepage-showcase {
   &__wrapper {
-    min-height: 120vh;
+    min-height: 135vh;
     margin-top: 4rem;
     position: relative;
     &::before {
@@ -12,6 +12,12 @@
       left: 0;
       top: 0;
       z-index: 10;
+    }
+    .primary-button {
+      position: absolute;
+      bottom: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   &__elements {
