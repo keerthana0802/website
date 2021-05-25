@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import PrimaryButton from "./buttons/PrimaryButton";
 import artwork from "../assets/puppyCallbackArtwork.svg";
+import CallbackRequestModal from "./modals/CallbackRequestModal";
+import axios from "axios";
 function HomepageCallback() {
   // ! initial render state
   const [initialRender, setInitialRender] = useState(true);
@@ -34,13 +36,45 @@ function HomepageCallback() {
   // ! useeffect for phone number onchange
   useEffect(() => {
     if (!initialRender) {
-      if (phoneNumber.length !== phoneNumberLengthValidation(phoneNumber)) {
-        setTooltipClass("phone-validation-tooltip visible");
-      } else {
-        setTooltipClass("phone-validation-tooltip");
+      if (phoneNumber.length > phoneNumberLengthValidation(phoneNumber)) {
+        setPhoneNumber((phoneNumber) => {
+          phoneNumber = phoneNumber.split("");
+          phoneNumber.pop();
+          return phoneNumber.join("");
+        });
       }
     }
   }, [phoneNumber]);
+  // ! state for modal
+  const [showModal, setShowModal] = useState(false);
+  // ! function to close modal
+  const modalClose = () => {
+    setShowModal(false);
+  };
+  // ! handle form submit
+  const handleSubmit = () => {
+    if (
+      fullName &&
+      countryCode &&
+      phoneNumber.length === phoneNumberLengthValidation(phoneNumber)
+    ) {
+      console.log("here");
+      axios
+        .post(process.env.REACT_APP_CALLBACK_REQUEST_API, {
+          callback_request: {
+            phone_no: `${countryCode}-${phoneNumber}`,
+            name: fullName,
+          },
+        })
+        .then((res) => console.log(res))
+        .then(() => setShowModal(true))
+        .then(() => {
+          setFullName("");
+          setPhoneNumber("");
+        })
+        .catch((err) => console.log(err));
+    }
+  };
   return (
     <div className="homepage-callback__wrapper">
       <div className="homepage-callback__artwork">
@@ -93,6 +127,23 @@ function HomepageCallback() {
                   if (numberRegex.test(ev.target.value))
                     setPhoneNumber(ev.target.value);
                 }}
+                onKeyPress={(ev) => {
+                  if (ev.code === "Backspace") {
+                    console.log("here");
+                    setPhoneNumber(ev.target.value);
+                  }
+                }}
+                onFocus={() => setTooltipClass("phone-validation-tooltip")}
+                onBlur={(ev) => {
+                  if (
+                    phoneNumber.length !==
+                    phoneNumberLengthValidation(phoneNumber)
+                  ) {
+                    setTooltipClass("phone-validation-tooltip visible");
+                  } else {
+                    setTooltipClass("phone-validation-tooltip");
+                  }
+                }}
               />
               <div className={tooltipClass}>
                 <span>
@@ -103,9 +154,16 @@ function HomepageCallback() {
               </div>
             </label>
           </div>
-          <PrimaryButton buttonText="Request callback" version="version-1" />
+          <PrimaryButton
+            buttonText="Request callback"
+            version="version-1"
+            clickHandle={handleSubmit}
+          />
         </div>
       </div>
+      {showModal ? (
+        <CallbackRequestModal modalCloseFunction={modalClose} />
+      ) : null}
     </div>
   );
 }

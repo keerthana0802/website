@@ -71,7 +71,7 @@ function BookingModal({ slots, days, times, modalHandler, updateApi, custom }) {
     return s.toLowerCase().charAt(0).toUpperCase() + s.toLowerCase().slice(1);
   };
   return (
-    <div className="modal__wrapper" ref={modalWrapperRef}>
+    <div className="modal__wrapper  global-modal-wrapper" ref={modalWrapperRef}>
       <div className="modal" ref={modalRef}>
         <div className="modal__top">
           <h1 className="modal__top--header">

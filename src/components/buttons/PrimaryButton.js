@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import arrow from "../../assets/buttonArrow.svg";
-function PrimaryButton({ buttonText, version, linkTo }) {
+function PrimaryButton({ buttonText, version, linkTo, clickHandle }) {
   const clickHandler = () => {
     if (linkTo) {
       window.location.href = linkTo;
+    }
+    if (clickHandle) {
+      clickHandle()
     }
   };
 

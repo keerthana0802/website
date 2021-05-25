@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import cross from "../../assets/cross.svg";
-function VideoShowcaseModal({ videoUrl, modalCloseFunction }) {
+import cartoon from "../../assets/cartoon.svg";
+function CallbackRequestModal({ modalCloseFunction }) {
   const modalRef = useRef(null);
   const modalWrapperRef = useRef(null);
   const tweenRef = useRef(null);
@@ -27,19 +28,15 @@ function VideoShowcaseModal({ videoUrl, modalCloseFunction }) {
   }, []);
   return (
     <div
-      className="video-showcase-modal__wrapper  global-modal-wrapper"
+      className="callback-request-modal__wrapper global-modal-wrapper"
       ref={modalWrapperRef}
     >
-      <div className="video-showcase-modal" ref={modalRef}>
-        <video
-          src={videoUrl}
-          controls
-          controlsList="nodownload"
-          disablePictureInPicture
-          autoPlay
-        ></video>
+      <div className="callback-request-modal" ref={modalRef}>
+        <h1 className="callback-request-modal__content">
+          We will call you back!
+        </h1>
         <div
-          className="video-showcase-modal__close"
+          className="callback-request-modal__close"
           onClick={() => {
             setTimeout(() => {
               modalCloseFunction();
@@ -50,9 +47,10 @@ function VideoShowcaseModal({ videoUrl, modalCloseFunction }) {
         >
           <img src={cross} alt="close" />
         </div>
+        <img src={cartoon} alt="" className="callback-request-modal__cartoon" />
       </div>
     </div>
   );
 }
 
-export default VideoShowcaseModal;
+export default CallbackRequestModal;
