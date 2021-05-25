@@ -14,17 +14,22 @@
     font-weight: 600;
   }
   &.version-2 {
-    padding: 1.5rem 0 1.5rem 2.8rem;
+    padding: 1.5rem 0 1.5rem 2.2rem;
     justify-content: space-between;
     position: relative;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
-    width: 30rem;
+    width: 22rem;
     img {
       position: absolute;
       width: 4rem;
       right: 0.8rem;
     }
+  }
+  &.version-3 {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 1px 8px rgba(63, 63, 63, 0.3);
   }
 }

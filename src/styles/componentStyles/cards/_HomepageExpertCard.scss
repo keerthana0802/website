@@ -1,0 +1,57 @@
+.expert-card {
+  height: 300px;
+  width: 220px;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  &:hover {
+    transition: all 0.1s linear;
+    transform: scale(1.02);
+  }
+  &--blue {
+    background: linear-gradient(
+      113.87deg,
+      #a0dce7 -9.5%,
+      rgba(255, 255, 255, 0.5) 97.11%
+    );
+    .primary-button {
+      background: linear-gradient(
+        113.87deg,
+        rgba(255, 255, 255, 0.5) -9.5%,
+        #a0dce7 62.13%
+      );
+    }
+  }
+  &--yellow {
+    background: linear-gradient(
+      111.29deg,
+      #fdcd4c -1.83%,
+      rgba(255, 255, 255, 0) 109.95%
+    );
+    .primary-button {
+      background: linear-gradient(
+        111.29deg,
+        rgba(255, 255, 255, 0) -1.83%,
+        #fdcd4c 66.87%
+      );
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+  img {
+    width: 50%;
+  }
+  &__name {
+    font-size: 2rem;
+  }
+  &__title {
+    font-size: 1.6rem;
+  }
+  &__content {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}

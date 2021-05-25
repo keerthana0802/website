@@ -61,7 +61,11 @@ function HomepageShowcase() {
           <img src={thumbnail2} alt="picture" />
         </div>
       </div>
-      <PrimaryButton buttonText="Book a free trial" version="version-2" />
+      <PrimaryButton
+        buttonText="Book a free trial"
+        version="version-2"
+        linkTo="https://book-staging.sparkstudio.co/"
+      />
       {showModal ? (
         <VideoShowcaseModal
           modalCloseFunction={modalClose}

@@ -1,13 +1,9 @@
 .section-header {
-  // background: rgba(248, 255, 230, 0.46);
-  //
-  // transform: rotate(-180deg);
   position: relative;
+  margin: 4rem 0;
   &::before {
     content: "";
     position: absolute;
-    // background: url("../../../assets/sectionHeaderBackground.svg") center
-    //   center/cover no-repeat;
     background: rgba(248, 255, 230, 0.8);
     filter: blur(50px);
     top: 0;

@@ -5,7 +5,11 @@
   height: 394px;
   margin: 0 2rem;
   border-radius: 3rem;
-  background-color: red;
+  background: linear-gradient(
+    111.29deg,
+    #fdcd4c -1.83%,
+    rgba(255, 255, 255, 0) 109.95%
+  );
   &__top {
     width: 100%;
     img {

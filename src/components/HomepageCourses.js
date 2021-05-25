@@ -57,7 +57,11 @@ function HomepageCourses() {
           );
         })}
       </OverflowSlider>
-      <PrimaryButton buttonText="Book a free trial" version="version-2" />
+      <PrimaryButton
+        buttonText="Book a free trial"
+        version="version-2"
+        linkTo="https://book-staging.sparkstudio.co/"
+      />
     </div>
   );
 }

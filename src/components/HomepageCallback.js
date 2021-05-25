@@ -54,7 +54,11 @@ function HomepageCallback() {
           <p className="homepage-callback__left--liner">
             Request a callback or book a free trial.
           </p>
-          <PrimaryButton buttonText="Book a free trial" version="version-2" />
+          <PrimaryButton
+            buttonText="Book a free trial"
+            version="version-2"
+            linkTo="https://book-staging.sparkstudio.co/"
+          />
         </div>
         <div className="homepage-callback__right">
           <input

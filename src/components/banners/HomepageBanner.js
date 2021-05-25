@@ -1,6 +1,6 @@
 import React from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
-import bannerImage1 from "../../assets/homeBannerImage1.svg";
+import bannerImage1 from "../../assets/bannerImage2.png";
 import bannerImage2 from "../../assets/homeBannerImage2.webp";
 // import bannerImageCombined from "../../assets/homepageBannerImageCombined.svg";
 function HomepageBanner() {
@@ -10,7 +10,11 @@ function HomepageBanner() {
         <h1 className="homepage-banner__left--header">
           High quality live online programs for children.
         </h1>
-        <PrimaryButton buttonText="Book a free trial" version="version-2" />
+        <PrimaryButton
+          buttonText="Book a free trial"
+          version="version-2"
+          linkTo="https://book-staging.sparkstudio.co/"
+        />
       </div>
       <div className="homepage-banner__right">
         <img

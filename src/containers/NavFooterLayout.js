@@ -19,6 +19,7 @@ function NavFooterLayout({ children }) {
               <PrimaryButton
                 buttonText="Book a free trial"
                 version="version-1"
+                linkTo="https://book-staging.sparkstudio.co/"
               />
             </li>
           </ul>

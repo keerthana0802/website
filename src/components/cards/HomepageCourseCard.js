@@ -10,7 +10,7 @@ function HomepageCourseCard({
   return (
     <div
       className="homepage-course-card"
-      style={{ background: `url(${yellowCard}) 25% 20%` }}
+      // style={{ background: `url(${yellowCard}) 25% 20%` }}
     >
       <div className="homepage-course-card__top">
         <img src={courseImage} alt="" />
