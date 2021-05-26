@@ -34,6 +34,7 @@ function HomepageCourses() {
       <div className="homepage-courses__top">
         <h1 className="homepage-courses__liner">Find our top course by age</h1>
         <ul className="homepage-courses__age-filter">
+          <li className="homepage-courses__age-filter-item active">All ages</li>
           <li className="homepage-courses__age-filter-item">5-7 yrs</li>
           <li className="homepage-courses__age-filter-item">8-10 yrs</li>
           <li className="homepage-courses__age-filter-item">11-13 yrs</li>

@@ -30,7 +30,7 @@
         position: absolute;
         font-size: 1.4rem;
         top: 60%;
-        left: 20%;
+        left: 23%;
         width: 20rem;
         text-align: center;
       }
@@ -59,6 +59,13 @@
       img {
         width: 40rem;
       }
+
+      .usp-card__header {
+        left: 28%;
+      }
+      .usp-card__content {
+        left: 27%;
+      }
     }
   }
   &__middle {
@@ -67,6 +74,12 @@
       img {
         width: 40rem;
       }
+      .usp-card__header {
+        top: 55%;
+      }
+      .usp-card__content {
+        top: 65%;
+      }
     }
     &--card-2 {
       img {
@@ -74,9 +87,11 @@
       }
       .usp-card__header {
         top: 55%;
+        left: 22%;
       }
       .usp-card__content {
         top: 65%;
+        left: 20%;
       }
     }
   }
