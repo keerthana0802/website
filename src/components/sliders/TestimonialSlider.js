@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import testimonialSlideBackground from "../../assets/testimonialSlide.svg";
-import testimonialSlideMobile from "../../assets/testimonialSlideMobile.svg";
+import testimonialSlideBackground from "../../assets/testimonialSlide.jpeg";
+import testimonialSlideMobile from "../../assets/testimonialSlideMobile.jpeg";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import gsap from "gsap";
 // ! Swiper

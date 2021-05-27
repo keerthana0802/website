@@ -17,26 +17,34 @@ function HomepageExpertsSection() {
   const [responsiveMode, setResponsiveMode] = useState(false);
   const [slidersPerView, setSlidersPerView] = useState(3);
   const [centeredSlides, setCenteredSlides] = useState(false);
+  // ! Rerender
+  const [rerendered, setRerendered] = useState(false);
   const pagination = {
     clickable: true,
   };
   // ! Animation refs
   const imageGridWRapperRef = useRef(null);
   const squareRef = useRef(null);
+  const startingRef = useRef(null);
   // ! Effect to register the timeline
   useEffect(() => {
+    setTimeout(() => {
+      setRerendered(true);
+    }, 3000);
+    // console.log(imageGridWRapperRef.current.getBoundingClientRect());
     if (window.innerWidth < 992) {
       setResponsiveMode(true);
     } else {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: imageGridWRapperRef.current,
-            start: "top top",
+            trigger: startingRef.current,
+            start: "200",
+            end: "1800",
             toggleActions: "play none none none",
             scrub: 2,
             pin: imageGridWRapperRef.current,
-            anticipatePin: 1,
+            // markers: true,
             ease: "ease-in",
           },
         })
@@ -50,6 +58,7 @@ function HomepageExpertsSection() {
       setSlidersPerView((slidersPerView) => "auto");
     }
   }, [responsiveMode, centeredSlides, slidersPerView]);
+  // console.log(rerendered);
   // ! Function to render the cards
   const renderCardsDesktop = () => {
     let arrayOfCards = [];
@@ -111,6 +120,7 @@ function HomepageExpertsSection() {
   };
   return (
     <>
+      <hr ref={startingRef} />
       <HomepageSectionHeader headerContent="Meet the experts" />
       <div
         className="homepage-experts-section__wrapper"
@@ -120,7 +130,7 @@ function HomepageExpertsSection() {
           <div className="homepage-experts-section__responsive" ref={squareRef}>
             <Swiper
               slidesPerView={slidersPerView}
-              spaceBetween={40}
+              spaceBetween={0}
               centeredSlides={centeredSlides}
               pagination={pagination}
               className="mySwiper"

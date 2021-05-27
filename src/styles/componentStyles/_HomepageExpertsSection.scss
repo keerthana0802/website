@@ -9,7 +9,7 @@
       overflow: hidden;
     }
     margin: 0 auto;
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
@@ -17,7 +17,7 @@
     .swiper-slide {
       margin-bottom: 12rem;
       transition: all 0.2s linear;
-      width: 22rem !important;
+      width: 25rem !important;
     }
     @include bpm-md {
       .swiper-slide-active {

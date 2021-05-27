@@ -4,13 +4,15 @@
   border-radius: 3rem;
   cursor: pointer;
   transition: all 0.1s linear;
-  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
   @include bpm-md {
     margin: 2.5rem 0;
   }
-  &:hover {
-    transition: all 0.1s linear;
-    transform: scale(1.02);
+  @include bp-md {
+    &:hover {
+      transition: all 0.1s linear;
+      transform: scale(1.02);
+    }
   }
   &--blue {
     background: linear-gradient(

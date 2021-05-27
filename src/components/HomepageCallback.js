@@ -139,7 +139,7 @@ function HomepageCallback() {
               type="text"
               className="homepage-callback__right--name"
               placeholder="Your Name"
-              autocomplete="on"
+              autoComplete="on"
               value={fullName}
               onChange={(ev) => {
                 if (textRegex.test(ev.target.value))
@@ -162,7 +162,7 @@ function HomepageCallback() {
                   type="text"
                   className="homepage-callback__right--contact-number"
                   placeholder="Phone number"
-                  autocomplete="on"
+                  autoComplete="on"
                   value={phoneNumber}
                   onChange={(ev) => {
                     if (numberRegex.test(ev.target.value))

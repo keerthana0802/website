@@ -26,10 +26,10 @@ function Homepage() {
           <HomepageShowcase />
         </Suspense>
         <Suspense fallback={<div></div>}>
-          <HomepageUspSection />
+          <HomepageExpertsSection />
         </Suspense>
         <Suspense fallback={<div></div>}>
-          <HomepageExpertsSection />
+          <HomepageUspSection />
         </Suspense>
         <Suspense fallback={<div></div>}>
           <TestimonialSlider />
