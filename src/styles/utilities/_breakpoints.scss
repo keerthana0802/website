@@ -1,0 +1,96 @@
+// ! max-width breakpoints for desktop first
+@mixin bpm-xxs {
+  @media screen and (max-width: $g-bp-xxs + 1px) {
+    @content;
+  }
+}
+
+@mixin bpm-xs {
+  @media screen and (max-width: $g-bp-xs + 1px) {
+    @content;
+  }
+}
+
+@mixin bpm-sm {
+  @media screen and (max-width: $g-bp-sm + 1px) {
+    @content;
+  }
+}
+
+@mixin bpm-md {
+  @media screen and (max-width: $g-bp-md + 1px) {
+    @content;
+  }
+}
+
+@mixin bpm-lg {
+  @media screen and (max-width: $g-bp-lg + 1px) {
+    @content;
+  }
+}
+
+@mixin bpm-xl {
+  @media screen and (max-width: $g-bp-xl + 1px) {
+    @content;
+  }
+}
+
+@mixin bpm-xxl {
+  @media screen and (max-width: $g-bp-xxl + 1px) {
+    @content;
+  }
+}
+
+@mixin bpm-custom($bp) {
+  @media screen and (max-width: $bp + 1px) {
+    @content;
+  }
+}
+// ! min-width breakpoints for desktop first
+@mixin bp-xxs {
+  @media screen and (min-width: $g-bp-xxs) {
+    @content;
+  }
+}
+
+@mixin bp-xs {
+  @media screen and (min-width: $g-bp-xs) {
+    @content;
+  }
+}
+
+@mixin bp-sm {
+  @media screen and (min-width: $g-bp-sm) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media screen and (min-width: $g-bp-md) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media screen and (min-width: $g-bp-lg) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  @media screen and (min-width: $g-bp-xl) {
+    @content;
+  }
+}
+
+@mixin bp-xxl {
+  @media screen and (min-width: $g-bp-xxl) {
+    @content;
+  }
+}
+
+@mixin bp-custom($bp) {
+  @media screen and (min-width: $bp) {
+    @content;
+  }
+}

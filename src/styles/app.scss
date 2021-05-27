@@ -1,5 +1,9 @@
 // ! Basic reset
-@import "./baseReset";
+@import "./utilities/baseReset";
+// ! Utilities
+@import "./utilities/variables";
+@import "./utilities/breakpoints";
+@import "./utilities/swiper";
 // ! Components
 @import "./componentStyles/buttons/PrimaryButton";
 @import "./componentStyles/SocialIcons";

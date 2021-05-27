@@ -1,12 +1,20 @@
-import React from "react";
-import HomepageBanner from "../components/banners/HomepageBanner";
-import HomepageCallback from "../components/HomepageCallback";
-import HomepageCourses from "../components/HomepageCourses";
-import HomepageExpertsSection from "../components/HomepageExpertsSection";
-import HomepageShowcase from "../components/HomepageShowcase";
-import HomepageUspSection from "../components/HomepageUspSection";
-import TestimonialSlider from "../components/sliders/TestimonialSlider";
+import React, { lazy, Suspense } from "react";
 import NavFooterLayout from "../containers/NavFooterLayout";
+import HomepageBanner from "../components/banners/HomepageBanner";
+import HomepageCourses from "../components/HomepageCourses";
+
+// ! lazy loaded components
+const HomepageCallback = lazy(() => import("../components/HomepageCallback"));
+const HomepageExpertsSection = lazy(() =>
+  import("../components/HomepageExpertsSection")
+);
+const HomepageShowcase = lazy(() => import("../components/HomepageShowcase"));
+const HomepageUspSection = lazy(() =>
+  import("../components/HomepageUspSection")
+);
+const TestimonialSlider = lazy(() =>
+  import("../components/sliders/TestimonialSlider")
+);
 
 function Homepage() {
   return (
@@ -14,11 +22,21 @@ function Homepage() {
       <div className="spark-homepage">
         <HomepageBanner />
         <HomepageCourses />
-        <HomepageShowcase />
-        <HomepageUspSection />
-        <HomepageExpertsSection />
-        <TestimonialSlider />
-        <HomepageCallback />
+        <Suspense fallback={<div></div>}>
+          <HomepageShowcase />
+        </Suspense>
+        <Suspense fallback={<div></div>}>
+          <HomepageUspSection />
+        </Suspense>
+        <Suspense fallback={<div></div>}>
+          <HomepageExpertsSection />
+        </Suspense>
+        <Suspense fallback={<div></div>}>
+          <TestimonialSlider />
+        </Suspense>
+        <Suspense fallback={<div></div>}>
+          <HomepageCallback />
+        </Suspense>
       </div>
     </NavFooterLayout>
   );

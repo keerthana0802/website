@@ -19,17 +19,50 @@
       left: 50%;
       transform: translateX(-50%);
     }
+    @include bpm-lg {
+      min-height: 95rem;
+    }
+    @include bpm-md {
+      min-height: 85rem;
+    }
+    @include bpm-sm {
+      min-height: 80rem;
+    }
+    @include bpm-xs {
+      min-height: 73rem;
+    }
   }
   &__elements {
     max-width: 940px;
     margin: 0 auto;
     position: relative;
     margin-top: 4rem;
+    @include bpm-lg {
+      transform: scale(0.75);
+    }
+    @include bpm-md {
+      max-width: 700px;
+      transform: scale(0.75);
+    }
+    @include bpm-custom(700px) {
+      max-width: 500px;
+    }
+    @include bpm-custom(500px) {
+      transform: scale(0.6);
+      max-width: 375px;
+    }
     .showcase-single-element {
       border-radius: 6.6rem;
       box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
       position: absolute;
       overflow: hidden;
+      cursor: pointer;
+      @include bpm-md {
+        transform: scale(0.8);
+      }
+      @include bpm-custom(700px) {
+        transform: scale(0.65);
+      }
       img {
         width: 130%;
         object-fit: cover;
@@ -62,7 +95,7 @@
       height: 290px;
       width: 290px;
 
-      right: 10rem;
+      right: 12%;
       top: 5rem;
       z-index: 3;
     }
@@ -89,6 +122,72 @@
       left: 20rem;
       top: 45rem;
       z-index: 5;
+    }
+    @include bpm-md {
+      &--one {
+        left: -6rem;
+        top: 0;
+      }
+      &--two {
+        right: 5rem;
+        top: 10rem;
+      }
+      &--three {
+        top: 28rem;
+        left: 30%;
+      }
+      &--four {
+        right: -5rem;
+        top: 30rem;
+      }
+      &--five {
+        left: 5rem;
+        top: 40rem;
+      }
+    }
+    @include bpm-custom(700) {
+      &--one {
+        left: -13rem;
+        top: 0;
+      }
+      &--two {
+        right: -2rem;
+        top: 10rem;
+      }
+      &--three {
+        top: 24rem;
+        left: 25%;
+      }
+      &--four {
+        right: -10rem;
+        top: 28rem;
+      }
+      &--five {
+        left: 2rem;
+        top: 36rem;
+      }
+    }
+    @include bpm-custom(500) {
+      &--one {
+        left: -17rem;
+        top: 0;
+      }
+      &--two {
+        right: -10rem;
+        top: 10rem;
+      }
+      &--three {
+        top: 25rem;
+        left: 17%;
+      }
+      &--four {
+        right: -15rem;
+        top: 28rem;
+      }
+      &--five {
+        left: -6rem;
+        top: 36rem;
+      }
     }
   }
 }

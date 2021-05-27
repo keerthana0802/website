@@ -23,6 +23,24 @@
   margin: 0 7rem 7rem 7rem;
   min-height: 35rem;
   padding: 0 7rem;
+  @include bpm-md {
+    padding: 0 4rem;
+    min-height: 28rem;
+    &__artwork {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 30rem;
+      }
+      transform: translateY(10rem);
+    }
+  }
+  @include bpm-sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.7fr;
+    padding: 0 3rem;
+    margin: 0 3rem 7rem 3rem;
+  }
   &__left {
     width: 100%;
     display: flex;
@@ -49,6 +67,36 @@
       font-weight: 400;
       font-size: 2.6rem;
     }
+    @include bpm-md {
+      &--header {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      &--liner {
+        font-weight: 400;
+        font-size: 2.2rem;
+      }
+      .primary-button {
+        font-size: 2rem;
+        height: 5rem;
+        width: 24rem;
+        img {
+          width: 4rem;
+          right: 0.5rem;
+        }
+      }
+    }
+    @include bpm-sm {
+      padding-top: 3rem;
+      align-items: center;
+      &--header {
+        text-align: center;
+      }
+      &--liner {
+        text-align: center;
+        margin: 2rem 0;
+      }
+    }
   }
   &__right {
     display: flex;
@@ -69,6 +117,14 @@
       padding: 0 1rem;
       font-size: 1.6rem;
     }
+    @include bpm-md {
+      & > input {
+        width: 270px;
+      }
+      input {
+        height: 50px;
+      }
+    }
     &--contact {
       //   display: flex;
       &-country-code {
@@ -81,6 +137,16 @@
       }
       label {
         position: relative;
+      }
+      @include bpm-md {
+        &-country-code {
+          width: 80px;
+        }
+
+        &-number {
+          width: 170px;
+          margin-left: 2rem;
+        }
       }
       .phone-validation-tooltip {
         position: absolute;
@@ -107,6 +173,39 @@
         }
         &.visible {
           display: block;
+        }
+      }
+    }
+    @include bpm-sm {
+      align-items: center;
+      .contact__whatsapp {
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+        background-color: #25d366;
+        // background-image: linear-gradient(
+        //   to bottom right,
+        //   #1ac559,
+        //   #4ddb81,
+        //   #41ea7f
+        // );
+        padding: 1.5rem 3rem;
+        border-radius: 10rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        .whatsapp-icon {
+          margin-right: 1rem;
+          width: 4rem;
+          fill: #fff;
+        }
+      }
+    }
+    @include bpm-xs {
+      .contact__whatsapp {
+        padding: 1.25rem 3rem;
+        font-size: 1.8rem;
+        .whatsapp-icon {
+          width: 3rem;
         }
       }
     }

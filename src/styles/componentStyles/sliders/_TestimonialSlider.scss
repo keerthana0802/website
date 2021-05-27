@@ -2,6 +2,9 @@
   position: relative;
   &__background {
     width: 100vw;
+    @include bpm-xs {
+      transform: scaleY(0.8);
+    }
   }
   &__content {
     position: absolute;
@@ -11,6 +14,7 @@
     width: 80rem;
     top: 30%;
     left: 20%;
+    z-index: 10;
   }
   &__source {
     position: absolute;
@@ -18,12 +22,100 @@
     color: #fff;
     bottom: 30%;
     left: 20%;
+    z-index: 10;
+  }
+  @include bpm-md {
+    &__content {
+      font-size: 2rem;
+      width: 50rem;
+    }
+    &__source {
+      font-size: 2.2rem;
+    }
+  }
+  @include bpm-sm {
+    &__content {
+      font-size: 1.8rem;
+      width: 40rem;
+      top: 20%;
+      left: 15%;
+    }
+    &__source {
+      font-size: 2rem;
+      bottom: 20%;
+      left: 15%;
+    }
+  }
+  @include bpm-custom(600px) {
+    &__content {
+      top: 15%;
+    }
+    &__source {
+      font-size: 2rem;
+      bottom: 23%;
+    }
+  }
+  @include bpm-xs {
+    &__content {
+      font-size: 2.2rem;
+      text-align: left;
+      font-weight: 600;
+      max-width: 85vw;
+      top: 30%;
+      left: 10%;
+      z-index: 10;
+    }
+    &__source {
+      font-size: 2.5rem;
+      color: #fff;
+      text-align: left;
+      max-width: 85vw;
+      bottom: 30%;
+      left: 10%;
+      z-index: 10;
+    }
+  }
+  @include bpm-custom(460px) {
+    &__content {
+      font-size: 2rem;
+      top: 22%;
+      left: 10%;
+    }
+    &__source {
+      font-size: 2.2rem;
+      bottom: 35%;
+      left: 10%;
+    }
+  }
+  @include bpm-custom(400px) {
+    &__content {
+      font-size: 1.8rem;
+      top: 20%;
+      left: 10%;
+    }
+    &__source {
+      font-size: 2rem;
+      bottom: 40%;
+      left: 10%;
+    }
   }
 }
 .testimonial-slider {
   &__wrapper {
     overflow: hidden;
     position: relative;
+    .swiper-pagination {
+      transform: translate(-33%, -10rem);
+    }
+    .swiper-pagination-bullet {
+      background-color: #4f4fff !important;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #fff !important;
+    }
+    @include bpm-xs {
+      margin-bottom: -10rem;
+    }
   }
   display: flex;
   align-items: center;
@@ -52,6 +144,36 @@
     }
     .single-dot + .single-dot {
       margin-left: 2rem;
+    }
+    @include bpm-md {
+      bottom: 12%;
+    }
+    @include bpm-sm {
+      bottom: 6%;
+      left: 15.3%;
+      .single-dot {
+        height: 1rem;
+        width: 1rem;
+        background-color: #4f4fff;
+        border-radius: 2rem;
+        cursor: pointer;
+      }
+      .active-dot {
+        background-color: #fff;
+        height: 1.8rem;
+        width: 1.8rem;
+        border-radius: 2rem;
+        position: absolute;
+        left: -0.5rem;
+        margin-bottom: 0.2rem;
+      }
+      .single-dot + .single-dot {
+        margin-left: 1.5rem;
+      }
+    }
+    @include bpm-custom(460px) {
+      bottom: 0%;
+      left: 17%;
     }
   }
 }

@@ -19,12 +19,20 @@
   height: 15rem;
   &__top {
     z-index: 2;
-    font-size: 7.2rem;
+    font-size: 5rem;
     color: #333;
+    text-align: center;
+    @include bpm-lg {
+      font-size: 4rem;
+    }
   }
   &__bottom {
     z-index: 2;
-    font-size: 2.6rem;
+    font-size: 2rem;
     color: #666;
+    text-align: center;
+    @include bpm-lg {
+      font-size: 1.8rem;
+    }
   }
 }

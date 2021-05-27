@@ -4,7 +4,6 @@
     rgba(255, 130, 205, 0.2) -59.43%,
     rgba(255, 253, 201, 0.4) 100%
   );
-  // height: 500vh;
   .spark-layout {
     &-navbar {
       display: flex;
@@ -16,10 +15,14 @@
       top: 0;
       left: 0;
       z-index: 10;
-      &.navbar-scrolling {
-        background-color: rgba(255, 255, 255, 0.9);
-        // filter: drop-shadow(50px 60px 100px rgba(255, 255, 255, 0));
-        // backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.9);
+      @include bpm-sm {
+        padding: 0 3rem;
+        &__left {
+          img {
+            width: 10rem;
+          }
+        }
       }
       &__left {
       }
@@ -38,6 +41,129 @@
             }
           }
         }
+        @include bpm-sm {
+          &--list {
+            &-item {
+              margin-left: 3rem;
+            }
+          }
+        }
+      }
+      @include bpm-custom(640px) {
+        padding: 0 3rem;
+        height: 7rem;
+        .menu-toggle {
+          width: 4rem;
+        }
+        &__right {
+          position: absolute;
+          height: calc(100vh - 7rem);
+          padding: 2rem 3rem;
+          width: 100vw;
+          background-color: #fdcd4c;
+          top: 7rem;
+          left: 100%;
+          &--list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            height: 100%;
+            &-item {
+              margin: 3rem 0;
+              font-size: 2.2rem;
+              font-weight: 600;
+            }
+            &-ruler {
+              background-color: #f3705b;
+              height: 0.3rem;
+              width: 100%;
+              justify-self: flex-end;
+              // margin-top: 25vh;
+            }
+            > div {
+              &:first-child {
+              }
+              &:last-child {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+                margin-bottom: 4rem;
+              }
+            }
+          }
+        }
+        .trial-hamburger {
+          display: flex;
+          align-items: center;
+          .primary-button {
+            margin-right: 2rem;
+            @include bpm-custom(460px) {
+              margin-right: 1rem;
+              font-size: 1.4rem;
+              padding: 1rem 2.2rem;
+              font-weight: 400;
+            }
+          }
+        }
+        &.visible {
+          .spark-layout-navbar__right {
+            transition: all 0.3s linear;
+            transform: translateX(-100vw);
+            opacity: 1;
+          }
+        }
+        &.hidden {
+          .spark-layout-navbar__right {
+            transition: all 0.3s linear;
+            transform: translateX(0);
+            opacity: 0.3;
+          }
+        }
+        .contact {
+          &__header {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            font-weight: 700;
+          }
+          &__content {
+            font-size: 1.8rem;
+            color: #333;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+            font-weight: 600;
+          }
+          &__call {
+            display: flex;
+            align-items: center;
+            p {
+              margin-left: 1rem;
+              margin-bottom: 0.5rem;
+              font-size: 2rem;
+              color: #f3705b;
+            }
+            .call-icon {
+              width: 2.2rem;
+              fill: #f3705b !important;
+            }
+          }
+          &__whatsapp {
+            display: flex;
+            align-items: center;
+            p {
+              margin-left: 1rem;
+              margin-bottom: 0.5rem;
+              font-size: 2rem;
+              color: #f3705b;
+            }
+            .whatsapp-icon {
+              width: 2.2rem;
+              fill: #f3705b;
+            }
+          }
+        }
       }
     }
   }
@@ -49,12 +175,12 @@
     // max-width: 1100px;
 
     margin: 0 7rem;
-    @media screen and (max-width: 1200px) {
-      max-width: 800px;
+    @include bpm-lg {
+      max-width: 100%;
     }
-    @media screen and (max-width: 850px) {
-      max-width: 375px;
-      padding: 0 2rem;
+    @include bpm-custom(850px) {
+      margin: 0 3rem;
+      padding: 0;
     }
     &__top {
       &--contact-us {
@@ -62,8 +188,9 @@
         flex-direction: column;
         align-items: flex-start;
         width: 400px;
-        @media screen and (max-width: 850px) {
-          width: 350px;
+
+        @include bpm-custom(850px) {
+          width: 300px;
         }
         .contact {
           &__header {

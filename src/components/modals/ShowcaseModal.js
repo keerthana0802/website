@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import cross from "../../assets/cross.svg";
-function VideoShowcaseModal({ videoUrl, modalCloseFunction }) {
+function ShowcaseModal({ media, modalCloseFunction, mediaType }) {
   const modalRef = useRef(null);
   const modalWrapperRef = useRef(null);
   const tweenRef = useRef(null);
@@ -31,13 +31,16 @@ function VideoShowcaseModal({ videoUrl, modalCloseFunction }) {
       ref={modalWrapperRef}
     >
       <div className="video-showcase-modal" ref={modalRef}>
-        <video
-          src={videoUrl}
-          controls
-          controlsList="nodownload"
-          disablePictureInPicture
-          autoPlay
-        ></video>
+        {mediaType === "video" ? (
+          <video
+            src={media}
+            controls
+            controlsList="nodownload"
+            disablePictureInPicture
+            autoPlay
+          ></video>
+        ) : null}
+        {mediaType === "image" ? <img src={media} alt="" /> : null}
         <div
           className="video-showcase-modal__close"
           onClick={() => {
@@ -55,4 +58,4 @@ function VideoShowcaseModal({ videoUrl, modalCloseFunction }) {
   );
 }
 
-export default VideoShowcaseModal;
+export default ShowcaseModal;

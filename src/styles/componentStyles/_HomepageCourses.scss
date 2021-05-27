@@ -16,10 +16,14 @@
     list-style: none;
     padding-inline-start: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     position: relative;
     width: 100%;
+    @include bpm-md {
+      margin-bottom: 2rem;
+    }
     &-item {
       padding: 0.5rem 2rem;
       background: linear-gradient(
@@ -35,12 +39,12 @@
       border-radius: 8px;
       border: 3px solid #fff;
       //   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-      margin-left: 2.5rem;
+      margin: 1rem 1.5rem;
       cursor: pointer;
       font-weight: 500;
       color: #666;
-      &:first-child {
-        margin-left: 0;
+      @include bpm-md {
+        margin: 1rem;
       }
       &--see-all {
         position: absolute;
@@ -49,6 +53,16 @@
         font-weight: 600;
         color: #666;
         cursor: pointer;
+        @include bpm-md {
+          font-size: 2rem;
+          right: 5rem;
+          top: 7rem;
+        }
+        @include bpm-custom(628px) {
+          font-size: 2rem;
+          right: 3rem;
+          top: 12rem;
+        }
       }
       &.active {
         border: 3px solid #fcb444;
@@ -56,6 +70,21 @@
     }
   }
   .primary-button {
-    margin: 4rem auto;
+    margin: 8rem auto;
+  }
+  @include bpm-md {
+    .primary-button {
+      margin: 4rem auto 8rem auto;
+    }
+    .swiper-slide {
+      width: 35rem !important;
+    }
+    .swiper-wrapper {
+      margin-bottom: 6rem;
+    }
+    .swiper-pagination {
+      // bottom: -3rem !important;
+      margin-bottom: 0;
+    }
   }
 }

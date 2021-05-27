@@ -8,10 +8,10 @@ function HomepageBanner() {
     <div className="homepage-banner__wrapper">
       <div className="homepage-banner__left">
         <h1 className="homepage-banner__left--header">
-          High quality live online programs for children.
+          High quality live online programs for children
         </h1>
         <PrimaryButton
-          buttonText="Book a free trial"
+          buttonText="Book a FREE trial"
           version="version-2"
           linkTo="https://book-staging.sparkstudio.co/"
         />
