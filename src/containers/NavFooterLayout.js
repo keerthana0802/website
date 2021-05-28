@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
-import logo from "../assets/sparkLogo.svg";
+import logo from "../assets/sparkLogo.png";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import SocialIcons from "../components/SocialIcons";
 import hamburger from "../assets/hamburger.svg";
@@ -18,6 +18,7 @@ function NavFooterLayout({ children }) {
     if (window.innerWidth < 640) {
       setResponsiveMode(true);
     }
+    console.log(window.geoplugin_city());
   }, []);
   const containerLayout = useRef(null);
   return (
