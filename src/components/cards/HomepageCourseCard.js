@@ -9,6 +9,7 @@ function HomepageCourseCard({
   verticalThemeColorLight,
   verticalThemeColorDark,
 }) {
+  console.log("loaded");
   return (
     <div
       className="homepage-course-card"

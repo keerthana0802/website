@@ -1,0 +1,112 @@
+.course-category-slider {
+  &__wrapper {
+    padding: 4rem 7rem;
+    height: 610px;
+  }
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  height: 100%;
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 5rem;
+    &--header {
+      font-size: 5rem;
+      color: #333;
+      font-weight: 800;
+    }
+    &--duration {
+      display: flex;
+      align-items: center;
+      img {
+        width: 1.3rem;
+        margin-right: 1rem;
+        transform: translateY(0.1rem);
+      }
+      font-size: 1.4rem;
+      color: #333;
+    }
+    &--content {
+      font-size: 1.4rem;
+      color: #333;
+      max-width: 280px;
+      font-weight: 600;
+      line-height: 2.4rem;
+    }
+    &--keywords {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: self-start;
+      //   margin-top: 3rem;
+      .keyword {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+        &:nth-child(1) {
+          border-right: 2px solid black;
+          padding-right: 1.7rem;
+        }
+      }
+    }
+    .secondary-button {
+      margin-top: 5rem;
+    }
+  }
+
+  .sq {
+    height: 20rem;
+    width: 15rem;
+    background-color: red;
+  }
+  .course-category-swiper {
+    width: calc(100vw - 485px) !important;
+    margin-left: 0;
+  }
+  .swiper-slide {
+    width: 32rem !important;
+  }
+  .swiper-pagination {
+    // bottom: -3rem !important;
+    margin-bottom: 0;
+  }
+  .swiper-button-next {
+    transform: translate(7rem, -5rem);
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10rem;
+    position: absolute;
+    &::after {
+      content: "";
+      background: url("../../../assets/nextArrow.svg") center center/contain
+        no-repeat;
+      background-size: 2rem;
+      transform: translateX(-2.3rem);
+    }
+  }
+  .swiper-button-prev {
+    transform: translate(-7rem, -5rem);
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10rem;
+    position: absolute;
+    &::after {
+      content: "";
+      background: url("../../../assets/nextArrow.svg") center center/contain
+        no-repeat;
+      background-size: 2rem;
+      transform: rotate(180deg) translateX(-2.3rem);
+    }
+  }
+  .swiper-button-disabled {
+    opacity: 0 !important;
+  }
+}

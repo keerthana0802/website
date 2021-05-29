@@ -1,26 +1,35 @@
 // ! Basic reset
 @import "./utilities/baseReset";
+// ! *******************************************************8
 // ! Utilities
 @import "./utilities/variables";
 @import "./utilities/breakpoints";
 @import "./utilities/swiper";
+// ! *******************************************************8
 // ! Components
 @import "./componentStyles/buttons/PrimaryButton";
 @import "./componentStyles/SocialIcons";
 @import "./componentStyles/banners/HomepageBanner";
 @import "./componentStyles/headers/HomepageSectionHeader.scss";
 @import "./componentStyles/sliders/OverflowSlider.scss";
-@import "./componentStyles/HomepageCourses.scss";
 @import "./componentStyles/cards/HomepageCourseCard";
-@import "./componentStyles/HomepageShowcase";
-@import "./componentStyles/HomepageCallback";
 @import "./componentStyles/modals/BookingModal";
 @import "./componentStyles/modals/VideoShowcaseModal";
 @import "./componentStyles/sliders/TestimonialSlider";
-@import "./componentStyles/HomepageUspSection";
-@import "./componentStyles/HomepageExpertsSection";
 @import "./componentStyles/cards/HomepageExpertCard";
 @import "./componentStyles/modals/CallbackRequestModal";
+@import "./componentStyles/buttons/SecondaryButton";
+@import "./componentStyles/cards/CourseCategoryCard";
+@import "./componentStyles/sliders/CourseCategorySlider";
+// ! Homepage components
+@import "./componentStyles/HomepageComponentStyles/HomepageCourses.scss";
+@import "./componentStyles/HomepageComponentStyles/HomepageShowcase";
+@import "./componentStyles/HomepageComponentStyles/HomepageCallback";
+@import "./componentStyles/HomepageComponentStyles/HomepageUspSection";
+@import "./componentStyles/HomepageComponentStyles/HomepageExpertsSection";
+// ! All courses page components
+@import "./componentStyles/AllCoursesComponentStyles/CourseCategorySection";
+// ! *******************************************************8
 // ! Containers
 @import "./containerStyles/NavFooterLayout";
 // ! Pages

@@ -1,0 +1,44 @@
+.secondary-button {
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  cursor: pointer;
+
+  &.version-1 {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    height: 5rem;
+    width: 20rem;
+    img {
+      width: 1.5rem;
+    }
+  }
+  &.version-2 {
+    width: 14rem;
+    height: 2.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    position: relative;
+    img {
+      &:first-child {
+        margin-right: 1rem;
+        width: 1.2rem;
+      }
+      &:last-child {
+        margin-right: 1rem;
+        width: 2.2rem;
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

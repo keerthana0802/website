@@ -1,0 +1,29 @@
+.homepage-experts-section {
+  @include bp-md {
+    &__wrapper {
+      width: 100%;
+      padding: 9rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    margin: 0 auto;
+    grid-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  &__responsive {
+    .swiper-slide {
+      margin-bottom: 12rem;
+      transition: all 0.2s linear;
+      width: 25rem !important;
+    }
+    @include bpm-md {
+      .swiper-slide-active {
+        transition: all 0.2s linear;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

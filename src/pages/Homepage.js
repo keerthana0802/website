@@ -1,16 +1,20 @@
 import React, { lazy, Suspense } from "react";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import HomepageBanner from "../components/banners/HomepageBanner";
-import HomepageCourses from "../components/HomepageCourses";
+import HomepageCourses from "../components/HomepageComponents/HomepageCourses";
 
 // ! lazy loaded components
-const HomepageCallback = lazy(() => import("../components/HomepageCallback"));
-const HomepageExpertsSection = lazy(() =>
-  import("../components/HomepageExpertsSection")
+const HomepageCallback = lazy(() =>
+  import("../components/HomepageComponents/HomepageCallback")
 );
-const HomepageShowcase = lazy(() => import("../components/HomepageShowcase"));
+const HomepageExpertsSection = lazy(() =>
+  import("../components/HomepageComponents/HomepageExpertsSection")
+);
+const HomepageShowcase = lazy(() =>
+  import("../components/HomepageComponents/HomepageShowcase")
+);
 const HomepageUspSection = lazy(() =>
-  import("../components/HomepageUspSection")
+  import("../components/HomepageComponents/HomepageUspSection")
 );
 const TestimonialSlider = lazy(() =>
   import("../components/sliders/TestimonialSlider")
