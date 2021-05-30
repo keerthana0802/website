@@ -9,7 +9,6 @@ function HomepageCourseCard({
   verticalThemeColorLight,
   verticalThemeColorDark,
 }) {
-  console.log("loaded");
   return (
     <div
       className="homepage-course-card"
@@ -19,9 +18,9 @@ function HomepageCourseCard({
     >
       <div className="homepage-course-card__top">
         <img src={courseImage} alt="" />
-        <h1 className="homepage-course-card__top--liner">{courseLiner}</h1>
       </div>
       <div className="homepage-course-card__bottom">
+        <h1 className="homepage-course-card__bottom--liner">{courseLiner}</h1>
         <h1 className="homepage-course-card__bottom--title">{courseName}</h1>
         <p className="homepage-course-card__bottom--content">{courseContent}</p>
         <div className="homepage-course-card__bottom--tags">

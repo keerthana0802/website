@@ -4,8 +4,9 @@ import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import { Link } from "react-router-dom";
 // ! JSON data for courses
 import cardsData from "../../store/staticData/HomepageCourseCards.json";
-import blue from "../../assets/blueCard.png";
-import yellow from "../../assets/yellowCard.png";
+import yellowCourse from "../../assets/yellowCourse.svg";
+import blueCourse from "../../assets/blueCourse.svg";
+import purpleCourse from "../../assets/purpleCourse.svg";
 import PrimaryButton from "../buttons/PrimaryButton";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
@@ -44,6 +45,20 @@ function HomepageCourses() {
       return "homepage-courses__age-filter-item active";
     } else {
       return "homepage-courses__age-filter-item";
+    }
+  };
+  // ! Temporary image selector
+  const imageSelector = (colorLight) => {
+    switch (colorLight.toUpperCase()) {
+      case "#FFEDC8":
+        return yellowCourse;
+      case "#EDFCFF":
+        return blueCourse;
+      case "#DCCCFF":
+        return purpleCourse;
+
+      default:
+        break;
     }
   };
   return (
@@ -104,19 +119,22 @@ function HomepageCourses() {
         >
           {cardsData.map((course, index) => {
             if (course.courseStatus === "ACTIVE")
-              return (
-                <SwiperSlide key={index}>
-                  <HomepageCourseCard
-                    key={index}
-                    courseName={course.displayName}
-                    courseContent={course.courseContent}
-                    courseLiner={course.courseLiner}
-                    courseTags={course.courseTags}
-                    courseImage={yellow}
-                    verticalThemeColorLight={course.verticalThemeColorLight}
-                  />
-                </SwiperSlide>
-              );
+              if (shouldRenderCard(course.minAge, course.maxAge))
+                return (
+                  <SwiperSlide key={index}>
+                    <HomepageCourseCard
+                      key={index}
+                      courseName={course.displayName}
+                      courseContent={course.courseContent}
+                      courseLiner={course.courseLiner}
+                      courseTags={course.courseTags}
+                      courseImage={imageSelector(
+                        course.verticalThemeColorLight
+                      )}
+                      verticalThemeColorLight={course.verticalThemeColorLight}
+                    />
+                  </SwiperSlide>
+                );
           })}
         </Swiper>
       ) : (
@@ -137,7 +155,9 @@ function HomepageCourses() {
                       courseContent={course.courseContent}
                       courseLiner={course.courseLiner}
                       courseTags={course.courseTags}
-                      courseImage={yellow}
+                      courseImage={imageSelector(
+                        course.verticalThemeColorLight
+                      )}
                       verticalThemeColorLight={course.verticalThemeColorLight}
                     />
                   </SwiperSlide>

@@ -7,6 +7,14 @@
   display: grid;
   grid-template-rows: 6fr 4.5fr;
   justify-items: self-start;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  @include bp-md {
+    &:hover {
+      transition: all 0.1s linear;
+      transform: scale(1.03);
+    }
+  }
   &__top {
     img {
       height: 100%;

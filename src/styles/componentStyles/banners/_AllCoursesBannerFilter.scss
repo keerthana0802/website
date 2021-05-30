@@ -1,0 +1,156 @@
+.all-courses-banner-filter {
+  &__wrapper {
+    padding-top: 14rem;
+    .swiper-slide {
+      width: 36rem !important;
+    }
+    .swiper-wrapper {
+      margin-bottom: 6rem;
+    }
+    .swiper-pagination {
+      // bottom: -3rem !important;
+      margin-bottom: 0;
+    }
+    .swiper-button-next {
+      transform: translate(7rem, -5rem);
+      outline: none;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      height: 10rem;
+      width: 10rem;
+      border-radius: 10rem;
+      position: absolute;
+      &::after {
+        content: "";
+        background: url("../../../assets/nextArrow.svg") center center/contain
+          no-repeat;
+        background-size: 2rem;
+        transform: translateX(-2.3rem);
+      }
+    }
+    .swiper-button-prev {
+      transform: translate(-7rem, -5rem);
+      outline: none;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      height: 10rem;
+      width: 10rem;
+      border-radius: 10rem;
+      position: absolute;
+      &::after {
+        content: "";
+        background: url("../../../assets/nextArrow.svg") center center/contain
+          no-repeat;
+        background-size: 2rem;
+        transform: rotate(180deg) translateX(-2.3rem);
+      }
+    }
+    .swiper-button-disabled {
+      opacity: 0 !important;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__header {
+    font-size: 5rem;
+    font-weight: 800;
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+    label {
+      input {
+        height: 5rem;
+        width: 44rem;
+        font-size: 1.4rem;
+        outline: none;
+        border: none;
+        padding: 0 2rem 0 5rem;
+        border-radius: 8px;
+        &:active,
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+      margin-right: 2rem;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 2rem;
+        width: 2rem;
+        // background-color: red;
+        background: url("../../../assets/searchIcon.svg") center center/contain
+          no-repeat;
+        left: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    select {
+      height: 5rem;
+      width: 15rem;
+      font-size: 1.4rem;
+      outline: none;
+      border: none;
+      margin-right: 2rem;
+      border-radius: 8px;
+      padding-left: 1rem;
+      cursor: pointer;
+      option {
+        outline: none;
+        border: none;
+        color: #333;
+        font-weight: 600;
+        // background-color: #fcb44433;
+        &:hover {
+          background-color: red !important;
+        }
+      }
+    }
+  }
+  &__age-filter {
+    list-style: none;
+    padding-inline-start: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 6rem;
+    @include bpm-md {
+      margin-bottom: 2rem;
+    }
+    &-item {
+      padding: 0.5rem 2rem;
+      background: linear-gradient(
+        111.29deg,
+        rgba(234, 234, 234, 0.53) -1.83%,
+        rgba(255, 255, 255, 0) 109.95%
+      );
+      // filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
+      // backdrop-filter: blur(70px);
+      //   filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
+      // backdrop-filter: blur(70px);
+      font-size: 1.6rem;
+      border-radius: 8px;
+      border: 3px solid #fff;
+      //   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+      margin: 1rem 1.5rem;
+      cursor: pointer;
+      font-weight: 500;
+      color: #666;
+      @include bpm-md {
+        margin: 1rem;
+      }
+      &.active {
+        border: 3px solid #fcb444;
+      }
+    }
+  }
+}
