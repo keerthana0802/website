@@ -17,4 +17,17 @@
     text-align: center;
     max-width: 75rem;
   }
+  @include bpm-sm {
+    margin: 7rem 0 0 0;
+    border-radius: 5px;
+    &__header {
+      font-size: 3.6rem;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    &__content {
+      font-size: 1.5rem;
+      padding: 0 2rem;
+    }
+  }
 }

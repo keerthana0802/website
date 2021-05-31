@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import SecondaryButton from "../buttons/SecondaryButton";
 import durationIcon from "../../assets/durationIcon.svg";
 import CourseCategoryCard from "../cards/CourseCategoryCard";
-import yellow from "../../assets/yellowCard.png";
 // ! Swiper
-import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import SwiperCore, { Pagination } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
-import "swiper/components/navigation/navigation.min.css";
-SwiperCore.use([Pagination, Navigation]);
-function CourseCatgorySlider({
+SwiperCore.use([Pagination]);
+function CourseCatgorySliderResp({
   courseData,
   courseSliderHeader,
   courseSliderDuration,
@@ -54,9 +52,9 @@ function CourseCatgorySlider({
           <Swiper
             slidesPerView={"auto"}
             spaceBetween={0}
-            className="course-category-swiper"
-            // pagination={{ clickable: true }}
-            navigation={true}
+            className={`course-category-swiper course-category-swiper--${courseVertical}`}
+            pagination={{ clickable: true }}
+            centeredSlides={true}
           >
             {courseData.map((course, index) => (
               <SwiperSlide key={index}>
@@ -78,4 +76,4 @@ function CourseCatgorySlider({
   );
 }
 
-export default CourseCatgorySlider;
+export default CourseCatgorySliderResp;

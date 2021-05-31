@@ -9,7 +9,7 @@
     }
     .swiper-pagination {
       // bottom: -3rem !important;
-      margin-bottom: 0;
+      margin-bottom: 0 !important;
     }
     .swiper-button-next {
       transform: translate(7rem, -5rem);
@@ -55,12 +55,20 @@
   &__header {
     font-size: 5rem;
     font-weight: 800;
+    text-align: center;
+    @include bpm-sm {
+      font-size: 3.6rem;
+    }
   }
   &__search {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 4rem 0;
+    @include bpm-sm {
+      padding: 0 3rem;
+      flex-wrap: wrap;
+    }
     label {
       input {
         height: 5rem;
@@ -74,6 +82,9 @@
         &:focus {
           outline: none;
           border: none;
+        }
+        @include bpm-sm {
+          width: calc(100vw - 20rem);
         }
       }
       margin-right: 2rem;
@@ -110,6 +121,12 @@
         &:hover {
           background-color: red !important;
         }
+      }
+      @include bpm-sm {
+        order: 3;
+        margin-right: 0;
+        margin-top: 4rem;
+        width: 20rem;
       }
     }
   }

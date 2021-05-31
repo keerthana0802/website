@@ -9,6 +9,11 @@
   justify-items: self-start;
   transition: all 0.2s linear;
   cursor: pointer;
+  @include bpm-sm {
+    width: 250px;
+    height: 380px;
+    grid-template-rows: 6fr 5fr;
+  }
   @include bp-md {
     &:hover {
       transition: all 0.1s linear;
@@ -57,16 +62,28 @@
         right: 2rem;
         top: 1rem;
       }
+      @include bpm-sm {
+        font-size: 1.8rem;
+        .sessions {
+          right: 1rem;
+        }
+      }
     }
     &--category {
       font-size: 1.4rem;
       padding: 0 1.5rem;
       color: #7a7a7a;
+      @include bpm-sm {
+        font-size: 1.2rem;
+      }
     }
     &--details {
       font-size: 1.2rem;
       padding: 0 1.5rem;
       color: #333;
+      @include bpm-sm {
+        font-size: 1rem;
+      }
     }
     .secondary-button {
       margin-left: 1.5rem;

@@ -11,19 +11,7 @@ import blueCourse from "../../assets/blueCourse.svg";
 import purpleCourse from "../../assets/purpleCourse.svg";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
 SwiperCore.use([Pagination, Navigation]);
-function AllCoursesBannerFilter({ courseData }) {
-  // ! State for responsive mode
-  const [responsiveMode, setResponsiveMode] = useState(false);
-  // ! initial render state
-  const [initialRender, setInitialRender] = useState(true);
-  useEffect(() => {
-    setInitialRender(false);
-  }, []);
-  useEffect(() => {
-    if (window.innerWidth < 992) {
-      setResponsiveMode(true);
-    }
-  }, [initialRender]);
+function AllCoursesBannerFilterResp({ courseData }) {
   // ! Filter application
   const [filterRange, setFilterRange] = useState([5, 15]);
   const [currentCategory, setCurrentCategory] = useState("All Categories");
@@ -37,7 +25,6 @@ function AllCoursesBannerFilter({ courseData }) {
     }
     return false;
   };
-
   const pagination = {
     clickable: true,
   };
@@ -64,7 +51,6 @@ function AllCoursesBannerFilter({ courseData }) {
         break;
     }
   };
-  // console.log(currentCategory);
   return (
     <div className="all-courses-banner-filter__wrapper">
       <div className="all-courses-banner-filter">
@@ -133,11 +119,11 @@ function AllCoursesBannerFilter({ courseData }) {
       <Swiper
         slidesPerView={"auto"}
         spaceBetween={0}
-        className="mySwiperpc"
-        navigation={true}
+        pagination={pagination}
+        className="mySwiperresp"
       >
         {courseData.map((course, index) => {
-          if (course.courseStatus === "ACTIVE") {
+          if (course.courseStatus === "ACTIVE")
             if (shouldRenderCard(course.minAge, course.maxAge, course.vertical))
               return (
                 <SwiperSlide key={index}>
@@ -152,11 +138,10 @@ function AllCoursesBannerFilter({ courseData }) {
                   />
                 </SwiperSlide>
               );
-          }
         })}
       </Swiper>
     </div>
   );
 }
 
-export default AllCoursesBannerFilter;
+export default AllCoursesBannerFilterResp;

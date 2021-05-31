@@ -19,16 +19,16 @@
 
       &__left {
         img {
-          width: 16rem;
+          width: 13rem;
         }
       }
       @include bpm-sm {
         padding: 0 3rem;
-        &__left {
-          img {
-            width: 13rem;
-          }
-        }
+        // &__left {
+        //   img {
+        //     width: 13rem;
+        //   }
+        // }
       }
       &__right {
         &--list {

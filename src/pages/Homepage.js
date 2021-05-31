@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import HomepageBanner from "../components/banners/HomepageBanner";
 import HomepageCourses from "../components/HomepageComponents/HomepageCourses";
@@ -21,6 +21,9 @@ const TestimonialSlider = lazy(() =>
 );
 
 function Homepage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <NavFooterLayout>
       <div className="spark-homepage">

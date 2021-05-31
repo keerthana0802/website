@@ -6,6 +6,15 @@
   display: grid;
   grid-template-columns: 400px 1fr;
   height: 100%;
+  @include bpm-sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.2fr;
+    justify-items: center;
+    &__wrapper {
+      height: auto;
+      padding: 4rem 0 0 0;
+    }
+  }
   &__left {
     display: flex;
     flex-direction: column;
@@ -13,10 +22,17 @@
     justify-content: space-between;
     height: 100%;
     padding-bottom: 5rem;
+    @include bpm-sm {
+      align-items: center;
+      padding-bottom: 0;
+    }
     &--header {
       font-size: 5rem;
       color: #333;
       font-weight: 800;
+      @include bpm-sm {
+        font-size: 3.6rem;
+      }
     }
     &--duration {
       display: flex;
@@ -28,6 +44,9 @@
       }
       font-size: 1.4rem;
       color: #333;
+      @include bpm-sm {
+        margin-top: 3rem;
+      }
     }
     &--content {
       font-size: 1.4rem;
@@ -35,6 +54,10 @@
       max-width: 280px;
       font-weight: 600;
       line-height: 2.4rem;
+      @include bpm-sm {
+        margin: 3rem 0;
+        text-align: center;
+      }
     }
     &--keywords {
       display: grid;
@@ -57,14 +80,54 @@
   }
   .course-category-swiper {
     width: calc(100vw - 485px) !important;
+    @include bpm-sm {
+      width: 100vw !important;
+    }
     margin-left: 0;
+    &--communication {
+      .swiper-pagination-bullet {
+        background-color: #fff !important;
+        border: 2px solid #83def0;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #83def0 !important;
+      }
+    }
+    &--music {
+      .swiper-pagination-bullet {
+        background-color: #fff !important;
+        border: 2px solid #ffc142;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #ffc142 !important;
+      }
+    }
+    &--art {
+      .swiper-pagination-bullet {
+        background-color: #fff !important;
+        border: 2px solid #8469c0;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #8469c0 !important;
+      }
+    }
+    @include bpm-sm {
+      .swiper-slide {
+        transition: all 0.15s linear !important;
+        width: 28rem !important;
+      }
+      .swiper-slide-active {
+        transition: all 0.15s linear !important;
+        transform: scale(1.05) !important;
+      }
+    }
   }
   .swiper-slide {
     width: 32rem !important;
   }
   .swiper-pagination {
     // bottom: -3rem !important;
-    margin-bottom: 0;
+    margin-bottom: 1rem !important;
   }
   .swiper-button-next {
     transform: translate(7rem, -5rem);

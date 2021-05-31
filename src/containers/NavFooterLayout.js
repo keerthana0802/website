@@ -4,8 +4,7 @@ import logo from "../assets/sparkLogo.png";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import SocialIcons from "../components/SocialIcons";
 import hamburger from "../assets/hamburger.svg";
-// 3rd party library setup:
-// Scrollbar.init(document.body);
+import { Link } from "react-router-dom";
 function NavFooterLayout({ children }) {
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
@@ -18,7 +17,7 @@ function NavFooterLayout({ children }) {
     if (window.innerWidth < 640) {
       setResponsiveMode(true);
     }
-    console.log(window.geoplugin_city());
+    // console.log(window.geoplugin_city());
   }, []);
   const containerLayout = useRef(null);
   return (
@@ -26,7 +25,9 @@ function NavFooterLayout({ children }) {
       {responsiveMode ? (
         <nav className={menuDrawerClass}>
           <div className="spark-layout-navbar__left">
-            <img src={logo} alt="Spark Studio" />
+            <Link to="/">
+              <img src={logo} alt="Spark Studio" />
+            </Link>
           </div>
           <div className="trial-hamburger">
             <PrimaryButton
@@ -129,7 +130,9 @@ function NavFooterLayout({ children }) {
       ) : (
         <nav className="spark-layout-navbar navbar-scrolling">
           <div className="spark-layout-navbar__left">
-            <img src={logo} alt="Spark Studio" />
+            <Link to="/">
+              <img src={logo} alt="Spark Studio" />
+            </Link>
           </div>
           <div className="spark-layout-navbar__right">
             <ul className="spark-layout-navbar__right--list">
