@@ -1,7 +1,7 @@
 [
     {
-        "courseId": "",
-        "courseInitials": "AS/ST",
+        "courseId": "CO111ST",
+        "courseInitials": "ST",
         "courseStatus": "ACTIVE",
         "courseName": "Art of Storytelling",
         "displayName": "Art of Storytelling",
@@ -27,7 +27,7 @@
         ]
     },
     {
-        "courseId": "",
+        "courseId": "CO212PS",
         "courseInitials": "PS",
         "courseStatus": "ACTIVE",
         "courseName": "Public Speaking",
@@ -54,7 +54,7 @@
         ]
     },
     {
-        "courseId": "",
+        "courseId": "CO313DS",
         "courseInitials": "DS",
         "courseStatus": "ACTIVE",
         "courseName": "Dramatic Storytelling",
@@ -81,8 +81,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "AJR",
+        "courseId": "VI1111AJ",
+        "courseInitials": "AJ",
         "courseStatus": "ACTIVE",
         "courseName": "Stop Motion Animation - Junior",
         "displayName": "Stop Motion Animation",
@@ -108,8 +108,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "P",
+        "courseId": "VI2113PH",
+        "courseInitials": "PH",
         "courseStatus": "ACTIVE",
         "courseName": "Photography",
         "displayName": "Photography",
@@ -135,8 +135,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "ASR",
+        "courseId": "VI1215AS",
+        "courseInitials": "AS",
         "courseStatus": "ACTIVE",
         "courseName": "Stop Motion Animation - Senior",
         "displayName": "Stop Motion Animation",
@@ -162,8 +162,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "AJA",
+        "courseId": "VI1212AJ",
+        "courseInitials": "AJ",
         "courseStatus": "ACTIVE",
         "courseName": "Stop Motion Animation - Junior (Advanced)",
         "displayName": "Stop Motion Animation",
@@ -189,8 +189,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "D",
+        "courseId": "CO414DB",
+        "courseInitials": "DB",
         "courseStatus": "ACTIVE",
         "courseName": "Debate",
         "displayName": "Debate",
@@ -216,8 +216,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "GB",
+        "courseId": "MU117GB",
+        "courseInitials": "GU",
         "courseStatus": "ACTIVE",
         "courseName": "Guitar - Beginner",
         "displayName": "Guitar",
@@ -243,8 +243,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "GI",
+        "courseId": "MU128GI",
+        "courseInitials": "GU",
         "courseStatus": "ACTIVE",
         "courseName": "Guitar - Intermediate",
         "displayName": "Guitar",
@@ -270,8 +270,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "WVB",
+        "courseId": "MU215WVB",
+        "courseInitials": "WV",
         "courseStatus": "ACTIVE",
         "courseName": "Western Vocals - Beginner",
         "displayName": "Western Vocals",
@@ -297,8 +297,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "WVI",
+        "courseId": "MU226WVI",
+        "courseInitials": "WV",
         "courseStatus": "ACTIVE",
         "courseName": "Western Vocals - Intermediate",
         "displayName": "Western Vocals",
@@ -324,7 +324,7 @@
         ]
     },
     {
-        "courseId": "",
+        "courseId": "MU319KBB",
         "courseInitials": "KB",
         "courseStatus": "COMING-UP",
         "courseName": "Keyboard - Beginner",
@@ -351,8 +351,8 @@
         ]
     },
     {
-        "courseId": "",
-        "courseInitials": "AE",
+        "courseId": "VI3110AR",
+        "courseInitials": "AR",
         "courseStatus": "ACTIVE",
         "courseName": "Art Explorer",
         "displayName": "Art",
@@ -378,7 +378,7 @@
         ]
     },
     {
-        "courseId": "",
+        "courseId": "VI3214AB",
         "courseInitials": "AB",
         "courseStatus": "ACTIVE",
         "courseName": "Art Beginner",
