@@ -5,6 +5,8 @@ import PrimaryButton from "../components/buttons/PrimaryButton";
 import SocialIcons from "../components/SocialIcons";
 import hamburger from "../assets/hamburger.svg";
 import { Link } from "react-router-dom";
+import uuid from "react-uuid";
+import moengageEvent from "../helpers/MoengageEventTracking";
 function NavFooterLayout({ children }) {
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
@@ -17,7 +19,10 @@ function NavFooterLayout({ children }) {
     if (window.innerWidth < 640) {
       setResponsiveMode(true);
     }
-    // console.log(window.geoplugin_city());
+    if (!window.localStorage.visitor_uuid) {
+      window.localStorage.setItem("visitor_uuid", uuid());
+    }
+    moengageEvent();
   }, []);
   const containerLayout = useRef(null);
   return (

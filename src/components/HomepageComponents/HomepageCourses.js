@@ -4,9 +4,9 @@ import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import { Link } from "react-router-dom";
 // ! JSON data for courses
 import cardsData from "../../store/staticData/HomepageCourseCards.json";
-import yellowCourse from "../../assets/yellowCourse.svg";
-import blueCourse from "../../assets/blueCourse.svg";
-import purpleCourse from "../../assets/purpleCourse.svg";
+import yellowCourse from "../../assets/yellowCourse.jpeg";
+import blueCourse from "../../assets/blueCourse.jpeg";
+import purpleCourse from "../../assets/purpleCourse.jpeg";
 import PrimaryButton from "../buttons/PrimaryButton";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";

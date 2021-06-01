@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CourseCatgorySlider from "../sliders/CourseCatgorySlider";
 import CourseCatgorySliderResp from "../sliders/CourseCategorySliderResp";
-import yellowCourse from "../../assets/yellowCard.png";
-import blueCourse from "../../assets/blueCourse.svg";
-import purpleCourse from "../../assets/purpleCourse.svg";
+import yellowCourse from "../../assets/yellowCourse.jpeg";
+import blueCourse from "../../assets/blueCourse.jpeg";
+import purpleCourse from "../../assets/purpleCourse.jpeg";
 function CourseCategorySection({ courseData }) {
   const [musicCourses, setMusicCourses] = useState([]);
   const [communicationCourses, setCommunicationCourses] = useState([]);

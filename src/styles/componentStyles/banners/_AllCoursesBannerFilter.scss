@@ -1,6 +1,7 @@
 .all-courses-banner-filter {
   &__wrapper {
     padding-top: 14rem;
+    padding-bottom: 7rem;
     .swiper-slide {
       width: 36rem !important;
     }
@@ -167,6 +168,38 @@
       }
       &.active {
         border: 3px solid #fcb444;
+      }
+    }
+  }
+  &__courses-grid {
+    display: grid;
+    justify-items: center;
+    grid-gap: 1rem;
+
+    @include bp-sm {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include bp-lg {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include bp-custom(1600px) {
+      max-width: 1600px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  &__wrapper {
+    @include bp-sm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .secondary-button.version-4 {
+        margin-top: 3rem;
+        height: 5rem;
+        font-size: 1.6rem;
+        width: 20rem;
+        img {
+          display: none;
+        }
       }
     }
   }

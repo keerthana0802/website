@@ -6,9 +6,9 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import SecondaryButton from "../buttons/SecondaryButton";
-import yellowCourse from "../../assets/yellowCourse.svg";
-import blueCourse from "../../assets/blueCourse.svg";
-import purpleCourse from "../../assets/purpleCourse.svg";
+import yellowCourse from "../../assets/yellowCourse.jpeg";
+import blueCourse from "../../assets/blueCourse.jpeg";
+import purpleCourse from "../../assets/purpleCourse.jpeg";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
 SwiperCore.use([Pagination, Navigation]);
 function AllCoursesBannerFilterResp({ courseData }) {
