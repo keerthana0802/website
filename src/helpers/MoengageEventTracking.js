@@ -63,10 +63,11 @@ const moengageEvent = async (eventName, eventAttributes = {}) => {
   }
   console.log(eventName, { ...initialAttributes, ...eventAttributes });
 
-  window.Moengage.track_event(eventName, {
-    ...initialAttributes,
-    ...eventAttributes,
-  });
+  if (window.Moengage)
+    window.Moengage.track_event(eventName, {
+      ...initialAttributes,
+      ...eventAttributes,
+    });
 };
 
 export default moengageEvent;

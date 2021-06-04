@@ -189,7 +189,7 @@ function AllCoursesBannerFilter({ courseData }) {
               courseLiner={course.courseLiner}
               courseTags={course.courseTags}
               courseImage={imageSelector(course.verticalThemeColorLight)}
-              verticalThemeColorLight={course.verticalThemeColorLight}
+              verticalThemeColorDark={course.verticalThemeColorDark}
             />
           );
         })}

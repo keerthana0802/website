@@ -131,7 +131,7 @@ function HomepageCourses() {
                       courseImage={imageSelector(
                         course.verticalThemeColorLight
                       )}
-                      verticalThemeColorLight={course.verticalThemeColorLight}
+                      verticalThemeColorDark={course.verticalThemeColorDark}
                     />
                   </SwiperSlide>
                 );
@@ -158,7 +158,7 @@ function HomepageCourses() {
                       courseImage={imageSelector(
                         course.verticalThemeColorLight
                       )}
-                      verticalThemeColorLight={course.verticalThemeColorLight}
+                      verticalThemeColorDark={course.verticalThemeColorDark}
                     />
                   </SwiperSlide>
                 );

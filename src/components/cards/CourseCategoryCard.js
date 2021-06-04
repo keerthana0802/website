@@ -1,6 +1,7 @@
 import React from "react";
 import SecondaryButton from "../buttons/SecondaryButton";
-
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart, addQtyToCart } from "../../store/actions/rootActions";
 function CourseCategoryCard({
   courseCardImage,
   courseCardColor,
@@ -9,7 +10,10 @@ function CourseCategoryCard({
   courseCardSessions,
   courseCardCategory,
   courseCardLiner,
+  courseCardId,
 }) {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
   return (
     <div className="course-category-card__wrapper">
       <div
@@ -35,7 +39,20 @@ function CourseCategoryCard({
           <p className="course-category-card__bottom--details">
             {courseCardDetails}
           </p>
-          <SecondaryButton buttonText="Add to cart" version="version-2" />
+          <SecondaryButton
+            buttonText="Add to cart"
+            version="version-2"
+            clickHandle={() => {
+              let found = cart.find(
+                (course) => course.courseId === courseCardId
+              );
+              if (found) {
+                dispatch(addQtyToCart(found.courseId));
+              } else {
+                dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
+              }
+            }}
+          />
         </div>
       </div>
     </div>

@@ -23,6 +23,10 @@
 @import "./componentStyles/sliders/CourseCategorySlider";
 @import "./componentStyles/banners/AllCoursesBannerFilter";
 @import "./componentStyles/cards/LargeBookATrialCard";
+@import "./componentStyles/drawers/CartDrawer";
+@import "./componentStyles/cards/CartCard";
+@import "./componentStyles/CheckoutPageComponents/CartPreview";
+@import "./componentStyles/CheckoutPageComponents/AddressForm";
 // ! Homepage components
 @import "./componentStyles/HomepageComponentStyles/HomepageCourses.scss";
 @import "./componentStyles/HomepageComponentStyles/HomepageShowcase";
@@ -31,8 +35,11 @@
 @import "./componentStyles/HomepageComponentStyles/HomepageExpertsSection";
 // ! All courses page components
 @import "./componentStyles/AllCoursesComponentStyles/CourseCategorySection";
+// ! Checkout page components
+// @import "./componentStyles/AllCoursesComponentStyles/CourseCategorySection";
 // ! *******************************************************8
 // ! Containers
 @import "./containerStyles/NavFooterLayout";
 // ! Pages
 @import "./pagesStyles/Homepage";
+@import "./pagesStyles/Checkout";

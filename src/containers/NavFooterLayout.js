@@ -1,20 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import logo from "../assets/sparkLogo.png";
+import cartIcon from "../assets/cartIconBlack.svg";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import SocialIcons from "../components/SocialIcons";
 import hamburger from "../assets/hamburger.svg";
 import { Link } from "react-router-dom";
 import uuid from "react-uuid";
 import moengageEvent from "../helpers/MoengageEventTracking";
+import { cartDrawerOpen } from "../store/actions/rootActions";
+import { useSelector, useDispatch } from "react-redux";
+import CartDrawer from "../components/drawers/CartDrawer";
 function NavFooterLayout({ children }) {
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
-  const menuDrawerRef = useRef(null);
-  const menuToggleRef = useRef(null);
   const [menuDrawerClass, setMenuDrawerClass] = useState(
     "spark-layout-navbar hidden"
   );
+
   useEffect(() => {
     if (window.innerWidth < 640) {
       setResponsiveMode(true);
@@ -25,6 +28,19 @@ function NavFooterLayout({ children }) {
     moengageEvent();
   }, []);
   const containerLayout = useRef(null);
+  const cart = useSelector((state) => state.cart);
+  const cartDrawer = useSelector((state) => state.cartDrawer);
+  const dispatch = useDispatch();
+  const [cartDrawerClass, setCartDrawerClass] = useState(
+    cartDrawer
+      ? "spark-layout-navbar--cart-drawer visible"
+      : "spark-layout-navbar--cart-drawer hidden"
+  );
+  useEffect(() => {
+    cartDrawer
+      ? setCartDrawerClass("spark-layout-navbar--cart-drawer visible")
+      : setCartDrawerClass("spark-layout-navbar--cart-drawer hidden");
+  }, [cartDrawer]);
   return (
     <div className="nav-footer-layout" id="layout" ref={containerLayout}>
       {responsiveMode ? (
@@ -44,9 +60,7 @@ function NavFooterLayout({ children }) {
               src={hamburger}
               alt=""
               className="menu-toggle"
-              ref={menuToggleRef}
               onClick={() => {
-                console.log("clicked");
                 menuDrawerClass === "spark-layout-navbar hidden"
                   ? setMenuDrawerClass("spark-layout-navbar visible")
                   : setMenuDrawerClass("spark-layout-navbar hidden");
@@ -58,7 +72,7 @@ function NavFooterLayout({ children }) {
             <ul className="spark-layout-navbar__right--list">
               <div>
                 <li className="spark-layout-navbar__right--list-item">
-                  Explore Courses
+                  <Link to="/all-courses">Explore Courses</Link>
                 </li>
                 <li className="spark-layout-navbar__right--list-item">
                   About Us
@@ -142,7 +156,7 @@ function NavFooterLayout({ children }) {
           <div className="spark-layout-navbar__right">
             <ul className="spark-layout-navbar__right--list">
               <li className="spark-layout-navbar__right--list-item">
-                Explore Courses
+                <Link to="/all-courses">Explore Courses</Link>
               </li>
               <li className="spark-layout-navbar__right--list-item">
                 About Us
@@ -154,7 +168,23 @@ function NavFooterLayout({ children }) {
                   linkTo="https://book-staging.sparkstudio.co/"
                 />
               </li>
+              <li
+                className="spark-layout-navbar__right--list-item cart-icon"
+                onClick={() => {
+                  dispatch(cartDrawerOpen());
+                }}
+              >
+                <img src={cartIcon} alt="" />
+                {cart.length > 0 ? (
+                  <div className="cart-bubble">
+                    {cart?.reduce((a, b) => a + b.qty, 0)}
+                  </div>
+                ) : null}
+              </li>
             </ul>
+          </div>
+          <div className={cartDrawerClass}>
+            <CartDrawer selectedCourses={cart} />
           </div>
         </nav>
       )}

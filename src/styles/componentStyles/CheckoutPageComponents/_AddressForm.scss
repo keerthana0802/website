@@ -1,0 +1,78 @@
+.address-form {
+  &__wrapper {
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25),
+      4px 4px 4px rgba(231, 231, 231, 0.25);
+    padding-top: 5rem;
+  }
+  display: flex;
+  flex-direction: column;
+  //   align-items: center;
+  max-width: 30rem;
+  margin: 0 auto;
+  &__header {
+    margin-bottom: 2rem;
+  }
+  input[type="text"] {
+    width: 31rem;
+    height: 5rem;
+    border: none;
+    outline: none;
+    padding: 0 1.5rem;
+    &:focus,
+    &:active {
+      border: none;
+      outline: none;
+    }
+    box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+    border-radius: 0.8rem;
+    margin: 0.7rem 0;
+  }
+  &__state-and-pincode {
+    display: flex;
+    align-items: center;
+    input {
+      &:first-child {
+        width: 18rem;
+      }
+      &:last-child {
+        margin-left: 1.4rem;
+        width: 11.6rem;
+      }
+    }
+  }
+  label {
+    margin: 2rem 0;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+  .pay-button {
+    align-self: center;
+    color: #fff;
+    background: linear-gradient(90deg, #f3705b 0%, #fcb444 100%);
+    box-shadow: 0px 2px 6px rgba(91, 22, 170, 0.12), 0px 4px 14px #eeeeee,
+      inset 1px 0px 3px rgba(255, 255, 255, 0.5);
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    padding: 1.5rem 0 1.5rem 2.2rem;
+    justify-content: space-between;
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+    width: 22rem;
+    img {
+      position: absolute;
+      width: 4rem;
+      right: 0.6rem;
+    }
+  }
+}

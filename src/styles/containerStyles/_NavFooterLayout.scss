@@ -14,7 +14,8 @@
       width: 100%;
       top: 0;
       left: 0;
-      z-index: 10;
+      // ! To hide the chatbot when cart is open
+      z-index: 2147483648;
       background-color: rgba(255, 255, 255, 0.9);
 
       &__left {
@@ -42,6 +43,27 @@
             margin-left: 4.8rem;
             &:first-child {
               margin-left: 0;
+            }
+            cursor: pointer;
+            &.cart-icon {
+              position: relative;
+              img {
+                width: 2.5rem;
+              }
+              .cart-bubble {
+                position: absolute;
+                height: 1.7rem;
+                width: 1.7rem;
+                background-color: #fcb444;
+                top: -1rem;
+                right: -1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+                font-weight: 800;
+                border-radius: 5rem;
+              }
             }
           }
         }
@@ -167,6 +189,27 @@
               fill: #f3705b;
             }
           }
+        }
+      }
+      &--cart-drawer {
+        height: calc(100vh - 7rem);
+        width: 31rem;
+        background-color: #f6f5f5;
+        position: absolute;
+        right: 0;
+        top: 6.9rem;
+        overflow-y: scroll;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+          4px 4px 4px rgba(231, 231, 231, 0.25);
+        &.visible {
+          transition: all 0.3s linear;
+          transform: translateX(0);
+          opacity: 1;
+        }
+        &.hidden {
+          transition: all 0.3s linear;
+          transform: translateX(31rem);
+          opacity: 0.3;
         }
       }
     }

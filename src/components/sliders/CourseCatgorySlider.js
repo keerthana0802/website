@@ -58,19 +58,23 @@ function CourseCatgorySlider({
             // pagination={{ clickable: true }}
             navigation={true}
           >
-            {courseData.map((course, index) => (
-              <SwiperSlide key={index}>
-                <CourseCategoryCard
-                  courseCardName={course.displayName}
-                  courseCardCategory={course.vertical}
-                  courseCardColor={course.verticalThemeColorDark}
-                  courseCardDetails={course.courseContent}
-                  courseCardSessions={course.numberOfClasses}
-                  courseCardLiner={course.courseLiner}
-                  courseCardImage={tempImage}
-                />
-              </SwiperSlide>
-            ))}
+            {courseData.map((course, index) => {
+              if (course.courseStatus === "ACTIVE" && course.courseLevel === 1)
+                return (
+                  <SwiperSlide key={index}>
+                    <CourseCategoryCard
+                      courseCardName={course.displayName}
+                      courseCardCategory={course.vertical}
+                      courseCardColor={course.verticalThemeColorDark}
+                      courseCardDetails={course.courseContent}
+                      courseCardSessions={course.numberOfClasses}
+                      courseCardLiner={course.courseLiner}
+                      courseCardImage={tempImage}
+                      courseCardId={course.courseId}
+                    />
+                  </SwiperSlide>
+                );
+            })}
           </Swiper>
         </div>
       </div>

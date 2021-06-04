@@ -1,24 +1,30 @@
-const increase = () => {
+// ! Checkout related actions
+const cartDrawerOpen = () => {
   return {
-    type: "INCREASE",
+    type: "CART_DRAWER_OPEN",
   };
 };
-const decrease = () => {
+const addToCart = (data) => {
+  let cart = window.localStorage.cart
+    ? JSON.parse(window.localStorage.cart)
+    : [];
+  window.localStorage.setItem("cart", JSON.stringify([...cart, data]));
+
   return {
-    type: "DECREASE",
-  };
-};
-const insert = (data) => {
-  return {
-    type: "INSERT",
+    type: "ADD_TO_CART",
     payload: data,
   };
 };
-
-const logIn = () => {
+const addQtyToCart = (data) => {
   return {
-    type: "LOGIN",
+    type: "ADD_QTY_TO_CART",
+    payload: data,
   };
 };
-
-export { increase, decrease, insert, logIn };
+const removeQtyFromCart = (data) => {
+  return {
+    type: "REMOVE_QTY_FROM_CART",
+    payload: data,
+  };
+};
+export { cartDrawerOpen, addToCart, addQtyToCart, removeQtyFromCart };
