@@ -1,0 +1,25 @@
+{
+    "orders": [
+        {
+            "course_id": "ABCDE12",
+            "quantity": 2
+        },
+        {
+            "course_id": "ZZCDE12",
+            "quantity": 1
+        }
+    ],
+    "user_details": {
+        "type": "guest",
+        "email": "abc@gmail.com",
+        "phone_no": "+91-7977984255",
+        "remember_details": true,
+        "parent_name": "xyz",
+        "address_line_1": "xyz",
+        "address_line_2": "xyz",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "pin_code": 400068
+    }
+}

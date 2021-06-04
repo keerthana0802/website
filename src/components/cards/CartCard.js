@@ -89,6 +89,20 @@ function CartCard({
           </div>
         </div>
       ) : null}
+      {version === "--no-price-qty" ? (
+        <div className="cart-card cart-card--large cart-card--no-price-qty">
+          <div className="cart-card--large-left">
+            <h1 className="cart-card__name">{courseName}</h1>
+            <h2 className="cart-card__category">Category: {courseCategory}</h2>
+            <p className="cart-card__course-duration">
+              Course Duration: {courseDuration} Weeks (One session/week)
+            </p>
+            <p className="cart-card__session-duration">
+              Session Duration: {sessionDuration} minutes
+            </p>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

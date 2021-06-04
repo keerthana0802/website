@@ -27,4 +27,16 @@ const removeQtyFromCart = (data) => {
     payload: data,
   };
 };
-export { cartDrawerOpen, addToCart, addQtyToCart, removeQtyFromCart };
+const paymentSuccessful = () => {
+  console.log("from actions");
+  return {
+    type: "PAYMENT_SUCCESSFUL",
+  };
+};
+export {
+  cartDrawerOpen,
+  addToCart,
+  addQtyToCart,
+  removeQtyFromCart,
+  paymentSuccessful,
+};

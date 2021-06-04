@@ -4,7 +4,10 @@ import AddressForm from "../components/CheckoutPageComponents/AddressForm";
 import CartPreview from "../components/CheckoutPageComponents/CartPreview";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import sparkLogoSquare from "../assets/sparkLogoSquare.jpeg";
+import { useDispatch } from "react-redux";
+import { paymentSuccessful } from "../store/actions/rootActions";
 function Checkout() {
+  const dispatch = useDispatch();
   // ! Managing the orderID
   const [orderDetails, setOrderDetails] = useState("");
   const [razorOptions, setRazorOptions] = useState({
@@ -13,12 +16,15 @@ function Checkout() {
     description: "Test Transaction",
     image: sparkLogoSquare,
     handler: function (response) {
-      console.log(response);
+      console.log("here", response);
+      window.localStorage.setItem("payment_id", response.razorpay_payment_id);
+      dispatch(paymentSuccessful());
+      window.location.href = "/payment-successful";
     },
     prefill: {
       name: "Manas Tripathi",
       email: "manas@sparkstudio.co",
-      contact: "9999999999",
+      contact: "7977984255",
     },
     notes: {
       address: "Razorpay Corporate Office",

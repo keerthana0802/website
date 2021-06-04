@@ -12,6 +12,12 @@
       width: 100%;
       padding: 1rem;
     }
+    &--no-price-qty {
+      margin: 1rem 0;
+      width: 32rem;
+      height: 10rem;
+      padding: 2rem;
+    }
   }
   display: flex;
   flex-direction: column;
@@ -88,6 +94,11 @@
     }
     .cart-card__category {
       margin: 0.25rem 0;
+    }
+  }
+  &--no-price-qty {
+    .cart-card__course-duration {
+      margin-top: 1rem;
     }
   }
 }

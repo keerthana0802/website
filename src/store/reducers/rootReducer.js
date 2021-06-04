@@ -1,11 +1,13 @@
 const initState = {
   cartDrawer: false,
   cart: window.localStorage.cart ? JSON.parse(window.localStorage.cart) : [],
+  paid: window.localStorage.paid ? JSON.parse(window.localStorage.paid) : [],
 };
 
 const rootReducer = (state = initState, action) => {
   let currentCart;
   switch (action.type) {
+    // ! Cart related reducers
     case "CART_DRAWER_OPEN":
       return { ...state, cartDrawer: !state.cartDrawer };
     case "ADD_TO_CART":
@@ -43,6 +45,10 @@ const rootReducer = (state = initState, action) => {
       return window.location.pathname === "/checkout"
         ? { ...state, cartDrawer: false, cart: [...currentCart] }
         : { ...state, cartDrawer: true, cart: [...currentCart] };
+    case "PAYMENT_SUCCESSFUL":
+      window.localStorage.setItem("paid", JSON.stringify([...state.cart]));
+      window.localStorage.setItem("cart", JSON.stringify([]));
+      return { ...state, paid: [...state.cart], cart: [] };
     default:
       return state;
   }
