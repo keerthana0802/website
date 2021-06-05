@@ -51,6 +51,8 @@
       ></iframe
     ></noscript>
     <!--! End Google Tag Manager (noscript) -->
+    <!-- ! Script for razorpay checkout-->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <!-- ! Intelliticks script -->
     <!-- <script type="text/javascript">
       (function (I, L, T, i, c, k, s) {
@@ -182,35 +184,51 @@
         src="https://www.facebook.com/tr?id=701185977201709&ev=PageView&noscript=1"
       />
     </noscript>
-    <!-- <script
-      language="JavaScript"
-      src="http://www.geoplugin.net/javascript.gp"
-      type="text/javascript"
-    ></script>
-    <script>
-      console.log(geoplugin_city());
-    </script> -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
+    <!-- ! Script for ipstack -->
+    <!-- <script>
       (function () {
-        var qs,
-          js,
-          q,
-          s,
-          d = document,
-          gi = d.getElementById,
-          ce = d.createElement,
-          gt = d.getElementsByTagName,
-          id = "typef_orm_share",
-          b = "https://embed.typeform.com/";
-        if (!gi.call(d, id)) {
-          js = ce.call(d, "script");
-          js.id = id;
-          js.src = b + "embed.js";
-          q = gt.call(d, "script")[0];
-          q.parentNode.insertBefore(js, q);
+        if (window.sessionStorage.ipstack_response === undefined) {
+          fetch(
+            "http://api.ipstack.com/check?access_key=4130df180c95ca5d9d16b941bb867d3c"
+          )
+            .then(function (res) {
+              res
+                .json()
+                .then(function (resp) {
+                  console.log("creating");
+                  window.sessionStorage.ipstack_response = JSON.stringify(resp);
+                })
+                .catch(function (e) {
+                  console.log(e);
+                });
+            })
+            .catch(function (e) {
+              console.log(e);
+            });
         }
       })();
-    </script>
+    </script> -->
+
+    <!-- ! Script for ipapi -->
+    <!-- <script>
+      (function () {
+        if (window.sessionStorage.ipapi_response === undefined) {
+          fetch("https://ipapi.co/json/")
+            .then(function (res) {
+              res
+                .json()
+                .then(function (resp) {
+                  window.sessionStorage.ipapi_response = JSON.stringify(resp);
+                })
+                .catch(function (e) {
+                  console.log(e);
+                });
+            })
+            .catch(function (e) {
+              console.log(e);
+            });
+        }
+      })();
+    </script> -->
   </body>
 </html>

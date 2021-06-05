@@ -14,8 +14,28 @@ const deviceIdGenerator = async () => {
 };
 // ! Getting the location string
 const location = () => {
-  let data = JSON.parse(window?.sessionStorage?.ipstack_response);
-  return `${data.city}, ${data.region_name}, ${data.country_name}`;
+  if (window?.sessionStorage?.ipapi_response) {
+    let data = JSON.parse(window?.sessionStorage?.ipapi_response);
+    return `${data.city}, ${data.region}, ${data.country}`;
+  } else {
+    return "";
+  }
+};
+// ! getting the ip
+const ipAddress = () => {
+  if (window?.sessionStorage?.ipapi_response) {
+    return JSON.parse(window.sessionStorage.ipapi_response).ip;
+  } else {
+    return "NO IP FOUND";
+  }
+};
+// ! getting the zipcode
+const zipcode = () => {
+  if (window?.sessionStorage?.ipapi_response) {
+    return JSON.parse(window.sessionStorage.ipapi_response).postal;
+  } else {
+    return "NO ZIPCODE FOUND";
+  }
 };
 // ! Initial attributes for all the requests
 const initialAttributes = {
@@ -48,12 +68,12 @@ const initialAttributes = {
   device_manufacturing_company: userAgent.device.manufacturer,
   location: location(),
   network: "",
-  ip_address: JSON.parse(window?.sessionStorage?.ipstack_response).ip,
+  ip_address: ipAddress(),
   os: userAgent.os.family,
   user_agent: userAgent.source,
   browser: userAgent.browser.name,
   platform: userAgent.device.type,
-  zipcode: JSON.parse(window?.sessionStorage?.ipstack_response).zip,
+  zipcode: zipcode(),
 };
 const moengageEvent = async (eventName, eventAttributes = {}) => {
   console.log(userAgent);

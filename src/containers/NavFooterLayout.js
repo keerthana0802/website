@@ -25,7 +25,7 @@ function NavFooterLayout({ children }) {
     if (!window.localStorage.visitor_uuid) {
       window.localStorage.setItem("visitor_uuid", uuid());
     }
-    moengageEvent();
+    // moengageEvent();
   }, []);
   const containerLayout = useRef(null);
   const cart = useSelector((state) => state.cart);
