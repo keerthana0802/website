@@ -66,6 +66,8 @@ function CourseCatgorySliderResp({
                   courseCardSessions={course.numberOfClasses}
                   courseCardLiner={course.courseLiner}
                   courseCardImage={tempImage}
+                  coursePrice={course.price}
+                  courseCardId={course.courseId}
                 />
               </SwiperSlide>
             ))}

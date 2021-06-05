@@ -71,6 +71,7 @@ function CourseCatgorySlider({
                       courseCardLiner={course.courseLiner}
                       courseCardImage={tempImage}
                       courseCardId={course.courseId}
+                      coursePrice={course.price}
                     />
                   </SwiperSlide>
                 );

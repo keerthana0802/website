@@ -6,6 +6,7 @@ import AllCourses from "./pages/AllCourses";
 import PaymentPOC from "./pages/PaymentPOC";
 import Checkout from "./pages/Checkout";
 import PaymentSuccessful from "./pages/PaymentSuccessful";
+import TeacherFeedback from "./pages/TeacherFeedback";
 // ! Lazy loaded routes
 // const Homepage = lazy(() => import("./pages/Homepage.js"));
 function App() {
@@ -13,6 +14,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/teacher-feedback">
+            <TeacherFeedback />
+          </Route>
           <Route path="/payment-successful">
             <PaymentSuccessful />
           </Route>

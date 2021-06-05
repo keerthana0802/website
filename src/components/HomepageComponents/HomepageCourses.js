@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import { Link } from "react-router-dom";
+import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 // ! JSON data for courses
 import cardsData from "../../store/staticData/HomepageCourseCards.json";
 import yellowCourse from "../../assets/yellowCourse.jpeg";
@@ -15,7 +16,30 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 SwiperCore.use([Pagination, Navigation]);
+
 function HomepageCourses() {
+  // ! Moengage event attribute objects
+  const ageFilterAttributes = (kingdom, filter) => {
+    return {
+      event_id: "1001024",
+      event_type: "Click",
+      funnel_stage: "Consideration",
+      event_category: "Browsing",
+      feature_set: "Base",
+      event_priority: "High",
+      kingdom: kingdom,
+      phylum: filter.join("-"),
+      class: "",
+      order: "Homepage",
+      family: "1001024",
+      genus: "2",
+      species: "",
+      sub_c_1: "",
+      sub_c_2: "",
+      app_version: "0.0.0",
+      a_b_variant: "a",
+    };
+  };
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
   // ! initial render state
@@ -74,31 +98,51 @@ function HomepageCourses() {
         <ul className="homepage-courses__age-filter">
           <li
             className={setActiveClass([5, 15])}
-            onClick={() => setFilterRange([5, 15])}
+            onClick={() => {
+              let attr = ageFilterAttributes(1, [5 - 15]);
+              MoengageEventTracking("Age_filter", attr);
+              setFilterRange([5, 15]);
+            }}
           >
             All ages
           </li>
           <li
             className={setActiveClass([5, 7])}
-            onClick={() => setFilterRange([5, 7])}
+            onClick={() => {
+              let attr = ageFilterAttributes(2, [5, 7]);
+              MoengageEventTracking("Age_filter", attr);
+              setFilterRange([5, 7]);
+            }}
           >
             5-7 Yrs
           </li>
           <li
             className={setActiveClass([8, 10])}
-            onClick={() => setFilterRange([8, 10])}
+            onClick={() => {
+              let attr = ageFilterAttributes(3, [8, 10]);
+              MoengageEventTracking("Age_filter", attr);
+              setFilterRange([8, 10]);
+            }}
           >
             8-10 Yrs
           </li>
           <li
             className={setActiveClass([11, 13])}
-            onClick={() => setFilterRange([11, 13])}
+            onClick={() => {
+              let attr = ageFilterAttributes(4, [11, 13]);
+              MoengageEventTracking("Age_filter", attr);
+              setFilterRange([11, 13]);
+            }}
           >
             11-13 Yrs
           </li>
           <li
             className={setActiveClass([14, 15])}
-            onClick={() => setFilterRange([14, 15])}
+            onClick={() => {
+              let attr = ageFilterAttributes(5, [14, 15]);
+              MoengageEventTracking("Age_filter", attr);
+              setFilterRange([14, 15]);
+            }}
           >
             14-15 Yrs
           </li>

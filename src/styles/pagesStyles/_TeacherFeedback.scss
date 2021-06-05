@@ -1,0 +1,35 @@
+.teacher-feedback-page {
+  &__wrapper {
+    height: 120vh;
+    width: 100vw;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 130, 205, 0.2) -59.43%,
+      rgba(255, 253, 201, 0.4) 100%
+    );
+    padding: 7rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .typeform-widget {
+      max-width: 800px;
+      height: 700px;
+    }
+  }
+  &__header {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 700;
+    padding: 0 3rem;
+    margin: 3rem 0;
+    max-width: 700px;
+  }
+  &__content {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+}

@@ -43,18 +43,19 @@ function PaymentPOC() {
         currency: resp.data.order.currency,
       });
     };
-    getOrderDetails();
+    // getOrderDetails();
   }, []);
 
   var rzp1 = new window.Razorpay(razorOptions);
   rzp1.on("payment.failed", function (response) {
-    alert(response.error.code);
-    alert(response.error.description);
-    alert(response.error.source);
-    alert(response.error.step);
-    alert(response.error.reason);
-    alert(response.error.metadata.order_id);
-    alert(response.error.metadata.payment_id);
+    console.log("failure", response);
+    // alert(response.error.code);
+    // alert(response.error.description);
+    // alert(response.error.source);
+    // alert(response.error.step);
+    // alert(response.error.reason);
+    // alert(response.error.metadata.order_id);
+    // alert(response.error.metadata.payment_id);
   });
   // ! Moengage testing
   const handler = () => {

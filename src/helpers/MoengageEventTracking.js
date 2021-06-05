@@ -12,10 +12,14 @@ const deviceIdGenerator = async () => {
   window.localStorage.setItem("dev_id", id);
   return id;
 };
-// ! Moengage object
-const MO = window.Moengage;
+// ! Getting the location string
+const location = () => {
+  let data = JSON.parse(window?.sessionStorage?.ipstack_response);
+  return `${data.city}, ${data.region_name}, ${data.country_name}`;
+};
 // ! Initial attributes for all the requests
 const initialAttributes = {
+  event_id: "",
   event_type: "",
   funnel_stage: "",
   event_category: "",
@@ -42,14 +46,14 @@ const initialAttributes = {
   //   device_timezone: new Date().toLocaleString(),
   model_number: userAgent.device.family,
   device_manufacturing_company: userAgent.device.manufacturer,
-  // location: `${window.geoplugin_city()}, ${window.geoplugin_region()}, ${window.geoplugin_countryName()}`,
+  location: location(),
   network: "",
-  ip_address: "",
+  ip_address: JSON.parse(window?.sessionStorage?.ipstack_response).ip,
   os: userAgent.os.family,
   user_agent: userAgent.source,
   browser: userAgent.browser.name,
   platform: userAgent.device.type,
-  // currency: window.geoplugin_currencyCode(),
+  zipcode: JSON.parse(window?.sessionStorage?.ipstack_response).zip,
 };
 const moengageEvent = async (eventName, eventAttributes = {}) => {
   console.log(userAgent);
@@ -63,11 +67,11 @@ const moengageEvent = async (eventName, eventAttributes = {}) => {
   }
   console.log(eventName, { ...initialAttributes, ...eventAttributes });
 
-  // if (window.Moengage)
-  //   window.Moengage.track_event(eventName, {
-  //     ...initialAttributes,
-  //     ...eventAttributes,
-  //   });
+  if (window.Moengage)
+    window.Moengage.track_event(eventName, {
+      ...initialAttributes,
+      ...eventAttributes,
+    });
 };
 
 export default moengageEvent;

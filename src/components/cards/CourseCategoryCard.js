@@ -2,6 +2,7 @@ import React from "react";
 import SecondaryButton from "../buttons/SecondaryButton";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, addQtyToCart } from "../../store/actions/rootActions";
+import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 function CourseCategoryCard({
   courseCardImage,
   courseCardColor,
@@ -11,7 +12,27 @@ function CourseCategoryCard({
   courseCardCategory,
   courseCardLiner,
   courseCardId,
+  coursePrice,
 }) {
+  const addToCartAttributes = {
+    event_id: "1001018",
+    event_type: "Click",
+    funnel_stage: "Conversion",
+    event_category: "Cart",
+    feature_set: "Base",
+    event_priority: "High",
+    kingdom: courseCardId,
+    phylum: courseCardName,
+    class: "Button state - clicked",
+    order: coursePrice,
+    family: "1001018",
+    genus: "3",
+    species: "",
+    sub_c_1: "",
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   return (
@@ -50,6 +71,7 @@ function CourseCategoryCard({
                 dispatch(addQtyToCart(found.courseId));
               } else {
                 dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
+                MoengageEventTracking("Add_to_Cart", addToCartAttributes);
               }
             }}
           />
