@@ -162,7 +162,7 @@ function HomepageCourses() {
           className="mySwiper"
         >
           {cardsData.map((course, index) => {
-            if (course.courseStatus === "ACTIVE")
+            if (course.courseStatus === "ACTIVE" && course.courseLevel === 1)
               if (shouldRenderCard(course.minAge, course.maxAge))
                 return (
                   <SwiperSlide key={index}>
@@ -189,7 +189,7 @@ function HomepageCourses() {
           navigation={true}
         >
           {cardsData.map((course, index) => {
-            if (course.courseStatus === "ACTIVE") {
+            if (course.courseStatus === "ACTIVE" && course.courseLevel === 1) {
               if (shouldRenderCard(course.minAge, course.maxAge))
                 return (
                   <SwiperSlide key={index}>

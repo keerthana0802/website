@@ -19,6 +19,7 @@ function HomepageCallback() {
   let textRegex = new RegExp(/^[A-Za-z -]*$/);
   // ! State to manage the phone validation tooltip
   const [tooltipClass, setTooltipClass] = useState("phone-validation-tooltip");
+  const [tooltipText, setTooltipText] = useState(<></>);
   // ! Phone number validation // Replace with a logic to support all countries
   const phoneNumberLengthValidation = (number) => {
     switch (countryCode) {
@@ -45,6 +46,16 @@ function HomepageCallback() {
   // ! useeffect for phone number onchange
   useEffect(() => {
     if (!initialRender) {
+      if (phoneNumber[0] === "0") {
+        setTooltipClass("phone-validation-tooltip visible");
+        setTooltipText(
+          <>
+            First digit
+            <br />
+            cannot be 0
+          </>
+        );
+      }
       if (phoneNumber.length > phoneNumberLengthValidation(phoneNumber)) {
         setPhoneNumber((phoneNumber) => {
           phoneNumber = phoneNumber.split("");
@@ -59,6 +70,7 @@ function HomepageCallback() {
   // ! function to close modal
   const modalClose = () => {
     setShowModal(false);
+    setTooltipClass("phone-validation-tooltip");
   };
   // ! handle form submit
   const handleSubmit = () => {
@@ -67,7 +79,6 @@ function HomepageCallback() {
       countryCode &&
       phoneNumber.length === phoneNumberLengthValidation(phoneNumber)
     ) {
-      console.log("here");
       axios
         .post(process.env.REACT_APP_CALLBACK_REQUEST_API, {
           callback_request: {
@@ -80,6 +91,7 @@ function HomepageCallback() {
         .then(() => {
           setFullName("");
           setPhoneNumber("");
+          setTooltipClass("phone-validation-tooltip");
         })
         .catch((err) => console.log(err));
     }
@@ -165,13 +177,30 @@ function HomepageCallback() {
                   autoComplete="on"
                   value={phoneNumber}
                   onChange={(ev) => {
-                    if (numberRegex.test(ev.target.value))
-                      setPhoneNumber(ev.target.value);
+                    if (numberRegex.test(ev.target.value)) {
+                      if (ev.target.value === "0" && phoneNumber.length === 0) {
+                        setPhoneNumber((phoneNumber) => {
+                          let numberArray = phoneNumber.split("");
+                          numberArray.shift();
+                          return numberArray.join("");
+                        });
+                      } else {
+                        setPhoneNumber(ev.target.value);
+                      }
+                    }
                   }}
                   onKeyPress={(ev) => {
                     if (ev.code === "Backspace") {
                       console.log("here");
                       setPhoneNumber(ev.target.value);
+                    }
+                    if (ev.code === "Enter") {
+                      if (
+                        phoneNumber.length ===
+                        phoneNumberLengthValidation(phoneNumber)
+                      ) {
+                        handleSubmit();
+                      }
                     }
                   }}
                   onFocus={() => setTooltipClass("phone-validation-tooltip")}
@@ -181,17 +210,32 @@ function HomepageCallback() {
                       phoneNumberLengthValidation(phoneNumber)
                     ) {
                       setTooltipClass("phone-validation-tooltip visible");
+                      setTooltipText(
+                        <p>
+                          Please enter
+                          <br />
+                          {phoneNumberLengthValidation(countryCode) || 10}{" "}
+                          digits
+                        </p>
+                      );
+                    } else if (phoneNumber[0] === "0") {
+                      setTooltipClass("phone-validation-tooltip visible");
+                      setTooltipText(
+                        <>
+                          First digit
+                          <br />
+                          cannot be 0
+                        </>
+                      );
                     } else {
                       setTooltipClass("phone-validation-tooltip");
                     }
                   }}
+                  required
+                  autoComplete="on"
                 />
                 <div className={tooltipClass}>
-                  <span>
-                    Please enter
-                    <br />
-                    {phoneNumberLengthValidation(countryCode) || 10} digits
-                  </span>
+                  <span>{tooltipText}</span>
                 </div>
               </label>
             </div>

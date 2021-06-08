@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import coursesData from "../../store/staticData/HomepageCourseCards.json";
 import CartCard from "../cards/CartCard";
 function CartPreview() {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.checkout.cart);
   //   useEffect(() => {}, [cart]);
   return (
     <section className="cart-preview__wrapper">

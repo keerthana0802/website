@@ -8,7 +8,7 @@ import coursesData from "../store/staticData/HomepageCourseCards.json";
 import check from "../assets/paidCheck.svg";
 import mail from "../assets/email.svg";
 function PaymentSuccessful() {
-  const paid = useSelector((state) => state.paid);
+  const paid = useSelector((state) => state.checkout.paid);
   return (
     <NavFooterLayout>
       <div className="spark-payment-successful__wrapper">

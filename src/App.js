@@ -6,7 +6,9 @@ import AllCourses from "./pages/AllCourses";
 import PaymentPOC from "./pages/PaymentPOC";
 import Checkout from "./pages/Checkout";
 import PaymentSuccessful from "./pages/PaymentSuccessful";
-import TeacherFeedback from "./pages/TeacherFeedback";
+import Feedback from "./pages/Feedback";
+import LiveClassLogin from "./pages/LiveClassLogin";
+import Meeting from "./pages/Meeting";
 // ! Lazy loaded routes
 // const Homepage = lazy(() => import("./pages/Homepage.js"));
 function App() {
@@ -14,8 +16,14 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/teacher-feedback">
-            <TeacherFeedback />
+          <Route exact path="/live-class">
+            <LiveClassLogin />
+          </Route>
+          <Route path="/live-class/meeting/">
+            <Meeting />
+          </Route>
+          <Route path="/feedback">
+            <Feedback />
           </Route>
           <Route path="/payment-successful">
             <PaymentSuccessful />

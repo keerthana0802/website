@@ -1,7 +1,11 @@
 import React from "react";
 import SecondaryButton from "../buttons/SecondaryButton";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, addQtyToCart } from "../../store/actions/rootActions";
+import {
+  addToCart,
+  addQtyToCart,
+  cartTooltipOpen,
+} from "../../store/actions/rootActions";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 function CourseCategoryCard({
   courseCardImage,
@@ -34,7 +38,7 @@ function CourseCategoryCard({
     a_b_variant: "a",
   };
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.checkout.cart);
   return (
     <div className="course-category-card__wrapper">
       <div
@@ -69,8 +73,10 @@ function CourseCategoryCard({
               );
               if (found) {
                 dispatch(addQtyToCart(found.courseId));
+                dispatch(cartTooltipOpen(courseCardName));
               } else {
                 dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
+                dispatch(cartTooltipOpen(courseCardName));
                 MoengageEventTracking("Add_to_Cart", addToCartAttributes);
               }
             }}

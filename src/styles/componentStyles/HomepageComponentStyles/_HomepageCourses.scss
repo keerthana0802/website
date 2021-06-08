@@ -78,6 +78,11 @@
   .swiper-slide {
     width: 36rem !important;
   }
+  @include bpm-xs {
+    .swiper-slide {
+      width: 33rem !important;
+    }
+  }
   .swiper-wrapper {
     margin-bottom: 6rem;
   }

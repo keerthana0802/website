@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import coursesData from "../../store/staticData/HomepageCourseCards.json";
 import arrow from "../../assets/buttonArrow.svg";
 function AddressForm({ openPayment }) {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.checkout.cart);
   // ! States for input elements
   const [country, setCountry] = useState("");
   const [addressLineOne, setAddressLineOne] = useState("");

@@ -1,42 +1,38 @@
-// ! Checkout related actions
-const cartDrawerOpen = () => {
-  return {
-    type: "CART_DRAWER_OPEN",
-  };
-};
-const addToCart = (data) => {
-  let cart = window.localStorage.cart
-    ? JSON.parse(window.localStorage.cart)
-    : [];
-  window.localStorage.setItem("cart", JSON.stringify([...cart, data]));
-
-  return {
-    type: "ADD_TO_CART",
-    payload: data,
-  };
-};
-const addQtyToCart = (data) => {
-  return {
-    type: "ADD_QTY_TO_CART",
-    payload: data,
-  };
-};
-const removeQtyFromCart = (data) => {
-  return {
-    type: "REMOVE_QTY_FROM_CART",
-    payload: data,
-  };
-};
-const paymentSuccessful = () => {
-  console.log("from actions");
-  return {
-    type: "PAYMENT_SUCCESSFUL",
-  };
-};
-export {
+import {
   cartDrawerOpen,
+  cartTooltipOpen,
+  cartTooltipClose,
   addToCart,
   addQtyToCart,
   removeQtyFromCart,
   paymentSuccessful,
+} from "./checkoutActions";
+import {
+  sendOtp,
+  loginWithOtp,
+  saveAuthToken,
+  changeNumber,
+  setMeetingDetails,
+  openSignup,
+  openLogin,
+  openGuest,
+} from "./authActions";
+export {
+  // ! checkout actions
+  cartDrawerOpen,
+  cartTooltipOpen,
+  cartTooltipClose,
+  addToCart,
+  addQtyToCart,
+  removeQtyFromCart,
+  paymentSuccessful,
+  // ! auth actions
+  sendOtp,
+  loginWithOtp,
+  saveAuthToken,
+  changeNumber,
+  setMeetingDetails,
+  openSignup,
+  openLogin,
+  openGuest,
 };

@@ -27,6 +27,7 @@
 @import "./componentStyles/cards/CartCard";
 @import "./componentStyles/CheckoutPageComponents/CartPreview";
 @import "./componentStyles/CheckoutPageComponents/AddressForm";
+@import "./componentStyles/modals/AuthModal";
 // ! Homepage components
 @import "./componentStyles/HomepageComponentStyles/HomepageCourses.scss";
 @import "./componentStyles/HomepageComponentStyles/HomepageShowcase";
@@ -44,4 +45,5 @@
 @import "./pagesStyles/Homepage";
 @import "./pagesStyles/Checkout";
 @import "./pagesStyles/PaymentSuccessful";
-@import "./pagesStyles/TeacherFeedback";
+@import "./pagesStyles/Feedback";
+@import "./pagesStyles/LiveClassLogin";
