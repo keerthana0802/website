@@ -12,7 +12,10 @@ function SingleCourse() {
   return (
     <NavFooterLayout>
       <div className="single-course-page__wrapper">
-        <SingleCourseBanner courseName={courseName} />
+        <SingleCourseBanner
+          courseName={courseName}
+          courseContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, molestiae!"
+        />
       </div>
     </NavFooterLayout>
   );

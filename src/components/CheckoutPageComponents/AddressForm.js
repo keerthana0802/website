@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { useSelector } from "react-redux";
-import coursesData from "../../store/staticData/HomepageCourseCards.json";
 import arrow from "../../assets/buttonArrow.svg";
 function AddressForm({ openPayment }) {
   const cart = useSelector((state) => state.checkout.cart);
+  const coursesData = useSelector((state) => state.courses.allCourses);
   // ! States for input elements
   const [country, setCountry] = useState("");
   const [addressLineOne, setAddressLineOne] = useState("");
@@ -25,6 +25,7 @@ function AddressForm({ openPayment }) {
     }, 0);
     return `${currency || ""} ${amount}`;
   };
+  // console.log(coursesData);
   return (
     <div className="address-form__wrapper">
       <div className="address-form">

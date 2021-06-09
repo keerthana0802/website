@@ -4,10 +4,10 @@ import NavFooterLayout from "../containers/NavFooterLayout";
 import { useSelector } from "react-redux";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import CartCard from "../components/cards/CartCard";
-import coursesData from "../store/staticData/HomepageCourseCards.json";
 import check from "../assets/paidCheck.svg";
 import mail from "../assets/email.svg";
 function PaymentSuccessful() {
+  const coursesData = useSelector((state) => state.courses.allCourses);
   const paid = useSelector((state) => state.checkout.paid);
   return (
     <NavFooterLayout>

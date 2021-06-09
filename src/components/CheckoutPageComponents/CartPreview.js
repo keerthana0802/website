@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import coursesData from "../../store/staticData/HomepageCourseCards.json";
 import CartCard from "../cards/CartCard";
 function CartPreview() {
   const cart = useSelector((state) => state.checkout.cart);
-  //   useEffect(() => {}, [cart]);
+  const coursesData = useSelector((state) => state.courses.allCourses);
   return (
     <section className="cart-preview__wrapper">
       <div className="cart-preview">

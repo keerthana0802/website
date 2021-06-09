@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Faqpage from "../components/Faq/Faqpage";
 import NavFooterLayout from "../containers/NavFooterLayout";
-import courseData from "../store/staticData/HomepageCourseCards.json";
+import { useSelector } from "react-redux";
 import HomepageCallback from "../components/HomepageComponents/HomepageCallback";
-// import "../styles/pagesStyles/faq.scss";
 import FaqBanner from "../components/banners/FaqBanner";
 import FaqBannerResp from "../components/banners/FaqBannerResp";
 
 function Faq() {
+  const courseData = useSelector((state) => state.courses.allCourses);
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
   // ! initial render state

@@ -3,8 +3,7 @@ import HomepageCourseCard from "../cards/HomepageCourseCard";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import { Link } from "react-router-dom";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
-// ! JSON data for courses
-import cardsData from "../../store/staticData/HomepageCourseCards.json";
+import { useSelector } from "react-redux";
 import yellowCourse from "../../assets/yellowCourse.jpeg";
 import blueCourse from "../../assets/blueCourse.jpeg";
 import purpleCourse from "../../assets/purpleCourse.jpeg";
@@ -18,6 +17,7 @@ import "swiper/components/navigation/navigation.min.css";
 SwiperCore.use([Pagination, Navigation]);
 
 function HomepageCourses() {
+  const cardsData = useSelector((state) => state.courses.allCourses);
   // ! Moengage event attribute objects
   const ageFilterAttributes = (kingdom, filter) => {
     return {

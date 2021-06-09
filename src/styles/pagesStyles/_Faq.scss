@@ -6,6 +6,12 @@
   justify-content: center;
   position: relative;
   align-items: center;
+  * button {
+    background-color: transparent;
+    text-align: left;
+    border: none;
+    outline: none;
+  }
 }
 
 /* || SECTION LEFT PART */

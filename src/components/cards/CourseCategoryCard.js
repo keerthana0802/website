@@ -41,6 +41,11 @@ function CourseCategoryCard({
   };
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.checkout.cart);
+  const openCourse = () => {
+    history.push(
+      `/explore-course/${courseCardName.toLowerCase().split(" ").join("-")}`
+    );
+  };
   return (
     <div className="course-category-card__wrapper">
       <div
@@ -48,36 +53,40 @@ function CourseCategoryCard({
         style={{
           background: `linear-gradient(111.29deg,${courseCardColor}66 -1.83%,rgba(255, 255, 255, 0) 109.95%)`,
         }}
-        onClick={() =>
-          history.push(
-            `/explore-course/${courseCardName
-              .toLowerCase()
-              .split(" ")
-              .join("-")}`
-          )
-        }
       >
         <div className="course-category-card__top">
-          <img src={courseCardImage} alt="" />
+          <img src={courseCardImage} alt="" onClick={openCourse} />
         </div>
         <div className="course-category-card__bottom">
-          <h3 className="course-category-card__bottom--liner">
+          <h3
+            className="course-category-card__bottom--liner"
+            onClick={openCourse}
+          >
             {courseCardLiner}
           </h3>
-          <h1 className="course-category-card__bottom--name">
+          <h1
+            className="course-category-card__bottom--name"
+            onClick={openCourse}
+          >
             {courseCardName}
             <span className="sessions">{courseCardSessions} Sessions</span>
           </h1>
-          <h2 className="course-category-card__bottom--category">
+          <h2
+            className="course-category-card__bottom--category"
+            onClick={openCourse}
+          >
             {courseCardCategory}
           </h2>
-          <p className="course-category-card__bottom--details">
+          <p
+            className="course-category-card__bottom--details"
+            onClick={openCourse}
+          >
             {courseCardDetails}
           </p>
           <SecondaryButton
             buttonText="Add to cart"
             version="version-2"
-            clickHandle={() => {
+            clickHandle={(ev) => {
               let found = cart.find(
                 (course) => course.courseId === courseCardId
               );

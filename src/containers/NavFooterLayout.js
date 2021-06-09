@@ -36,6 +36,7 @@ function NavFooterLayout({ children }) {
       window.localStorage.setItem("visitor_uuid", uuid());
     }
     if (allCourses.length === 0) {
+      console.log("from effect");
       axios
         .get(process.env.REACT_APP_ALL_COURSES_API)
         .then((res) => dispatch(getCourses(res.data.courses)))

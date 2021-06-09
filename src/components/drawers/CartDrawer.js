@@ -1,8 +1,19 @@
 import React from "react";
-import coursesData from "../../store/staticData/HomepageCourseCards.json";
 import PrimaryButton from "../buttons/PrimaryButton";
 import CartCard from "../cards/CartCard";
+import { useDispatch, useSelector } from "react-redux";
+import { cartDrawerOpen } from "../../store/actions/rootActions";
+import { useHistory } from "react-router-dom";
 function CartDrawer({ selectedCourses }) {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const coursesData = useSelector((state) => state.courses.allCourses);
+  const goToCheckout = () => {
+    dispatch(cartDrawerOpen());
+    setTimeout(() => {
+      history.push("/checkout");
+    }, 200);
+  };
   return (
     <div className="cart-drawer__wrapper">
       <div className="cart-drawer">
@@ -54,7 +65,7 @@ function CartDrawer({ selectedCourses }) {
           <PrimaryButton
             buttonText="Buy Now"
             version="version-1"
-            linkTo="/checkout"
+            clickHandle={goToCheckout}
           />
         </div>
       ) : null}
