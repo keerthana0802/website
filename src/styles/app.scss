@@ -28,6 +28,7 @@
 @import "./componentStyles/CheckoutPageComponents/CartPreview";
 @import "./componentStyles/CheckoutPageComponents/AddressForm";
 @import "./componentStyles/modals/AuthModal";
+@import "./componentStyles/banners/SingleCourseBanner";
 // ! Homepage components
 @import "./componentStyles/HomepageComponentStyles/HomepageCourses.scss";
 @import "./componentStyles/HomepageComponentStyles/HomepageShowcase";
@@ -43,7 +44,9 @@
 @import "./containerStyles/NavFooterLayout";
 // ! Pages
 @import "./pagesStyles/Homepage";
+@import "./pagesStyles/SingleCourse";
 @import "./pagesStyles/Checkout";
 @import "./pagesStyles/PaymentSuccessful";
-@import "./pagesStyles/Feedback";
 @import "./pagesStyles/LiveClassLogin";
+@import "./pagesStyles/Feedback";
+@import "./pagesStyles/Faq";

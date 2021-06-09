@@ -4,7 +4,7 @@ import PrimaryButton from "../buttons/PrimaryButton";
 import logo from "../../assets/sparkLogo.png";
 import cross from "../../assets/cross.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { openSignup } from "../../store/actions/rootActions";
+import { openLogin, openSignup } from "../../store/actions/rootActions";
 function AuthSignUp() {
   // ! initial render state
   const [initialRender, setInitialRender] = useState(true);
@@ -196,9 +196,22 @@ function AuthSignUp() {
         <div className="auth-modal__separator">
           <span></span>
           <p>Already have an account?</p>
+          <button
+            className="auth-modal__alternate-button"
+            onClick={() => {
+              setTimeout(() => {
+                dispatch(openSignup());
+                dispatch(openLogin());
+              }, 600);
+              opacityRef.current.reverse();
+              tweenRef.current.reverse();
+            }}
+          >
+            Sign in
+          </button>
           <span></span>
         </div>
-        <button className="auth-modal__alternate-button">Sign in</button>
+
         <img src={logo} alt="" className="auth-modal__logo" />
         <img
           src={cross}

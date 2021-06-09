@@ -1,6 +1,7 @@
 import React from "react";
 import SecondaryButton from "../buttons/SecondaryButton";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import {
   addToCart,
   addQtyToCart,
@@ -18,6 +19,7 @@ function CourseCategoryCard({
   courseCardId,
   coursePrice,
 }) {
+  const history = useHistory();
   const addToCartAttributes = {
     event_id: "1001018",
     event_type: "Click",
@@ -46,6 +48,14 @@ function CourseCategoryCard({
         style={{
           background: `linear-gradient(111.29deg,${courseCardColor}66 -1.83%,rgba(255, 255, 255, 0) 109.95%)`,
         }}
+        onClick={() =>
+          history.push(
+            `/explore-course/${courseCardName
+              .toLowerCase()
+              .split(" ")
+              .join("-")}`
+          )
+        }
       >
         <div className="course-category-card__top">
           <img src={courseCardImage} alt="" />

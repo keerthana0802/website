@@ -8,6 +8,7 @@ import {
 } from "../store/actions/rootActions";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import PrimaryButton from "../components/buttons/PrimaryButton";
 // ! React redux
 
 function LiveClassLogin() {
@@ -50,49 +51,88 @@ function LiveClassLogin() {
           console.log(errors);
         });
     }
-  }, []);
+  }, [profiles]);
   console.log(nextClass);
   return (
     <NavFooterLayout>
       <div className="live-class-login__wrapper">
         <div className="live-class-login">
-          {nextClass.length > 0
-            ? nextClass.map((classDetails, index) => {
+          <h1 className="live-class-login__header">
+            Get ready for your next live class. <br />
+            {authToken.length === 0 ? (
+              <span>Please log in to continue!</span>
+            ) : (
+              <span>Please select your profile to begin the live-class!</span>
+            )}
+          </h1>
+          <div className="live-class-login__cards">
+            {nextClass.length > 0 ? (
+              nextClass.map((classDetails, index) => {
                 return (
-                  <>
-                    <div className="live-class-login__student-card">
-                      <h2 className="class-name">
-                        Hi {profiles[index].first_name}.<br />
-                        Your {classDetails.batch.course.display_name} class
-                        starts at{" "}
-                        {new Date(classDetails.start_time * 1000)
-                          .toTimeString()
-                          .split(" ")
-                          .shift()}
-                      </h2>
-                      <button
-                        onClick={() => {
-                          launchClass(
-                            classDetails.dyte_token,
-                            classDetails.dyte_room_name,
-                            classDetails.dyte_org_id,
-                            classDetails.dyte_meeting_id
-                          );
-                        }}
-                      >
-                        Join class.
-                      </button>
-                    </div>
-                  </>
+                  <div className="live-class-login__student-card">
+                    <h2 className="class-name">
+                      <span> Hi {profiles[index].first_name}.</span>
+                      <br />
+                      Your {classDetails.batch.course.display_name} class starts
+                      at{" "}
+                      {new Date(classDetails.start_time * 1000)
+                        .toTimeString()
+                        .split(" ")
+                        .shift()}
+                    </h2>
+                    <PrimaryButton
+                      buttonText="Join class"
+                      version="version-1"
+                      clickHandle={() => {
+                        launchClass(
+                          classDetails.dyte_token,
+                          classDetails.dyte_room_name,
+                          classDetails.dyte_org_id,
+                          classDetails.dyte_meeting_id
+                        );
+                      }}
+                    />
+                  </div>
                 );
               })
-            : null}
+            ) : authToken.length === 0 ? null : (
+              <div className="live-class-login__student-card">
+                <h2 className="class-name">
+                  No upcoming live classes for today
+                </h2>
+                <PrimaryButton
+                  buttonText="Visit homepage"
+                  version="version-1"
+                  linkTo="/"
+                />
+              </div>
+            )}
+          </div>
+
           {authToken.length === 0 ? (
             <>
-              <button onClick={() => dispatch(openLogin())}>Login</button>
-              <button onClick={() => dispatch(openSignup())}>Signup</button>
+              <PrimaryButton
+                buttonText="Login"
+                version="version-1"
+                clickHandle={() => dispatch(openLogin())}
+              />
+              {/* <PrimaryButton
+                buttonText="Sign up"
+                version="version-1"
+                clickHandle={() => dispatch(openSignup())}
+              /> */}
             </>
           ) : null}
+          {/* <PrimaryButton
+            buttonText="Login"
+            version="version-1"
+            clickHandle={() => dispatch(openLogin())}
+          />
+          <PrimaryButton
+            buttonText="Sign up"
+            version="version-1"
+            clickHandle={() => dispatch(openSignup())}
+          /> */}
         </div>
       </div>
     </NavFooterLayout>

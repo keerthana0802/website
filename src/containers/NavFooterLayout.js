@@ -13,11 +13,13 @@ import {
   cartTooltipClose,
   openLogin,
   openSignup,
+  getCourses,
 } from "../store/actions/rootActions";
 import { useSelector, useDispatch } from "react-redux";
 import CartDrawer from "../components/drawers/CartDrawer";
 import AuthSignUp from "../components/modals/AuthSignUp";
 import AuthLogin from "../components/modals/AuthLogin";
+import axios from "axios";
 
 function NavFooterLayout({ children }) {
   // ! State for responsive mode
@@ -25,7 +27,7 @@ function NavFooterLayout({ children }) {
   const [menuDrawerClass, setMenuDrawerClass] = useState(
     "spark-layout-navbar hidden"
   );
-
+  const allCourses = useSelector((state) => state.courses.allCourses);
   useEffect(() => {
     if (window.innerWidth < 690) {
       setResponsiveMode(true);
@@ -33,7 +35,12 @@ function NavFooterLayout({ children }) {
     if (!window.localStorage.visitor_uuid) {
       window.localStorage.setItem("visitor_uuid", uuid());
     }
-    // moengageEvent();
+    if (allCourses.length === 0) {
+      axios
+        .get(process.env.REACT_APP_ALL_COURSES_API)
+        .then((res) => dispatch(getCourses(res.data.courses)))
+        .catch((e) => console.log(e));
+    }
   }, []);
   const containerLayout = useRef(null);
   // ! Redux states

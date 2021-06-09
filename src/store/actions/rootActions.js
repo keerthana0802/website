@@ -17,6 +17,7 @@ import {
   openLogin,
   openGuest,
 } from "./authActions";
+import { getCourses } from "./coursesActions";
 export {
   // ! checkout actions
   cartDrawerOpen,
@@ -35,4 +36,6 @@ export {
   openSignup,
   openLogin,
   openGuest,
+  // ! courses actions
+  getCourses,
 };

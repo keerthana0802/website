@@ -1,4 +1,5 @@
 import React from "react";
+
 // ! Dyte
 import { DyteMeeting } from "dyte-client";
 import { useHistory } from "react-router-dom";
@@ -9,7 +10,7 @@ function Meeting() {
   const onDyteInit = (meeting) => {
     meeting.on(meeting.Events.meetingEnded, () => {
       sessionStorage.clear();
-      history.push("/live-class");
+      history.push("/feedback");
     });
   };
   return (
@@ -17,11 +18,26 @@ function Meeting() {
       <DyteMeeting
         onInit={onDyteInit}
         clientId={meetingDetails.clientId}
+        uiConfig={{
+          header: true,
+          headerElements: {
+            clock: true,
+            title: true,
+            logo: true,
+            participantCount: true,
+          },
+          //   colors: {
+          //     primary: "#FF8671",
+          //     secondary: "#1A1A1A",
+          //     textPrimary: "#FF8671",
+          //     videoBackground: "#1A1A1A",
+          //   },
+        }}
         meetingConfig={{
           roomName: meetingDetails.roomName,
           authToken: meetingDetails.auth,
           apiBase: process.env.REACT_APP_DYTE_BASE_URL,
-          //   showSetupScreen: true,
+          showSetupScreen: true,
         }}
       />
     </div>

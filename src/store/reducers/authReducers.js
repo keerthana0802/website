@@ -16,7 +16,6 @@ const authReducers = (state = initState, action) => {
     case "CHANGE_NUMBER":
       return { ...state, authOtpRequested: false };
     case "LOGIN_WITH_OTP":
-      console.log("from reducers", action.payload.profiles);
       return {
         ...state,
         authOtpRequested: false,

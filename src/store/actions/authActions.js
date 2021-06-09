@@ -15,7 +15,6 @@ const sendOtp = (number) => {
   };
 };
 const loginWithOtp = (data) => {
-  console.log("from here", data);
   return {
     type: "LOGIN_WITH_OTP",
     payload: data,

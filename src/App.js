@@ -9,6 +9,8 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import Feedback from "./pages/Feedback";
 import LiveClassLogin from "./pages/LiveClassLogin";
 import Meeting from "./pages/Meeting";
+import Faq from "./pages/Faq";
+import SingleCourse from "./pages/SingleCourse";
 // ! Lazy loaded routes
 // const Homepage = lazy(() => import("./pages/Homepage.js"));
 function App() {
@@ -16,6 +18,12 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/explore-course/">
+            <SingleCourse />
+          </Route>
+          <Route path="/faq">
+            <Faq />
+          </Route>
           <Route exact path="/live-class">
             <LiveClassLogin />
           </Route>

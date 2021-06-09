@@ -1,0 +1,141 @@
+.container {
+  padding: 0% 0;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+/* || SECTION LEFT PART */
+
+.interactive-box-image.moved {
+  transform: translateX(-30px);
+}
+
+.faq__picture {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translateY(-50%);
+}
+
+/* || SECTION RIGHT PART */
+
+.faq__right {
+  padding: -4em -4em -4em -4em;
+  flex: 1;
+  margin-top: -130px;
+}
+
+.faq__heading {
+  font-size: 1.75rem;
+  margin-left: -60px;
+}
+.faq__title {
+  font-size: 50px;
+  margin-top: 150px;
+  color: #ffa724;
+}
+.faq__title1 {
+  font-size: 50px;
+  margin-top: 0;
+  color: #f3705b;
+}
+.faq__title2 {
+  font-size: 50px;
+  margin-top: 0;
+  color: #ffa724;
+}
+
+.faq__button {
+  padding: 1em 10px 1em 0;
+  font-size: 26px;
+  width: 1111px;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq__button:hover {
+  color: #686868;
+}
+
+.faq__button::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url("/assets/icon-arrow-down.svg") no-repeat;
+  // background: url("/assets/circle.svg") no-repeat;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.faq__button.active {
+  font-weight: 700;
+  border-bottom: 0;
+}
+
+.faq__button.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faq dd {
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.faq dd.expanded {
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.faq__desc {
+  color: #686868;
+  font-size: 18px;
+  padding: 1em 0;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: calc(98px + 3%) 0;
+  }
+
+  .faq {
+    flex-direction: column;
+  }
+
+  .faq__left {
+    overflow-x: visible;
+  }
+
+  .faq__picture {
+    left: 45%;
+    transform: translate(-47%, -50%);
+  }
+
+  .faq__heading {
+    text-align: center;
+    margin-top: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .faq__left {
+    min-width: 35%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .interactive-box-image {
+    display: none;
+  }
+
+  .faq {
+    width: 90%;
+  }
+}

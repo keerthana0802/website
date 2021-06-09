@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import axios from "axios";
-import arrow from "../../assets/leftArrow.svg";
+import arrow from "../../assets/leftArrowOrange.svg";
 import PrimaryButton from "../buttons/PrimaryButton";
 import logo from "../../assets/sparkLogo.png";
 import cross from "../../assets/cross.svg";
@@ -12,6 +12,7 @@ import {
   saveAuthToken,
   openLogin,
   changeNumber,
+  openSignup,
 } from "../../store/actions/rootActions";
 function AuthSignUp() {
   // ! Redux
@@ -41,6 +42,7 @@ function AuthSignUp() {
       { autoAlpha: 0 },
       { autoAlpha: 1, duration: 0.6 }
     );
+    timer();
   }, []);
 
   // ! local states for the input fields
@@ -118,12 +120,26 @@ function AuthSignUp() {
       })
       .catch((e) => console.log(e));
   };
+  // ! Resend otp timer
+  const [ticker, setTicker] = useState(5);
+  const timer = (stop = false) => {
+    let resendTimeout = setInterval(() => {
+      if (ticker != 1) {
+        setTicker((ticker) => {
+          if (ticker > 0) return ticker - 1;
+          return 0;
+        });
+      } else {
+        clearInterval(resendTimeout);
+      }
+    }, 1000);
+  };
   return (
     <div className="global-modal-wrapper" ref={modalWrapperRef}>
       <div className="auth-modal auth-login" ref={modalRef}>
         {authOtpRequested ? (
           <>
-            <h1 className="auth-modal__header" style={{ paddingTop: "4rem" }}>
+            <h1 className="auth-modal__header" style={{ paddingTop: "3rem" }}>
               Sign in to Spark Studio
             </h1>
             <input
@@ -136,6 +152,18 @@ function AuthSignUp() {
               buttonText="Verify OTP"
               clickHandle={checkOtpHandle}
             />
+            <span className="auth-modal__resend-otp">
+              Didn’t receive an OTP?{" "}
+              <button
+                className={
+                  ticker === 0
+                    ? "auth-modal__alternate-button"
+                    : "auth-modal__alternate-button inactive"
+                }
+              >
+                Resend {ticker === 0 ? null : <span>{ticker}</span>}
+              </button>
+            </span>
             <button
               className="auth-modal__change-number auth-modal__alternate-button"
               onClick={() => dispatch(changeNumber())}
@@ -246,9 +274,22 @@ function AuthSignUp() {
         <div className="auth-modal__separator">
           <span></span>
           <p>Don't have an account?</p>
+          <button
+            className="auth-modal__alternate-button"
+            onClick={() => {
+              setTimeout(() => {
+                dispatch(openLogin());
+                dispatch(openSignup());
+              }, 600);
+              opacityRef.current.reverse();
+              tweenRef.current.reverse();
+            }}
+          >
+            Sign up
+          </button>
           <span></span>
         </div>
-        <button className="auth-modal__alternate-button">Sign up</button>
+
         <img src={logo} alt="" className="auth-modal__logo" />
         <img
           src={cross}

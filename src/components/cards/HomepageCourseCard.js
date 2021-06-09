@@ -1,5 +1,6 @@
 import React from "react";
 import yellowCard from "../../assets/yellowCourseCard.svg";
+import { useHistory } from "react-router-dom";
 function HomepageCourseCard({
   courseImage,
   courseName,
@@ -9,12 +10,18 @@ function HomepageCourseCard({
   verticalThemeColorLight,
   verticalThemeColorDark,
 }) {
+  const history = useHistory();
   return (
     <div
       className="homepage-course-card"
       style={{
         background: `linear-gradient(111.29deg,${verticalThemeColorDark}88 -1.83%,rgba(255, 255, 255, 0) 109.95%)`,
       }}
+      onClick={() =>
+        history.push(
+          `/explore-course/${courseName.toLowerCase().split(" ").join("-")}`
+        )
+      }
     >
       <div className="homepage-course-card__top">
         <img src={courseImage} alt="" />
