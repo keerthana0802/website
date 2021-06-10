@@ -14,8 +14,11 @@
       width: 100%;
       top: 0;
       left: 0;
-      // ! To hide the chatbot when cart is open
-      z-index: 2147483648;
+      z-index: 100;
+      &.bring-above {
+        // ! To hide the chatbot when cart is open
+        z-index: 2147483648;
+      }
       background-color: rgba(255, 255, 255, 0.9);
 
       &__left {
@@ -31,6 +34,7 @@
           }
         }
       }
+
       &__right {
         &--list {
           display: flex;
@@ -40,7 +44,7 @@
           &-item {
             font-size: 1.6rem;
             color: #333;
-            margin-left: 4.8rem;
+            margin-left: 2.5rem;
             &:first-child {
               margin-left: 0;
             }
@@ -73,6 +77,9 @@
                 background: #f3f3f3;
                 border-radius: 1.2rem;
                 transform: translateX(8%);
+                @include bpm-sm {
+                  transform: translateX(-1rem);
+                }
                 clip-path: polygon(
                   0% 0%,
                   0% 1rem,
@@ -97,6 +104,9 @@
                   text-align: center;
                   padding-left: 2rem;
                   width: max-content;
+                  @include bpm-xs {
+                    font-size: 1.8rem;
+                  }
                 }
                 opacity: 0;
                 &.visible {
@@ -176,6 +186,24 @@
               font-weight: 400;
             }
           }
+          .cart-icon {
+            margin-left: 2rem;
+            img {
+              width: 3.2rem;
+              transform: translateY(3px);
+            }
+            @include bpm-xs {
+              margin-left: 1rem;
+              img {
+                width: 2.5rem;
+              }
+            }
+          }
+          @include bpm-xs {
+            > img {
+              width: 3rem;
+            }
+          }
         }
         &.visible {
           .spark-layout-navbar__right {
@@ -234,6 +262,9 @@
             }
           }
         }
+      }
+      @include bpm-xs {
+        padding: 0 1.5rem;
       }
       &--cart-drawer {
         height: calc(100vh - 7rem);

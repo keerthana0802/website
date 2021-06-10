@@ -4,6 +4,7 @@ const initState = {
   cartTooltipData: "",
   cart: [],
   paid: [],
+  promoCode: "",
 };
 const checkoutReducers = (state = initState, action) => {
   let currentCart;
@@ -57,6 +58,8 @@ const checkoutReducers = (state = initState, action) => {
         : { ...state, cartTooltip: true, cart: [...currentCart] };
     case "PAYMENT_SUCCESSFUL":
       return { ...state, paid: [...state.cart], cart: [] };
+    case "SET_PROMO_CODE":
+      return { ...state, promoCode: action.payload };
     default:
       return state;
   }

@@ -1,0 +1,42 @@
+.dyte-client {
+  * p,
+  * span {
+    font-size: 1.2rem !important;
+    padding: 1rem 0 !important;
+  }
+  .chakra-image {
+    width: 9rem !important;
+    height: 3rem;
+  }
+  .dyte-client-noSelect {
+    .chakra-menu__menu-button {
+      transform: translate(-12px, 8px) scale(1.2);
+    }
+    &.css-1qphhiy {
+      height: 5rem;
+    }
+    .chakra-button.css-1554xrd {
+      border-radius: 1rem;
+      transform: scale(0.9);
+      margin: 0 0.6rem;
+      padding: 0;
+      width: 7rem;
+      svg {
+        path {
+          &:first-child {
+            // transform: translateX(15px);
+          }
+        }
+      }
+    }
+    .css-k008qs {
+      > div {
+        &:last-child {
+          button {
+            border: 3px solid #f2715a;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.showcase-section {
+  &__wrapper {
+    padding: 0 7rem;
+    margin-bottom: 7rem;
+    @include bpm-md {
+      padding: 0 2rem;
+      .primary-button {
+        margin: -3rem auto 3rem auto;
+        width: 20rem;
+      }
+    }
+    @include bpm-xs {
+      padding: 0;
+    }
+  }
+  // height: 50rem;
+  width: 100%;
+  border: 5px solid #fff;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-radius: 3rem;
+  align-items: flex-start;
+  @include bpm-xs {
+    border: none;
+    border-radius: 0;
+  }
+  @include bpm-md {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 1fr;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 7rem;
+    @include bpm-md {
+      padding: 0 3rem;
+    }
+    &--header {
+      font-size: 5rem;
+      font-weight: 800;
+      margin: 3rem 0 2rem 0;
+      @include bpm-md {
+        font-size: 4rem;
+        text-align: center;
+        width: 100%;
+      }
+    }
+    &--content {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 3rem;
+      @include bpm-md {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+      }
+    }
+  }
+  &__right {
+    .showcase-card {
+      margin: 3rem 2rem 8rem 2rem;
+      width: 100%;
+      @include bpm-xs {
+        margin: 3rem 0 8rem 0;
+        width: 80%;
+      }
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+      h1 {
+        padding: 1rem 0;
+        font-size: 1.8rem;
+        font-weight: 900;
+      }
+      p {
+        padding-bottom: 2rem;
+        font-size: 1.6rem;
+      }
+    }
+    .swiper-slide {
+      margin: 2rem 0;
+      height: 90%;
+    }
+  }
+}

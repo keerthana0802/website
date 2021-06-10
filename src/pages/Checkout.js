@@ -11,7 +11,7 @@ function Checkout() {
   // ! Managing the orderID
   const [orderDetails, setOrderDetails] = useState("");
   const [razorOptions, setRazorOptions] = useState({
-    key: "rzp_test_QdrQy08GBk9ZFP",
+    key: "rzp_live_NqPR6NhpUVm5Vr",
     name: "Spark Studio",
     description: "Test Transaction",
     image: sparkLogoSquare,
@@ -50,6 +50,9 @@ function Checkout() {
       currency: resp.data.order.currency,
     });
   };
+  useEffect(() => {
+    getOrderDetails();
+  }, []);
   var rzp1 = new window.Razorpay(razorOptions);
   rzp1.on("payment.failed", function (response) {
     console.log("failure", response);

@@ -1,0 +1,107 @@
+.single-course-details {
+  &__wrapper {
+    // height: 60vh;
+    padding: 2rem 0 5rem 0;
+  }
+  .course-details-slide {
+    // height: 41rem;
+    margin: 0 7rem 0 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    border-radius: 3rem;
+    border: 5px solid #ffffff;
+    overflow: hidden;
+    @include bpm-custom(1050px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 0.5fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    @include bpm-xs {
+      max-width: 360px;
+      max-height: 60rem !important;
+    }
+    &__left {
+      img {
+        width: 100%;
+      }
+    }
+    &__right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 7rem;
+      padding-top: 3rem;
+      @include bpm-custom(1300px) {
+        padding: 2rem 4rem;
+      }
+      @include bpm-xs {
+        padding-left: 2rem;
+      }
+      .name {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        @include bpm-custom(1300px) {
+          font-size: 2.5rem;
+          margin-bottom: 2rem;
+        }
+        @include bpm-xs {
+          font-size: 2rem;
+          font-weight: 900;
+        }
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        span {
+          font-weight: 800;
+        }
+        @include bpm-custom(1300px) {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+          text-align: left;
+        }
+        @include bpm-xs {
+          font-size: 1.6rem;
+          width: max-content;
+        }
+      }
+      .primary-button {
+        margin-top: 3rem;
+        @include bpm-custom(1300px) {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+  .course-details-filter-swiper {
+    position: relative;
+    padding-top: 12rem;
+    .swiper-wrapper {
+      @include bpm-sm {
+        margin-top: 4rem;
+      }
+      @include bpm-xs {
+        margin-top: 10rem;
+      }
+    }
+    .swiper-pagination {
+      position: absolute;
+      top: 3rem;
+      &-bullet {
+        width: 25rem !important;
+        height: 5rem !important;
+        background-color: #ffffff77 !important;
+        font-size: 1.4rem !important;
+        font-weight: 800 !important;
+        padding-top: 1.4rem;
+        border-radius: 0.8rem !important;
+        border: 3px solid #fff !important;
+      }
+      &-bullet-active {
+        border: 3px solid #fcb444 !important;
+      }
+    }
+  }
+}

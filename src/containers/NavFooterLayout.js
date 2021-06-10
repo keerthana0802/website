@@ -22,11 +22,33 @@ import AuthLogin from "../components/modals/AuthLogin";
 import axios from "axios";
 
 function NavFooterLayout({ children }) {
+  // ! Redux states
+  const cart = useSelector((state) => state.checkout.cart);
+  const cartDrawer = useSelector((state) => state.checkout.cartDrawer);
+  const cartTooltip = useSelector((state) => state.checkout.cartTooltip);
+  const cartTooltipData = useSelector(
+    (state) => state.checkout.cartTooltipData
+  );
+  const dispatch = useDispatch();
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
   const [menuDrawerClass, setMenuDrawerClass] = useState(
-    "spark-layout-navbar hidden"
+    cartDrawer
+      ? "spark-layout-navbar bring-above hidden"
+      : "spark-layout-navbar hidden"
   );
+  const [desktopNavbarClass, setDesktopNavbarClass] = useState(
+    "spark-layout-navbar navbar-scrolling"
+  );
+  useEffect(() => {
+    if (cartDrawer) {
+      setMenuDrawerClass("spark-layout-navbar bring-above");
+      setDesktopNavbarClass("spark-layout-navbar bring-above navbar-scrolling");
+    } else {
+      setMenuDrawerClass("spark-layout-navbar hidden");
+      setDesktopNavbarClass("spark-layout-navbar navbar-scrolling");
+    }
+  }, [cartDrawer]);
   const allCourses = useSelector((state) => state.courses.allCourses);
   useEffect(() => {
     if (window.innerWidth < 690) {
@@ -44,14 +66,7 @@ function NavFooterLayout({ children }) {
     }
   }, []);
   const containerLayout = useRef(null);
-  // ! Redux states
-  const cart = useSelector((state) => state.checkout.cart);
-  const cartDrawer = useSelector((state) => state.checkout.cartDrawer);
-  const cartTooltip = useSelector((state) => state.checkout.cartTooltip);
-  const cartTooltipData = useSelector(
-    (state) => state.checkout.cartTooltipData
-  );
-  const dispatch = useDispatch();
+
   const [cartDrawerClass, setCartDrawerClass] = useState(
     cartDrawer
       ? "spark-layout-navbar--cart-drawer visible"
@@ -100,10 +115,34 @@ function NavFooterLayout({ children }) {
               className="menu-toggle"
               onClick={() => {
                 menuDrawerClass === "spark-layout-navbar hidden"
-                  ? setMenuDrawerClass("spark-layout-navbar visible")
+                  ? setMenuDrawerClass(
+                      "spark-layout-navbar bring-above visible"
+                    )
                   : setMenuDrawerClass("spark-layout-navbar hidden");
               }}
             />
+            <div
+              className="spark-layout-navbar__right--list-item cart-icon"
+              onClick={() => {
+                dispatch(cartDrawerOpen());
+              }}
+            >
+              <img src={cartIcon} alt="" />
+              {cart.length > 0 ? (
+                <div className="cart-bubble">
+                  {cart?.reduce((a, b) => a + b.qty, 0)}
+                </div>
+              ) : null}
+              {cartTooltip ? (
+                <div className={cartTooltipClass}>
+                  <img src={check} alt="" />
+                  <p>
+                    {cartTooltipData} <br />
+                    Added to cart
+                  </p>
+                </div>
+              ) : null}
+            </div>
           </div>
 
           <div className="spark-layout-navbar__right">
@@ -121,19 +160,6 @@ function NavFooterLayout({ children }) {
                     version="version-1"
                     linkTo="https://book-staging.sparkstudio.co/"
                   />
-                </li>
-                <li
-                  className="spark-layout-navbar__right--list-item cart-icon"
-                  onClick={() => {
-                    dispatch(cartDrawerOpen());
-                  }}
-                >
-                  <img src={cartIcon} alt="" />
-                  {cart.length > 0 ? (
-                    <div className="cart-bubble">
-                      {cart?.reduce((a, b) => a + b.qty, 0)}
-                    </div>
-                  ) : null}
                 </li>
               </div>
               <li className="spark-layout-navbar__right--list-ruler"></li>
@@ -196,9 +222,12 @@ function NavFooterLayout({ children }) {
               </li>
             </ul>
           </div>
+          <div className={cartDrawerClass}>
+            <CartDrawer selectedCourses={cart} />
+          </div>
         </nav>
       ) : (
-        <nav className="spark-layout-navbar navbar-scrolling">
+        <nav className={desktopNavbarClass}>
           <div className="spark-layout-navbar__left">
             <Link to="/">
               <img src={logo} alt="Spark Studio" />

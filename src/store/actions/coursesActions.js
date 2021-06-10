@@ -3,6 +3,20 @@ const colors = {
   "Visual Arts": { light: "#DCCCFF", dark: "#8469C0" },
   Music: { light: "#FFEDC8", dark: "#FFC142" },
 };
+const courseLevelCount = (displayName) => {
+  switch (displayName.toLowerCase()) {
+    case "guitar":
+      return 2;
+    case "western vocals":
+      return 2;
+    case "stop motion animation":
+      return 3;
+    case "art":
+      return 2;
+    default:
+      return 1;
+  }
+};
 // ! courses actions
 const getCourses = (coursesData) => {
   let allCourses = coursesData.map((course) => {
@@ -28,6 +42,7 @@ const getCourses = (coursesData) => {
       courseLiner: course.course_one_liner,
       courseContent: course.description,
       courseCurrency: "INR",
+      courseLevelCount: courseLevelCount(course.display_name),
       courseTags:
         course.tags.length > 0
           ? course.tags

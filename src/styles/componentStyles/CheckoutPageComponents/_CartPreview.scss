@@ -1,6 +1,9 @@
 .cart-preview {
   &__wrapper {
     background-color: #fff;
+    @include bpm-md {
+      background-color: transparent;
+    }
   }
   max-width: 45rem;
   margin: 0 auto;
@@ -10,6 +13,9 @@
   align-items: flex-start;
   justify-content: space-between;
   height: 100%;
+  @include bpm-md {
+    padding: 5rem 0;
+  }
   &__customer-name,
   &__liner,
   &__liner-2 {
@@ -19,6 +25,7 @@
   }
   &__cart-cards {
     margin: 2rem 0;
+    padding: 0 1.5rem;
     max-height: 48rem;
     overflow-y: scroll;
   }

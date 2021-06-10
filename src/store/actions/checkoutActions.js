@@ -38,6 +38,12 @@ const paymentSuccessful = () => {
     type: "PAYMENT_SUCCESSFUL",
   };
 };
+const setPromoCode = (data) => {
+  return {
+    type: "SET_PROMO_CODE",
+    payload: data,
+  };
+};
 export {
   cartDrawerOpen,
   cartTooltipOpen,
@@ -46,4 +52,5 @@ export {
   addQtyToCart,
   removeQtyFromCart,
   paymentSuccessful,
+  setPromoCode,
 };

@@ -1,0 +1,30 @@
+.usp-strip {
+  // height: 15rem;
+  padding: 4rem 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 5rem;
+  @include bpm-sm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 2rem 0;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    span {
+      display: inline-block;
+      font-weight: 900;
+      font-size: 2.5rem;
+    }
+    @include bpm-sm {
+      margin: 2rem 0;
+    }
+  }
+}

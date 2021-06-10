@@ -5,6 +5,7 @@
 @import "./utilities/variables";
 @import "./utilities/breakpoints";
 @import "./utilities/swiper";
+@import "./utilities/dyte";
 // ! *******************************************************8
 // ! Components
 @import "./componentStyles/buttons/PrimaryButton";
@@ -39,6 +40,14 @@
 @import "./componentStyles/AllCoursesComponentStyles/CourseCategorySection";
 // ! Checkout page components
 // @import "./componentStyles/AllCoursesComponentStyles/CourseCategorySection";
+// ! single course page components
+@import "./componentStyles/SingleCoursePageComponents/CourseDetails";
+@import "./componentStyles/SingleCoursePageComponents/UspStrip";
+@import "./componentStyles/SingleCoursePageComponents/ParentsSection";
+@import "./componentStyles/SingleCoursePageComponents/ShowcaseSection";
+@import "./componentStyles/SingleCoursePageComponents/ExpertSection";
+@import "./componentStyles/SingleCoursePageComponents/CurriculumSection";
+@import "./componentStyles/SingleCoursePageComponents/paths/CurriculumPath";
 // ! *******************************************************8
 // ! Containers
 @import "./containerStyles/NavFooterLayout";

@@ -4,4 +4,9 @@
   grid-template-columns: 4.5fr 5.5fr;
   min-height: calc(100vh - 6.9rem);
   margin-top: 6.9rem;
+  @include bpm-md {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

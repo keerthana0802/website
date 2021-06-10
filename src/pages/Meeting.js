@@ -1,5 +1,5 @@
 import React from "react";
-
+import white from "../assets/sparkLogoWhite.png";
 // ! Dyte
 import { DyteMeeting } from "dyte-client";
 import { useHistory } from "react-router-dom";
@@ -13,6 +13,7 @@ function Meeting() {
       history.push("/feedback");
     });
   };
+  console.log(meetingDetails);
   return (
     <div>
       <DyteMeeting
@@ -26,12 +27,13 @@ function Meeting() {
             logo: true,
             participantCount: true,
           },
-          //   colors: {
-          //     primary: "#FF8671",
-          //     secondary: "#1A1A1A",
-          //     textPrimary: "#FF8671",
-          //     videoBackground: "#1A1A1A",
-          //   },
+          logo: white,
+          colors: {
+            primary: "#18a0fb",
+            secondary: "#3E4454",
+            textPrimary: "#EEEEEE",
+            videoBackground: "#1A1A1A",
+          },
         }}
         meetingConfig={{
           roomName: meetingDetails.roomName,

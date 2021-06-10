@@ -6,6 +6,7 @@ import {
   addQtyToCart,
   removeQtyFromCart,
   paymentSuccessful,
+  setPromoCode,
 } from "./checkoutActions";
 import {
   sendOtp,
@@ -27,6 +28,7 @@ export {
   addQtyToCart,
   removeQtyFromCart,
   paymentSuccessful,
+  setPromoCode,
   // ! auth actions
   sendOtp,
   loginWithOtp,

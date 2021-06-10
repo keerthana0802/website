@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import CartCard from "../cards/CartCard";
+import cross from "../../assets/cross.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { cartDrawerOpen } from "../../store/actions/rootActions";
+import { cartDrawerOpen, setPromoCode } from "../../store/actions/rootActions";
 import { useHistory } from "react-router-dom";
 function CartDrawer({ selectedCourses }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const coursesData = useSelector((state) => state.courses.allCourses);
+  const [promo, setPromo] = useState("null");
   const goToCheckout = () => {
     dispatch(cartDrawerOpen());
+    dispatch(setPromoCode(promo));
     setTimeout(() => {
       history.push("/checkout");
     }, 200);
   };
+
   return (
     <div className="cart-drawer__wrapper">
       <div className="cart-drawer">
+        <img
+          src={cross}
+          alt=""
+          className="cart-drawer__close-button"
+          onClick={() => dispatch(cartDrawerOpen())}
+        />
         <h1 className="cart-drawer__header">
           {selectedCourses.length > 0 ? "Courses in cart" : "Cart is empty!"}
         </h1>
@@ -46,22 +56,12 @@ function CartDrawer({ selectedCourses }) {
             placeholder="Promo code"
             type="text"
             className="cart-drawer__promo"
+            onChange={(ev) => setPromo(ev.target.value)}
           />
         ) : null}
       </div>
       {selectedCourses.length > 0 ? (
         <div className="cart-drawer__bottom">
-          <label htmlFor="terms" className="cart-drawer__terms">
-            <input type="checkbox" name="terms" id="" /> I agree to the{" "}
-            <a
-              href="https://sparkstudio.co/tnc"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              terms and conditions
-            </a>
-          </label>
           <PrimaryButton
             buttonText="Buy Now"
             version="version-1"

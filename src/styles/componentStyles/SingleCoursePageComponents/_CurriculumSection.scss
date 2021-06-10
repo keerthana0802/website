@@ -1,0 +1,57 @@
+.curriculum-section {
+  &__wrapper {
+    min-height: 60vh;
+    padding: 0 7rem;
+    margin: 5rem 0;
+    @include bpm-sm {
+      padding: 0;
+    }
+  }
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  @include bpm-md {
+    flex-direction: column;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 2.5rem;
+    &--header {
+      font-size: 5rem;
+      font-weight: 900;
+    }
+    &--liner {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 3rem 0 2rem 0;
+    }
+    &--list {
+      list-style: none;
+      padding-inline-start: 0;
+      margin-bottom: 4rem;
+      &-item {
+        font-size: 1.8rem;
+        position: relative;
+        margin: 1rem 0;
+        &::before {
+          content: "";
+          background: url("../../../assets/bulletArrow.svg") center
+            center/contain no-repeat;
+          height: 2rem;
+          width: 2rem;
+          position: absolute;
+          top: 0.2rem;
+          left: -2.5rem;
+          border-radius: 5rem;
+        }
+      }
+      @include bpm-xs {
+        margin-left: 2rem;
+      }
+    }
+  }
+  &__right {
+  }
+}

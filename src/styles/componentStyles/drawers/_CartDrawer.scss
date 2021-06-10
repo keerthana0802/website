@@ -1,10 +1,21 @@
 .cart-drawer {
+  // position: fixed;
   &__wrapper {
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+  }
+  position: relative;
+  &__close-button {
+    cursor: pointer;
+    position: absolute;
+    width: 3rem;
+    top: 1.6rem;
+    left: 0.5rem;
+    background: #fff;
+    border-radius: 5rem;
   }
   &__header {
     font-size: 1.8rem;
@@ -43,7 +54,7 @@
     font-size: 1.4rem;
     align-self: center;
     color: #333;
-    margin: 2rem 0;
+    margin: 0 0 2rem 0 !important;
     input {
       cursor: pointer;
       margin-bottom: -0.1rem;

@@ -29,14 +29,6 @@ function PaymentSuccessful() {
                 <span>Status: Payment successful</span>
                 <span>Date: April 12th, 2021, 14:42</span>
               </div>
-              <div className="spark-payment-successful__right--top-email-box">
-                <p className="email-info">
-                  We will be sending out an email confirmation to <br />
-                  <span>shobha@sparkstudio.co</span>
-                </p>
-                <img src={mail} alt="" />
-                <button>Change email</button>
-              </div>
             </div>
             <div className="spark-payment-successful__right--bottom">
               <h2 className="spark-payment-successful__right--bottom-header">
@@ -64,6 +56,13 @@ function PaymentSuccessful() {
                       />
                     );
                 })}
+              </div>
+              <div className="spark-payment-successful__right--top-email-box">
+                <p className="email-info">
+                  We will be sending out an email confirmation to <br />
+                  <span>shobha@sparkstudio.co</span>
+                </p>
+                <button>Change email</button>
               </div>
             </div>
             <PrimaryButton
