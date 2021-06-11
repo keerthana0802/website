@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect } from "react";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import HomepageBanner from "../components/banners/HomepageBanner";
 import HomepageCourses from "../components/HomepageComponents/HomepageCourses";
+import { Helmet } from "react-helmet";
 
 // ! lazy loaded components
 const HomepageCallback = lazy(() =>
@@ -26,6 +27,9 @@ function Homepage() {
   }, []);
   return (
     <NavFooterLayout>
+      <Helmet>
+        <title>Homepage</title>
+      </Helmet>
       <div className="spark-homepage">
         <HomepageBanner />
         <HomepageCourses />

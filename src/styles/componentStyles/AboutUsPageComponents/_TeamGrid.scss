@@ -1,0 +1,46 @@
+.team-grid {
+  &__wrapper {
+    margin-bottom: 5rem;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    @include bpm-lg {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include bpm-md {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .single-card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 2rem;
+    img {
+      width: 20rem;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    }
+    @include bpm-xs {
+      margin: 1rem 0.5rem;
+      img {
+        width: 16rem;
+      }
+    }
+    p {
+      font-size: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0.5rem;
+      span {
+        display: inline-block;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

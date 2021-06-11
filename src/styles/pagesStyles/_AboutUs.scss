@@ -1,0 +1,58 @@
+.spark-about-us {
+  &__wrapper {
+    padding-top: 7rem;
+  }
+  &__strip {
+    margin: 5rem 0;
+    @include bpm-md {
+    }
+    &--header {
+      font-size: 4rem;
+      font-weight: 900;
+      text-align: center;
+    }
+    &--companies {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      img {
+        @include bpm-md {
+          transform: scale(0.8);
+        }
+      }
+      @include bpm-md {
+        justify-content: flex-start;
+        overflow-x: scroll;
+        padding-right: 4rem;
+      }
+    }
+  }
+  &__career {
+    margin-bottom: 7rem;
+    .linkedin-input-field {
+      width: 40%;
+      height: 5rem;
+      background: #faefec;
+      border: 1px solid #b6b6b6;
+      box-sizing: border-box;
+      border-radius: 5px;
+      padding: 0 2rem;
+      outline: none;
+      @include bpm-md {
+        width: 60%;
+      }
+      @include bpm-xs {
+        width: 80%;
+      }
+      @include bpm-xxs {
+        margin: 2rem 0;
+      }
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+}

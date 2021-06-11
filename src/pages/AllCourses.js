@@ -6,6 +6,7 @@ import AllCoursesBannerFilter from "../components/banners/AllCoursesBannerFilter
 import LargeBookATrialCard from "../components/cards/LargeBookATrialCard";
 import AllCoursesBannerFilterResp from "../components/banners/AllCoursesBannerFilterResp";
 import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 function AllCourses() {
   const courseData = useSelector((state) => state.courses.allCourses);
   // ! State for responsive mode
@@ -23,6 +24,9 @@ function AllCourses() {
   }, []);
   return (
     <NavFooterLayout>
+      <Helmet>
+        <title>All courses page</title>
+      </Helmet>
       <div className="spark-all-courses">
         {responsiveMode ? (
           <AllCoursesBannerFilterResp courseData={courseData} />

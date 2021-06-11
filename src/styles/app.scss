@@ -48,6 +48,12 @@
 @import "./componentStyles/SingleCoursePageComponents/ExpertSection";
 @import "./componentStyles/SingleCoursePageComponents/CurriculumSection";
 @import "./componentStyles/SingleCoursePageComponents/paths/CurriculumPath";
+// ! About us page styles
+@import "./componentStyles/banners/AboutUsBanner";
+@import "./componentStyles/AboutUsPageComponents/TeamGrid";
+@import "./componentStyles/AboutUsPageComponents/TeamDescriptionSection";
+@import "./componentStyles/AboutUsPageComponents/BeliefSection";
+@import "./componentStyles/AboutUsPageComponents/MentorsSection";
 // ! *******************************************************8
 // ! Containers
 @import "./containerStyles/NavFooterLayout";
@@ -59,3 +65,4 @@
 @import "./pagesStyles/LiveClassLogin";
 @import "./pagesStyles/Feedback";
 @import "./pagesStyles/Faq";
+@import "./pagesStyles/AboutUs";

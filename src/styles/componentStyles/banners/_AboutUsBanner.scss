@@ -1,0 +1,79 @@
+.about-us-banner {
+  &__wrapper {
+    width: 100%;
+    padding: 0 7rem;
+    @include bpm-md {
+      padding: 0 2rem;
+    }
+  }
+  &__cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    @include bpm-custom(1520px) {
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+  }
+  .banner-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe7c2;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 30rem;
+    padding: 1rem 2rem;
+    margin: 2rem;
+    &__top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-bottom: 1.5rem;
+      &--left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        .position {
+          font-size: 1.8rem;
+          font-weight: 500;
+          padding-bottom: 1.5rem;
+        }
+        .name {
+          font-size: 2.6rem;
+          font-weight: 900;
+          text-align: left;
+          span {
+            display: block;
+          }
+        }
+      }
+      &--right {
+        button {
+          background: transparent;
+          outline: none;
+          border: none;
+          margin-bottom: 0.5rem;
+          cursor: pointer;
+          width: max-content;
+        }
+      }
+    }
+    &__bottom {
+      img {
+        width: 100%;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+  &__slider {
+    padding-bottom: 5rem !important;
+    .swiper-pagination {
+      margin-bottom: 0 !important;
+    }
+  }
+}

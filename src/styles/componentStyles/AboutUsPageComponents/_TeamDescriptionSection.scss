@@ -1,0 +1,40 @@
+.team-description {
+  &__wrapper {
+    padding: 0 7rem;
+    margin-bottom: 5rem;
+    @include bpm-xs {
+      padding: 0 3rem;
+    }
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  @include bpm-md {
+    flex-direction: column;
+  }
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 50rem;
+    @include bpm-md {
+      margin-bottom: 4rem;
+    }
+    @include bpm-sm {
+      max-width: 80vw;
+    }
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+  }
+  &__right {
+    img {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}

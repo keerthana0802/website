@@ -1,0 +1,230 @@
+.belief-section {
+  &__wrapper {
+    width: 100%;
+    // padding-right: 7rem;
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: 40rem 1fr;
+    min-height: 80rem;
+    @include bpm-custom(1020px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__left {
+    position: relative;
+    z-index: 5;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #fff5e5;
+      border-radius: 100rem;
+      height: 70rem;
+      width: 70rem;
+      left: 0;
+      top: -5rem;
+      transform: translateX(-50%);
+      z-index: 0;
+      @include bpm-custom(1020px) {
+        left: -30vw;
+      }
+      @include bpm-sm {
+        left: calc(-50vw);
+      }
+    }
+    &--header {
+      position: absolute;
+      z-index: 10;
+      font-size: 5rem;
+      font-weight: 900;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      top: 0rem;
+      left: 4rem;
+      @include bpm-custom(1020px) {
+        left: calc(-30vw + 4rem);
+      }
+      @include bpm-sm {
+        left: calc(-50vw + 4rem);
+      }
+      span {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 500;
+        transform: translateY(1rem);
+      }
+    }
+    .belief-card {
+      position: absolute;
+      z-index: 10;
+      width: 25rem;
+      height: 12rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      padding: 0 2rem;
+      background-color: #fff;
+      border-radius: 0.8rem;
+      span {
+        position: absolute;
+        top: -2rem;
+        left: -0.5rem;
+        color: #f6a428;
+        font-size: 3.5rem;
+        font-weight: 900;
+      }
+      .title {
+        font-size: 2rem;
+        font-weight: 900;
+      }
+      .liner {
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+      @include bpm-xs {
+        padding: 1rem;
+        width: 20rem;
+        span {
+          position: absolute;
+          top: -1.5rem;
+          left: 1rem;
+          color: #f6a428;
+          font-size: 2.5rem;
+          font-weight: 900;
+        }
+        .title {
+          font-size: 1.8rem;
+          font-weight: 900;
+        }
+        .liner {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+      }
+      &:nth-child(2) {
+        top: 13rem;
+        right: -2rem;
+        @include bpm-custom(1020px) {
+          left: calc(-30vw + 25rem);
+        }
+        @include bpm-sm {
+          left: calc(-50vw + 22rem);
+        }
+        @include bpm-xs {
+          left: calc(-50vw + 16rem);
+        }
+      }
+      &:nth-child(3) {
+        top: 28rem;
+        left: 4rem;
+        @include bpm-custom(1020px) {
+          left: calc(-30vw + 6rem);
+        }
+        @include bpm-sm {
+          left: calc(-50vw + 6rem);
+        }
+        @include bpm-xs {
+          left: calc(-50vw + 3rem);
+        }
+      }
+      &:nth-child(4) {
+        top: 43rem;
+        right: 3rem;
+        @include bpm-custom(1020px) {
+          left: calc(-30vw + 28rem);
+        }
+        @include bpm-sm {
+          left: calc(-50vw + 26rem);
+        }
+        @include bpm-xs {
+          left: calc(-50vw + 10rem);
+        }
+      }
+    }
+  }
+  &__right {
+    .showcase-section {
+      &__wrapper {
+        @include bpm-custom(1150px) {
+          padding-right: 0;
+          padding-left: 5rem;
+        }
+        @include bpm-custom(1020px) {
+          padding: 0;
+        }
+      }
+      padding: 0 3rem;
+      grid-template-columns: 3fr 1fr;
+      @include bp-xl {
+        height: 45rem;
+      }
+      @include bpm-xl {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr;
+      }
+      @include bpm-custom(1150px) {
+        border: none;
+      }
+      @include bpm-custom(1020px) {
+        padding: 0;
+      }
+      &__left {
+        padding-left: 0;
+        &--header {
+          font-size: 3.5rem;
+          @include bpm-custom(1020px) {
+            font-size: 4rem;
+            text-align: center;
+            width: 100%;
+          }
+        }
+        &--content {
+          font-size: 1.6rem;
+          @include bpm-custom(1020px) {
+            margin-bottom: 0;
+            font-size: 1.8rem;
+            max-width: 60vw;
+            margin: auto;
+            margin-bottom: 4rem;
+          }
+          @include bpm-xs {
+            max-width: 80vw;
+          }
+        }
+        @include bpm-custom(1020px) {
+          padding: 0;
+          .primary-button {
+            margin: 0 auto;
+          }
+        }
+      }
+      &__right {
+        .showcase-card {
+          width: 65%;
+          @include bpm-custom(1150px) {
+            width: 100%;
+          }
+          @include bpm-sm {
+            width: 80%;
+          }
+        }
+        .swiper-slide {
+          margin: 2rem 0;
+          height: 90%;
+          @include bpm-custom(1150px) {
+            width: 80% !important;
+          }
+          @include bpm-sm {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+    @include bpm-custom(1020px) {
+      margin-top: 70rem;
+    }
+  }
+}

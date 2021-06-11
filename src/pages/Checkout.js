@@ -6,6 +6,7 @@ import NavFooterLayout from "../containers/NavFooterLayout";
 import sparkLogoSquare from "../assets/sparkLogoSquare.jpeg";
 import { useDispatch } from "react-redux";
 import { paymentSuccessful } from "../store/actions/rootActions";
+import { Helmet } from "react-helmet";
 function Checkout() {
   const dispatch = useDispatch();
   // ! Managing the orderID
@@ -63,6 +64,9 @@ function Checkout() {
   };
   return (
     <NavFooterLayout>
+      <Helmet>
+        <title>Checkout page</title>
+      </Helmet>
       <div className="spark-checkout-page">
         <CartPreview />
         <AddressForm openPayment={openPayment} />

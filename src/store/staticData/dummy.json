@@ -20,6 +20,7 @@
         "city": "Mumbai",
         "state": "Maharashtra",
         "country": "India",
-        "pin_code": 400068
+        "pin_code": 400068,
+        "promo_code": "ABCD12"
     }
 }
