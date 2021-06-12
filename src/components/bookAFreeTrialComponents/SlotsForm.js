@@ -5,7 +5,9 @@ import moment from "moment";
 import axios from "axios";
 import Modal from "./Modal";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 function SlotsForm() {
+  const authToken = useSelector((state) => state.auth.authToken);
   const history = useHistory();
   let today = new Date().getDay();
   // ! state to manage the available days
@@ -181,7 +183,8 @@ function SlotsForm() {
                 is_booked: true,
                 is_custom_request: false,
               },
-            }
+            },
+            { headers: { Authorization: authToken } }
           )
           .then(() => window.localStorage.clear())
           .then(function (response) {

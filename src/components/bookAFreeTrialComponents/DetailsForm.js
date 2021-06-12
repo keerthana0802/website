@@ -5,15 +5,16 @@ import detect from "detect.js";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  sendOtp,
   openLogin,
-  loginWithOtp,
+  sendOtp,
   tempPhoneNumber,
 } from "../../store/actions/rootActions";
 function DetailsForm({ switchRoute, tabsStatus }) {
-  const history = useHistory();
-  const verified = useSelector((state) => state.auth.verified);
+  // ! Redux
+  const authToken = useSelector((state) => state.auth.authToken);
+  const userDetails = useSelector((state) => state.auth.userDetails);
   const dispatch = useDispatch();
+  const history = useHistory();
   // ! initial render state
   const [initialRender, setInitialRender] = useState(true);
   // ! States for input fields
@@ -74,13 +75,45 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         return 10;
       case "+971":
         return 7;
+      case "+974":
+        return 7;
+      case "+966":
+        return 9;
       default:
-        return false;
+        return number.length;
     }
   };
-
+  // ! Number verification logic
+  const [verificationTooltipClass, setVerificationTooltipClass] = useState(
+    "verification-tooltip not-verified"
+  );
+  const [verificationTooltipText, setVerificationTooltipText] =
+    useState("not verified");
+  const verificationHandler = (countryCode, phoneNumber) => {
+    if (verificationTooltipClass === "verification-tooltip not-verified") {
+      dispatch(tempPhoneNumber({ countryCode, phoneNumber }));
+      dispatch(sendOtp(`${countryCode}-${phoneNumber}`));
+      dispatch(openLogin());
+    }
+  };
   // ! useeffect for phone number onchange
   useEffect(() => {
+    if (userDetails.phoneNumber === `${countryCode}-${phoneNumber}`) {
+      setVerificationTooltipClass("verification-tooltip verified");
+      setVerificationTooltipText("verified");
+    } else if (
+      countryCode !== "+91" &&
+      countryCode !== "+971" &&
+      countryCode !== "+1" &&
+      countryCode !== "+974" &&
+      countryCode !== "+966"
+    ) {
+      setVerificationTooltipClass("verification-tooltip verified");
+      setVerificationTooltipText("verified");
+    } else {
+      setVerificationTooltipClass("verification-tooltip not-verified");
+      setVerificationTooltipText("click to verify");
+    }
     if (!initialRender) {
       if (phoneNumber[0] === "0") {
         console.log("from effect");
@@ -101,24 +134,35 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         });
       }
     }
-  }, [phoneNumber]);
-  const updateApi = () => {
+  }, [phoneNumber, userDetails]);
+  // ! To move to the courses page
+  function handleSubmit() {
+    setLocalStorage();
+    window.Moengage.track_event("Book_React", {
+      add_first_name: fullName,
+      add_email: email,
+      add_mobile: `${countryCode}-${phoneNumber}`,
+    });
     axios
-      .post(process.env.REACT_APP_API_URL, {
-        booking: {
-          name: fullName,
-          phone_no: `${countryCode}-${phoneNumber}`,
-          email: email,
-          child_name: childName,
-          child_age: childAge,
-          whatsapp_opt_in: true,
-          registration_source:
-            userAgentDeviceRef.current === "Desktop" ? "webd" : "webm",
+      .post(
+        process.env.REACT_APP_API_URL,
+        {
+          booking: {
+            name: fullName,
+            phone_no: `${countryCode}-${phoneNumber}`,
+            email: email,
+            child_name: childName,
+            child_age: childAge,
+            whatsapp_opt_in: true,
+            registration_source:
+              userAgentDeviceRef.current === "Desktop" ? "webd" : "webm",
+          },
         },
-      })
+        { headers: { Authorization: authToken } }
+      )
 
       .then(function (response) {
-        console.log("from resp", response);
+        // console.log(response);
         window.localStorage.setItem("uuid", response.data.uuid);
         tabsStatus("/book-a-trial");
         switchRoute("/book-a-trial/courses-selection");
@@ -127,33 +171,8 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       .catch(function (error) {
         // console.log(error);
       });
-  };
-  // ! To move to the courses page
-  function handleSubmit() {
-    setLocalStorage();
-    if (verified) {
-      updateApi();
-    } else {
-      dispatch(tempPhoneNumber({ countryCode, phoneNumber }));
-      dispatch(openLogin());
-    }
   }
-  useEffect(() => {
-    if (
-      fullName &&
-      countryCode &&
-      phoneNumber &&
-      phoneNumber.length === phoneNumberLengthValidation(phoneNumber) &&
-      phoneNumber[0] !== "0" &&
-      email &&
-      childName &&
-      childAge > 4 &&
-      childAge < 16 &&
-      verified
-    ) {
-      updateApi();
-    }
-  }, [verified]);
+
   return (
     <form action="" className="booking-form" autoComplete="on">
       <input
@@ -234,6 +253,12 @@ function DetailsForm({ switchRoute, tabsStatus }) {
           <div className={tooltipClass}>
             <span>{tooltipText}</span>
           </div>
+          <div
+            className={verificationTooltipClass}
+            onClick={() => verificationHandler(countryCode, phoneNumber)}
+          >
+            <span>{verificationTooltipText}</span>
+          </div>
         </label>
       </div>
       <input
@@ -274,13 +299,14 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       email &&
       childName &&
       childAge > 4 &&
-      childAge < 16 ? (
+      childAge < 16 &&
+      verificationTooltipClass === "verification-tooltip verified" ? (
         <Link
           className="select-courses"
           onClick={handleSubmit}
-          // to={verified ? "/book-a-trial/courses-selection" : "#"}
+          // to="/courses-selection"
         >
-          {verified ? "Select courses" : "Verify number"}
+          Select courses
         </Link>
       ) : (
         <Link to="#" className="select-courses hidden">

@@ -58,19 +58,22 @@ function AuthSignUp() {
   let numberRegex = new RegExp(/^[0-9]*$/);
   let countryCodeRegex = new RegExp(/^\+[0-9]*$/);
   // ! Phone number validation // Replace with a logic to support all countries
-  const phoneNumberLengthValidation = (number) => {
-    switch (countryCode) {
-      case "+91":
-        return 10;
-      case "+1":
-        return 10;
-      case "+971":
-        return 7;
-      default:
-        break;
-    }
-  };
-
+const phoneNumberLengthValidation = (number) => {
+  switch (countryCode) {
+    case "+91":
+      return 10;
+    case "+1":
+      return 10;
+    case "+971":
+      return 7;
+    case "+974":
+      return 7;
+    case "+966":
+      return 9;
+    default:
+      return number.length;
+  }
+};
   // ! useeffect for phone number onchange
   useEffect(() => {
     if (phoneNumber[0] === "0") {
@@ -110,7 +113,7 @@ function AuthSignUp() {
         let userDetails = {
           fullName: data.user.name,
           id: data.user.id,
-          phoneNumber: phoneNumber,
+          phoneNumber: data.user.phone_no,
           email: data.user.email,
         };
 
@@ -145,7 +148,7 @@ function AuthSignUp() {
         {authOtpRequested ? (
           <>
             <h1 className="auth-modal__header" style={{ paddingTop: "3rem" }}>
-              Sign in to Spark Studio
+              Verify number
             </h1>
             <input
               className="auth-modal__input"

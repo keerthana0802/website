@@ -8,6 +8,7 @@ let childAge;
 function CoursesForm({ switchRoute, tabsStatus }) {
   const history = useHistory();
   const courseData = useSelector((state) => state.courses.allCourses);
+  const authToken = useSelector((state) => state.auth.authToken);
   const ageMap = [
     [5, 9],
     [6, 10],
@@ -92,12 +93,16 @@ function CoursesForm({ switchRoute, tabsStatus }) {
       };
     });
     axios
-      .patch(`${process.env.REACT_APP_API_URL}${window.localStorage.uuid}`, {
-        booking: {
-          courses: coursesArray,
-          courses_with_id: coursesSelected,
+      .patch(
+        `${process.env.REACT_APP_API_URL}${window.localStorage.uuid}`,
+        {
+          booking: {
+            courses: coursesArray,
+            courses_with_id: coursesSelected,
+          },
         },
-      })
+        { headers: { Authorization: authToken } }
+      )
       .then(function (response) {
         window.localStorage.setItem(
           "courseBookingCount",

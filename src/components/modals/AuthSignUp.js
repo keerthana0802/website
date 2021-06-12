@@ -58,8 +58,12 @@ function AuthSignUp() {
         return 10;
       case "+971":
         return 7;
+      case "+974":
+        return 7;
+      case "+966":
+        return 9;
       default:
-        break;
+        return number.length;
     }
   };
 

@@ -58,7 +58,7 @@ function AboutUsBanner() {
               clickable: true,
             }}
             className="about-us-banner__slider"
-            navigation={true}
+            // navigation={true}
           >
             <SwiperSlide>
               <BannerCard
