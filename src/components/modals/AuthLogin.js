@@ -117,7 +117,11 @@ function AuthSignUp() {
         let profiles = data.user.profiles;
         dispatch(saveAuthToken(authToken));
         dispatch(loginWithOtp({ userDetails, profiles }));
-        dispatch(openLogin());
+        setTimeout(() => {
+          dispatch(openLogin());
+        }, 600);
+        opacityRef.current.reverse();
+        tweenRef.current.reverse();
       })
       .catch((e) => console.log(e));
   };

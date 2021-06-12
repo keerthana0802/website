@@ -1,0 +1,77 @@
+{
+    "identifier": "CO111ST",
+    "display_name": "Art of Storytelling",
+    "category_name": "Communication",
+    "name": "Art of Storytelling",
+    "course_one_liner": null,
+    "description": null,
+    "num_classes": null,
+    "session_duration_minutes": null,
+    "tags": [],
+    "vertical_theme_color_light": null,
+    "vertical_theme_color_dark": null,
+    "experts_say_video_url": null,
+    "image_url": null,
+    "is_live": true,
+    "min_age": 5,
+    "max_age": 9,
+    "level": 1,
+    "abbreviation": "ST",
+    "price": "1.0",
+    "priority": 4,
+    "number_of_home_activities": "",
+    "class_size": "",
+    "usp_of_course": "",
+    "full_description": "",
+    "pitch": "",
+    "short_pitch": "",
+    "social_proof": "",
+    "curriculum_liner": "",
+    "curriculum_outcomes": "comma separated or array",
+    "curriculum_sessions": [
+        {
+            "session_number": "",
+            "title": "",
+            "details": ""
+        },
+        {
+            "session_number": "",
+            "title": "",
+            "details": ""
+        }
+    ],
+    "showcase_section_header": "",
+    "showcase_section_content": "",
+    "showcase_data": [
+        {
+            "image_url": "",
+            "title": "",
+            "one_liner": ""
+        },
+        {
+            "image_url": "",
+            "title": "",
+            "one_liner": ""
+        }
+    ],
+    "testimonial_data": [
+        {
+            "content": "",
+            "source": ""
+        },
+        {
+            "content": "",
+            "source": ""
+        }
+    ],
+    "expert_details": {
+        "image_url": "",
+        "expert_position": "",
+        "expert_description": "",
+        "expert_usp_pointers": [
+            "",
+            "",
+            ""
+        ]
+    }
+}
