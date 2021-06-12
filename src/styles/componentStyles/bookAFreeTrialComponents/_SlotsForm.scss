@@ -1,0 +1,271 @@
+.slots {
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .timing-disclaimer {
+      font-size: 1.3rem;
+      margin: 1.5rem 0;
+    }
+  }
+  &__days {
+    display: flex;
+    align-items: center;
+
+    .slots-day-card {
+      margin-right: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @media screen and (max-width: 850px) {
+      flex-wrap: wrap;
+    }
+  }
+  &-day-card {
+    width: 96px;
+    height: 70px;
+    box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+
+    -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+    -webkit-appearance: none;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    .date,
+    .month,
+    .day {
+      color: #999;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+    &.checked {
+      border: 1px solid #f2b65a;
+      .date,
+      .month,
+      .day {
+        color: #000;
+      }
+    }
+    position: relative;
+    .radio {
+      position: absolute;
+      height: 7rem;
+      width: 9.6rem;
+      cursor: pointer;
+      // visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__times {
+    .slots-time-card + .slots-time-card {
+      margin-top: 1.5rem;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  &-time-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    width: 250px;
+    height: 56px;
+    box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+    -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+    -webkit-appearance: none;
+    border-radius: 8px;
+    cursor: pointer;
+    .time {
+      color: #999;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+    &.checked {
+      border: 1px solid #f2b65a;
+      .time {
+        color: #000;
+      }
+    }
+    .slot-time-tooltip {
+      display: none;
+    }
+    &.disabled {
+      background-color: #f0f0f0;
+      cursor: not-allowed;
+      .time {
+        color: #999;
+      }
+      .slot-time-tooltip {
+        display: none;
+      }
+      &:hover {
+        position: relative;
+        .slot-time-tooltip {
+          background-color: #fff;
+          position: absolute;
+          left: calc(100% + 1rem);
+          display: block;
+          width: 16rem;
+          padding: 0.5rem 0;
+          text-align: center;
+          border: 1px solid #f2b65a;
+          border-radius: 5rem;
+          box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+          -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+          -webkit-appearance: none;
+          font-size: 1.3rem;
+          font-weight: 500;
+          @media screen and (max-width: 850px) {
+            left: calc(100% - 16rem);
+            top: -5rem;
+          }
+        }
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    @media screen and (max-width: 850px) {
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+    }
+    .request-trial {
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 400;
+      width: 140px;
+      height: 46px;
+      background: linear-gradient(90deg, #e47762 0%, #f2b65a 98.07%);
+
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      -webkit-appearance: none;
+      border-radius: 100px;
+      font-family: inherit;
+      cursor: pointer;
+      position: relative;
+      .slots-selected-notification {
+        position: absolute;
+        top: -0.5rem;
+        right: 0rem;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 5rem;
+        background-color: #e47762;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+        -webkit-appearance: none;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .slots-tooltip {
+          position: absolute;
+          bottom: 2rem;
+          left: 0;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+          -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+          -webkit-appearance: none;
+          width: 24rem;
+          padding: 1rem 1.25rem;
+          p {
+            color: #444;
+            font-weight: 600;
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+          }
+          p.single-slot {
+            margin: 0.5rem 0;
+            padding: 0.5rem 0;
+            border: 1.5px solid #f2b65a;
+            border-radius: 5rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+          }
+          opacity: 0;
+          display: none;
+        }
+        span {
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        span:hover {
+          & + .slots-tooltip {
+            opacity: 1;
+            transition: all 0.25s linear;
+            display: block;
+          }
+        }
+      }
+      &.disabled {
+        background: linear-gradient(90deg, #909090 0%, #d7d7d7 98.07%);
+        position: relative;
+        cursor: not-allowed;
+        .disabled-tooltip {
+          display: none;
+        }
+        &:hover {
+          .disabled-tooltip {
+            display: block;
+            position: absolute;
+            top: -7rem;
+            left: -100%;
+            height: 7rem;
+            width: 20rem;
+            background-color: #fff;
+            box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+            -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+            -webkit-appearance: none;
+            border-radius: 8px;
+            border: 2px solid #f2b65a;
+            font-size: 1.5rem;
+            padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+            text-align: center;
+            color: #333;
+            cursor: default;
+            span {
+              color: #e47762;
+              font-weight: 500;
+              cursor: pointer;
+            }
+            @media screen and (max-width: 850px) {
+              left: 50%;
+              transform: translate(-50%, -10px);
+            }
+          }
+        }
+      }
+    }
+    .custom-slot-request {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      margin-left: 2rem;
+      width: max-content;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #666;
+      border-bottom: 2px solid #f2b65a;
+      cursor: pointer;
+      @media screen and (max-width: 850px) {
+        margin-left: 0;
+        margin-top: 3rem;
+      }
+    }
+  }
+}

@@ -18,6 +18,8 @@ function AuthSignUp() {
   // ! Redux
   const loginModalOpen = useSelector((state) => state.auth.loginModalOpen);
   const authOtpRequested = useSelector((state) => state.auth.authOtpRequested);
+  const tempCountryCode = useSelector((state) => state.auth.tempCountryCode);
+  const tempPhoneNumber = useSelector((state) => state.auth.tempPhoneNumber);
   const dispatch = useDispatch();
   // ! Gsap
   const modalRef = useRef(null);
@@ -46,8 +48,8 @@ function AuthSignUp() {
   }, []);
 
   // ! local states for the input fields
-  const [countryCode, setCountryCode] = useState("+91");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [countryCode, setCountryCode] = useState(tempCountryCode || "+91");
+  const [phoneNumber, setPhoneNumber] = useState(tempPhoneNumber);
   const [OTP, setOTP] = useState("");
   // ! State to manage the phone validation tooltip
   const [tooltipClass, setTooltipClass] = useState("phone-validation-tooltip");
@@ -96,7 +98,6 @@ function AuthSignUp() {
   }, [phoneNumber]);
   // ! checking OTP
   const checkOtpHandle = () => {
-    console.log(`${countryCode}-${phoneNumber}`);
     axios
       .post(`${process.env.REACT_APP_AUTH_API}/login_by_otp`, {
         phone_no: `${countryCode}-${phoneNumber}`,
@@ -121,7 +122,7 @@ function AuthSignUp() {
       .catch((e) => console.log(e));
   };
   // ! Resend otp timer
-  const [ticker, setTicker] = useState(5);
+  const [ticker, setTicker] = useState(15);
   const timer = (stop = false) => {
     let resendTimeout = setInterval(() => {
       if (ticker != 1) {

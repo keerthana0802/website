@@ -54,6 +54,13 @@
 @import "./componentStyles/AboutUsPageComponents/TeamDescriptionSection";
 @import "./componentStyles/AboutUsPageComponents/BeliefSection";
 @import "./componentStyles/AboutUsPageComponents/MentorsSection";
+// ! book A Free Trial page Components
+@import "./componentStyles/bookAFreeTrialComponents/SocialAlert";
+@import "./componentStyles/bookAFreeTrialComponents/SlotsForm";
+@import "./componentStyles/bookAFreeTrialComponents/CoursesForm";
+@import "./componentStyles/bookAFreeTrialComponents/DetailsForm";
+@import "./componentStyles/bookAFreeTrialComponents/Modal";
+
 // ! *******************************************************8
 // ! Containers
 @import "./containerStyles/NavFooterLayout";
@@ -66,3 +73,4 @@
 @import "./pagesStyles/Feedback";
 @import "./pagesStyles/Faq";
 @import "./pagesStyles/AboutUs";
+@import "./pagesStyles/BookTrial";

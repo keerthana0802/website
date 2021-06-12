@@ -17,6 +17,7 @@ import {
   openSignup,
   openLogin,
   openGuest,
+  tempPhoneNumber,
 } from "./authActions";
 import { getCourses } from "./coursesActions";
 export {
@@ -38,6 +39,7 @@ export {
   openSignup,
   openLogin,
   openGuest,
+  tempPhoneNumber,
   // ! courses actions
   getCourses,
 };

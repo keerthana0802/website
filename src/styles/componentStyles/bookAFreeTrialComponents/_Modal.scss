@@ -1,0 +1,175 @@
+.modal {
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 130vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    display: none;
+  }
+  width: 482px;
+  min-height: 604px;
+  background: #f2b65a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 0px 8px rgba(75, 0, 188, 0.08);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 0px 8px rgba(75, 0, 188, 0.08);
+  -webkit-appearance: none;
+  border-radius: 16px;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  display: none;
+  @media screen and (max-width: 850px) {
+    padding: 2rem 1.5rem;
+    margin: 0 1.5rem;
+    min-height: auto;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.7rem;
+    background: url("../../../assets/modalArtwork.svg") center center/contain
+      no-repeat;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+  }
+  &__top {
+    padding-left: 1.75rem;
+    &--header {
+      font-size: 2rem;
+      color: #fff;
+    }
+    &--content {
+      font-size: 1.6rem;
+      color: #fff;
+      padding: 0.5rem 0 1rem 0;
+    }
+    z-index: 7;
+  }
+  &__bottom {
+    z-index: 7;
+    width: 100%;
+    min-height: 460px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-appearance: none;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2.8rem;
+    padding-bottom: 1.8rem;
+    @media screen and (max-width: 850px) {
+      padding: 2rem 1.5rem;
+      min-height: auto;
+    }
+    &--name,
+    &--courses,
+    &--slots {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #999;
+      padding-top: 2rem;
+
+      span {
+        color: #000;
+        font-weight: 600;
+      }
+    }
+    &--name {
+      padding-top: 0;
+    }
+    &--courses {
+      &-list {
+        list-style: none;
+        padding-inline-start: 0;
+        font-size: 1.6rem;
+        color: #000;
+        font-weight: 600;
+        margin: 0;
+        padding-top: 0.5rem;
+        @media screen and (max-width: 850px) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    &--slots {
+    }
+    .selected-slot {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      margin: 0.7rem 0;
+      font-weight: 500;
+      img {
+        width: 1.8rem;
+        margin-right: 1rem;
+      }
+      @media screen and (max-width: 850px) {
+        font-size: 1.4rem;
+        img {
+          width: 1.5rem;
+        }
+      }
+    }
+    .custom-slot-liner {
+      margin-top: 1rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    .modal-btn-group {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+      @media screen and (max-width: 850px) {
+        margin-top: 1rem;
+      }
+      .modal-confirm {
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 400;
+        width: 140px;
+        height: 46px;
+        background: linear-gradient(90deg, #e47762 0%, #f2b65a 98.07%);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        -webkit-appearance: none;
+        border-radius: 100px;
+        font-family: inherit;
+        cursor: pointer;
+      }
+      .modal-edit {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin-top: 1.8rem;
+        width: max-content;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #666;
+        border-bottom: 2px solid #f2b65a;
+        cursor: pointer;
+        @media screen and (max-width: 850px) {
+          margin-bottom: -0.5rem;
+        }
+      }
+    }
+  }
+}

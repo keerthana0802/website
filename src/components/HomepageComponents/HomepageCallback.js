@@ -114,7 +114,7 @@ function HomepageCallback() {
           <PrimaryButton
             buttonText="Book a FREE trial"
             version="version-2"
-            linkTo="https://book-staging.sparkstudio.co/"
+            linkTo="/book-a-trial"
           />
         </div>
         {responsiveMode ? (

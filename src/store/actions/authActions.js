@@ -53,6 +53,12 @@ const openGuest = () => {
     type: "GUEST_MODAL_OPEN",
   };
 };
+const tempPhoneNumber = (data) => {
+  return {
+    type: "TEMP_PHONE_NUMBER",
+    payload: data,
+  };
+};
 export {
   sendOtp,
   loginWithOtp,
@@ -62,4 +68,5 @@ export {
   openSignup,
   openLogin,
   openGuest,
+  tempPhoneNumber,
 };

@@ -23,11 +23,17 @@ const Meeting = lazy(() => import("./pages/Meeting.js"));
 const Faq = lazy(() => import("./pages/Faq.js"));
 const SingleCourse = lazy(() => import("./pages/SingleCourse.js"));
 const AboutUs = lazy(() => import("./pages/AboutUs.js"));
+const BookTrial = lazy(() => import("./pages/BookTrial.js"));
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/book-a-trial">
+            <Suspense fallback={<div></div>}>
+              <BookTrial />
+            </Suspense>
+          </Route>
           <Route path="/about-us">
             <Suspense fallback={<div></div>}>
               <AboutUs />

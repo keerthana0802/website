@@ -1,0 +1,6 @@
+<svg id="info" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect id="Rectangle_7" data-name="Rectangle 7" width="256" height="256" fill="none"/>
+  <circle id="Ellipse_4" data-name="Ellipse 4" cx="96" cy="96" r="96" transform="translate(32 32)" fill="none" stroke="#f2b65a" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+  <path id="Path_2" data-name="Path 2" d="M120,120h8v56h8" fill="none" stroke="#f2b65a" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+  <circle id="Ellipse_5" data-name="Ellipse 5" cx="12" cy="12" r="12" transform="translate(116 72)" fill="#f2b65a"/>
+</svg>

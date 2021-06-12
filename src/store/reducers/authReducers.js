@@ -1,6 +1,7 @@
 const initState = {
   authPhoneNumber: "",
   authOtpRequested: false,
+  verified: false,
   authToken: "",
   profiles: [],
   userDetails: {},
@@ -8,6 +9,8 @@ const initState = {
   loginModalOpen: false,
   guestModalOpen: false,
   meetingDetails: null,
+  tempCountryCode: "",
+  tempPhoneNumber: "",
 };
 const authReducers = (state = initState, action) => {
   switch (action.type) {
@@ -18,6 +21,7 @@ const authReducers = (state = initState, action) => {
     case "LOGIN_WITH_OTP":
       return {
         ...state,
+        verified: true,
         authOtpRequested: false,
         profiles: action.payload.profiles,
         userDetails: action.payload.userDetails,
@@ -25,13 +29,25 @@ const authReducers = (state = initState, action) => {
     case "SAVE_AUTH_TOKEN":
       return { ...state, authToken: action.payload };
     case "SIGNUP_MODAL_OPEN":
-      return { ...state, signupModalOpen: !state.signupModalOpen };
+      return {
+        ...state,
+        signupModalOpen: !state.signupModalOpen,
+      };
     case "LOGIN_MODAL_OPEN":
-      return { ...state, loginModalOpen: !state.loginModalOpen };
+      return {
+        ...state,
+        loginModalOpen: !state.loginModalOpen,
+      };
     case "GUEST_MODAL_OPEN":
       return { ...state, guestModalOpen: !state.guestModalOpen };
     case "SET_MEETING_DETAILS":
       return { ...state, meetingDetails: action.payload };
+    case "TEMP_PHONE_NUMBER":
+      return {
+        ...state,
+        tempCountryCode: action.payload.countryCode,
+        tempPhoneNumber: action.payload.phoneNumber,
+      };
     default:
       return state;
   }

@@ -107,7 +107,7 @@ function NavFooterLayout({ children }) {
             <PrimaryButton
               buttonText="Book a FREE trial"
               version="version-1"
-              linkTo="https://book-staging.sparkstudio.co/"
+              linkTo="/book-a-trial"
             />
             <img
               src={hamburger}
@@ -158,7 +158,7 @@ function NavFooterLayout({ children }) {
                   <PrimaryButton
                     buttonText="Book a FREE trial"
                     version="version-1"
-                    linkTo="https://book-staging.sparkstudio.co/"
+                    linkTo="/book-a-trial"
                   />
                 </li>
               </div>
@@ -245,7 +245,7 @@ function NavFooterLayout({ children }) {
                 <PrimaryButton
                   buttonText="Book a FREE trial"
                   version="version-1"
-                  linkTo="https://book-staging.sparkstudio.co/"
+                  linkTo="/book-a-trial"
                 />
               </li>
               <li

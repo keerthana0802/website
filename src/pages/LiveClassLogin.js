@@ -123,7 +123,7 @@ function LiveClassLogin() {
               /> */}
             </>
           ) : null}
-          {/* <PrimaryButton
+          <PrimaryButton
             buttonText="Login"
             version="version-1"
             clickHandle={() => dispatch(openLogin())}
@@ -132,7 +132,7 @@ function LiveClassLogin() {
             buttonText="Sign up"
             version="version-1"
             clickHandle={() => dispatch(openSignup())}
-          /> */}
+          />
         </div>
       </div>
     </NavFooterLayout>

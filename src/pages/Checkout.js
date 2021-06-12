@@ -52,7 +52,7 @@ function Checkout() {
     });
   };
   useEffect(() => {
-    getOrderDetails();
+    // getOrderDetails();
   }, []);
   var rzp1 = new window.Razorpay(razorOptions);
   rzp1.on("payment.failed", function (response) {

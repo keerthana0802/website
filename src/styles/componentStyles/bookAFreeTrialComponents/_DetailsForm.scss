@@ -1,0 +1,162 @@
+.booking {
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__header {
+      color: #e47762;
+      font-size: 2.4rem;
+      background: -webkit-linear-gradient(left, #e47762, #f2b65a);
+      -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      // -webkit-appearance: none;
+      margin-top: 3rem;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      .ist-tooltip {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        img {
+          width: 2.4rem;
+          transform: translateY(0.2rem);
+        }
+        position: relative;
+        &__content {
+          -webkit-text-fill-color: #333;
+          position: absolute;
+          left: 3.5rem;
+          font-size: 1.3rem;
+          color: #333;
+          font-weight: 400;
+          width: 20rem;
+          background-color: #fff;
+          box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+          -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+          -webkit-appearance: none;
+          border-radius: 8px;
+          padding: 0.5rem 1rem;
+          display: none;
+          transition: all 0.25s linear;
+
+          @media screen and (max-width: 850px) {
+            left: -17rem;
+            top: 3rem;
+          }
+        }
+        img:hover {
+          & + .ist-tooltip__content {
+            transition: all 0.25s linear;
+            display: block;
+          }
+        }
+      }
+    }
+    &__sub-header {
+      font-size: 1.6rem;
+      margin-bottom: 4rem;
+    }
+    input {
+      height: 56px;
+      width: 312px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+      -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+      -webkit-appearance: none;
+      padding: 0 1rem;
+      margin: 1rem 0;
+    }
+    .whatsapp-notif {
+      display: flex;
+      align-items: center;
+      .whatsapp-icon {
+        width: 1.7rem;
+        margin-right: 0.8rem;
+        fill: limegreen;
+      }
+      input[type="checkbox"] {
+        height: 1.6rem;
+        width: 1.6rem;
+        margin: 0.5rem 1rem 0.5rem 0;
+      }
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      input {
+        &:first-child {
+          width: 119px;
+        }
+        &:last-child {
+          width: 170px;
+        }
+      }
+      // ! for validation tooltip
+      .phone-label {
+        position: relative;
+        margin-left: 2rem;
+        width: 100%;
+        input {
+          width: 170px;
+        }
+        .phone-validation-tooltip {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: -70%;
+          background-color: #fff;
+          padding: 0.5rem 2rem;
+          border-radius: 5rem;
+          border: 1px solid #e47762;
+          box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+          -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+          -webkit-appearance: none;
+          display: none;
+          span {
+            font-size: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          @media screen and (max-width: 850px) {
+            right: 0;
+            top: -25%;
+          }
+          &.visible {
+            display: block;
+          }
+        }
+      }
+    }
+    .select-courses {
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 400;
+      width: 160px;
+      height: 46px;
+      background: linear-gradient(90deg, #e47762 0%, #f2b65a 98.07%);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      -webkit-appearance: none;
+      border-radius: 100px;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.hidden {
+        visibility: hidden;
+      }
+    }
+  }
+}
