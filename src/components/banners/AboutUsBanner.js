@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
-import jyothika from "../../assets/jyothika.svg";
-import kaustubh from "../../assets/kaustubh.svg";
-import anushree from "../../assets/anushree.svg";
-import namita from "../../assets/namita.svg";
+import jyothika from "../../assets/jyothika.webp";
+import kaustubh from "../../assets/kaustubh.webp";
+import anushree from "../../assets/anushree.webp";
+import namita from "../../assets/namita.webp";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";

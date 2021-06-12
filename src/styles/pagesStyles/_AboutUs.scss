@@ -14,8 +14,8 @@
     &--companies {
       display: flex;
       align-items: center;
-      justify-content: center;
-      max-width: 1000px;
+      justify-content: space-between;
+      max-width: 990px;
       margin: 0 auto;
       img {
         @include bpm-md {

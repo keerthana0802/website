@@ -152,7 +152,7 @@ function NavFooterLayout({ children }) {
                   <Link to="/all-courses">Explore Courses</Link>
                 </li>
                 <li className="spark-layout-navbar__right--list-item">
-                  About Us
+                  <Link to="/about-us">About Us</Link>
                 </li>
                 <li className="spark-layout-navbar__right--list-item">
                   <PrimaryButton
@@ -239,7 +239,7 @@ function NavFooterLayout({ children }) {
                 <Link to="/all-courses">Explore Courses</Link>
               </li>
               <li className="spark-layout-navbar__right--list-item">
-                About Us
+                <Link to="/about-us">About Us</Link>
               </li>
               <li className="spark-layout-navbar__right--list-item">
                 <PrimaryButton
