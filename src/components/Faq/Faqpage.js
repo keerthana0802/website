@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Question from "./Question";
 import SecondaryButton from "../buttons/SecondaryButton";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { searchExecuteAttributes } from "../../helpers/MoengageAttributeCreators";
 
 function Faqpage() {
   const [responsiveMode, setResponsiveMode] = useState(false);
@@ -42,14 +44,17 @@ function Faqpage() {
 
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState(faqs);
-
+  useEffect(() => {
+    if (searchText === "") {
+      setData(faqs);
+    }
+  }, [searchText]);
   // exclude column list from filter
   const excludeColumns = ["id", "color"];
 
   // handle change event of search input
   const handleChange = (value) => {
     setSearchText(value);
-    filterData(value);
   };
 
   // filter records by search text
@@ -84,7 +89,23 @@ function Faqpage() {
                   onChange={(e) => handleChange(e.target.value)}
                 />
               </label>
-              <SecondaryButton buttonText="Search" version="version-3" />
+              <SecondaryButton
+                buttonText="Search"
+                version="version-3"
+                clickHandle={() => {
+                  moengageEvent(
+                    "Search_Execute",
+                    searchExecuteAttributes(
+                      searchText,
+                      data.length,
+                      data.length > 0 ? "success" : "failure",
+                      5,
+                      "faq"
+                    )
+                  );
+                  filterData(searchText);
+                }}
+              />
             </div>
 
             <h2 className="faq__title">Trial Class</h2>

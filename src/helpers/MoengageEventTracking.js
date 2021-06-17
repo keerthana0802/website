@@ -76,7 +76,7 @@ const initialAttributes = {
   zipcode: zipcode(),
 };
 const moengageEvent = async (eventName, eventAttributes = {}) => {
-  console.log(userAgent);
+  // console.log(userAgent);
   if (window.localStorage.dev_id) {
     initialAttributes.device_id = window.localStorage.dev_id;
     initialAttributes.device_identifier = window.localStorage.dev_id;
@@ -85,7 +85,7 @@ const moengageEvent = async (eventName, eventAttributes = {}) => {
     initialAttributes.device_id = dev_id;
     initialAttributes.device_identifier = dev_id;
   }
-  console.log(eventName, { ...initialAttributes, ...eventAttributes });
+  // console.log(eventName, { ...initialAttributes, ...eventAttributes });
 
   if (window.Moengage)
     window.Moengage.track_event(eventName, {

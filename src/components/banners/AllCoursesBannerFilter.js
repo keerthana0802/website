@@ -3,6 +3,7 @@ import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 import {
   ageFilterAttributes,
   categoryFilterAttributes,
+  searchExecuteAttributes,
 } from "../../helpers/MoengageAttributeCreators";
 import SecondaryButton from "../buttons/SecondaryButton";
 import yellowCourse from "../../assets/yellowCourse.jpeg";
@@ -117,6 +118,16 @@ function AllCoursesBannerFilter({ courseData }) {
     let filteredCourses = courseData.filter((course) => {
       return course.courseName.toLowerCase().includes(searchTerm.toLowerCase());
     });
+    moengageEvent(
+      "Search_Execute",
+      searchExecuteAttributes(
+        searchTerm,
+        filteredCourses.length,
+        filteredCourses.length > 0 ? "success" : "failure",
+        1,
+        "course"
+      )
+    );
     setToRender([...filteredCourses]);
     rowToRenderHandler(filteredCourses, true);
   };

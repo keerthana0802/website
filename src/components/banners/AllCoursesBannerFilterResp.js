@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
-import { ageFilterAttributes } from "../../helpers/MoengageAttributeCreators";
+import {
+  ageFilterAttributes,
+  searchExecuteAttributes,
+} from "../../helpers/MoengageAttributeCreators";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +15,7 @@ import yellowCourse from "../../assets/yellowCourse.jpeg";
 import blueCourse from "../../assets/blueCourse.jpeg";
 import purpleCourse from "../../assets/purpleCourse.jpeg";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
+import moengageEvent from "../../helpers/MoengageEventTracking";
 SwiperCore.use([Pagination, Navigation]);
 function AllCoursesBannerFilterResp({ courseData }) {
   // ! Filter application
@@ -60,6 +64,16 @@ function AllCoursesBannerFilterResp({ courseData }) {
     let filteredCourses = courseData.filter((course) => {
       return course.courseName.toLowerCase().includes(searchTerm.toLowerCase());
     });
+    moengageEvent(
+      "Search_Execute",
+      searchExecuteAttributes(
+        searchTerm,
+        filteredCourses.length,
+        filteredCourses.length > 0 ? "success" : "failure",
+        1,
+        "course"
+      )
+    );
     setAllCourses([...filteredCourses]);
   };
   return (

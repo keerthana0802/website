@@ -230,7 +230,7 @@ function AddressForm({ openPayment }) {
             )
               setTimeout(() => {
                 openPayment(ev);
-              }, 200);
+              }, 100);
           }}
         >
           {`Pay ${totalAmount()}`} <img src={arrow} alt="" />

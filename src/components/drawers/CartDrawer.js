@@ -5,14 +5,32 @@ import cross from "../../assets/cross.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { cartDrawerOpen, setPromoCode } from "../../store/actions/rootActions";
 import { useHistory } from "react-router-dom";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { checkoutAttributes } from "../../helpers/MoengageAttributeCreators";
 function CartDrawer({ selectedCourses }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const coursesData = useSelector((state) => state.courses.allCourses);
-  // const [promo, setPromo] = useState("null");
   const goToCheckout = () => {
+    let totalQty = selectedCourses.reduce((acc, course) => acc + course.qty, 0);
+
+    let cartTotal = selectedCourses.reduce((acc, course) => {
+      let found = coursesData.find((item) => item.courseId === course.courseId);
+      return acc + course.qty * found.price;
+    }, 0);
+    moengageEvent(
+      "Checkout",
+      checkoutAttributes(
+        totalQty,
+        "null",
+        window.location.pathname,
+        cartTotal,
+        8,
+        "",
+        0
+      )
+    );
     dispatch(cartDrawerOpen());
-    // dispatch(setPromoCode(promo));
     setTimeout(() => {
       history.push("/checkout");
     }, 200);
@@ -51,14 +69,6 @@ function CartDrawer({ selectedCourses }) {
                 );
             })
           : null}
-        {/* {selectedCourses.length > 0 ? (
-          <input
-            placeholder="Promo code"
-            type="text"
-            className="cart-drawer__promo"
-            onChange={(ev) => setPromo(ev.target.value)}
-          />
-        ) : null} */}
       </div>
       {selectedCourses.length > 0 ? (
         <div className="cart-drawer__bottom">

@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import AddressForm from "../components/CheckoutPageComponents/AddressForm";
 import CartPreview from "../components/CheckoutPageComponents/CartPreview";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import sparkLogoSquare from "../assets/sparkLogoSquare.jpeg";
 import { useSelector, useDispatch } from "react-redux";
-import { openLogin, paymentSuccessful } from "../store/actions/rootActions";
+import {
+  openLogin,
+  paymentSuccessful,
+} from "../store/actions/rootActions";
 import { Helmet } from "react-helmet";
 function Checkout() {
   const dispatch = useDispatch();
+  const uuidRef = useRef(null);
   const address = useSelector((state) => state.checkout.address);
   const authToken = useSelector((state) => state.auth.authToken);
   const userDetails = useSelector((state) => state.auth.userDetails);
@@ -16,20 +20,24 @@ function Checkout() {
   const allCourses = useSelector((state) => state.courses.allCourses);
   const promoCode = useSelector((state) => state.checkout.promoCode);
   // ! Managing the orderID
-  const [orderDetails, setOrderDetails] = useState("");
   const [razorOptions, setRazorOptions] = useState({
-    key: "rzp_test_QdrQy08GBk9ZFP",
+    key: process.env.REACT_APP_RAZOR_KEY,
     name: "Spark Studio",
     image: sparkLogoSquare,
-    handler: function (response) {
-      console.log("here", response);
+    handler: async function (response) {
+      // console.log("payment response", response);
       window.localStorage.setItem("payment_id", response.razorpay_payment_id);
       dispatch(paymentSuccessful());
+      await axios.post(
+        `${process.env.REACT_APP_RAZOR_API}/${uuidRef.current}/success`,
+        { payment_response: response },
+        { headers: { Authorization: authToken, "X-SSUID": userDetails.id } }
+      );
       window.location.href = "/payment-successful";
     },
 
     notes: {
-      address: "Razorpay Corporate Office",
+      address: "Spark Studio",
     },
     theme: {
       color: "#63C2AF",
@@ -40,12 +48,6 @@ function Checkout() {
   const getOrderDetails = async () => {
     const cartItems = await cart.map((item) => {
       return { course_id: item.courseId, quantity: item.qty };
-    });
-    console.log({
-      visitor_uuid: window.localStorage.visitor_uuid,
-      items: cartItems,
-      promo_code: promoCode,
-      address_attributes: address,
     });
     const resp = await axios.post(
       process.env.REACT_APP_RAZOR_API,
@@ -75,8 +77,7 @@ function Checkout() {
           .displayName
       } and ${cart.length - 1} others`;
     }
-    await setOrderDetails(resp.data.order);
-    // await setRazorOptions();
+    uuidRef.current = resp.data.order.uuid;
     rzp1 = new window.Razorpay({
       ...razorOptions,
       description: description,
@@ -90,8 +91,20 @@ function Checkout() {
       },
     });
     await rzp1.open();
-    rzp1.on("payment.failed", function (response) {
-      console.log("failure", response);
+    rzp1.on("payment.failed", async function (response) {
+      // console.log("failure", response);
+      await axios.post(
+        `${process.env.REACT_APP_RAZOR_API}/${resp.data.order.uuid}/failure`,
+        {
+          payment_response: {
+            razorpay_order_id: resp.data.order.razorpay_order_id,
+            errors: {
+              x: response,
+            },
+          },
+        },
+        { headers: { Authorization: authToken, "X-SSUID": userDetails.id } }
+      );
     });
   };
   useEffect(() => {

@@ -64,7 +64,7 @@ const addToCartAttributes = (courseCardId, courseCardName, coursePrice) => {
     a_b_variant: "a",
   };
 };
-// ! Moengage click to homepage event attributes (1001018)
+// ! Moengage click to homepage event attributes (1001002)
 const clickToHomepageAttributes = () => {
   return {
     event_id: "1001002",
@@ -86,7 +86,7 @@ const clickToHomepageAttributes = () => {
     a_b_variant: "a",
   };
 };
-// ! Moengage click to homepage event attributes (1001018)
+// ! Moengage click to homepage event attributes (1001003)
 const mainMenuClickAttributes = (
   itemID,
   itemTitle,
@@ -115,7 +115,7 @@ const mainMenuClickAttributes = (
     a_b_variant: "a",
   };
 };
-// ! Moengage category filter event attributes (1001018)
+// ! Moengage category filter event attributes (1001031)
 const categoryFilterAttributes = (categoryId, categoryTitle) => {
   return {
     event_id: "1001031",
@@ -137,6 +137,64 @@ const categoryFilterAttributes = (categoryId, categoryTitle) => {
     a_b_variant: "a",
   };
 };
+// ! Moengage search execution event attributes (1001012)
+const searchExecuteAttributes = (
+  searchTerm,
+  returnedItemCount,
+  result,
+  leadScore,
+  searchType
+) => {
+  return {
+    event_id: "1001012",
+    event_type: "Platform",
+    funnel_stage: "Action",
+    event_category: "Search",
+    feature_set: "Search",
+    event_priority: "High",
+    kingdom: searchTerm,
+    phylum: returnedItemCount,
+    class: result,
+    order: "",
+    family: "1001012",
+    genus: leadScore,
+    species: "",
+    sub_c_1: searchType,
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage checkout event attributes (1001038)
+const checkoutAttributes = (
+  totalQuantity,
+  cartImageStyle,
+  locationOfTrigger,
+  cartTotal,
+  leadScore,
+  promoCode,
+  discountVisible
+) => {
+  return {
+    event_id: "1001038",
+    event_type: "Click",
+    funnel_stage: "Action",
+    event_category: "Cart",
+    feature_set: "Checkout",
+    event_priority: "High",
+    kingdom: totalQuantity,
+    phylum: cartImageStyle,
+    class: locationOfTrigger,
+    order: cartTotal,
+    family: "1001038",
+    genus: leadScore,
+    species: promoCode,
+    sub_c_1: discountVisible,
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
 export {
   pageVisitAttributes,
   ageFilterAttributes,
@@ -144,4 +202,6 @@ export {
   clickToHomepageAttributes,
   mainMenuClickAttributes,
   categoryFilterAttributes,
+  searchExecuteAttributes,
+  checkoutAttributes,
 };
