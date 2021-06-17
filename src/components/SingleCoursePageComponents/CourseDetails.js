@@ -76,7 +76,7 @@ function CourseDetails({ courseName, courseType }) {
     },
   };
   return (
-    <div className="single-course-details__wrapper">
+    <div className="single-course-details__wrapper" id="single-course-details">
       <div className="single-course-details">
         {courseType === "multilevel" ? (
           <Swiper

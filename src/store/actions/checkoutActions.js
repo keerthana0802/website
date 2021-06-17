@@ -44,6 +44,10 @@ const setPromoCode = (data) => {
     payload: data,
   };
 };
+
+const setAddress = (data) => {
+  return { type: "SET_ADDRESS", payload: data };
+};
 export {
   cartDrawerOpen,
   cartTooltipOpen,
@@ -53,4 +57,5 @@ export {
   removeQtyFromCart,
   paymentSuccessful,
   setPromoCode,
+  setAddress,
 };

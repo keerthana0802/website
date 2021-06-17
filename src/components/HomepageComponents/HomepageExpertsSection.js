@@ -48,7 +48,7 @@ function HomepageExpertsSection() {
             ease: "ease-in",
           },
         })
-        .set(squareRef.current, { scale: 3.5, ease: "ease-out" })
+        .set(squareRef.current, { scale: 3, ease: "ease-out" })
         .to(squareRef.current, { scale: 1, ease: "ease-out" }, 0.001);
     }
   }, []);

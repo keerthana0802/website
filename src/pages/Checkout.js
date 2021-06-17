@@ -4,17 +4,22 @@ import AddressForm from "../components/CheckoutPageComponents/AddressForm";
 import CartPreview from "../components/CheckoutPageComponents/CartPreview";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import sparkLogoSquare from "../assets/sparkLogoSquare.jpeg";
-import { useDispatch } from "react-redux";
-import { paymentSuccessful } from "../store/actions/rootActions";
+import { useSelector, useDispatch } from "react-redux";
+import { openLogin, paymentSuccessful } from "../store/actions/rootActions";
 import { Helmet } from "react-helmet";
 function Checkout() {
   const dispatch = useDispatch();
+  const address = useSelector((state) => state.checkout.address);
+  const authToken = useSelector((state) => state.auth.authToken);
+  const userDetails = useSelector((state) => state.auth.userDetails);
+  const cart = useSelector((state) => state.checkout.cart);
+  const allCourses = useSelector((state) => state.courses.allCourses);
+  const promoCode = useSelector((state) => state.checkout.promoCode);
   // ! Managing the orderID
   const [orderDetails, setOrderDetails] = useState("");
   const [razorOptions, setRazorOptions] = useState({
-    key: "rzp_live_NqPR6NhpUVm5Vr",
+    key: "rzp_test_QdrQy08GBk9ZFP",
     name: "Spark Studio",
-    description: "Test Transaction",
     image: sparkLogoSquare,
     handler: function (response) {
       console.log("here", response);
@@ -22,11 +27,7 @@ function Checkout() {
       dispatch(paymentSuccessful());
       window.location.href = "/payment-successful";
     },
-    prefill: {
-      name: "Manas Tripathi",
-      email: "manas@sparkstudio.co",
-      contact: "7977984255",
-    },
+
     notes: {
       address: "Razorpay Corporate Office",
     },
@@ -35,32 +36,73 @@ function Checkout() {
       hide_topbar: true,
     },
   });
+  var rzp1;
   const getOrderDetails = async () => {
-    const resp = await axios.post(process.env.REACT_APP_RAZOR_API, {
-      order: {
-        visitor_uuid: window.localStorage.visitor_uuid,
-        course_ids: ["CO212PS"],
-      },
+    const cartItems = await cart.map((item) => {
+      return { course_id: item.courseId, quantity: item.qty };
     });
+    console.log({
+      visitor_uuid: window.localStorage.visitor_uuid,
+      items: cartItems,
+      promo_code: promoCode,
+      address_attributes: address,
+    });
+    const resp = await axios.post(
+      process.env.REACT_APP_RAZOR_API,
+      {
+        order: {
+          visitor_uuid: window.localStorage.visitor_uuid,
+          items: cartItems,
+          promo_code: promoCode,
+          address_attributes: address,
+        },
+      },
+      {
+        headers: {
+          Authorization: authToken,
+          "X-SSUID": userDetails.id,
+        },
+      }
+    );
+    let description;
+    if (cart.length === 1) {
+      description = allCourses.find(
+        (item) => cart[0].courseId === item.courseId
+      ).displayName;
+    } else {
+      description = `${
+        allCourses.find((item) => cart[0].courseId === item.courseId)
+          .displayName
+      } and ${cart.length - 1} others`;
+    }
     await setOrderDetails(resp.data.order);
-    console.log(resp.data.order);
-    await setRazorOptions({
+    // await setRazorOptions();
+    rzp1 = new window.Razorpay({
       ...razorOptions,
+      description: description,
       amount: resp.data.order.amount,
       order_id: resp.data.order.razorpay_order_id,
       currency: resp.data.order.currency,
+      prefill: {
+        name: address.full_name,
+        email: address.email,
+        contact: userDetails?.phoneNumber?.split("-").join("") || "",
+      },
+    });
+    await rzp1.open();
+    rzp1.on("payment.failed", function (response) {
+      console.log("failure", response);
     });
   };
   useEffect(() => {
-    // getOrderDetails();
+    if (authToken.length === 0 || userDetails.id === undefined) {
+      dispatch(openLogin());
+    }
   }, []);
-  var rzp1 = new window.Razorpay(razorOptions);
-  rzp1.on("payment.failed", function (response) {
-    console.log("failure", response);
-  });
-  const openPayment = (ev) => {
+
+  const openPayment = async (ev) => {
     ev.preventDefault();
-    rzp1.open();
+    await getOrderDetails();
   };
   return (
     <NavFooterLayout>

@@ -9,11 +9,18 @@ import { Link } from "react-router-dom";
 import uuid from "react-uuid";
 import moengageEvent from "../helpers/MoengageEventTracking";
 import {
+  pageVisitAttributes,
+  clickToHomepageAttributes,
+  mainMenuClickAttributes,
+} from "../helpers/MoengageAttributeCreators";
+import {
   cartDrawerOpen,
   cartTooltipClose,
   openLogin,
   openSignup,
+  logoutUser,
   getCourses,
+  changeNumber,
 } from "../store/actions/rootActions";
 import { useSelector, useDispatch } from "react-redux";
 import CartDrawer from "../components/drawers/CartDrawer";
@@ -29,6 +36,8 @@ function NavFooterLayout({ children }) {
   const cartTooltipData = useSelector(
     (state) => state.checkout.cartTooltipData
   );
+  const authToken = useSelector((state) => state.auth.authToken);
+  const authOtpRequested = useSelector((state) => state.auth.authOtpRequested);
   const dispatch = useDispatch();
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
@@ -64,6 +73,9 @@ function NavFooterLayout({ children }) {
         .then((res) => dispatch(getCourses(res.data.courses)))
         .catch((e) => console.log(e));
     }
+    if (authOtpRequested && authToken.length === 0) dispatch(changeNumber());
+    // ! Moengage event firing (add kingdom and genus)
+    moengageEvent("Page_View", pageVisitAttributes("", ""));
   }, []);
   const containerLayout = useRef(null);
 
@@ -99,7 +111,12 @@ function NavFooterLayout({ children }) {
       {responsiveMode ? (
         <nav className={menuDrawerClass}>
           <div className="spark-layout-navbar__left">
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() =>
+                moengageEvent("Click_To_Home_Page", clickToHomepageAttributes())
+              }
+            >
               <img src={logo} alt="Spark Studio" />
             </Link>
           </div>
@@ -108,6 +125,19 @@ function NavFooterLayout({ children }) {
               buttonText="Book a FREE trial"
               version="version-1"
               linkTo="/book-a-trial"
+              clickHandle={() =>
+                moengageEvent(
+                  "Main_Menu_Click",
+                  mainMenuClickAttributes(
+                    1,
+                    "Book a FREE trial",
+                    "/book-a-trial",
+                    3,
+                    4,
+                    3
+                  )
+                )
+              }
             />
             <img
               src={hamburger}
@@ -121,44 +151,105 @@ function NavFooterLayout({ children }) {
                   : setMenuDrawerClass("spark-layout-navbar hidden");
               }}
             />
-            <div
-              className="spark-layout-navbar__right--list-item cart-icon"
-              onClick={() => {
-                dispatch(cartDrawerOpen());
-              }}
-            >
-              <img src={cartIcon} alt="" />
-              {cart.length > 0 ? (
-                <div className="cart-bubble">
-                  {cart?.reduce((a, b) => a + b.qty, 0)}
-                </div>
-              ) : null}
-              {cartTooltip ? (
-                <div className={cartTooltipClass}>
-                  <img src={check} alt="" />
-                  <p>
-                    {cartTooltipData} <br />
-                    Added to cart
-                  </p>
-                </div>
-              ) : null}
-            </div>
+            {cart.length > 0 ? (
+              <div
+                className="spark-layout-navbar__right--list-item cart-icon"
+                onClick={() => {
+                  dispatch(cartDrawerOpen());
+                  moengageEvent(
+                    "Main_Menu_Click",
+                    mainMenuClickAttributes(0, "cart-icon", "", 3, 2, "")
+                  );
+                }}
+              >
+                <img src={cartIcon} alt="" />
+                {cart.length > 0 ? (
+                  <div className="cart-bubble">
+                    {cart?.reduce((a, b) => a + b.qty, 0)}
+                  </div>
+                ) : null}
+                {cartTooltip ? (
+                  <div className={cartTooltipClass}>
+                    <img src={check} alt="" />
+                    <p>
+                      {cartTooltipData} <br />
+                      Added to cart
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
           </div>
 
           <div className="spark-layout-navbar__right">
             <ul className="spark-layout-navbar__right--list">
               <div>
                 <li className="spark-layout-navbar__right--list-item">
-                  <Link to="/all-courses">Explore Courses</Link>
+                  <Link
+                    to="/all-courses"
+                    onClick={() =>
+                      moengageEvent(
+                        "Main_Menu_Click",
+                        mainMenuClickAttributes(
+                          2,
+                          "all-courses",
+                          "/all-courses",
+                          1,
+                          2,
+                          2
+                        )
+                      )
+                    }
+                  >
+                    Explore Courses
+                  </Link>
                 </li>
                 <li className="spark-layout-navbar__right--list-item">
-                  <Link to="/about-us">About Us</Link>
+                  <Link
+                    to="/about-us"
+                    onClick={() =>
+                      moengageEvent(
+                        "Main_Menu_Click",
+                        mainMenuClickAttributes(
+                          3,
+                          "about-us",
+                          "/about-us",
+                          1,
+                          0,
+                          5
+                        )
+                      )
+                    }
+                  >
+                    About Us
+                  </Link>
                 </li>
+                {authToken.length > 0 ? (
+                  <li
+                    className="spark-layout-navbar__right--list-item"
+                    onClick={() => dispatch(logoutUser())}
+                  >
+                    Logout
+                  </li>
+                ) : null}
                 <li className="spark-layout-navbar__right--list-item">
                   <PrimaryButton
                     buttonText="Book a FREE trial"
                     version="version-1"
                     linkTo="/book-a-trial"
+                    clickHandle={() =>
+                      moengageEvent(
+                        "Main_Menu_Click",
+                        mainMenuClickAttributes(
+                          1,
+                          "Book a FREE trial",
+                          "/book-a-trial",
+                          3,
+                          4,
+                          3
+                        )
+                      )
+                    }
                   />
                 </li>
               </div>
@@ -229,47 +320,113 @@ function NavFooterLayout({ children }) {
       ) : (
         <nav className={desktopNavbarClass}>
           <div className="spark-layout-navbar__left">
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() =>
+                moengageEvent("Click_To_Home_Page", clickToHomepageAttributes())
+              }
+            >
               <img src={logo} alt="Spark Studio" />
             </Link>
           </div>
           <div className="spark-layout-navbar__right">
             <ul className="spark-layout-navbar__right--list">
               <li className="spark-layout-navbar__right--list-item">
-                <Link to="/all-courses">Explore Courses</Link>
+                <Link
+                  to="/all-courses"
+                  onClick={() =>
+                    moengageEvent(
+                      "Main_Menu_Click",
+                      mainMenuClickAttributes(
+                        2,
+                        "all-courses",
+                        "/all-courses",
+                        1,
+                        2,
+                        2
+                      )
+                    )
+                  }
+                >
+                  Explore Courses
+                </Link>
               </li>
               <li className="spark-layout-navbar__right--list-item">
-                <Link to="/about-us">About Us</Link>
+                <Link
+                  to="/about-us"
+                  onClick={() =>
+                    moengageEvent(
+                      "Main_Menu_Click",
+                      mainMenuClickAttributes(
+                        3,
+                        "about-us",
+                        "/about-us",
+                        1,
+                        0,
+                        5
+                      )
+                    )
+                  }
+                >
+                  About Us
+                </Link>
               </li>
               <li className="spark-layout-navbar__right--list-item">
                 <PrimaryButton
                   buttonText="Book a FREE trial"
                   version="version-1"
                   linkTo="/book-a-trial"
+                  clickHandle={() =>
+                    moengageEvent(
+                      "Main_Menu_Click",
+                      mainMenuClickAttributes(
+                        1,
+                        "Book a FREE trial",
+                        "/book-a-trial",
+                        3,
+                        4,
+                        3
+                      )
+                    )
+                  }
                 />
-              </li>
-              <li
-                className="spark-layout-navbar__right--list-item cart-icon"
-                onClick={() => {
-                  dispatch(cartDrawerOpen());
-                }}
-              >
-                <img src={cartIcon} alt="" />
-                {cart.length > 0 ? (
-                  <div className="cart-bubble">
-                    {cart?.reduce((a, b) => a + b.qty, 0)}
-                  </div>
-                ) : null}
-                {cartTooltip ? (
-                  <div className={cartTooltipClass}>
-                    <img src={check} alt="" />
-                    <p>
-                      {cartTooltipData} <br />
-                      Added to cart
-                    </p>
-                  </div>
-                ) : null}
-              </li>
+              </li>{" "}
+              {authToken.length > 0 ? (
+                <li
+                  className="spark-layout-navbar__right--list-item"
+                  onClick={() => dispatch(logoutUser())}
+                >
+                  Logout
+                </li>
+              ) : null}
+              {cart.length > 0 ? (
+                <li
+                  className="spark-layout-navbar__right--list-item cart-icon"
+                  onClick={() => {
+                    dispatch(cartDrawerOpen());
+                    moengageEvent(
+                      "Main_Menu_Click",
+                      mainMenuClickAttributes(0, "cart-icon", "", 3, 2, "")
+                    );
+                  }}
+                >
+                  <img src={cartIcon} alt="" />
+                  {cart.length > 0 ? (
+                    <div className="cart-bubble">
+                      {cart?.reduce((a, b) => a + b.qty, 0)}
+                    </div>
+                  ) : null}
+                  {cartTooltip ? (
+                    <div className={cartTooltipClass}>
+                      <img src={check} alt="" />
+                      <p>
+                        {cartTooltipData} <br />
+                        Added to cart
+                      </p>
+                    </div>
+                  ) : null}
+                </li>
+              ) : null}
             </ul>
           </div>
           <div className={cartDrawerClass}>
@@ -306,7 +463,9 @@ function NavFooterLayout({ children }) {
                     ></path>
                   </svg>
                 </span>
-                <p>+91 63637 01578</p>
+                <p>
+                  <a href="tel:+916363701578">+91 63637 01578</a>
+                </p>
               </div>
               <a
                 className="contact__whatsapp"

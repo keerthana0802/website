@@ -29,7 +29,7 @@ function Meeting() {
           },
           logo: white,
           colors: {
-            primary: "#18a0fb",
+            primary: "#EFA431",
             secondary: "#3E4454",
             textPrimary: "#EEEEEE",
             videoBackground: "#1A1A1A",

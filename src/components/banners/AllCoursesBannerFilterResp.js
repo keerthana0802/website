@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
+import { ageFilterAttributes } from "../../helpers/MoengageAttributeCreators";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,29 +14,8 @@ import purpleCourse from "../../assets/purpleCourse.jpeg";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
 SwiperCore.use([Pagination, Navigation]);
 function AllCoursesBannerFilterResp({ courseData }) {
-  // ! Moengage event attribute objects
-  const ageFilterAttributes = (kingdom, filter) => {
-    return {
-      event_id: "1001024",
-      event_type: "Click",
-      funnel_stage: "Consideration",
-      event_category: "Browsing",
-      feature_set: "Base",
-      event_priority: "High",
-      kingdom: kingdom,
-      phylum: filter.join("-"),
-      class: "",
-      order: "Homepage",
-      family: "1001024",
-      genus: "2",
-      species: "",
-      sub_c_1: "",
-      sub_c_2: "",
-      app_version: "0.0.0",
-      a_b_variant: "a",
-    };
-  };
   // ! Filter application
+  const [allCourses, setAllCourses] = useState(courseData);
   const [filterRange, setFilterRange] = useState([5, 15]);
   const [currentCategory, setCurrentCategory] = useState("All Categories");
   const shouldRenderCard = (min, max, category) => {
@@ -74,6 +54,14 @@ function AllCoursesBannerFilterResp({ courseData }) {
         break;
     }
   };
+  // ! Search  functionality
+  const [searchTerm, setSearchTerm] = useState("");
+  const searchHandle = () => {
+    let filteredCourses = courseData.filter((course) => {
+      return course.courseName.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setAllCourses([...filteredCourses]);
+  };
   return (
     <div className="all-courses-banner-filter__wrapper">
       <div className="all-courses-banner-filter">
@@ -85,7 +73,8 @@ function AllCoursesBannerFilterResp({ courseData }) {
             <input
               type="text"
               name="searchbar"
-              id=""
+              value={searchTerm}
+              onChange={(ev) => setSearchTerm(ev.target.value)}
               placeholder="Course Name"
             />
           </label>
@@ -104,7 +93,11 @@ function AllCoursesBannerFilterResp({ courseData }) {
             <option value="Communication">Communication</option>
             <option value="Visual Arts">Visual Arts</option>
           </select>
-          <SecondaryButton buttonText="Search" version="version-3" />
+          <SecondaryButton
+            buttonText="Search"
+            version="version-3"
+            clickHandle={searchHandle}
+          />
         </div>
         <ul className="all-courses-banner-filter__age-filter">
           <li
@@ -165,7 +158,7 @@ function AllCoursesBannerFilterResp({ courseData }) {
         pagination={pagination}
         className="mySwiperresp"
       >
-        {courseData.map((course, index) => {
+        {allCourses.map((course, index) => {
           if (course.courseStatus === "ACTIVE")
             if (shouldRenderCard(course.minAge, course.maxAge, course.vertical))
               return (

@@ -13,6 +13,7 @@ import {
   openLogin,
   changeNumber,
   openSignup,
+  setMeetingDetails,
 } from "../../store/actions/rootActions";
 function AuthSignUp() {
   // ! Redux
@@ -20,12 +21,17 @@ function AuthSignUp() {
   const authOtpRequested = useSelector((state) => state.auth.authOtpRequested);
   const tempCountryCode = useSelector((state) => state.auth.tempCountryCode);
   const tempPhoneNumber = useSelector((state) => state.auth.tempPhoneNumber);
+  const authOtpRequestBody = useSelector(
+    (state) => state.auth.authOtpRequestBody
+  );
   const dispatch = useDispatch();
   // ! Gsap
   const modalRef = useRef(null);
   const modalWrapperRef = useRef(null);
   const tweenRef = useRef(null);
   const opacityRef = useRef(null);
+  // ! Resend otp timer
+  const [ticker, setTicker] = useState(15);
   useEffect(() => {
     modalRef.current.style.display = "flex";
     modalWrapperRef.current.style.display = "flex";
@@ -44,12 +50,21 @@ function AuthSignUp() {
       { autoAlpha: 0 },
       { autoAlpha: 1, duration: 0.6 }
     );
-    timer();
   }, []);
-
+  useEffect(() => {
+    if (ticker === 15) {
+      let count = 15;
+      let resendTimeout = setInterval(() => {
+        setTicker((ticker) => ticker - 1);
+        count--;
+        if (count < 1) clearInterval(resendTimeout);
+      }, 1000);
+    }
+  }, [ticker]);
   // ! local states for the input fields
   const [countryCode, setCountryCode] = useState(tempCountryCode || "+91");
-  const [phoneNumber, setPhoneNumber] = useState(tempPhoneNumber);
+  const [phoneNumber, setPhoneNumber] = useState(tempPhoneNumber || "");
+  const [email, setEmail] = useState("");
   const [OTP, setOTP] = useState("");
   // ! State to manage the phone validation tooltip
   const [tooltipClass, setTooltipClass] = useState("phone-validation-tooltip");
@@ -58,22 +73,22 @@ function AuthSignUp() {
   let numberRegex = new RegExp(/^[0-9]*$/);
   let countryCodeRegex = new RegExp(/^\+[0-9]*$/);
   // ! Phone number validation // Replace with a logic to support all countries
-const phoneNumberLengthValidation = (number) => {
-  switch (countryCode) {
-    case "+91":
-      return 10;
-    case "+1":
-      return 10;
-    case "+971":
-      return 7;
-    case "+974":
-      return 7;
-    case "+966":
-      return 9;
-    default:
-      return number.length;
-  }
-};
+  const phoneNumberLengthValidation = (number) => {
+    switch (countryCode) {
+      case "+91":
+        return 10;
+      case "+1":
+        return 10;
+      case "+971":
+        return 7;
+      case "+974":
+        return 7;
+      case "+966":
+        return 9;
+      default:
+        return number.length;
+    }
+  };
   // ! useeffect for phone number onchange
   useEffect(() => {
     if (phoneNumber[0] === "0") {
@@ -101,12 +116,20 @@ const phoneNumberLengthValidation = (number) => {
   }, [phoneNumber]);
   // ! checking OTP
   const checkOtpHandle = () => {
-    axios
-      .post(`${process.env.REACT_APP_AUTH_API}/login_by_otp`, {
-        phone_no: `${countryCode}-${phoneNumber}`,
+    let postBody = {};
+    if (authOtpRequestBody.phone_no) {
+      postBody = {
+        phone_no: authOtpRequestBody.phone_no,
         otp: OTP,
-      })
+      };
+    } else if (authOtpRequestBody.email) {
+      postBody = { email: authOtpRequestBody.email, otp: OTP };
+    }
+    axios
+      .post(`${process.env.REACT_APP_AUTH_API}/login_by_otp`, postBody)
       .then((response) => {
+        // if (response.status > 400) throw Error(response.json());
+        console.log(response.status);
         console.log("from ax", response.data);
         const data = response.data;
         let authToken = data.token;
@@ -126,29 +149,22 @@ const phoneNumberLengthValidation = (number) => {
         opacityRef.current.reverse();
         tweenRef.current.reverse();
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        if (e.response.data.error.code === 42201) {
+          alert(e.response.data.error.message);
+        } else {
+          console.log("here", e.response.data);
+        }
+      });
   };
-  // ! Resend otp timer
-  const [ticker, setTicker] = useState(15);
-  const timer = (stop = false) => {
-    let resendTimeout = setInterval(() => {
-      if (ticker != 1) {
-        setTicker((ticker) => {
-          if (ticker > 0) return ticker - 1;
-          return 0;
-        });
-      } else {
-        clearInterval(resendTimeout);
-      }
-    }, 1000);
-  };
+
   return (
     <div className="global-modal-wrapper" ref={modalWrapperRef}>
       <div className="auth-modal auth-login" ref={modalRef}>
         {authOtpRequested ? (
           <>
             <h1 className="auth-modal__header" style={{ paddingTop: "3rem" }}>
-              Verify number
+              {authOtpRequestBody.phone_no ? "Verify Number" : "Verify Email"}
             </h1>
             <input
               className="auth-modal__input"
@@ -168,6 +184,17 @@ const phoneNumberLengthValidation = (number) => {
                     ? "auth-modal__alternate-button"
                     : "auth-modal__alternate-button inactive"
                 }
+                onClick={() => {
+                  if (countryCode === "+91") {
+                    dispatch(
+                      sendOtp({ phone_no: `${countryCode}-${phoneNumber}` })
+                    );
+                    setTicker(15);
+                  } else {
+                    dispatch(sendOtp({ email: email }));
+                    setTicker(15);
+                  }
+                }}
               >
                 Resend {ticker === 0 ? null : <span>{ticker}</span>}
               </button>
@@ -176,88 +203,102 @@ const phoneNumberLengthValidation = (number) => {
               className="auth-modal__change-number auth-modal__alternate-button"
               onClick={() => dispatch(changeNumber())}
             >
-              <img src={arrow} alt="" /> Change number
+              <img src={arrow} alt="" />{" "}
+              {authOtpRequestBody.phone_no ? "Change Number" : "Change Email"}
             </button>
           </>
         ) : (
           <>
             <h1 className="auth-modal__header">Sign in to Spark Studio</h1>
             <form className="contact">
-              <input
-                type="text"
-                placeholder="+91"
-                className="auth-modal__input"
-                value={countryCode}
-                onChange={(ev) => {
-                  if (countryCodeRegex.test(ev.target.value))
-                    setCountryCode(ev.target.value);
-                }}
-              />
-              <input
-                type="text"
-                placeholder="Phone Number"
-                className="auth-modal__input"
-                value={phoneNumber}
-                onChange={(ev) => {
-                  if (numberRegex.test(ev.target.value)) {
-                    if (ev.target.value === "0" && phoneNumber.length === 0) {
-                      setPhoneNumber((phoneNumber) => {
-                        let numberArray = phoneNumber.split("");
-                        numberArray.shift();
-                        return numberArray.join("");
-                      });
-                    } else {
+              <div className="phone-number">
+                <input
+                  type="text"
+                  placeholder="+91"
+                  className="auth-modal__input"
+                  value={countryCode}
+                  onChange={(ev) => {
+                    if (countryCodeRegex.test(ev.target.value))
+                      setCountryCode(ev.target.value);
+                  }}
+                />
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  className="auth-modal__input"
+                  value={phoneNumber}
+                  onChange={(ev) => {
+                    if (numberRegex.test(ev.target.value)) {
+                      if (ev.target.value === "0" && phoneNumber.length === 0) {
+                        setPhoneNumber((phoneNumber) => {
+                          let numberArray = phoneNumber.split("");
+                          numberArray.shift();
+                          return numberArray.join("");
+                        });
+                      } else {
+                        setPhoneNumber(ev.target.value);
+                      }
+                    }
+                  }}
+                  onKeyPress={(ev) => {
+                    if (ev.code === "Backspace") {
+                      console.log("here");
                       setPhoneNumber(ev.target.value);
                     }
-                  }
-                }}
-                onKeyPress={(ev) => {
-                  if (ev.code === "Backspace") {
-                    console.log("here");
-                    setPhoneNumber(ev.target.value);
-                  }
-                  if (ev.code === "Enter") {
+                    if (ev.code === "Enter") {
+                      if (
+                        phoneNumber.length ===
+                        phoneNumberLengthValidation(phoneNumber)
+                      ) {
+                        //   handleSubmit();
+                      }
+                    }
+                  }}
+                  onFocus={() => setTooltipClass("phone-validation-tooltip")}
+                  onBlur={(ev) => {
                     if (
-                      phoneNumber.length ===
+                      phoneNumber.length !==
                       phoneNumberLengthValidation(phoneNumber)
                     ) {
-                      //   handleSubmit();
-                    }
-                  }
-                }}
-                onFocus={() => setTooltipClass("phone-validation-tooltip")}
-                onBlur={(ev) => {
-                  if (
-                    phoneNumber.length !==
-                    phoneNumberLengthValidation(phoneNumber)
-                  ) {
-                    setTooltipClass("phone-validation-tooltip visible");
-                    setTooltipText(
-                      <p>
-                        Please enter
-                        <br />
-                        {phoneNumberLengthValidation(countryCode) || 10} digits
-                      </p>
-                    );
-                  } else if (phoneNumber[0] === "0") {
-                    setTooltipClass(
-                      (tooltipClass) => "phone-validation-tooltip visible"
-                    );
-                    setTooltipText((tooltipText) => {
-                      return (
-                        <>
-                          First digit
+                      setTooltipClass("phone-validation-tooltip visible");
+                      setTooltipText(
+                        <p>
+                          Please enter
                           <br />
-                          cannot be 0
-                        </>
+                          {phoneNumberLengthValidation(countryCode) || 10}{" "}
+                          digits
+                        </p>
                       );
-                    });
-                  } else {
-                    setTooltipClass("phone-validation-tooltip");
-                  }
-                }}
-                required
-              />
+                    } else if (phoneNumber[0] === "0") {
+                      setTooltipClass(
+                        (tooltipClass) => "phone-validation-tooltip visible"
+                      );
+                      setTooltipText((tooltipText) => {
+                        return (
+                          <>
+                            First digit
+                            <br />
+                            cannot be 0
+                          </>
+                        );
+                      });
+                    } else {
+                      setTooltipClass("phone-validation-tooltip");
+                    }
+                  }}
+                  required
+                />
+              </div>
+              {countryCode !== "+91" ? (
+                <input
+                  type="text"
+                  className="auth-modal__input"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(ev) => setEmail(ev.target.value)}
+                />
+              ) : null}
+
               <div className={tooltipClass}>
                 <span>
                   Please enter
@@ -270,11 +311,13 @@ const phoneNumberLengthValidation = (number) => {
               buttonText="Send OTP"
               version="version-1"
               clickHandle={() => {
-                window.localStorage.setItem(
-                  "phone_no",
-                  `${countryCode}-${phoneNumber}`
-                );
-                dispatch(sendOtp(`${countryCode}-${phoneNumber}`));
+                if (countryCode === "+91") {
+                  dispatch(
+                    sendOtp({ phone_no: `${countryCode}-${phoneNumber}` })
+                  );
+                } else {
+                  dispatch(sendOtp({ email: email }));
+                }
               }}
             />
           </>

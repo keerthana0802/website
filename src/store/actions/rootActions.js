@@ -7,6 +7,7 @@ import {
   removeQtyFromCart,
   paymentSuccessful,
   setPromoCode,
+  setAddress,
 } from "./checkoutActions";
 import {
   sendOtp,
@@ -17,7 +18,10 @@ import {
   openSignup,
   openLogin,
   openGuest,
-  tempPhoneNumber,
+  setTempPhoneNumber,
+  setTempFullName,
+  setTempEmail,
+  logoutUser,
 } from "./authActions";
 import { getCourses } from "./coursesActions";
 export {
@@ -30,6 +34,7 @@ export {
   removeQtyFromCart,
   paymentSuccessful,
   setPromoCode,
+  setAddress,
   // ! auth actions
   sendOtp,
   loginWithOtp,
@@ -39,7 +44,10 @@ export {
   openSignup,
   openLogin,
   openGuest,
-  tempPhoneNumber,
+  setTempPhoneNumber,
+  setTempFullName,
+  setTempEmail,
+  logoutUser,
   // ! courses actions
   getCourses,
 };

@@ -1,42 +1,18 @@
 import React, { useState, useEffect } from "react";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
-// ! Swiper
-import SwiperCore, { Pagination, Navigation } from "swiper/core";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css";
-import "swiper/components/navigation/navigation.min.css";
+import {
+  ageFilterAttributes,
+  categoryFilterAttributes,
+} from "../../helpers/MoengageAttributeCreators";
 import SecondaryButton from "../buttons/SecondaryButton";
 import yellowCourse from "../../assets/yellowCourse.jpeg";
 import blueCourse from "../../assets/blueCourse.jpeg";
 import purpleCourse from "../../assets/purpleCourse.jpeg";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
 import PrimaryButton from "../buttons/PrimaryButton";
-SwiperCore.use([Pagination, Navigation]);
+import moengageEvent from "../../helpers/MoengageEventTracking";
 let firstRow = true;
 function AllCoursesBannerFilter({ courseData }) {
-  // ! Moengage event attribute objects
-  const ageFilterAttributes = (kingdom, filter) => {
-    return {
-      event_id: "1001024",
-      event_type: "Click",
-      funnel_stage: "Consideration",
-      event_category: "Browsing",
-      feature_set: "Base",
-      event_priority: "High",
-      kingdom: kingdom,
-      phylum: filter.join("-"),
-      class: "",
-      order: "Homepage",
-      family: "1001024",
-      genus: "2",
-      species: "",
-      sub_c_1: "",
-      sub_c_2: "",
-      app_version: "0.0.0",
-      a_b_variant: "a",
-    };
-  };
   // ! initial render state
   const [initialRender, setInitialRender] = useState(true);
   useEffect(() => {
@@ -135,7 +111,15 @@ function AllCoursesBannerFilter({ courseData }) {
         break;
     }
   };
-  // console.log(currentCategory);
+  // ! Search  functionality
+  const [searchTerm, setSearchTerm] = useState("");
+  const searchHandle = () => {
+    let filteredCourses = courseData.filter((course) => {
+      return course.courseName.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setToRender([...filteredCourses]);
+    rowToRenderHandler(filteredCourses, true);
+  };
   return (
     <div className="all-courses-banner-filter__wrapper">
       <div className="all-courses-banner-filter">
@@ -147,7 +131,8 @@ function AllCoursesBannerFilter({ courseData }) {
             <input
               type="text"
               name="searchbar"
-              id=""
+              value={searchTerm}
+              onChange={(ev) => setSearchTerm(ev.target.value)}
               placeholder="Course Name"
             />
           </label>
@@ -155,9 +140,28 @@ function AllCoursesBannerFilter({ courseData }) {
           <select
             name="category"
             id=""
-            onChange={(ev) =>
-              setCurrentCategory((currentCategory) => ev.target.value)
-            }
+            onChange={(ev) => {
+              setCurrentCategory((currentCategory) => ev.target.value);
+              let id;
+              switch (ev.target.value.toLowerCase()) {
+                case "communication":
+                  id = 1;
+                  break;
+                case "music":
+                  id = 2;
+                  break;
+                case "art":
+                  id = 3;
+                  break;
+                default:
+                  break;
+              }
+
+              MoengageEventTracking(
+                "Category_Filter",
+                categoryFilterAttributes(id, ev.target.value)
+              );
+            }}
           >
             <option value="All Categories" selected>
               All Categories
@@ -166,7 +170,11 @@ function AllCoursesBannerFilter({ courseData }) {
             <option value="Communication">Communication</option>
             <option value="Visual Arts">Visual Arts</option>
           </select>
-          <SecondaryButton buttonText="Search" version="version-3" />
+          <SecondaryButton
+            buttonText="Search"
+            version="version-3"
+            clickHandle={searchHandle}
+          />
         </div>
         <ul className="all-courses-banner-filter__age-filter">
           <li
@@ -243,38 +251,6 @@ function AllCoursesBannerFilter({ courseData }) {
           version="version-4"
         />
       ) : null}
-      {/* <button
-        onClick={() => {
-          throw new Error("Hello");
-        }}
-      >
-        error button
-      </button> */}
-      {/* <Swiper
-        slidesPerView={"auto"}
-        spaceBetween={0}
-        className="mySwiperpc"
-        navigation={true}
-      >
-        {courseData.map((course, index) => {
-          if (course.courseStatus === "ACTIVE") {
-            if (shouldRenderCard(course.minAge, course.maxAge, course.vertical))
-              return (
-                <SwiperSlide key={index}>
-                  <HomepageCourseCard
-                    key={index}
-                    courseName={course.displayName}
-                    courseContent={course.courseContent}
-                    courseLiner={course.courseLiner}
-                    courseTags={course.courseTags}
-                    courseImage={imageSelector(course.verticalThemeColorLight)}
-                    verticalThemeColorLight={course.verticalThemeColorLight}
-                  />
-                </SwiperSlide>
-              );
-          }
-        })}
-      </Swiper> */}
     </div>
   );
 }

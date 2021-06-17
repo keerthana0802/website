@@ -8,6 +8,7 @@ import {
   cartTooltipOpen,
 } from "../../store/actions/rootActions";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
+import { addToCartAttributes } from "../../helpers/MoengageAttributeCreators";
 function CourseCategoryCard({
   courseCardImage,
   courseCardColor,
@@ -20,25 +21,7 @@ function CourseCategoryCard({
   coursePrice,
 }) {
   const history = useHistory();
-  const addToCartAttributes = {
-    event_id: "1001018",
-    event_type: "Click",
-    funnel_stage: "Conversion",
-    event_category: "Cart",
-    feature_set: "Base",
-    event_priority: "High",
-    kingdom: courseCardId,
-    phylum: courseCardName,
-    class: "Button state - clicked",
-    order: coursePrice,
-    family: "1001018",
-    genus: "3",
-    species: "",
-    sub_c_1: "",
-    sub_c_2: "",
-    app_version: "0.0.0",
-    a_b_variant: "a",
-  };
+  
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.checkout.cart);
   const openCourse = () => {
@@ -96,7 +79,10 @@ function CourseCategoryCard({
               } else {
                 dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
                 dispatch(cartTooltipOpen(courseCardName));
-                MoengageEventTracking("Add_to_Cart", addToCartAttributes);
+                MoengageEventTracking(
+                  "Add_to_Cart",
+                  addToCartAttributes(courseCardId, courseCardName, coursePrice)
+                );
               }
             }}
           />

@@ -243,6 +243,10 @@
               font-weight: 500;
               cursor: pointer;
             }
+            @include bpm-custom(1110px) {
+              left: 0;
+              top: -7.5rem;
+            }
             @media screen and (max-width: 850px) {
               left: 50%;
               transform: translate(-50%, -10px);

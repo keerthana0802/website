@@ -9,10 +9,10 @@ function CartDrawer({ selectedCourses }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const coursesData = useSelector((state) => state.courses.allCourses);
-  const [promo, setPromo] = useState("null");
+  // const [promo, setPromo] = useState("null");
   const goToCheckout = () => {
     dispatch(cartDrawerOpen());
-    dispatch(setPromoCode(promo));
+    // dispatch(setPromoCode(promo));
     setTimeout(() => {
       history.push("/checkout");
     }, 200);
@@ -51,14 +51,14 @@ function CartDrawer({ selectedCourses }) {
                 );
             })
           : null}
-        {selectedCourses.length > 0 ? (
+        {/* {selectedCourses.length > 0 ? (
           <input
             placeholder="Promo code"
             type="text"
             className="cart-drawer__promo"
             onChange={(ev) => setPromo(ev.target.value)}
           />
-        ) : null}
+        ) : null} */}
       </div>
       {selectedCourses.length > 0 ? (
         <div className="cart-drawer__bottom">

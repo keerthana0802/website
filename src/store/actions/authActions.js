@@ -1,17 +1,15 @@
 import axios from "axios";
 // ! Auth actions
-const sendOtp = (number) => {
-  //   console.log(number);
+const sendOtp = (body) => {
   axios
-    .post(`${process.env.REACT_APP_AUTH_API}/send_otp`, {
-      phone_no: number,
-    })
+    .post(`${process.env.REACT_APP_AUTH_API}/send_otp`, body)
     .then((response) => {
       console.log(response);
     })
     .catch((e) => console.log(e));
   return {
     type: "SEND_OTP",
+    payload: body,
   };
 };
 const loginWithOtp = (data) => {
@@ -53,11 +51,26 @@ const openGuest = () => {
     type: "GUEST_MODAL_OPEN",
   };
 };
-const tempPhoneNumber = (data) => {
+const setTempPhoneNumber = (data) => {
   return {
     type: "TEMP_PHONE_NUMBER",
     payload: data,
   };
+};
+const setTempFullName = (data) => {
+  return {
+    type: "TEMP_FULL_NAME",
+    payload: data,
+  };
+};
+const setTempEmail = (data) => {
+  return {
+    type: "TEMP_EMAIL",
+    payload: data,
+  };
+};
+const logoutUser = () => {
+  return { type: "LOGOUT_USER" };
 };
 export {
   sendOtp,
@@ -68,5 +81,8 @@ export {
   openSignup,
   openLogin,
   openGuest,
-  tempPhoneNumber,
+  setTempPhoneNumber,
+  setTempFullName,
+  setTempEmail,
+  logoutUser,
 };

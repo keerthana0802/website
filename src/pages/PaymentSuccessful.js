@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import CartCard from "../components/cards/CartCard";
 import check from "../assets/paidCheck.svg";
-import mail from "../assets/email.svg";
+import moengageEvent from "../helpers/MoengageEventTracking";
+import { clickToHomepageAttributes } from "../helpers/MoengageAttributeCreators";
 function PaymentSuccessful() {
   const coursesData = useSelector((state) => state.courses.allCourses);
   const paid = useSelector((state) => state.checkout.paid);
+  const userDetails = useSelector((state) => state.auth.userDetails);
   return (
     <NavFooterLayout>
       <div className="spark-payment-successful__wrapper">
@@ -23,7 +25,7 @@ function PaymentSuccessful() {
                 order with us <img src={check} alt="" />
               </h1>
               <h1 className="spark-payment-successful__right--top-order-id">
-                Order ID:{window.localStorage.payment_id}
+                Order ID : {window.localStorage.payment_id}
               </h1>
               <div className="spark-payment-successful__right--top-status">
                 <span>Status: Payment successful</span>
@@ -60,15 +62,18 @@ function PaymentSuccessful() {
               <div className="spark-payment-successful__right--top-email-box">
                 <p className="email-info">
                   We will be sending out an email confirmation to <br />
-                  <span>shobha@sparkstudio.co</span>
+                  <span>{userDetails?.email || ""}</span>
                 </p>
-                <button>Change email</button>
+                {/* <button>Change email</button> */}
               </div>
             </div>
             <PrimaryButton
               version="version-1"
               buttonText="Return Home"
               linkTo="/"
+              onClick={() =>
+                moengageEvent("Click_To_Home_Page", clickToHomepageAttributes())
+              }
             />
           </div>
         </div>

@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   openLogin,
   sendOtp,
-  tempPhoneNumber,
+  setTempPhoneNumber,
 } from "../../store/actions/rootActions";
 function DetailsForm({ switchRoute, tabsStatus }) {
   // ! Redux
@@ -83,36 +83,55 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         return number.length;
     }
   };
+  // ! Email verification logic
+  const [verificationTooltipClassEmail, setVerificationTooltipClassEmail] =
+    useState("verification-tooltip not-verified");
+  const [verificationTooltipTextEmail, setVerificationTooltipTextEmail] =
+    useState("not verified");
+  const verificationHandlerEmail = (email) => {
+    if (verificationTooltipClassEmail === "verification-tooltip not-verified") {
+      dispatch(
+        sendOtp({
+          email: email,
+          child_name: childName,
+        })
+      );
+      dispatch(openLogin());
+    }
+  };
   // ! Number verification logic
   const [verificationTooltipClass, setVerificationTooltipClass] = useState(
     "verification-tooltip not-verified"
   );
   const [verificationTooltipText, setVerificationTooltipText] =
     useState("not verified");
-  const verificationHandler = (countryCode, phoneNumber) => {
+  const verificationHandlerPhone = (countryCode, phoneNumber) => {
     if (verificationTooltipClass === "verification-tooltip not-verified") {
-      dispatch(tempPhoneNumber({ countryCode, phoneNumber }));
-      dispatch(sendOtp(`${countryCode}-${phoneNumber}`));
+      dispatch(setTempPhoneNumber({ countryCode, phoneNumber }));
+      dispatch(
+        sendOtp({
+          phone_no: `${countryCode}-${phoneNumber}`,
+          child_name: childName,
+        })
+      );
       dispatch(openLogin());
     }
   };
   // ! useeffect for phone number onchange
   useEffect(() => {
-    if (userDetails.phoneNumber === `${countryCode}-${phoneNumber}`) {
-      setVerificationTooltipClass("verification-tooltip verified");
-      setVerificationTooltipText("verified");
-    } else if (
-      countryCode !== "+91" &&
-      countryCode !== "+971" &&
-      countryCode !== "+1" &&
-      countryCode !== "+974" &&
-      countryCode !== "+966"
+    if (
+      countryCode === "+91" &&
+      userDetails.phoneNumber === `${countryCode}-${phoneNumber}`
     ) {
       setVerificationTooltipClass("verification-tooltip verified");
       setVerificationTooltipText("verified");
     } else {
       setVerificationTooltipClass("verification-tooltip not-verified");
       setVerificationTooltipText("click to verify");
+    }
+    if (countryCode !== "+91") {
+      setVerificationTooltipClass("verification-tooltip verified");
+      setVerificationTooltipText("verified");
     }
     if (!initialRender) {
       if (phoneNumber[0] === "0") {
@@ -134,7 +153,17 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         });
       }
     }
-  }, [phoneNumber, userDetails]);
+  }, [phoneNumber, userDetails, countryCode]);
+  // ! Useeffect for email changes
+  useEffect(() => {
+    if (userDetails?.email?.toLowerCase() === email.toLowerCase()) {
+      setVerificationTooltipClassEmail("verification-tooltip verified");
+      setVerificationTooltipTextEmail("verified");
+    } else {
+      setVerificationTooltipClassEmail("verification-tooltip not-verified");
+      setVerificationTooltipTextEmail("click to verify");
+    }
+  }, [email, userDetails]);
   // ! To move to the courses page
   function handleSubmit() {
     setLocalStorage();
@@ -172,7 +201,6 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         // console.log(error);
       });
   }
-
   return (
     <form action="" className="booking-form" autoComplete="on">
       <input
@@ -253,24 +281,37 @@ function DetailsForm({ switchRoute, tabsStatus }) {
           <div className={tooltipClass}>
             <span>{tooltipText}</span>
           </div>
-          <div
-            className={verificationTooltipClass}
-            onClick={() => verificationHandler(countryCode, phoneNumber)}
-          >
-            <span>{verificationTooltipText}</span>
-          </div>
+          {countryCode === "+91" ? (
+            <div
+              className={verificationTooltipClass}
+              onClick={() => verificationHandlerPhone(countryCode, phoneNumber)}
+            >
+              <span>{verificationTooltipText}</span>
+            </div>
+          ) : null}
         </label>
       </div>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(ev) => {
-          setEmail(ev.target.value);
-        }}
-        required
-        autoComplete="on"
-      />
+      <label htmlFor="email" className="email-label">
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(ev) => {
+            setEmail(ev.target.value);
+          }}
+          required
+          autoComplete="on"
+        />
+        {countryCode !== "+91" ? (
+          <div
+            className={verificationTooltipClassEmail}
+            onClick={() => verificationHandlerEmail(email)}
+          >
+            <span>{verificationTooltipTextEmail}</span>
+          </div>
+        ) : null}
+      </label>
+
       <input
         type="text"
         placeholder="Child's name"

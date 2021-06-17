@@ -2,6 +2,9 @@ import React from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { useSelector, useDispatch } from "react-redux";
 import yellow from "../../assets/yellowCourse.jpeg";
+// ! GSAP imports
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,7 +12,8 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 SwiperCore.use([Pagination, Navigation]);
-
+// ! Registering plugin
+gsap.registerPlugin(ScrollToPlugin);
 function BannerCard({
   mediaType,
   mediaUrl,
@@ -34,7 +38,15 @@ function SingleCourseBanner({
   courseThemeColorDark,
   courseType, // ! single or multilevel
 }) {
-  //   console.log(courseType);
+  // ! Scroll-to function
+  const scroller = () => {
+    gsap.to(window, {
+      scrollTo: document.getElementById("single-course-details").offsetTop - 70,
+      ease: "ease-out",
+      duration: 1,
+      scrollBehavior: "smooth",
+    });
+  };
   return (
     <div className="single-course-banner__wrapper">
       <div
@@ -50,6 +62,7 @@ function SingleCourseBanner({
           <PrimaryButton
             buttonText={courseType === "single" ? "Buy Course" : "Choose level"}
             version="version-1"
+            clickHandle={courseType === "single" ? null : scroller}
           />
         </div>
         <div className="single-course-banner__right">

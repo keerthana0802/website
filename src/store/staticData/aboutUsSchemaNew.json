@@ -1,0 +1,91 @@
+{
+    "founders_banner": [
+        {
+            "founder_name": "string",
+            "founder_position": "",
+            "image_url": ""
+        },
+        {
+            "founder_name": "string",
+            "founder_position": "",
+            "image_url": ""
+        },
+        {
+            "founder_name": "string",
+            "founder_position": "",
+            "image_url": ""
+        },
+        {
+            "founder_name": "string",
+            "founder_position": "",
+            "image_url": ""
+        }
+    ],
+    "team_section": [
+        {
+            "team_member_name": "string",
+            "team_member_position": "",
+            "image_url": ""
+        }
+    ],
+    "team_description": {
+        "team_description_image": "",
+        "team_description_text": ""
+    },
+    "belief_section": {
+        "beliefs": [
+            {
+                "belief_header": "",
+                "belief_content": ""
+            },
+            {
+                "belief_header": "",
+                "belief_content": ""
+            },
+            {
+                "belief_header": "",
+                "belief_content": ""
+            }
+        ],
+        "belief_showcase": {
+            "showcase_title": "",
+            "showcase_liner": "",
+            "showcase_data": [
+                {
+                    "image_url": "",
+                    "title": "",
+                    "one_liner": ""
+                },
+                {
+                    "image_url": "",
+                    "title": "",
+                    "one_liner": ""
+                }
+            ]
+        }
+    },
+    "mentors_section": [
+        {
+            "mentor_name": "",
+            "mentor_position": "",
+            "mentor_content": "",
+            "mentor_image": ""
+        },
+        {
+            "mentor_name": "",
+            "mentor_position": "",
+            "mentor_content": "",
+            "mentor_image": ""
+        },
+        {
+            "mentor_name": "",
+            "mentor_position": "",
+            "mentor_content": "",
+            "mentor_image": ""
+        }
+    ],
+    "careers_section": {
+        "careers_header": "",
+        "careers_content": ""
+    }
+}

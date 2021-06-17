@@ -4,11 +4,11 @@ import testimonialSlideMobile from "../../assets/testimonialSlideMobile.jpeg";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import gsap from "gsap";
 // ! Swiper
-import SwiperCore, { Pagination } from "swiper/core";
+import SwiperCore, { Pagination, Autoplay } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
-SwiperCore.use([Pagination]);
+SwiperCore.use([Autoplay, Pagination]);
 let dummyString =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quas, dicta eius temporibus obcaecati perspiciatis explicabo sed enim olestiae. Minus aliquid ab odio nostrum quos tenetur non id perferendis hic.";
 function SingleSlide({ slideContent, slideSource, slideBg }) {
@@ -103,6 +103,7 @@ function TestimonialSlider() {
           spaceBetween={0}
           pagination={pagination}
           className="mySwiper"
+          autoplay={{ delay: 4000 }}
         >
           <SwiperSlide>
             <SingleSlide
@@ -128,7 +129,36 @@ function TestimonialSlider() {
         </Swiper>
       ) : (
         <>
-          <div className="testimonial-slider" ref={testimonialSliderRef}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={0}
+            pagination={pagination}
+            className="mySwiper"
+            autoplay={{ delay: 4000 }}
+          >
+            <SwiperSlide>
+              <SingleSlide
+                slideContent={dummyString}
+                slideSource="Neeta Gupta, Parent of a 6 year old"
+                slideBg={testimonialSlideBackground}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SingleSlide
+                slideContent={dummyString}
+                slideSource="Neeta Gupta, Parent of a 6 year old"
+                slideBg={testimonialSlideBackground}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SingleSlide
+                slideContent={dummyString}
+                slideSource="Neeta Gupta, Parent of a 6 year old"
+                slideBg={testimonialSlideBackground}
+              />
+            </SwiperSlide>
+          </Swiper>
+          {/* <div className="testimonial-slider" ref={testimonialSliderRef}>
             <SingleSlide
               slideContent={dummyString}
               slideSource="Neeta Gupta, Parent of a 6 year old"
@@ -145,6 +175,7 @@ function TestimonialSlider() {
               slideBg={testimonialSlideBackground}
             />
           </div>
+
           <div className="testimonial-slider__dots">
             <div
               className="single-dot"
@@ -165,7 +196,7 @@ function TestimonialSlider() {
               }}
             ></div>
             <div className="active-dot" ref={activeDotRef}></div>
-          </div>
+          </div> */}
         </>
       )}
     </div>

@@ -3,6 +3,7 @@ import HomepageCourseCard from "../cards/HomepageCourseCard";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import { Link } from "react-router-dom";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
+import { ageFilterAttributes } from "../../helpers/MoengageAttributeCreators";
 import { useSelector } from "react-redux";
 import yellowCourse from "../../assets/yellowCourse.jpeg";
 import blueCourse from "../../assets/blueCourse.jpeg";
@@ -18,28 +19,6 @@ SwiperCore.use([Pagination, Navigation]);
 
 function HomepageCourses() {
   const cardsData = useSelector((state) => state.courses.allCourses);
-  // ! Moengage event attribute objects
-  const ageFilterAttributes = (kingdom, filter) => {
-    return {
-      event_id: "1001024",
-      event_type: "Click",
-      funnel_stage: "Consideration",
-      event_category: "Browsing",
-      feature_set: "Base",
-      event_priority: "High",
-      kingdom: kingdom,
-      phylum: filter.join("-"),
-      class: "",
-      order: "Homepage",
-      family: "1001024",
-      genus: "2",
-      species: "",
-      sub_c_1: "",
-      sub_c_2: "",
-      app_version: "0.0.0",
-      a_b_variant: "a",
-    };
-  };
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
   // ! initial render state

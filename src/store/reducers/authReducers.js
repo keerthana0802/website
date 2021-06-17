@@ -1,6 +1,7 @@
 const initState = {
   authPhoneNumber: "",
   authOtpRequested: false,
+  authOtpRequestBody: null,
   verified: false,
   authToken: "",
   profiles: [],
@@ -11,11 +12,17 @@ const initState = {
   meetingDetails: null,
   tempCountryCode: "",
   tempPhoneNumber: "",
+  tempFullName: "",
+  tempEmail: "",
 };
 const authReducers = (state = initState, action) => {
   switch (action.type) {
     case "SEND_OTP":
-      return { ...state, authOtpRequested: true };
+      return {
+        ...state,
+        authOtpRequested: true,
+        authOtpRequestBody: action.payload,
+      };
     case "CHANGE_NUMBER":
       return { ...state, authOtpRequested: false };
     case "LOGIN_WITH_OTP":
@@ -48,6 +55,18 @@ const authReducers = (state = initState, action) => {
         tempCountryCode: action.payload.countryCode,
         tempPhoneNumber: action.payload.phoneNumber,
       };
+    case "TEMP_FULL_NAME":
+      return {
+        ...state,
+        tempFullName: action.payload,
+      };
+    case "TEMP_EMAIL":
+      return {
+        ...state,
+        tempEmail: action.payload,
+      };
+    case "LOGOUT_USER":
+      return { ...state, authToken: "", profiles: [], userDetails: {} };
     default:
       return state;
   }

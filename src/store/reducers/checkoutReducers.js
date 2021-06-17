@@ -5,6 +5,7 @@ const initState = {
   cart: [],
   paid: [],
   promoCode: "",
+  address: {},
 };
 const checkoutReducers = (state = initState, action) => {
   let currentCart;
@@ -60,6 +61,8 @@ const checkoutReducers = (state = initState, action) => {
       return { ...state, paid: [...state.cart], cart: [] };
     case "SET_PROMO_CODE":
       return { ...state, promoCode: action.payload };
+    case "SET_ADDRESS":
+      return { ...state, address: action.payload };
     default:
       return state;
   }

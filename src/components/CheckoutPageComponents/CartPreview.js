@@ -1,14 +1,20 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../cards/CartCard";
+import { setPromoCode } from "../../store/actions/rootActions";
 function CartPreview() {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.checkout.cart);
   const coursesData = useSelector((state) => state.courses.allCourses);
+  const promoCode = useSelector((state) => state.checkout.promoCode);
+  const userDetails = useSelector((state) => state.auth.userDetails);
   return (
     <section className="cart-preview__wrapper">
       <div className="cart-preview">
         <div className="cart-preview--top">
-          <h1 className="cart-preview__customer-name">Hey Aryan,</h1>
+          <h1 className="cart-preview__customer-name">
+            Hey {userDetails?.fullName || "There"},
+          </h1>
           <h2 className="cart-preview__liner">
             We are excited to have you as part of spark studio family!
           </h2>
@@ -50,8 +56,27 @@ function CartPreview() {
         </div>
 
         <p className="cart-preview__liner-2">
-          Our team will get in touch with you and sort out everything for you
+          Our team will get in touch with you.
         </p>
+        {/* <label htmlFor="promo" className="cart-preview__promo-code">
+          <input
+            type="text"
+            name="promo"
+            className="cart-preview__promo-code--input valid"
+            value={promoCode || ""}
+            onChange={(ev) => {
+              dispatch(setPromoCode(ev.target.value));
+            }}
+            required
+          />
+          <button>APPLY</button>
+          <div className="cart-preview__promo-code--validation-tooltip valid">
+            <p>
+              Promo code applied! Yay You saved <span>INR 1600</span> on this
+              order
+            </p>
+          </div>
+        </label> */}
       </div>
     </section>
   );

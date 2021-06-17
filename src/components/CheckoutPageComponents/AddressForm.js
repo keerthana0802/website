@@ -2,13 +2,21 @@ import React, { useState, useEffect, useRef } from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { useSelector, useDispatch } from "react-redux";
 import arrow from "../../assets/buttonArrow.svg";
-import { setPromoCode } from "../../store/actions/rootActions";
+import {
+  setPromoCode,
+  setAddress,
+  openLogin,
+} from "../../store/actions/rootActions";
 function AddressForm({ openPayment }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.checkout.cart);
   const coursesData = useSelector((state) => state.courses.allCourses);
   const promoCode = useSelector((state) => state.checkout.promoCode);
+  const userDetails = useSelector((state) => state.auth.userDetails);
+  const authToken = useSelector((state) => state.auth.authToken);
   // ! States for input elements
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
   const [addressLineOne, setAddressLineOne] = useState("");
   const [addressLineTwo, setAddressLineTwo] = useState("");
@@ -29,34 +37,70 @@ function AddressForm({ openPayment }) {
     return `${currency || ""} ${amount}`;
   };
   const termsRef = useRef(null);
+  useEffect(() => {
+    termsRef.current.checked = true;
+  }, []);
   const [buttonClass, setButtonClass] = useState("pay-button disabled");
+  const [tooltipText, setTooltipText] = useState(
+    <>
+      Please fill all fields <br />
+      and agree to the <br />
+      terms and conditions!
+    </>
+  );
   useEffect(() => {
     if (
       termsRef.current.checked &&
+      fullName &&
+      email &&
       country &&
       addressLineOne &&
       state &&
       city &&
       pin
     ) {
-      setButtonClass("pay-button");
+      if (authToken.length > 0) {
+        setButtonClass("pay-button");
+      } else {
+        setButtonClass("pay-button disabled");
+        setTooltipText(
+          <>
+            Please sign in or <br />
+            sign up to continue
+          </>
+        );
+      }
     } else {
       setButtonClass("pay-button disabled");
     }
-  }, [country, addressLineOne, state, city, pin]);
+  }, [country, addressLineOne, state, city, pin, fullName, email, authToken]);
   return (
     <div className="address-form__wrapper">
       <div className="address-form">
         <h1 className="address-form__header">Please provide your details</h1>
         <input
           type="text"
-          placeholder="Country"
-          value={country}
+          placeholder="Fullname"
+          value={fullName}
           onChange={(ev) => {
-            if (textRegex.test(ev.target.value)) setCountry(ev.target.value);
+            if (textRegex.test(ev.target.value)) setFullName(ev.target.value);
           }}
           required
         />
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(ev) => {
+            setEmail(ev.target.value);
+          }}
+          required
+        />
+        <div className="address-form__separator">
+          <span></span>
+          <p>Billing address</p>
+          <span></span>
+        </div>
         <input
           type="text"
           placeholder="Address line 1"
@@ -106,6 +150,15 @@ function AddressForm({ openPayment }) {
             required
           />
         </div>
+        <input
+          type="text"
+          placeholder="Country"
+          value={country}
+          onChange={(ev) => {
+            if (textRegex.test(ev.target.value)) setCountry(ev.target.value);
+          }}
+          required
+        />
         <label htmlFor="promo" className="promo-code">
           <input
             type="text"
@@ -120,10 +173,6 @@ function AddressForm({ openPayment }) {
           />
         </label>
 
-        <label htmlFor="save-info">
-          <input type="checkbox" name="save-info" id="" />
-          Save information for faster checkout next time.
-        </label>
         <label htmlFor="terms" className="cart-drawer__terms">
           <input
             type="checkbox"
@@ -157,7 +206,19 @@ function AddressForm({ openPayment }) {
         </label>
         <button
           className={buttonClass}
-          onClick={(ev) => {
+          onClick={async (ev) => {
+            await dispatch(
+              setAddress({
+                full_name: fullName,
+                email: email,
+                address_line_1: addressLineOne,
+                address_line_2: addressLineTwo,
+                city: city,
+                state: state,
+                country: country,
+                pin_code: pin,
+              })
+            );
             if (
               termsRef.current.checked &&
               cart.length > 0 &&
@@ -167,16 +228,22 @@ function AddressForm({ openPayment }) {
               city &&
               pin
             )
-              openPayment(ev);
+              setTimeout(() => {
+                openPayment(ev);
+              }, 200);
           }}
         >
           {`Pay ${totalAmount()}`} <img src={arrow} alt="" />
-          <span className="tooltip">
-            Please fill all fields <br />
-            and agree to the <br />
-            terms and conditions!
-          </span>
+          <span className="tooltip">{tooltipText}</span>
         </button>
+        {authToken.length > 0 ? null : (
+          <button
+            className="alternate-sign-in"
+            onClick={() => dispatch(openLogin())}
+          >
+            Sign in
+          </button>
+        )}
       </div>
     </div>
   );

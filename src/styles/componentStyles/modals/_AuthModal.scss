@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    flex-direction: column;
     width: 100%;
     input {
       &:first-child {
@@ -40,6 +41,15 @@
     }
     .phone-validation-tooltip {
       top: -2rem;
+    }
+    > div.phone-number {
+      width: 100%;
+      display: flex;
+    }
+  }
+  &.auth-sign-up {
+    .contact {
+      flex-direction: row;
     }
   }
   &__logo {
@@ -56,7 +66,7 @@
     margin-bottom: 3rem;
     span {
       height: 1px;
-      width: 5.5rem;
+      width: 4.5rem;
       background-color: #949494;
     }
     p {
@@ -110,6 +120,10 @@
     margin-bottom: 3rem;
     button {
       margin-left: 0.5rem;
+      span {
+        font-size: 1.1rem;
+        padding-top: 4px;
+      }
     }
   }
   &__close {
