@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Faqpage from "../components/Faq/Faqpage";
+import CourseCategorySection from "../components/AllCoursesComponents/CourseCategorySection";
 import NavFooterLayout from "../containers/NavFooterLayout";
-import { useSelector } from "react-redux";
 import HomepageCallback from "../components/HomepageComponents/HomepageCallback";
-import FaqBanner from "../components/banners/FaqBanner";
-import FaqBannerResp from "../components/banners/FaqBannerResp";
-
-function Faq() {
+import AllCoursesBannerFilter from "../components/banners/AllCoursesBannerFilter";
+import LargeBookATrialCard from "../components/cards/LargeBookATrialCard";
+import AllCoursesBannerFilterResp from "../components/banners/AllCoursesBannerFilterResp";
+import Tncpage from "../components/Tnc/Tncpage";
+import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
+function Tnc() {
   const courseData = useSelector((state) => state.courses.allCourses);
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
@@ -23,20 +25,17 @@ function Faq() {
   }, []);
   return (
     <NavFooterLayout>
-      <div className="spark-faq">
-        {responsiveMode ? (
-          <FaqBannerResp courseData={courseData} />
-        ) : (
-          <FaqBanner courseData={courseData} />
-        )}
-
-        <Faqpage />
+      <Helmet>
+        <title>Terms And Condition</title>
+      </Helmet>
+      <div className="spark-all-courses">
+         
+      <Tncpage />
+      
         <HomepageCallback />
       </div>
     </NavFooterLayout>
   );
 }
 
-export default Faq;
-
-
+export default Tnc;
