@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AboutUsBanner from "../components/banners/AboutUsBanner";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import zynga from "../assets/zynga.svg";
@@ -11,7 +11,13 @@ import TeamDescriptionSection from "../components/AboutUsPageComponents/TeamDesc
 import BeliefSection from "../components/AboutUsPageComponents/BeliefSection";
 import MentorsSection from "../components/AboutUsPageComponents/MentorsSection";
 import PrimaryButton from "../components/buttons/PrimaryButton";
+import moengageEvent from "../helpers/MoengageEventTracking";
+import { connectWithUsAttributes } from "../helpers/MoengageAttributeCreators";
+import ConfirmationModal from "../components/modals/ConfirmationModal";
+
 function AboutUs() {
+  const [linkedinUrl, setLinkedinUrl] = useState("");
+  const [showModal, setShowModal] = useState(false);
   return (
     <NavFooterLayout>
       <div className="spark-about-us__wrapper">
@@ -43,8 +49,31 @@ function AboutUs() {
             type="text"
             placeholder="Your linkedin profile"
             className="linkedin-input-field"
+            value={linkedinUrl}
+            onChange={(ev) => setLinkedinUrl(ev.target.value)}
           />
-          <PrimaryButton buttonText="Connect with us" version="version-2" />
+          <PrimaryButton
+            buttonText="Connect with us"
+            version="version-2"
+            clickHandle={() => {
+              setShowModal(!showModal);
+              moengageEvent(
+                "Connect_With_Us",
+                connectWithUsAttributes(
+                  linkedinUrl.length > 0 ? 1 : 0,
+                  window.location.pathname,
+                  linkedinUrl
+                )
+              );
+            }}
+          />
+
+          {showModal ? (
+            <ConfirmationModal
+              modalCloseFunction={() => setShowModal(!showModal)}
+              modalText="We will get back to you!"
+            />
+          ) : null}
         </section>
       </div>
     </NavFooterLayout>

@@ -9,6 +9,13 @@ import {
   sendOtp,
   setTempPhoneNumber,
 } from "../../store/actions/rootActions";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import {
+  bookTrialViewAttributes,
+  bookTrialFieldFilledAttributes,
+  bookTrialSubmitAttributes,
+  bookTrialSuccessAttributes,
+} from "../../helpers/MoengageAttributeCreators";
 function DetailsForm({ switchRoute, tabsStatus }) {
   // ! Redux
   const authToken = useSelector((state) => state.auth.authToken);
@@ -44,6 +51,7 @@ function DetailsForm({ switchRoute, tabsStatus }) {
     window.scrollTo(0, 0);
     setInitialRender(false);
     userAgentDeviceRef.current = detect.parse(navigator.userAgent).device.type;
+    moengageEvent("Book_Trial_View", bookTrialViewAttributes());
   }, []);
   // console.log(userAgentDeviceRef.current === "Desktop" ? "webd" : "webm");
   // ! REGEX
@@ -93,6 +101,7 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       dispatch(
         sendOtp({
           email: email,
+          parent_name: fullName,
           child_name: childName,
         })
       );
@@ -111,6 +120,7 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       dispatch(
         sendOtp({
           phone_no: `${countryCode}-${phoneNumber}`,
+          parent_name: fullName,
           child_name: childName,
         })
       );
@@ -167,11 +177,10 @@ function DetailsForm({ switchRoute, tabsStatus }) {
   // ! To move to the courses page
   function handleSubmit() {
     setLocalStorage();
-    window.Moengage.track_event("Book_React", {
-      add_first_name: fullName,
-      add_email: email,
-      add_mobile: `${countryCode}-${phoneNumber}`,
-    });
+    moengageEvent(
+      "Book_Trial_Submit",
+      bookTrialSubmitAttributes(1, "Details", "Yes", 2)
+    );
     axios
       .post(
         process.env.REACT_APP_API_URL,
@@ -191,14 +200,20 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       )
 
       .then(function (response) {
-        // console.log(response);
         window.localStorage.setItem("uuid", response.data.uuid);
         tabsStatus("/book-a-trial");
         switchRoute("/book-a-trial/courses-selection");
+        moengageEvent(
+          "Book_Trial_Success",
+          bookTrialSuccessAttributes(1, "Details", "Yes", 2, 3)
+        );
         window.location.href = "/book-a-trial/courses-selection";
       })
       .catch(function (error) {
-        // console.log(error);
+        moengageEvent(
+          "Book_Trial_Success",
+          bookTrialSuccessAttributes(1, "Details", "Yes", 2, 0)
+        );
       });
   }
   return (
@@ -212,6 +227,12 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         }}
         required
         autoComplete="on"
+        onBlur={() =>
+          moengageEvent(
+            "Book_Trial_Field_Filled",
+            bookTrialFieldFilledAttributes(1, "Parent Name", fullName)
+          )
+        }
       />
       <div className="contact">
         <input
@@ -223,6 +244,12 @@ function DetailsForm({ switchRoute, tabsStatus }) {
               setCountryCode(ev.target.value);
           }}
           autoComplete="on"
+          onBlur={() =>
+            moengageEvent(
+              "Book_Trial_Field_Filled",
+              bookTrialFieldFilledAttributes(4, "Parent ISD Code", countryCode)
+            )
+          }
         />
         <label htmlFor="" className="phone-label">
           <input
@@ -273,6 +300,14 @@ function DetailsForm({ switchRoute, tabsStatus }) {
                 );
               } else {
                 setTooltipClass("phone-validation-tooltip");
+                moengageEvent(
+                  "Book_Trial_Field_Filled",
+                  bookTrialFieldFilledAttributes(
+                    3,
+                    "Parent Phone Number",
+                    phoneNumber
+                  )
+                );
               }
             }}
             required
@@ -301,6 +336,12 @@ function DetailsForm({ switchRoute, tabsStatus }) {
           }}
           required
           autoComplete="on"
+          onBlur={() =>
+            moengageEvent(
+              "Book_Trial_Field_Filled",
+              bookTrialFieldFilledAttributes(2, "Parent Email ID", email)
+            )
+          }
         />
         {countryCode !== "+91" ? (
           <div
@@ -321,6 +362,12 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         }}
         required
         autoComplete="on"
+        onBlur={() =>
+          moengageEvent(
+            "Book_Trial_Field_Filled",
+            bookTrialFieldFilledAttributes(5, "Child Name", childName)
+          )
+        }
       />
       <input
         type="text"
@@ -331,6 +378,12 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         }}
         required
         autoComplete="on"
+        onBlur={() =>
+          moengageEvent(
+            "Book_Trial_Field_Filled",
+            bookTrialFieldFilledAttributes(6, "Child Age", childAge)
+          )
+        }
       />
       {fullName &&
       countryCode &&

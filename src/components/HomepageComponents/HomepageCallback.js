@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import artwork from "../../assets/puppyCallbackArtwork.svg";
-import CallbackRequestModal from "../modals/CallbackRequestModal";
 import axios from "axios";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { requestCallbackAttributes } from "../../helpers/MoengageAttributeCreators";
+import ConfirmationModal from "../modals/ConfirmationModal";
 function HomepageCallback() {
   // ! State for responsive mode
   const [responsiveMode, setResponsiveMode] = useState(false);
@@ -91,7 +93,18 @@ function HomepageCallback() {
           },
         })
         .then((res) => console.log(res))
-        .then(() => setShowModal(true))
+        .then(() => {
+          moengageEvent(
+            "Request_Callback",
+            requestCallbackAttributes(
+              1,
+              1,
+              window.location.pathname,
+              countryCode
+            )
+          );
+          setShowModal(true);
+        })
         .then(() => {
           setFullName("");
           setPhoneNumber("");
@@ -252,7 +265,10 @@ function HomepageCallback() {
         )}
       </div>
       {showModal ? (
-        <CallbackRequestModal modalCloseFunction={modalClose} />
+        <ConfirmationModal
+          modalCloseFunction={modalClose}
+          modalText="We will call you back!"
+        />
       ) : null}
     </div>
   );

@@ -9,6 +9,8 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import PrimaryButton from "../components/buttons/PrimaryButton";
+import moengageEvent from "../helpers/MoengageEventTracking";
+import { joinClassAttributes } from "../helpers/MoengageAttributeCreators";
 // ! React redux
 
 function LiveClassLogin() {
@@ -20,6 +22,7 @@ function LiveClassLogin() {
   const userDetails = useSelector((state) => state.auth.userDetails);
   // ! Function to launch the class
   const launchClass = (auth, roomName, clientId, meetingId) => {
+    // moengageEvent("Join_Class", joinClassAttributes(meetingId,));
     dispatch(setMeetingDetails({ auth, roomName, clientId }));
     history.push(`/live-class/meeting/${meetingId}`);
   };

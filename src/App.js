@@ -14,7 +14,6 @@ import Homepage from "./pages/Homepage";
 import Sitemap from "./components/Sitemap";
 // ! Lazy loaded routes
 const AllCourses = lazy(() => import("./pages/AllCourses.js"));
-const PaymentPOC = lazy(() => import("./pages/PaymentPOC.js"));
 const Checkout = lazy(() => import("./pages/Checkout.js"));
 const PaymentSuccessful = lazy(() => import("./pages/PaymentSuccessful.js"));
 const Feedback = lazy(() => import("./pages/Feedback.js"));
@@ -72,11 +71,6 @@ function App() {
           <Route path="/checkout">
             <Suspense fallback={<div></div>}>
               <Checkout />
-            </Suspense>
-          </Route>
-          <Route path="/payment-test">
-            <Suspense fallback={<div></div>}>
-              <PaymentPOC />
             </Suspense>
           </Route>
           <Route path="/all-courses">

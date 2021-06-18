@@ -6,6 +6,8 @@ import axios from "axios";
 import Modal from "./Modal";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { bookTrialSubmitAttributes } from "../../helpers/MoengageAttributeCreators";
 function SlotsForm() {
   const authToken = useSelector((state) => state.auth.authToken);
   const history = useHistory();
@@ -186,7 +188,9 @@ function SlotsForm() {
             },
             { headers: { Authorization: authToken } }
           )
-          .then(() => window.localStorage.clear())
+          .then(() => {
+            window.localStorage.clear();
+          })
           .then(function (response) {
             history.push("https://sparkstudio.co/booked/");
           })
@@ -417,6 +421,10 @@ function SlotsForm() {
             if (requestTrialClass === "request-trial") {
               setCustomSlotModal(false);
               setShowModal(true);
+              moengageEvent(
+                "Book_Trial_Submit",
+                bookTrialSubmitAttributes(3, "Slots", "Yes", 0)
+              );
             }
           }}
         >

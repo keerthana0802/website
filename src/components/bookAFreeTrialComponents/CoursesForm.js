@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { bookTrialSubmitAttributes } from "../../helpers/MoengageAttributeCreators";
 let childAge;
 function CoursesForm({ switchRoute, tabsStatus }) {
   const history = useHistory();
@@ -144,6 +146,10 @@ function CoursesForm({ switchRoute, tabsStatus }) {
           onClick={() => {
             setLocalStorage();
             updateApi();
+            moengageEvent(
+              "Book_Trial_Submit",
+              bookTrialSubmitAttributes(2, "Course Selection", "Yes", 3)
+            );
           }}
           className="select-slots"
           to="/book-a-trial/slot-selection"

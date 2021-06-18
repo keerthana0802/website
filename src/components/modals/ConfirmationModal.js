@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import cross from "../../assets/cross.svg";
 import cartoon from "../../assets/cartoon.svg";
-function CallbackRequestModal({ modalCloseFunction }) {
+function ConfirmationModal({ modalCloseFunction, modalText }) {
   const modalRef = useRef(null);
   const modalWrapperRef = useRef(null);
   const tweenRef = useRef(null);
@@ -32,9 +32,7 @@ function CallbackRequestModal({ modalCloseFunction }) {
       ref={modalWrapperRef}
     >
       <div className="callback-request-modal" ref={modalRef}>
-        <h1 className="callback-request-modal__content">
-          We will call you back!
-        </h1>
+        <h1 className="callback-request-modal__content">{modalText}</h1>
         <div
           className="callback-request-modal__close"
           onClick={() => {
@@ -53,4 +51,4 @@ function CallbackRequestModal({ modalCloseFunction }) {
   );
 }
 
-export default CallbackRequestModal;
+export default ConfirmationModal;

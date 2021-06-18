@@ -5,13 +5,16 @@ import CartPreview from "../components/CheckoutPageComponents/CartPreview";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import sparkLogoSquare from "../assets/sparkLogoSquare.jpeg";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  openLogin,
-  paymentSuccessful,
-} from "../store/actions/rootActions";
+import { openLogin, paymentSuccessful } from "../store/actions/rootActions";
 import { Helmet } from "react-helmet";
+import moengageEvent from "../helpers/MoengageEventTracking";
+import {
+  invokePaymentAttributes,
+  paymentStatusAttributes,
+} from "../helpers/MoengageAttributeCreators";
 function Checkout() {
   const dispatch = useDispatch();
+  const orderDetailsRef = useRef(null);
   const uuidRef = useRef(null);
   const address = useSelector((state) => state.checkout.address);
   const authToken = useSelector((state) => state.auth.authToken);
@@ -25,7 +28,6 @@ function Checkout() {
     name: "Spark Studio",
     image: sparkLogoSquare,
     handler: async function (response) {
-      // console.log("payment response", response);
       window.localStorage.setItem("payment_id", response.razorpay_payment_id);
       dispatch(paymentSuccessful());
       await axios.post(
@@ -33,6 +35,18 @@ function Checkout() {
         { payment_response: response },
         { headers: { Authorization: authToken, "X-SSUID": userDetails.id } }
       );
+      moengageEvent(
+        "Payment_Status",
+        paymentStatusAttributes(
+          orderDetailsRef.current.id,
+          orderDetailsRef.current.totalQty,
+          1,
+          orderDetailsRef.current.amount,
+          8,
+          orderDetailsRef.current.currency
+        )
+      );
+
       window.location.href = "/payment-successful";
     },
 
@@ -66,6 +80,17 @@ function Checkout() {
         },
       }
     );
+    let totalQty = cartItems.reduce((acc, course) => acc + course.quantity, 0);
+    moengageEvent(
+      "Invoke_Payment",
+      invokePaymentAttributes(
+        resp.data.order.razorpay_order_id,
+        totalQty,
+        JSON.stringify(address),
+        resp.data.order.amount,
+        resp.data.order.currency
+      )
+    );
     let description;
     if (cart.length === 1) {
       description = allCourses.find(
@@ -78,6 +103,12 @@ function Checkout() {
       } and ${cart.length - 1} others`;
     }
     uuidRef.current = resp.data.order.uuid;
+    orderDetailsRef.current = {
+      id: resp.data.order.razorpay_order_id,
+      amount: resp.data.order.amount,
+      currency: resp.data.order.currency,
+      totalQty: totalQty,
+    };
     rzp1 = new window.Razorpay({
       ...razorOptions,
       description: description,
@@ -92,7 +123,18 @@ function Checkout() {
     });
     await rzp1.open();
     rzp1.on("payment.failed", async function (response) {
-      // console.log("failure", response);
+      moengageEvent(
+        "Payment_Status",
+        paymentStatusAttributes(
+          resp.data.order.razorpay_order_id,
+          totalQty,
+          0,
+          resp.data.order.amount,
+          0,
+          resp.data.order.currency
+        )
+      );
+
       await axios.post(
         `${process.env.REACT_APP_RAZOR_API}/${resp.data.order.uuid}/failure`,
         {
@@ -119,9 +161,9 @@ function Checkout() {
   };
   return (
     <NavFooterLayout>
-      <Helmet>
+      {/* <Helmet>
         <title>Checkout page</title>
-      </Helmet>
+      </Helmet> */}
       <div className="spark-checkout-page">
         <CartPreview />
         <AddressForm openPayment={openPayment} />

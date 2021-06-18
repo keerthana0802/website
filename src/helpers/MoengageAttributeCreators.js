@@ -195,6 +195,281 @@ const checkoutAttributes = (
     a_b_variant: "a",
   };
 };
+// ! Moengage book trial page view event attributes (1001014)
+const bookTrialViewAttributes = () => {
+  return {
+    event_id: "1001014",
+    event_type: "View",
+    funnel_stage: "Trial",
+    event_category: "Book",
+    feature_set: "Trial",
+    event_priority: "High",
+    kingdom: "",
+    phylum: "",
+    class: "",
+    order: "",
+    family: "1001014",
+    genus: "",
+    species: "",
+    sub_c_1: "",
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage book trial field filled event attributes (1001017)
+const bookTrialFieldFilledAttributes = (fieldId, fieldTitle, fieldValue) => {
+  return {
+    event_id: "1001017",
+    event_type: "Platform",
+    funnel_stage: "Trial",
+    event_category: "Book",
+    feature_set: "Trial",
+    event_priority: "High",
+    kingdom: fieldId,
+    phylum: fieldTitle,
+    class: fieldValue,
+    order: "",
+    family: "1001017",
+    genus: ".5",
+    species: "",
+    sub_c_1: "",
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage book trial submit event attributes (1001026)
+const bookTrialSubmitAttributes = (
+  stageId,
+  stageTitle,
+  dataValidated,
+  nextStageId
+) => {
+  return {
+    event_id: "1001026",
+    event_type: "Click",
+    funnel_stage: "Trial",
+    event_category: "Book",
+    feature_set: "Trial",
+    event_priority: "High",
+    kingdom: stageId,
+    phylum: stageTitle,
+    class: dataValidated,
+    order: "",
+    family: "1001026",
+    genus: "1",
+    species: nextStageId,
+    sub_c_1: "",
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage book trial success event attributes (1001037)
+const bookTrialSuccessAttributes = (
+  stageId,
+  stageTitle,
+  dataValidated,
+  nextStageId,
+  leadScore
+) => {
+  return {
+    event_id: "1001037",
+    event_type: "System",
+    funnel_stage: "Trial",
+    event_category: "Book",
+    feature_set: "Trial",
+    event_priority: "High",
+    kingdom: stageId,
+    phylum: stageTitle,
+    class: dataValidated,
+    order: "",
+    family: "1001037",
+    genus: leadScore,
+    species: nextStageId,
+    sub_c_1: "",
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage invoke payment event attributes (1001043)
+const invokePaymentAttributes = (
+  orderId,
+  totalCartQuantity,
+  billingDetailsString,
+  totalCartPrice,
+  currency,
+  promoCode = "",
+  discountVisible = "No"
+) => {
+  return {
+    event_id: "1001043",
+    event_type: "Click",
+    funnel_stage: "Action",
+    event_category: "Cart",
+    feature_set: "Checkout",
+    event_priority: "High",
+    kingdom: orderId,
+    phylum: totalCartQuantity,
+    class: billingDetailsString,
+    order: totalCartPrice,
+    family: "1001043",
+    genus: "8",
+    species: promoCode,
+    sub_c_1: discountVisible,
+    sub_c_2: currency,
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage payment status event attributes (1001044)
+const paymentStatusAttributes = (
+  orderId,
+  totalCartQuantity,
+  status,
+  totalCartPrice,
+  genus,
+  currency,
+  promoCode = "",
+  discountVisible = "No"
+) => {
+  return {
+    event_id: "1001044",
+    event_type: "System",
+    funnel_stage: "Conversion",
+    event_category: "Cart",
+    feature_set: "Checkout",
+    event_priority: "High",
+    kingdom: orderId,
+    phylum: totalCartQuantity,
+    class: status,
+    order: totalCartPrice,
+    family: "1001044",
+    genus: genus,
+    species: promoCode,
+    sub_c_1: discountVisible,
+    sub_c_2: currency,
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage request callback event attributes (1001033)
+const requestCallbackAttributes = (
+  nameFilled,
+  mobileFilled,
+  location,
+  countryCode
+) => {
+  return {
+    event_id: "1001033",
+    event_type: "Click",
+    funnel_stage: "Action",
+    event_category: "Request",
+    feature_set: "Parent",
+    event_priority: "High",
+    kingdom: nameFilled,
+    phylum: mobileFilled,
+    class: location,
+    order: countryCode,
+    family: "1001033",
+    genus: ".5",
+    species: "",
+    sub_c_1: "",
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage connect with us event attributes (1001034)
+const connectWithUsAttributes = (
+  linkedinDetailsFilled,
+  location,
+  linkedinUrl
+) => {
+  return {
+    event_id: "1001034",
+    event_type: "Click",
+    funnel_stage: "Action",
+    event_category: "Request",
+    feature_set: "Teacher",
+    event_priority: "High",
+    kingdom: linkedinDetailsFilled,
+    phylum: "",
+    class: location,
+    order: "",
+    family: "1001034",
+    genus: ".5",
+    species: "",
+    sub_c_1: linkedinUrl,
+    sub_c_2: "",
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage join class event attributes (1001045)
+const joinClassAttributes = (
+  classId,
+  courseId,
+  classType,
+  teacherPresent,
+  leadScore,
+  classDate,
+  classTiming,
+  sessionNo
+) => {
+  return {
+    event_id: "1001045",
+    event_type: "Click",
+    funnel_stage: "Consumbtion",
+    event_category: "Class",
+    feature_set: "Base",
+    event_priority: "High",
+    kingdom: classId,
+    phylum: courseId,
+    class: classType,
+    order: teacherPresent,
+    family: "1001045",
+    genus: leadScore,
+    species: classDate,
+    sub_c_1: classTiming,
+    sub_c_2: sessionNo,
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage leave class event attributes (1001046)
+const leaveClassAttributes = (
+  classId,
+  courseId,
+  classType,
+  teacherPresent,
+  leadScore,
+  classDate,
+  classTiming,
+  sessionNo
+) => {
+  return {
+    event_id: "1001046",
+    event_type: "Click",
+    funnel_stage: "Consumbtion",
+    event_category: "Class",
+    feature_set: "Base",
+    event_priority: "High",
+    kingdom: classId,
+    phylum: courseId,
+    class: classType,
+    order: teacherPresent,
+    family: "1001046",
+    genus: leadScore,
+    species: classDate,
+    sub_c_1: classTiming,
+    sub_c_2: sessionNo,
+    app_version: "0.0.0",
+    a_b_variant: "a",
+  };
+};
 export {
   pageVisitAttributes,
   ageFilterAttributes,
@@ -204,4 +479,14 @@ export {
   categoryFilterAttributes,
   searchExecuteAttributes,
   checkoutAttributes,
+  bookTrialViewAttributes,
+  bookTrialFieldFilledAttributes,
+  bookTrialSubmitAttributes,
+  bookTrialSuccessAttributes,
+  invokePaymentAttributes,
+  paymentStatusAttributes,
+  requestCallbackAttributes,
+  connectWithUsAttributes,
+  joinClassAttributes,
+  leaveClassAttributes,
 };
