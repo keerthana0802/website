@@ -19,6 +19,9 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0 2.5rem;
+    @include bp-md {
+      padding-top: 5rem;
+    }
     &--header {
       font-size: 5rem;
       font-weight: 900;
@@ -32,6 +35,7 @@
       list-style: none;
       padding-inline-start: 0;
       margin-bottom: 4rem;
+      padding-left: 2.2rem;
       &-item {
         font-size: 1.8rem;
         position: relative;
@@ -47,9 +51,6 @@
           left: -2.5rem;
           border-radius: 5rem;
         }
-      }
-      @include bpm-xs {
-        margin-left: 2rem;
       }
     }
     @include bpm-md {

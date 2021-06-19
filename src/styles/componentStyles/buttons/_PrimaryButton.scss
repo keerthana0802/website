@@ -3,6 +3,9 @@
   background: linear-gradient(90deg, #f3705b 0%, #fcb444 100%);
   box-shadow: 0px 2px 6px rgba(91, 22, 170, 0.12), 0px 4px 14px #eeeeee,
     inset 1px 0px 3px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0px 2px 6px rgba(91, 22, 170, 0.12), 0px 4px 14px #eeeeee,
+    inset 1px 0px 3px rgba(255, 255, 255, 0.5);
+  -webkit-appearance: none;
   border-radius: 5rem;
   display: flex;
   align-items: center;
@@ -12,6 +15,26 @@
     padding: 1.5rem 4rem;
     justify-content: center;
     font-weight: 600;
+    animation: shine 1500ms ease-in infinite;
+    background: linear-gradient(
+      -45deg,
+      #fcb444 0%,
+      #f3705b 45%,
+      #f3705b 55%,
+      #fcb444 100%
+    );
+    background-size: 300px 1500px;
+    @keyframes shine {
+      0% {
+        background-position: top left;
+      }
+      50% {
+        background-position: center center;
+      }
+      100% {
+        background-position: bottom right;
+      }
+    }
   }
   &.version-2 {
     padding: 1.5rem 0 1.5rem 2.2rem;
@@ -20,16 +43,40 @@
     font-size: 18px;
     font-weight: 400;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    -webkit-appearance: none;
     width: 22rem;
     img {
       position: absolute;
       width: 4rem;
       right: 0.6rem;
     }
+    animation: shine 1500ms ease-out infinite;
+    background: linear-gradient(
+      -45deg,
+      #fcb444 0%,
+      #f3705b 45%,
+      #f3705b 55%,
+      #fcb444 100%
+    );
+    background-size: 300px 1500px;
+    @keyframes shine {
+      0% {
+        background-position: top left;
+      }
+      50% {
+        background-position: center center;
+      }
+      100% {
+        background-position: bottom right;
+      }
+    }
   }
   &.version-3 {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     box-shadow: 0px 1px 8px rgba(63, 63, 63, 0.3);
+    -webkit-box-shadow: 0px 1px 8px rgba(63, 63, 63, 0.3);
+    -webkit-appearance: none;
   }
 }

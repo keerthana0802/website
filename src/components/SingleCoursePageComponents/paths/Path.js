@@ -78,9 +78,7 @@ function Path({ courseThemeColorDark, steps, sessions }) {
         background: `linear-gradient(111.29deg,${courseThemeColorDark}88 -1.83%,rgba(255, 255, 255, 0) 109.95%)`,
       }}
     >
-      <h1 className="curriculum-path__wrapper--header">
-        Child’s Learning journey
-      </h1>
+      <h1 className="curriculum-path__wrapper--header">Learning journey</h1>
       <div
         className={`curriculum-path curriculum-path__${steps}`}
         ref={pathRef}

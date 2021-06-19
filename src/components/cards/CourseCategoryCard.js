@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import {
   addToCart,
   addQtyToCart,
-  cartTooltipOpen,
+  cartDrawerOpen,
 } from "../../store/actions/rootActions";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 import { addToCartAttributes } from "../../helpers/MoengageAttributeCreators";
@@ -21,9 +21,10 @@ function CourseCategoryCard({
   coursePrice,
 }) {
   const history = useHistory();
-  
+
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.checkout.cart);
+  const cartDrawer = useSelector((state) => state.checkout.cartDrawer);
   const openCourse = () => {
     history.push(
       `/course/${courseCardName.toLowerCase().split(" ").join("-")}`
@@ -75,10 +76,10 @@ function CourseCategoryCard({
               );
               if (found) {
                 dispatch(addQtyToCart(found.courseId));
-                dispatch(cartTooltipOpen(courseCardName));
+                if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
               } else {
                 dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
-                dispatch(cartTooltipOpen(courseCardName));
+                if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
                 MoengageEventTracking(
                   "Add_to_Cart",
                   addToCartAttributes(courseCardId, courseCardName, coursePrice)

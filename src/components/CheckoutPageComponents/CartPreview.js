@@ -16,7 +16,8 @@ function CartPreview() {
             Hey {userDetails?.fullName || "There"},
           </h1>
           <h2 className="cart-preview__liner">
-            We are excited to have you as part of spark studio family!
+            We are excited to have you on this journey with the Spark Studio
+            community!
           </h2>
           <div className="cart-preview__cart-cards">
             {cart.map((course, index) => {
@@ -55,9 +56,9 @@ function CartPreview() {
           </div>
         </div>
 
-        <p className="cart-preview__liner-2">
+        {/* <p className="cart-preview__liner-2">
           Our team will get in touch with you.
-        </p>
+        </p> */}
         {/* <label htmlFor="promo" className="cart-preview__promo-code">
           <input
             type="text"

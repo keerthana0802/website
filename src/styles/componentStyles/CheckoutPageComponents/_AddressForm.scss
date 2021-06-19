@@ -4,6 +4,9 @@
     @include bp-md {
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25),
         4px 4px 4px rgba(231, 231, 231, 0.25);
+      -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25),
+        4px 4px 4px rgba(231, 231, 231, 0.25);
+      -webkit-appearance: none;
       padding-top: 5rem;
     }
     @include bpm-md {
@@ -31,6 +34,8 @@
       outline: none;
     }
     box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+    -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+    -webkit-appearance: none;
     border-radius: 0.8rem;
     margin: 0.7rem 0;
     @include bpm-xs {
@@ -84,6 +89,9 @@
     background: linear-gradient(90deg, #f3705b 0%, #fcb444 100%);
     box-shadow: 0px 2px 6px rgba(91, 22, 170, 0.12), 0px 4px 14px #eeeeee,
       inset 1px 0px 3px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0px 2px 6px rgba(91, 22, 170, 0.12),
+      0px 4px 14px #eeeeee, inset 1px 0px 3px rgba(255, 255, 255, 0.5);
+    -webkit-appearance: none;
     border-radius: 5rem;
     display: flex;
     align-items: center;
@@ -98,6 +106,8 @@
     font-size: 18px;
     font-weight: 400;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+    -webkit-appearance: none;
     width: 22rem;
     img {
       position: absolute;
@@ -146,6 +156,8 @@
     margin: 0.7rem 0;
     overflow: hidden;
     box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.08);
+    -webkit-box-shadow: 0px 0px 8px rgba(75, 0, 188, 0.2);
+    -webkit-appearance: none;
     &::after {
       content: "PROMO CODE";
       color: #fff;

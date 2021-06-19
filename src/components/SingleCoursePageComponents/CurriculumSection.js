@@ -2,25 +2,20 @@ import React, { useState, useEffect } from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import Path from "./paths/Path";
 import { useSelector, useDispatch } from "react-redux";
-// ! GSAP imports
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import {
   addQtyToCart,
   addToCart,
-  cartTooltipClose,
-  cartTooltipOpen,
+  cartDrawerOpen,
 } from "../../store/actions/checkoutActions";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 import { addToCartAttributes } from "../../helpers/MoengageAttributeCreators";
-gsap.registerPlugin(ScrollToPlugin);
 function CurriculumSection({ dark, courseDetails, courseType, courseName }) {
   const activeCourseOnCoursePage = useSelector(
     (state) => state.courses.activeCourseOnCoursePage
   );
   const allCourses = useSelector((state) => state.courses.allCourses);
   const cart = useSelector((state) => state.checkout.cart);
-
+  const cartDrawer = useSelector((state) => state.checkout.cartDrawer);
   const dispatch = useDispatch();
   const addToCartHandle = (courseCardId, courseCardName) => {
     let found = cart.find((course) => course.courseId === courseCardId);
@@ -29,24 +24,15 @@ function CurriculumSection({ dark, courseDetails, courseType, courseName }) {
     );
     if (found) {
       dispatch(addQtyToCart(found.courseId));
-      dispatch(cartTooltipOpen(courseCardName));
+      if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
     } else {
       dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
-      dispatch(cartTooltipOpen(courseCardName));
+      if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
       MoengageEventTracking(
         "Add_to_Cart",
         addToCartAttributes(courseCardId, courseCardName, foundPrice.price)
       );
     }
-  };
-  // ! Scroll-to function
-  const scroller = () => {
-    gsap.to(window, {
-      scrollTo: document.getElementById("single-course-details").offsetTop - 70,
-      ease: "ease-out",
-      duration: 1,
-      scrollBehavior: "smooth",
-    });
   };
   const [localCourseDetails, setLocalCourseDetails] = useState(courseDetails);
   useEffect(() => {

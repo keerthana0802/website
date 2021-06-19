@@ -14,6 +14,7 @@ import PrimaryButton from "../components/buttons/PrimaryButton";
 import moengageEvent from "../helpers/MoengageEventTracking";
 import { connectWithUsAttributes } from "../helpers/MoengageAttributeCreators";
 import ConfirmationModal from "../components/modals/ConfirmationModal";
+import axios from "axios";
 
 function AboutUs() {
   const [linkedinUrl, setLinkedinUrl] = useState("");
@@ -55,14 +56,17 @@ function AboutUs() {
           <PrimaryButton
             buttonText="Connect with us"
             version="version-2"
-            clickHandle={() => {
+            clickHandle={async () => {
+              await axios.post(process.env.REACT_APP_CAREERS_APPLICATION_API, {
+                linkedin_profile: linkedinUrl,
+              });
               setShowModal(!showModal);
               moengageEvent(
                 "Connect_With_Us",
                 connectWithUsAttributes(
                   linkedinUrl.length > 0 ? 1 : 0,
                   window.location.pathname,
-                  linkedinUrl
+                  ""
                 )
               );
             }}

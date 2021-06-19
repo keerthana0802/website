@@ -96,7 +96,8 @@
           span {
             color: #fcb444;
             font-size: 1.8rem;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
           }
           @include bpm-sm {
             text-align: center;
@@ -148,6 +149,9 @@
         position: static;
         margin: 4rem auto;
       }
+    }
+    &--last-liner {
+      font-size: 1.6rem;
     }
   }
 }

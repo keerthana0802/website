@@ -54,6 +54,8 @@
     .showcase-single-element {
       border-radius: 6.6rem;
       box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+      -webkit-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+      -webkit-appearance: none;
       position: absolute;
       overflow: hidden;
       cursor: pointer;

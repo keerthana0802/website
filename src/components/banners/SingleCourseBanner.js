@@ -14,8 +14,7 @@ import "swiper/components/navigation/navigation.min.css";
 import {
   addQtyToCart,
   addToCart,
-  cartTooltipClose,
-  cartTooltipOpen,
+  cartDrawerOpen,
 } from "../../store/actions/checkoutActions";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 import { addToCartAttributes } from "../../helpers/MoengageAttributeCreators";
@@ -51,6 +50,7 @@ function SingleCourseBanner({
     (state) => state.courses.activeCourseOnCoursePage
   );
   const cart = useSelector((state) => state.checkout.cart);
+  const cartDrawer = useSelector((state) => state.checkout.cartDrawer);
   const allCourses = useSelector((state) => state.courses.allCourses);
   const dispatch = useDispatch();
   // ! Scroll-to function
@@ -69,15 +69,30 @@ function SingleCourseBanner({
     );
     if (found) {
       dispatch(addQtyToCart(found.courseId));
-      dispatch(cartTooltipOpen(courseCardName));
+      if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
     } else {
       dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
-      dispatch(cartTooltipOpen(courseCardName));
+      if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
       MoengageEventTracking(
         "Add_to_Cart",
         addToCartAttributes(courseCardId, courseCardName, foundPrice.price)
       );
     }
+  };
+  // ! Title casing
+  const capitalize = (s) => {
+    if (typeof s !== "string") return "";
+    return s.toLowerCase().charAt(0).toUpperCase() + s.toLowerCase().slice(1);
+  };
+  const titleCase = (string) => {
+    let result = string?.split(" ").map((word) => {
+      if (word.toLowerCase() === "of" || word.toLowerCase() === "in") {
+        return word;
+      } else {
+        return capitalize(word);
+      }
+    });
+    return result?.join(" ");
   };
   return (
     <div className="single-course-banner__wrapper">
@@ -88,7 +103,9 @@ function SingleCourseBanner({
         }}
       >
         <div className="single-course-banner__left">
-          <h1 className="single-course-banner__left--header">{courseName}</h1>
+          <h1 className="single-course-banner__left--header">
+            {titleCase(courseName)}
+          </h1>
           <p className="single-course-banner__left--content">{courseContent}</p>
           <div className="single-course-banner__left--tags"></div>
           <PrimaryButton

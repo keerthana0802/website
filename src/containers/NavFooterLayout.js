@@ -90,21 +90,6 @@ function NavFooterLayout({ children }) {
       ? "spark-layout-navbar--cart-drawer visible"
       : "spark-layout-navbar--cart-drawer hidden"
   );
-  const [cartTooltipClass, setCartTooltipClass] = useState(
-    "cart-tooltip hidden"
-  );
-  useEffect(() => {
-    if (cartTooltip) {
-      setCartTooltipClass("cart-tooltip visible");
-      setTimeout(() => {
-        setCartTooltipClass("cart-tooltip hidden");
-        setTimeout(() => {
-          dispatch(cartTooltipClose());
-        }, 200);
-      }, 1000);
-    }
-  }, [cartTooltip]);
-
   useEffect(() => {
     cartDrawer
       ? setCartDrawerClass("spark-layout-navbar--cart-drawer visible")
@@ -172,15 +157,6 @@ function NavFooterLayout({ children }) {
                 {cart?.length > 0 ? (
                   <div className="cart-bubble">
                     {cart?.reduce((a, b) => a + b.qty, 0)}
-                  </div>
-                ) : null}
-                {cartTooltip ? (
-                  <div className={cartTooltipClass}>
-                    <img src={check} alt="" />
-                    <p>
-                      {cartTooltipData} <br />
-                      Added to cart
-                    </p>
                   </div>
                 ) : null}
               </div>
@@ -420,15 +396,6 @@ function NavFooterLayout({ children }) {
                   {cart?.length > 0 ? (
                     <div className="cart-bubble">
                       {cart?.reduce((a, b) => a + b.qty, 0)}
-                    </div>
-                  ) : null}
-                  {cartTooltip ? (
-                    <div className={cartTooltipClass}>
-                      <img src={check} alt="" />
-                      <p>
-                        {cartTooltipData} <br />
-                        Added to cart
-                      </p>
                     </div>
                   ) : null}
                 </li>

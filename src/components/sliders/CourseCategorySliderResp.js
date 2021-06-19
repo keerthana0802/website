@@ -40,9 +40,12 @@ function CourseCatgorySliderResp({
           <div className="course-category-slider__left--keywords">
             {courseSliderKeywords.map((keyword, index) => {
               return (
-                <h3 className="keyword" key={index}>
-                  {keyword}
-                </h3>
+                <div>
+                  <h3 className="keyword" key={index}>
+                    {keyword}
+                  </h3>
+                  <br />
+                </div>
               );
             })}
           </div>

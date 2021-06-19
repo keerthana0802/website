@@ -66,6 +66,9 @@ function PaymentSuccessful() {
                 </p>
                 {/* <button>Change email</button> */}
               </div>
+              <p className="spark-payment-successful__right--last-liner">
+                Our team will get in touch with you with the batch details!
+              </p>
             </div>
             <PrimaryButton
               version="version-1"

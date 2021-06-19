@@ -24,6 +24,8 @@
     flex-direction: column;
     background-color: #ffe7c2;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    -webkit-appearance: none;
     border-radius: 10px;
     width: 30rem;
     padding: 1rem 2rem;

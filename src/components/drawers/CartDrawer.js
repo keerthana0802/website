@@ -65,6 +65,7 @@ function CartDrawer({ selectedCourses }) {
                     courseColor={found.verticalThemeColorDark}
                     courseId={course.courseId}
                     version="--small"
+                    courseDuration={found.numberOfClasses}
                   />
                 );
             })

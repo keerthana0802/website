@@ -52,14 +52,9 @@ function CourseCategorySection({ courseData }) {
             <CourseCatgorySliderResp
               tempImage={blueCourse}
               courseData={communicationCourses}
-              courseSliderHeader={
-                <p>
-                  Speech &<br />
-                  Debate
-                </p>
-              }
+              courseSliderHeader={<p>Communication</p>}
               courseVertical="communication"
-              courseSliderDuration="1 hour session"
+              courseSliderDuration="60 minute session"
               courseSliderContent="Develop the most sought after 21st century skill. Be an orator, an opinion leader, a storyteller."
               courseSliderKeywords={["Confidence", "Communication", "Logic"]}
               courseSliderExpertsVideoUrl=""
@@ -82,7 +77,7 @@ function CourseCategorySection({ courseData }) {
                 </p>
               }
               courseVertical="art"
-              courseSliderDuration="1 hour session"
+              courseSliderDuration="60 minute session"
               courseSliderContent="Get a real art education as you learn the fundamentals of fine art, unlock your imagination and dabble in the exciting world of applied arts"
               courseSliderKeywords={[
                 "Creativity",
@@ -105,7 +100,7 @@ function CourseCategorySection({ courseData }) {
                 </p>
               }
               courseVertical="music"
-              courseSliderDuration="1 hour session"
+              courseSliderDuration="60 minute session"
               courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"
               courseSliderKeywords={[
                 "Performance",
@@ -126,14 +121,9 @@ function CourseCategorySection({ courseData }) {
             <CourseCatgorySlider
               tempImage={blueCourse}
               courseData={communicationCourses}
-              courseSliderHeader={
-                <p>
-                  Speech &<br />
-                  Debate
-                </p>
-              }
+              courseSliderHeader={<p>Communication</p>}
               courseVertical="communication"
-              courseSliderDuration="1 hour session"
+              courseSliderDuration="60 minute session"
               courseSliderContent="Develop the most sought after 21st century skill. Be an orator, an opinion leader, a storyteller."
               courseSliderKeywords={["Confidence", "Communication", "Logic"]}
               courseSliderExpertsVideoUrl=""
@@ -156,7 +146,7 @@ function CourseCategorySection({ courseData }) {
                 </p>
               }
               courseVertical="art"
-              courseSliderDuration="1 hour session"
+              courseSliderDuration="60 minute session"
               courseSliderContent="Get a real art education as you learn the fundamentals of fine art, unlock your imagination and dabble in the exciting world of applied arts"
               courseSliderKeywords={[
                 "Creativity",
@@ -179,7 +169,7 @@ function CourseCategorySection({ courseData }) {
                 </p>
               }
               courseVertical="music"
-              courseSliderDuration="1 hour session"
+              courseSliderDuration="60 minute session"
               courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"
               courseSliderKeywords={[
                 "Performance",

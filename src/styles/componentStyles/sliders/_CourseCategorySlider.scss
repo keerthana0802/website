@@ -64,7 +64,9 @@
       flex-wrap: wrap;
       max-width: 20rem;
       align-items: center;
-
+      @include bpm-sm {
+        justify-content: center;
+      }
       > div {
         display: block;
         width: max-content;
