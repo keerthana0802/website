@@ -38,7 +38,7 @@ function App() {
               <AboutUs />
             </Suspense>
           </Route>
-          <Route path="/explore-course/">
+          <Route path="/course/">
             <Suspense fallback={<div></div>}>
               <SingleCourse />
             </Suspense>

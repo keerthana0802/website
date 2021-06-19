@@ -54,47 +54,47 @@ function HomepageUspSection() {
               classNameProp="usp-section__top--card-1 usp-card"
               uspImage={usp1}
               uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspContent="Small group classes for individual attention on each child"
             />
           </SwiperSlide>
           <SwiperSlide>
             <HomepageUspCard
               classNameProp="usp-section__top--card-2 usp-card usp-card-reverse"
               uspImage={uspReversed5}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Fun & Engaging"
+              uspContent="Learn, interact and co-create with other kids. Make new friends!"
             />
           </SwiperSlide>
           <SwiperSlide>
             <HomepageUspCard
               classNameProp="usp-section__top--card-3 usp-card"
               uspImage={usp2}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Top Notch Curriculum"
+              uspContent="Meticulously designed for effective learning, building interest and fun!"
             />
           </SwiperSlide>
           <SwiperSlide>
             <HomepageUspCard
               classNameProp="usp-section__middle--card-1 usp-card"
               uspImage={usp3}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Expert Teachers"
+              uspContent="Carefully selected faculty - skilled, child-friendly and verified"
             />
           </SwiperSlide>
           <SwiperSlide>
             <HomepageUspCard
               classNameProp="usp-section__middle--card-2 usp-card"
               uspImage={usp4}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Interdisciplinary"
+              uspContent="Learning beyond the skill, connecting to the science and history of things"
             />
           </SwiperSlide>
           <SwiperSlide>
             <HomepageUspCard
               classNameProp="usp-section__bottom--card-1 usp-card usp-card-reverse"
               uspImage={uspReversed6}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Certification"
+              uspContent="Individual feedback and assessment, with certifications on completing levels"
             />
           </SwiperSlide>
         </Swiper>
@@ -105,41 +105,41 @@ function HomepageUspSection() {
               classNameProp="usp-section__top--card-1 usp-card"
               uspImage={usp1}
               uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspContent="Small group classes for individual attention on each child"
             />
             <HomepageUspCard
               classNameProp="usp-section__top--card-2 usp-card usp-card-reverse"
               uspImage={uspReversed5}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Fun & Engaging"
+              uspContent="Learn, interact and co-create with other kids. Make new friends!"
             />
             <HomepageUspCard
               classNameProp="usp-section__top--card-3 usp-card"
               uspImage={usp2}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Top Notch Curriculum"
+              uspContent="Meticulously designed for effective learning, building interest and fun!"
             />
           </div>
           <div className="usp-section__middle">
             <HomepageUspCard
               classNameProp="usp-section__middle--card-1 usp-card"
               uspImage={usp3}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Expert Teachers"
+              uspContent="Carefully selected faculty - skilled, child-friendly and verified"
             />
             <HomepageUspCard
               classNameProp="usp-section__middle--card-2 usp-card"
               uspImage={usp4}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Interdisciplinary"
+              uspContent="Learning beyond the skill, connecting to the science and history of things"
             />
           </div>
           <div className="usp-section__bottom">
             <HomepageUspCard
               classNameProp="usp-section__bottom--card-1 usp-card usp-card-reverse"
               uspImage={uspReversed6}
-              uspHeader="Personal Attention"
-              uspContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+              uspHeader="Certification"
+              uspContent="Individual feedback and assessment, with certifications on completing levels"
             />
           </div>
         </div>

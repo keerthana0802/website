@@ -23,72 +23,77 @@ function BannerCard({
     </div>
   );
 }
-function ShowcaseSection({ verticalThemeColorDark }) {
+function ShowcaseSection({ verticalThemeColorDark, courseDetails }) {
   return (
-    <div className="showcase-section__wrapper">
-      <div
-        className="showcase-section"
-        style={{
-          background: `linear-gradient(111.29deg,${verticalThemeColorDark}88 -1.83%,rgba(255, 255, 255, 0) 109.95%)`,
-        }}
-      >
-        <div className="showcase-section__left">
-          <h1 className="showcase-section__left--header">
-            Take a look. <br />
-            This says it all.
-          </h1>
-          <p className="showcase-section__left--content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos impedit
-            vitae mollitia numquam accusamus ex eius soluta vel explicabo? Esse?
-          </p>
-          {typeof window === "object" && window.innerWidth > 992 ? (
-            <PrimaryButton buttonText="See more" version="version-1" />
-          ) : null}
-        </div>
-        <div className="showcase-section__right">
-          <Swiper
-            slidesPerView={"auto"}
-            spaceBetween={0}
-            centeredSlides={true}
-            className="single-course-banner-slider"
-            pagination={{ clickable: true }}
-            // navigation={true}
+    <>
+      {courseDetails.showcaseData ? (
+        <div className="showcase-section__wrapper">
+          <div
+            className="showcase-section"
+            style={{
+              background: `linear-gradient(111.29deg,${verticalThemeColorDark}88 -1.83%,rgba(255, 255, 255, 0) 109.95%)`,
+            }}
           >
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-          </Swiper>
-          {typeof window === "object" && window.innerWidth <= 992 ? (
-            <PrimaryButton buttonText="See more" version="version-1" />
-          ) : null}
+            <div className="showcase-section__left">
+              <h1 className="showcase-section__left--header">
+                Take a look. <br />
+                This says it all.
+              </h1>
+              <p className="showcase-section__left--content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                impedit vitae mollitia numquam accusamus ex eius soluta vel
+                explicabo? Esse?
+              </p>
+              {typeof window === "object" && window.innerWidth > 992 ? (
+                <PrimaryButton buttonText="See more" version="version-1" />
+              ) : null}
+            </div>
+            <div className="showcase-section__right">
+              <Swiper
+                slidesPerView={"auto"}
+                spaceBetween={0}
+                centeredSlides={true}
+                className="single-course-banner-slider"
+                pagination={{ clickable: true }}
+                // navigation={true}
+              >
+                <SwiperSlide>
+                  <BannerCard
+                    header="something"
+                    liner="other thing"
+                    mediaUrl={yellow}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <BannerCard
+                    header="something"
+                    liner="other thing"
+                    mediaUrl={yellow}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <BannerCard
+                    header="something"
+                    liner="other thing"
+                    mediaUrl={yellow}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <BannerCard
+                    header="something"
+                    liner="other thing"
+                    mediaUrl={yellow}
+                  />
+                </SwiperSlide>
+              </Swiper>
+              {typeof window === "object" && window.innerWidth <= 992 ? (
+                <PrimaryButton buttonText="See more" version="version-1" />
+              ) : null}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ) : null}
+    </>
   );
 }
 

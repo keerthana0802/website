@@ -1,5 +1,6 @@
 import React from "react";
 import ShowcaseSection from "../SingleCoursePageComponents/ShowcaseSection";
+import AboutUsShowcase from "./AboutUsShowcase";
 function BeliefCard({ index, title, liner }) {
   return (
     <div className="belief-card">
@@ -35,7 +36,7 @@ function BeliefSection() {
         />
       </div>
       <div className="belief-section__right">
-        <ShowcaseSection />
+        <AboutUsShowcase />
       </div>
     </div>
   );

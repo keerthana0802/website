@@ -18,52 +18,58 @@ function SingleSlide({ slideContent, slideSource, dark, light }) {
     </div>
   );
 }
-function ParentsSection({ light, dark }) {
+function ParentsSection({ light, dark, courseDetails }) {
   const pagination = {
     clickable: true,
   };
   return (
-    <div className="parents-section__wrapper">
-      <img src={artwork} alt="" />
-      <div className="parents-section">
-        <h1 className="parents-section__header">Beloved by all Parents</h1>
-        <p className="parents-section__liner">Here is what our parents says</p>
-        {/* <div className="parents-section__slider">
+    <>
+      {courseDetails.testimonialData ? (
+        <div className="parents-section__wrapper">
+          <img src={artwork} alt="" />
+          <div className="parents-section">
+            <h1 className="parents-section__header">Beloved by all Parents</h1>
+            <p className="parents-section__liner">
+              Here is what our parents says
+            </p>
+            {/* <div className="parents-section__slider">
           <TestimonialSlide dark={dark} light={light} />
         </div> */}
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={0}
-          pagination={pagination}
-          className="parents-section__slider"
-        >
-          <SwiperSlide>
-            <SingleSlide
-              slideContent={dummyString}
-              slideSource="Neeta Gupta, Parent of a 6 year old"
-              dark={dark}
-              light={light}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleSlide
-              slideContent={dummyString}
-              slideSource="Neeta Gupta, Parent of a 6 year old"
-              dark={dark}
-              light={light}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleSlide
-              slideContent={dummyString}
-              slideSource="Neeta Gupta, Parent of a 6 year old"
-              dark={dark}
-              light={light}
-            />
-          </SwiperSlide>
-        </Swiper>
-      </div>
-    </div>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={0}
+              pagination={pagination}
+              className="parents-section__slider"
+            >
+              <SwiperSlide>
+                <SingleSlide
+                  slideContent={dummyString}
+                  slideSource="Neeta Gupta, Parent of a 6 year old"
+                  dark={dark}
+                  light={light}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SingleSlide
+                  slideContent={dummyString}
+                  slideSource="Neeta Gupta, Parent of a 6 year old"
+                  dark={dark}
+                  light={light}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SingleSlide
+                  slideContent={dummyString}
+                  slideSource="Neeta Gupta, Parent of a 6 year old"
+                  dark={dark}
+                  light={light}
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
 

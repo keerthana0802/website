@@ -6,37 +6,38 @@
   .course-details-slide {
     // height: 41rem;
     margin: 0 7rem 0 7rem;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    display: flex;
+    align-items: center;
     border-radius: 3rem;
     border: 5px solid #ffffff;
     overflow: hidden;
-    @include bpm-custom(1050px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 0.5fr;
-      max-width: 500px;
-      margin: 0 auto;
+    padding: 2rem;
+    @include bpm-sm {
+      flex-direction: column;
+      align-items: center;
     }
     @include bpm-xs {
       max-width: 360px;
       max-height: 60rem !important;
+      margin: 0 1rem;
     }
     &__left {
       img {
         width: 100%;
+        border-radius: 2rem;
       }
     }
     &__right {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding-left: 7rem;
+      padding-left: 5rem;
       padding-top: 3rem;
       @include bpm-custom(1300px) {
         padding: 2rem 4rem;
       }
-      @include bpm-xs {
-        padding-left: 2rem;
+      @include bpm-sm {
+        padding: 2rem 0 0 0;
       }
       .name {
         font-size: 3rem;

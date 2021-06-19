@@ -50,20 +50,6 @@ function HomepageCourses() {
       return "homepage-courses__age-filter-item";
     }
   };
-  // ! Temporary image selector
-  const imageSelector = (colorLight) => {
-    switch (colorLight.toUpperCase()) {
-      case "#FFEDC8":
-        return yellowCourse;
-      case "#EDFCFF":
-        return blueCourse;
-      case "#DCCCFF":
-        return purpleCourse;
-
-      default:
-        break;
-    }
-  };
   return (
     <div className="homepage-courses">
       <HomepageSectionHeader
@@ -141,8 +127,13 @@ function HomepageCourses() {
           className="mySwiper"
         >
           {cardsData.map((course, index) => {
-            if (course.courseStatus === "ACTIVE" && course.courseLevel === 1)
-              if (shouldRenderCard(course.minAge, course.maxAge))
+            if (course.courseStatus === "ACTIVE" && course.showOutside)
+              if (
+                shouldRenderCard(
+                  course.showOutsideMinAge,
+                  course.showOutsideMaxAge
+                )
+              )
                 return (
                   <SwiperSlide key={index}>
                     <HomepageCourseCard
@@ -151,9 +142,9 @@ function HomepageCourses() {
                       courseContent={course.courseContent}
                       courseLiner={course.courseLiner}
                       courseTags={course.courseTags}
-                      courseImage={imageSelector(
-                        course.verticalThemeColorLight
-                      )}
+                      courseImage={`${
+                        process.env.REACT_APP_ALL_COURSES_IMAGES_API
+                      }${course.courseId.toLowerCase()}`}
                       verticalThemeColorDark={course.verticalThemeColorDark}
                     />
                   </SwiperSlide>
@@ -168,8 +159,13 @@ function HomepageCourses() {
           navigation={true}
         >
           {cardsData.map((course, index) => {
-            if (course.courseStatus === "ACTIVE" && course.courseLevel === 1) {
-              if (shouldRenderCard(course.minAge, course.maxAge))
+            if (course.courseStatus === "ACTIVE" && course.showOutside) {
+              if (
+                shouldRenderCard(
+                  course.showOutsideMinAge,
+                  course.showOutsideMaxAge
+                )
+              )
                 return (
                   <SwiperSlide key={index}>
                     <HomepageCourseCard
@@ -178,9 +174,9 @@ function HomepageCourses() {
                       courseContent={course.courseContent}
                       courseLiner={course.courseLiner}
                       courseTags={course.courseTags}
-                      courseImage={imageSelector(
-                        course.verticalThemeColorLight
-                      )}
+                      courseImage={`${
+                        process.env.REACT_APP_ALL_COURSES_IMAGES_API
+                      }${course.courseId.toLowerCase()}`}
                       verticalThemeColorDark={course.verticalThemeColorDark}
                     />
                   </SwiperSlide>

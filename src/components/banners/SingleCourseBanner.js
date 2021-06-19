@@ -11,6 +11,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
+import {
+  addQtyToCart,
+  addToCart,
+  cartTooltipClose,
+  cartTooltipOpen,
+} from "../../store/actions/checkoutActions";
+import MoengageEventTracking from "../../helpers/MoengageEventTracking";
+import { addToCartAttributes } from "../../helpers/MoengageAttributeCreators";
 SwiperCore.use([Pagination, Navigation]);
 // ! Registering plugin
 gsap.registerPlugin(ScrollToPlugin);
@@ -33,11 +41,18 @@ function BannerCard({
 function SingleCourseBanner({
   courseName,
   courseContent,
+  showcase,
   courseId,
   courseThemeColorLight,
   courseThemeColorDark,
   courseType, // ! single or multilevel
 }) {
+  const activeCourseOnCoursePage = useSelector(
+    (state) => state.courses.activeCourseOnCoursePage
+  );
+  const cart = useSelector((state) => state.checkout.cart);
+  const allCourses = useSelector((state) => state.courses.allCourses);
+  const dispatch = useDispatch();
   // ! Scroll-to function
   const scroller = () => {
     gsap.to(window, {
@@ -46,6 +61,23 @@ function SingleCourseBanner({
       duration: 1,
       scrollBehavior: "smooth",
     });
+  };
+  const addToCartHandle = (courseCardId, courseCardName) => {
+    let found = cart.find((course) => course.courseId === courseCardId);
+    let foundPrice = allCourses.find(
+      (course) => course.courseId === courseCardId
+    );
+    if (found) {
+      dispatch(addQtyToCart(found.courseId));
+      dispatch(cartTooltipOpen(courseCardName));
+    } else {
+      dispatch(addToCart({ courseId: courseCardId, qty: 1 }));
+      dispatch(cartTooltipOpen(courseCardName));
+      MoengageEventTracking(
+        "Add_to_Cart",
+        addToCartAttributes(courseCardId, courseCardName, foundPrice.price)
+      );
+    }
   };
   return (
     <div className="single-course-banner__wrapper">
@@ -62,47 +94,60 @@ function SingleCourseBanner({
           <PrimaryButton
             buttonText={courseType === "single" ? "Buy Course" : "Choose level"}
             version="version-1"
-            clickHandle={courseType === "single" ? null : scroller}
+            clickHandle={
+              courseType === "single"
+                ? () => addToCartHandle(activeCourseOnCoursePage, courseName)
+                : scroller
+            }
           />
         </div>
         <div className="single-course-banner__right">
-          <Swiper
-            slidesPerView={"auto"}
-            spaceBetween={0}
-            centeredSlides={true}
-            className="single-course-banner-slider"
-            pagination={{ clickable: true }}
-            // navigation={true}
-          >
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-          </Swiper>
+          {showcase ? (
+            <Swiper
+              slidesPerView={"auto"}
+              spaceBetween={0}
+              centeredSlides={true}
+              className="single-course-banner-slider"
+              pagination={{ clickable: true }}
+            >
+              <SwiperSlide>
+                <BannerCard
+                  header="something"
+                  liner="other thing"
+                  mediaUrl={yellow}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BannerCard
+                  header="something"
+                  liner="other thing"
+                  mediaUrl={yellow}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BannerCard
+                  header="something"
+                  liner="other thing"
+                  mediaUrl={yellow}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BannerCard
+                  header="something"
+                  liner="other thing"
+                  mediaUrl={yellow}
+                />
+              </SwiperSlide>
+            </Swiper>
+          ) : (
+            <img
+              src={`${
+                process.env.REACT_APP_ALL_COURSES_IMAGES_API
+              }${activeCourseOnCoursePage?.toLowerCase()}`}
+              className="fallback-image"
+              alt=""
+            />
+          )}
         </div>
       </div>
     </div>

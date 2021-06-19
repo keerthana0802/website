@@ -48,32 +48,7 @@ function CourseCategorySection({ courseData }) {
     <div className="course-category-section__wrapper">
       {responsiveMode ? (
         <>
-          <div className="course-category-section">
-            <CourseCatgorySliderResp
-              tempImage={yellowCourse}
-              courseData={musicCourses}
-              courseSliderHeader={
-                <p>
-                  Music &<br />
-                  Themes
-                </p>
-              }
-              courseVertical="music"
-              courseSliderDuration="1 hour session"
-              courseSliderContent="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, obcaecati harum ut Quaerat nam, obcaecati harum ut architecto rem. architecto rem."
-              courseSliderKeywords={[
-                "Performance",
-                "Music Composition",
-                "Appreciation",
-              ]}
-              courseSliderExpertsVideoUrl=""
-              courseCategoryColorDark={musicCourses[0]?.verticalThemeColorDark}
-              courseCategoryColorLight={
-                musicCourses[0]?.verticalThemeColorLight
-              }
-            />
-          </div>
-          <div className="course-category-section">
+          <div className="course-category-section" id="communication-section">
             <CourseCatgorySliderResp
               tempImage={blueCourse}
               courseData={communicationCourses}
@@ -85,12 +60,8 @@ function CourseCategorySection({ courseData }) {
               }
               courseVertical="communication"
               courseSliderDuration="1 hour session"
-              courseSliderContent="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, obcaecati harum ut Quaerat nam, obcaecati harum ut architecto rem. architecto rem."
-              courseSliderKeywords={[
-                "Performance",
-                "Music Composition",
-                "Appreciation",
-              ]}
+              courseSliderContent="Develop the most sought after 21st century skill. Be an orator, an opinion leader, a storyteller."
+              courseSliderKeywords={["Confidence", "Communication", "Logic"]}
               courseSliderExpertsVideoUrl=""
               courseCategoryColorDark={
                 communicationCourses[0]?.verticalThemeColorDark
@@ -100,7 +71,7 @@ function CourseCategorySection({ courseData }) {
               }
             />
           </div>
-          <div className="course-category-section">
+          <div className="course-category-section" id="art-section">
             <CourseCatgorySliderResp
               tempImage={purpleCourse}
               courseData={artCourses}
@@ -112,46 +83,46 @@ function CourseCategorySection({ courseData }) {
               }
               courseVertical="art"
               courseSliderDuration="1 hour session"
-              courseSliderContent="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, obcaecati harum ut Quaerat nam, obcaecati harum ut architecto rem. architecto rem."
+              courseSliderContent="Get a real art education as you learn the fundamentals of fine art, unlock your imagination and dabble in the exciting world of applied arts"
               courseSliderKeywords={[
-                "Performance",
-                "Music Composition",
-                "Appreciation",
+                "Creativity",
+                "Technique",
+                "Self-Expression",
               ]}
               courseSliderExpertsVideoUrl=""
               courseCategoryColorDark={artCourses[0]?.verticalThemeColorDark}
               courseCategoryColorLight={artCourses[0]?.verticalThemeColorLight}
+            />
+          </div>
+          <div className="course-category-section" id="music-section">
+            <CourseCatgorySliderResp
+              tempImage={yellowCourse}
+              courseData={musicCourses}
+              courseSliderHeader={
+                <p>
+                  Music &<br />
+                  Themes
+                </p>
+              }
+              courseVertical="music"
+              courseSliderDuration="1 hour session"
+              courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"
+              courseSliderKeywords={[
+                "Performance",
+                "Composition",
+                "Appreciation",
+              ]}
+              courseSliderExpertsVideoUrl=""
+              courseCategoryColorDark={musicCourses[0]?.verticalThemeColorDark}
+              courseCategoryColorLight={
+                musicCourses[0]?.verticalThemeColorLight
+              }
             />
           </div>
         </>
       ) : (
         <>
-          <div className="course-category-section">
-            <CourseCatgorySlider
-              tempImage={yellowCourse}
-              courseData={musicCourses}
-              courseSliderHeader={
-                <p>
-                  Music &<br />
-                  Themes
-                </p>
-              }
-              courseVertical="music"
-              courseSliderDuration="1 hour session"
-              courseSliderContent="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, obcaecati harum ut Quaerat nam, obcaecati harum ut architecto rem. architecto rem."
-              courseSliderKeywords={[
-                "Performance",
-                "Music Composition",
-                "Appreciation",
-              ]}
-              courseSliderExpertsVideoUrl=""
-              courseCategoryColorDark={musicCourses[0]?.verticalThemeColorDark}
-              courseCategoryColorLight={
-                musicCourses[0]?.verticalThemeColorLight
-              }
-            />
-          </div>
-          <div className="course-category-section">
+          <div className="course-category-section" id="communication-section">
             <CourseCatgorySlider
               tempImage={blueCourse}
               courseData={communicationCourses}
@@ -163,12 +134,8 @@ function CourseCategorySection({ courseData }) {
               }
               courseVertical="communication"
               courseSliderDuration="1 hour session"
-              courseSliderContent="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, obcaecati harum ut Quaerat nam, obcaecati harum ut architecto rem. architecto rem."
-              courseSliderKeywords={[
-                "Performance",
-                "Music Composition",
-                "Appreciation",
-              ]}
+              courseSliderContent="Develop the most sought after 21st century skill. Be an orator, an opinion leader, a storyteller."
+              courseSliderKeywords={["Confidence", "Communication", "Logic"]}
               courseSliderExpertsVideoUrl=""
               courseCategoryColorDark={
                 communicationCourses[0]?.verticalThemeColorDark
@@ -178,7 +145,7 @@ function CourseCategorySection({ courseData }) {
               }
             />
           </div>
-          <div className="course-category-section">
+          <div className="course-category-section" id="art-section">
             <CourseCatgorySlider
               tempImage={purpleCourse}
               courseData={artCourses}
@@ -190,15 +157,40 @@ function CourseCategorySection({ courseData }) {
               }
               courseVertical="art"
               courseSliderDuration="1 hour session"
-              courseSliderContent="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, obcaecati harum ut Quaerat nam, obcaecati harum ut architecto rem. architecto rem."
+              courseSliderContent="Get a real art education as you learn the fundamentals of fine art, unlock your imagination and dabble in the exciting world of applied arts"
               courseSliderKeywords={[
-                "Performance",
-                "Music Composition",
-                "Appreciation",
+                "Creativity",
+                "Technique",
+                "Self-Expression",
               ]}
               courseSliderExpertsVideoUrl=""
               courseCategoryColorDark={artCourses[0]?.verticalThemeColorDark}
               courseCategoryColorLight={artCourses[0]?.verticalThemeColorLight}
+            />
+          </div>
+          <div className="course-category-section" id="music-section">
+            <CourseCatgorySlider
+              tempImage={yellowCourse}
+              courseData={musicCourses}
+              courseSliderHeader={
+                <p>
+                  Music &<br />
+                  Themes
+                </p>
+              }
+              courseVertical="music"
+              courseSliderDuration="1 hour session"
+              courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"
+              courseSliderKeywords={[
+                "Performance",
+                "Composition",
+                "Appreciation",
+              ]}
+              courseSliderExpertsVideoUrl=""
+              courseCategoryColorDark={musicCourses[0]?.verticalThemeColorDark}
+              courseCategoryColorLight={
+                musicCourses[0]?.verticalThemeColorLight
+              }
             />
           </div>
         </>

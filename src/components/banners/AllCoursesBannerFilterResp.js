@@ -44,20 +44,6 @@ function AllCoursesBannerFilterResp({ courseData }) {
       return "all-courses-banner-filter__age-filter-item";
     }
   };
-  // ! Temporary image selector
-  const imageSelector = (colorLight) => {
-    switch (colorLight.toUpperCase()) {
-      case "#FFEDC8":
-        return yellowCourse;
-      case "#EDFCFF":
-        return blueCourse;
-      case "#DCCCFF":
-        return purpleCourse;
-
-      default:
-        break;
-    }
-  };
   // ! Search  functionality
   const [searchTerm, setSearchTerm] = useState("");
   const searchHandle = () => {
@@ -173,8 +159,14 @@ function AllCoursesBannerFilterResp({ courseData }) {
         className="mySwiperresp"
       >
         {allCourses.map((course, index) => {
-          if (course.courseStatus === "ACTIVE")
-            if (shouldRenderCard(course.minAge, course.maxAge, course.vertical))
+          if (course.courseStatus === "ACTIVE" && course.showOutside)
+            if (
+              shouldRenderCard(
+                course.showOutsideMinAge,
+                course.showOutsideMaxAge,
+                course.vertical
+              )
+            )
               return (
                 <SwiperSlide key={index}>
                   <HomepageCourseCard
@@ -183,7 +175,9 @@ function AllCoursesBannerFilterResp({ courseData }) {
                     courseContent={course.courseContent}
                     courseLiner={course.courseLiner}
                     courseTags={course.courseTags}
-                    courseImage={imageSelector(course.verticalThemeColorLight)}
+                    courseImage={`${
+                      process.env.REACT_APP_ALL_COURSES_IMAGES_API
+                    }${course.courseId.toLowerCase()}`}
                     verticalThemeColorDark={course.verticalThemeColorDark}
                   />
                 </SwiperSlide>

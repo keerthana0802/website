@@ -202,6 +202,9 @@
         }
       }
       &__right {
+        img.fallback-image {
+          width: 100%;
+        }
         .showcase-card {
           width: 65%;
           @include bpm-custom(1150px) {

@@ -23,7 +23,11 @@ import {
   setTempEmail,
   logoutUser,
 } from "./authActions";
-import { getCourses } from "./coursesActions";
+import {
+  getCourses,
+  setActiveCourseOnCoursePage,
+  setScrollToCourseCategory,
+} from "./coursesActions";
 export {
   // ! checkout actions
   cartDrawerOpen,
@@ -50,4 +54,6 @@ export {
   logoutUser,
   // ! courses actions
   getCourses,
+  setActiveCourseOnCoursePage,
+  setScrollToCourseCategory,
 };

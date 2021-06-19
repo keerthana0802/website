@@ -8,10 +8,12 @@ import ParentsSection from "../components/SingleCoursePageComponents/ParentsSect
 import ShowcaseSection from "../components/SingleCoursePageComponents/ShowcaseSection";
 import ExpertSection from "../components/SingleCoursePageComponents/ExpertSection";
 import CurriculumSection from "../components/SingleCoursePageComponents/CurriculumSection";
+import { setActiveCourseOnCoursePage } from "../store/actions/coursesActions";
 function SingleCourse() {
   const [courseName, setCourseName] = useState(null);
   const [courseDetails, setCourseDetails] = useState(null);
   const allCourses = useSelector((state) => state.courses.allCourses);
+  const dispatch = useDispatch();
   useEffect(() => {
     setCourseName(
       window.location.pathname.split("/").pop().split("-").join(" ")
@@ -28,14 +30,17 @@ function SingleCourse() {
         }
       });
       setCourseDetails(currentCourse);
+      dispatch(setActiveCourseOnCoursePage(currentCourse?.courseId));
     }
   }, [courseName]);
+  // console.log(courseDetails);
   return (
     <NavFooterLayout>
       <div className="single-course-page__wrapper">
         <SingleCourseBanner
           courseName={courseName}
-          courseContent="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, molestiae!"
+          courseContent={courseDetails ? courseDetails.courseContent : ""}
+          showcase={courseDetails?.showcaseData}
           courseType={
             courseDetails?.courseLevelCount === 1 ? "single" : "multilevel"
           }
@@ -50,26 +55,36 @@ function SingleCourse() {
           />
         ) : null}
         {courseDetails ? (
-          <CurriculumSection dark={courseDetails.verticalThemeColorDark} />
+          <CurriculumSection
+            courseDetails={courseDetails}
+            dark={courseDetails.verticalThemeColorDark}
+            courseName={courseName}
+            courseType={
+              courseDetails?.courseLevelCount === 1 ? "single" : "multilevel"
+            }
+          />
         ) : null}
         {courseDetails ? (
           <UspStrip
             sessions={courseDetails.numberOfClasses}
             background={courseDetails.verticalThemeColorLight}
+            activities={courseDetails.numberOfHomeActivities}
           />
         ) : null}
         {courseDetails ? (
           <ParentsSection
+            courseDetails={courseDetails}
             light={courseDetails.verticalThemeColorLight}
             dark={courseDetails.verticalThemeColorDark}
           />
         ) : null}
         {courseDetails ? (
           <ShowcaseSection
+            courseDetails={courseDetails}
             verticalThemeColorDark={courseDetails.verticalThemeColorDark}
           />
         ) : null}
-        <ExpertSection />
+        {courseDetails ? <ExpertSection courseDetails={courseDetails} /> : null}
       </div>
     </NavFooterLayout>
   );

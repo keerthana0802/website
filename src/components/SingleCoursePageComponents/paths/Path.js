@@ -3,7 +3,7 @@ import path7 from "../../../assets/path7.svg";
 import path10 from "../../../assets/path10.svg";
 import path12 from "../../../assets/path12.svg";
 import path14 from "../../../assets/path14.svg";
-function Path({ courseThemeColorDark, steps }) {
+function Path({ courseThemeColorDark, steps, sessions }) {
   const pathRef = useRef();
   const tooltipPositionClass = (num) => {
     if (num == 1 || num == 6 || num == 7 || num == 12 || num == 13) {
@@ -58,14 +58,11 @@ function Path({ courseThemeColorDark, steps }) {
             onBlur={blurFunction}
           />
           <div className={`${tooltipPositionClass(i + 1)}`}>
-            <span>Lorem ipsum dolor.</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-              nulla assumenda, odio officiis deserunt.
-            </p>
+            <span>{sessions[i].title}</span>
+            <p>{sessions[i].details}</p>
           </div>
           <span>{i + 1}</span>
-          <h3 className="session-title">Lorem ipsum dolor.</h3>
+          <h3 className="session-title">{sessions[i].title}</h3>
         </label>
       );
     }

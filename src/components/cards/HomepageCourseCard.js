@@ -18,9 +18,7 @@ function HomepageCourseCard({
         background: `linear-gradient(111.29deg,${verticalThemeColorDark}88 -1.83%,rgba(255, 255, 255, 0) 109.95%)`,
       }}
       onClick={() =>
-        history.push(
-          `/explore-course/${courseName.toLowerCase().split(" ").join("-")}`
-        )
+        history.push(`/course/${courseName.toLowerCase().split(" ").join("-")}`)
       }
     >
       <div className="homepage-course-card__top">

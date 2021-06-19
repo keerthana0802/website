@@ -26,7 +26,7 @@ function CourseCategoryCard({
   const cart = useSelector((state) => state.checkout.cart);
   const openCourse = () => {
     history.push(
-      `/explore-course/${courseCardName.toLowerCase().split(" ").join("-")}`
+      `/course/${courseCardName.toLowerCase().split(" ").join("-")}`
     );
   };
   return (

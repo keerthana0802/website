@@ -17,8 +17,10 @@ const courseLevelCount = (displayName) => {
       return 1;
   }
 };
+
 // ! courses actions
 const getCourses = (coursesData) => {
+  console.time("process-courses");
   let allCourses = coursesData.map((course) => {
     return {
       courseId: course.identifier,
@@ -30,9 +32,12 @@ const getCourses = (coursesData) => {
       courseLevel: course.level,
       numberOfClasses: course.num_classes,
       sessionDuration: course.session_duration_minutes,
-      price: Number(course.price.split(".").shift()),
+      price: Number(course.price.split(".")[0]),
       minAge: course.min_age,
       maxAge: course.max_age,
+      showOutside: course.show_outside,
+      showOutsideMinAge: course.show_outside_min_age,
+      showOutsideMaxAge: course.show_outside_max_age,
       courseType: "Regular",
       coursePriority: course.priority,
       verticalThemeColorLight: colors[course.category_name].light,
@@ -40,19 +45,45 @@ const getCourses = (coursesData) => {
       courseImageUrl: course.image_url,
       expertsSayVideoUrl: course.experts_say_video_url,
       courseLiner: course.course_one_liner,
-      courseContent: course.description,
+      courseContent: course.pitch.split(".")[0],
       courseCurrency: "INR",
       courseLevelCount: courseLevelCount(course.display_name),
-      courseTags:
-        course.tags.length > 0
-          ? course.tags
-          : ["Performance", "Music Composition", "Appreciation"],
+      courseTags: course.tags,
+      numberOfHomeActivities: Number(course.number_of_home_activities),
+      classSize: Number(course.class_size),
+      courseUsp: course.usp_of_course,
+      fullDescription: course.full_description,
+      pitch: course.pitch,
+      shortPitch: course.short_pitch,
+      socialProof: course.social_proof,
+      curriculumLiner: course.curriculum_liner,
+      curriculumOutcomes: course.curriculum_outcomes,
+      curriculumSessions: course.curriculum_sessions,
+      showcaseSectionHeader: course.showcase_section_header,
+      showcaseSectionContent: course.showcase_section_content,
+      showcaseData: course.showcase_data,
+      testimonialData: course.testimonial_data,
+      expertDetails: course.expert_details,
     };
   });
-
+  console.timeEnd("process-courses");
+  console.log("from action", allCourses);
   return {
     type: "SET_ALL_COURSES",
     payload: allCourses,
   };
 };
-export { getCourses };
+
+const setActiveCourseOnCoursePage = (courseId) => {
+  return {
+    type: "ACTIVE_COURSE_ON_COURSE_PAGE",
+    payload: courseId,
+  };
+};
+const setScrollToCourseCategory = (category) => {
+  return {
+    type: "SCROLL_TO_COURSE_CATEGORY",
+    payload: category,
+  };
+};
+export { getCourses, setActiveCourseOnCoursePage, setScrollToCourseCategory };

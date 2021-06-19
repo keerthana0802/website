@@ -37,7 +37,7 @@ function AllCoursesBannerFilter({ courseData }) {
     clickable: true,
   };
   // ! funtion to add courses to rowToRender
-  const rowToRenderHandler = (initArray, clear = false) => {
+  const rowToRenderHandler = (initArray, clear = false, all = false) => {
     let initialRowArray = [];
     if (clear) {
       initialRowArray = [];
@@ -45,6 +45,11 @@ function AllCoursesBannerFilter({ courseData }) {
       initialRowArray = [...rowToRender];
     }
     if (window.innerWidth >= 1600) {
+      if (all) {
+        setRowToRender([...initialRowArray, ...initArray]);
+        setRemaining([]);
+        return;
+      }
       if (initArray.length >= 4) {
         setRowToRender([...initialRowArray, ...initArray.splice(0, 4)]);
         setRemaining(initArray);
@@ -53,6 +58,11 @@ function AllCoursesBannerFilter({ courseData }) {
         setRemaining([]);
       }
     } else if (window.innerWidth >= 1200 && window.innerWidth < 1600) {
+      if (all) {
+        setRowToRender([...initialRowArray, ...initArray]);
+        setRemaining([]);
+        return;
+      }
       if (initArray.length >= 3) {
         setRowToRender([...initialRowArray, ...initArray.splice(0, 3)]);
         setRemaining(initArray);
@@ -61,7 +71,11 @@ function AllCoursesBannerFilter({ courseData }) {
         setRemaining([]);
       }
     } else if (window.innerWidth > 768 && window.innerWidth < 1200) {
-      // console.log([...rowToRender, ...initArray.splice(0, 2)]);
+      if (all) {
+        setRowToRender([...initialRowArray, ...initArray]);
+        setRemaining([]);
+        return;
+      }
       if (initArray.length >= 2) {
         setRowToRender([...initialRowArray, ...initArray.splice(0, 2)]);
         setRemaining(initArray);
@@ -78,8 +92,14 @@ function AllCoursesBannerFilter({ courseData }) {
   useEffect(() => {
     setRowToRender((rowToRender) => []);
     let initArray = courseData.filter((course, index) => {
-      if (course.courseStatus === "ACTIVE") {
-        if (shouldRenderCard(course.minAge, course.maxAge, course.vertical)) {
+      if (course.courseStatus === "ACTIVE" && course.showOutside) {
+        if (
+          shouldRenderCard(
+            course.showOutsideMinAge,
+            course.showOutsideMaxAge,
+            course.vertical
+          )
+        ) {
           return course;
         }
       } else {
@@ -96,20 +116,6 @@ function AllCoursesBannerFilter({ courseData }) {
       return "all-courses-banner-filter__age-filter-item active";
     } else {
       return "all-courses-banner-filter__age-filter-item";
-    }
-  };
-  // ! Temporary image selector
-  const imageSelector = (colorLight) => {
-    switch (colorLight.toUpperCase()) {
-      case "#FFEDC8":
-        return yellowCourse;
-      case "#EDFCFF":
-        return blueCourse;
-      case "#DCCCFF":
-        return purpleCourse;
-
-      default:
-        break;
     }
   };
   // ! Search  functionality
@@ -249,7 +255,9 @@ function AllCoursesBannerFilter({ courseData }) {
               courseContent={course.courseContent}
               courseLiner={course.courseLiner}
               courseTags={course.courseTags}
-              courseImage={imageSelector(course.verticalThemeColorLight)}
+              courseImage={`${
+                process.env.REACT_APP_ALL_COURSES_IMAGES_API
+              }${course.courseId.toLowerCase()}`}
               verticalThemeColorDark={course.verticalThemeColorDark}
             />
           );
@@ -258,7 +266,7 @@ function AllCoursesBannerFilter({ courseData }) {
       {remaining.length > 0 ? (
         <SecondaryButton
           buttonText="Load More"
-          clickHandle={() => rowToRenderHandler(remaining)}
+          clickHandle={() => rowToRenderHandler(remaining, false, true)}
           version="version-4"
         />
       ) : null}

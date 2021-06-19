@@ -21,8 +21,9 @@
     grid-template-columns: 1fr 1fr;
   }
   @include bpm-md {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   height: 100%;
   @include bp-sm {
@@ -66,8 +67,16 @@
     }
   }
   &__right {
-    @include bpm-md {
-      // padding-bottom: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img.fallback-image {
+      width: 70%;
+      border-radius: 2rem;
+      @include bpm-md {
+        margin-bottom: 4rem;
+        width: 90%;
+      }
     }
   }
   .single-course-banner-card {

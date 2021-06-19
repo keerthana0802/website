@@ -103,26 +103,26 @@ function TestimonialSlider() {
           spaceBetween={0}
           pagination={pagination}
           className="mySwiper"
-          autoplay={{ delay: 4000 }}
+          autoplay={{ delay: 5000 }}
         >
           <SwiperSlide>
             <SingleSlide
-              slideContent={dummyString}
-              slideSource="Neeta Gupta, Parent of a 6 year old"
+              slideContent="This is the second time we signed up with Spark Studio for a course. After completing his Art of Storytelling course, we signed up for Dramatic Storytelling and Anvay thoroughly enjoyed it and he loves his teacher."
+              slideSource="Akanksha Jaiswal, Parent of a 7 year old"
               slideBg={testimonialSlideMobile}
             />
           </SwiperSlide>
           <SwiperSlide>
             <SingleSlide
-              slideContent={dummyString}
-              slideSource="Neeta Gupta, Parent of a 6 year old"
+              slideContent="It’s the one thing she looks forward to everyday. She had initially joined the Art of Storytelling course which she enjoyed so we signed her up for the Dramatic Storytelling course."
+              slideSource="Niharika Rakesh, Parent of a 5 year old"
               slideBg={testimonialSlideMobile}
             />
           </SwiperSlide>
           <SwiperSlide>
             <SingleSlide
-              slideContent={dummyString}
-              slideSource="Neeta Gupta, Parent of a 6 year old"
+              slideContent="Fantastic session. It made me nostalgic, taking me back to my childhood...kids spinning such magical stories..This was only possible because of the clear direction given by the teacher. I am keen on signing up Jhanavi for more classes on Spark Studio."
+              slideSource="Bhargavi Rao, Parent of a 6.5 year old"
               slideBg={testimonialSlideMobile}
             />
           </SwiperSlide>
@@ -134,26 +134,26 @@ function TestimonialSlider() {
             spaceBetween={0}
             pagination={pagination}
             className="mySwiper"
-            autoplay={{ delay: 4000 }}
+            autoplay={{ delay: 5000 }}
           >
             <SwiperSlide>
               <SingleSlide
-                slideContent={dummyString}
-                slideSource="Neeta Gupta, Parent of a 6 year old"
+                slideContent="This is the second time we signed up with Spark Studio for a course. After completing his Art of Storytelling course, we signed up for Dramatic Storytelling and Anvay thoroughly enjoyed it and he loves his teacher."
+                slideSource="Akanksha Jaiswal, Parent of a 7 year old"
                 slideBg={testimonialSlideBackground}
               />
             </SwiperSlide>
             <SwiperSlide>
               <SingleSlide
-                slideContent={dummyString}
-                slideSource="Neeta Gupta, Parent of a 6 year old"
+                slideContent="It’s the one thing she looks forward to everyday. She had initially joined the Art of Storytelling course which she enjoyed so we signed her up for the Dramatic Storytelling course."
+                slideSource="Niharika Rakesh, Parent of a 5 year old"
                 slideBg={testimonialSlideBackground}
               />
             </SwiperSlide>
             <SwiperSlide>
               <SingleSlide
-                slideContent={dummyString}
-                slideSource="Neeta Gupta, Parent of a 6 year old"
+                slideContent="It's great to see the kids grow confident, being able to speak out and learn to recite from memory, the manner of articulation, the gestures, the flow of speech, it was great to see the kids showcase their learnings with so much confidence"
+                slideSource="Shikha Gupta, Parent of a 7 year old"
                 slideBg={testimonialSlideBackground}
               />
             </SwiperSlide>

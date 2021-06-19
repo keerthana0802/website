@@ -27,7 +27,7 @@ import CartDrawer from "../components/drawers/CartDrawer";
 import AuthSignUp from "../components/modals/AuthSignUp";
 import AuthLogin from "../components/modals/AuthLogin";
 import axios from "axios";
-
+import coursesDataNew from "../store/staticData/coursesDataNew.json";
 function NavFooterLayout({ children }) {
   // ! Redux states
   const cart = useSelector((state) => state.checkout.cart);
@@ -66,14 +66,20 @@ function NavFooterLayout({ children }) {
     if (!window.localStorage.visitor_uuid) {
       window.localStorage.setItem("visitor_uuid", uuid());
     }
-    if (allCourses.length === 0) {
-      console.log("from effect");
-      axios
-        .get(process.env.REACT_APP_ALL_COURSES_API)
-        .then((res) => dispatch(getCourses(res.data.courses)))
-        .catch((e) => console.log(e));
+    if (allCourses?.length === 0) {
+      // console.log("from effect");
+      // axios
+      //   .get(process.env.REACT_APP_ALL_COURSES_API, {
+      //     headers: {
+      //       "Access-Control-Allow-Origin": "*",
+      //       "Content-Type": "application/json",
+      //     },
+      //   })
+      //   .then((res) => dispatch(getCourses(res.data)))
+      //   .catch((e) => console.log(e));
+      dispatch(getCourses(coursesDataNew));
     }
-    if (authOtpRequested && authToken.length === 0) dispatch(changeNumber());
+    if (authOtpRequested && authToken?.length === 0) dispatch(changeNumber());
     // ! Moengage event firing (add kingdom and genus)
     moengageEvent("Page_View", pageVisitAttributes("", ""));
   }, []);
@@ -151,7 +157,7 @@ function NavFooterLayout({ children }) {
                   : setMenuDrawerClass("spark-layout-navbar hidden");
               }}
             />
-            {cart.length > 0 ? (
+            {cart?.length > 0 ? (
               <div
                 className="spark-layout-navbar__right--list-item cart-icon"
                 onClick={() => {
@@ -163,7 +169,7 @@ function NavFooterLayout({ children }) {
                 }}
               >
                 <img src={cartIcon} alt="" />
-                {cart.length > 0 ? (
+                {cart?.length > 0 ? (
                   <div className="cart-bubble">
                     {cart?.reduce((a, b) => a + b.qty, 0)}
                   </div>
@@ -224,14 +230,14 @@ function NavFooterLayout({ children }) {
                     About Us
                   </Link>
                 </li>
-                {authToken.length > 0 ? (
+                {/* {authToken?.length > 0 ? (
                   <li
                     className="spark-layout-navbar__right--list-item"
                     onClick={() => dispatch(logoutUser())}
                   >
                     Logout
                   </li>
-                ) : null}
+                ) : null} */}
                 <li className="spark-layout-navbar__right--list-item">
                   <PrimaryButton
                     buttonText="Book a FREE trial"
@@ -391,15 +397,15 @@ function NavFooterLayout({ children }) {
                   }
                 />
               </li>{" "}
-              {authToken.length > 0 ? (
+              {/* {authToken?.length > 0 ? (
                 <li
                   className="spark-layout-navbar__right--list-item"
                   onClick={() => dispatch(logoutUser())}
                 >
                   Logout
                 </li>
-              ) : null}
-              {cart.length > 0 ? (
+              ) : null} */}
+              {cart?.length > 0 ? (
                 <li
                   className="spark-layout-navbar__right--list-item cart-icon"
                   onClick={() => {
@@ -411,7 +417,7 @@ function NavFooterLayout({ children }) {
                   }}
                 >
                   <img src={cartIcon} alt="" />
-                  {cart.length > 0 ? (
+                  {cart?.length > 0 ? (
                     <div className="cart-bubble">
                       {cart?.reduce((a, b) => a + b.qty, 0)}
                     </div>

@@ -35,7 +35,7 @@ function CartDrawer({ selectedCourses }) {
       history.push("/checkout");
     }, 200);
   };
-
+  // console.log("here selec", selectedCourses);
   return (
     <div className="cart-drawer__wrapper">
       <div className="cart-drawer">

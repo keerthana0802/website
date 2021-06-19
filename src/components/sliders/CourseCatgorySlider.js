@@ -42,9 +42,12 @@ function CourseCatgorySlider({
           <div className="course-category-slider__left--keywords">
             {courseSliderKeywords.map((keyword, index) => {
               return (
-                <h3 className="keyword" key={index}>
-                  {keyword}
-                </h3>
+                <div>
+                  <h3 className="keyword" key={index}>
+                    {keyword}
+                  </h3>
+                  <br />
+                </div>
               );
             })}
           </div>
@@ -59,7 +62,7 @@ function CourseCatgorySlider({
             navigation={true}
           >
             {courseData.map((course, index) => {
-              if (course.courseStatus === "ACTIVE" && course.courseLevel === 1)
+              if (course.courseStatus === "ACTIVE" && course.showOutside)
                 return (
                   <SwiperSlide key={index}>
                     <CourseCategoryCard
@@ -69,7 +72,9 @@ function CourseCatgorySlider({
                       courseCardDetails={course.courseContent}
                       courseCardSessions={course.numberOfClasses}
                       courseCardLiner={course.courseLiner}
-                      courseCardImage={tempImage}
+                      courseCardImage={`${
+                        process.env.REACT_APP_ALL_COURSES_IMAGES_API
+                      }${course.courseId.toLowerCase()}`}
                       courseCardId={course.courseId}
                       coursePrice={course.price}
                     />
