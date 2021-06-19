@@ -58,66 +58,7 @@ function HomepageExpertsSection() {
       setSlidersPerView((slidersPerView) => "auto");
     }
   }, [responsiveMode, centeredSlides, slidersPerView]);
-  // console.log(rerendered);
-  // ! Function to render the cards
-  const renderCardsDesktop = () => {
-    let arrayOfCards = [];
-    for (let i = 0; i < 15; i++) {
-      if (i % 2 === 0) {
-        arrayOfCards.push(
-          <HomepageExpertCard
-            cardType="blue"
-            cardName="Raag Sethi"
-            cardTitle="Music"
-            cardContent="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum quae reiciendis odit officia accusantium?"
-            cardImage={image1}
-          />
-        );
-      } else {
-        arrayOfCards.push(
-          <HomepageExpertCard
-            cardType="yellow"
-            cardName="Meera Desai"
-            cardTitle="Music"
-            cardContent="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum quae reiciendis odit officia accusantium?"
-            cardImage={image2}
-          />
-        );
-      }
-    }
-    return arrayOfCards;
-  };
-  const renderCardsResponsive = () => {
-    let arrayOfCards = [];
-    for (let i = 0; i < 7; i++) {
-      if (i % 2 === 0) {
-        arrayOfCards.push(
-          <SwiperSlide>
-            <HomepageExpertCard
-              cardType="blue"
-              cardName="Raag Sethi"
-              cardTitle="Music"
-              cardContent="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum quae reiciendis odit officia accusantium?"
-              cardImage={image1}
-            />
-          </SwiperSlide>
-        );
-      } else {
-        arrayOfCards.push(
-          <SwiperSlide>
-            <HomepageExpertCard
-              cardType="yellow"
-              cardName="Meera Desai"
-              cardTitle="Music"
-              cardContent="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum quae reiciendis odit officia accusantium?"
-              cardImage={image2}
-            />
-          </SwiperSlide>
-        );
-      }
-    }
-    return arrayOfCards;
-  };
+
   return (
     <>
       <hr ref={startingRef} />
@@ -135,7 +76,51 @@ function HomepageExpertsSection() {
               pagination={pagination}
               className="mySwiper"
             >
-              {renderCardsResponsive()}
+              <SwiperSlide>
+                <HomepageExpertCard
+                  cardType="purple"
+                  cardName="Rashmi Bidasria"
+                  cardTitle="Art"
+                  cardContent="Rashmi is a designer and an architect from the Royal College of Art, London."
+                  cardImage={image1}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HomepageExpertCard
+                  cardType="blue"
+                  cardName="Priyanka Babbar"
+                  cardTitle="Communication"
+                  cardContent="Priyanka has conducted 200+ storytelling sessions globally! She's bubbly, engaging and a student favourite."
+                  cardImage={image1}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HomepageExpertCard
+                  cardType="yellow"
+                  cardName="Meera Desai"
+                  cardTitle="Music"
+                  cardContent="In 2020 Meera won the Indies for the Best Female Vocalist in India. She's a professinal singer and songwriter."
+                  cardImage={image1}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HomepageExpertCard
+                  cardType="blue"
+                  cardName="Rachita Rath"
+                  cardTitle="Communication"
+                  cardContent="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
+                  cardImage={image1}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HomepageExpertCard
+                  cardType="yellow"
+                  cardName="Vivek Oswal"
+                  cardTitle="Music"
+                  cardContent="Vivek has 15 years of experience playing guitar, teaching and composing music."
+                  cardImage={image1}
+                />
+              </SwiperSlide>
             </Swiper>
           </div>
         ) : (
