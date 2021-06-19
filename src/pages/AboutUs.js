@@ -15,7 +15,7 @@ import moengageEvent from "../helpers/MoengageEventTracking";
 import { connectWithUsAttributes } from "../helpers/MoengageAttributeCreators";
 import ConfirmationModal from "../components/modals/ConfirmationModal";
 import axios from "axios";
-
+import heart from "../assets/heart.svg";
 function AboutUs() {
   const [linkedinUrl, setLinkedinUrl] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -25,7 +25,12 @@ function AboutUs() {
         <AboutUsBanner />
         <div className="spark-about-us__strip">
           <h1 className="spark-about-us__strip--header">
-            Built with love by a team not just from
+            Built with{" "}
+            <span className="heart">
+              <img src={heart} alt="" />
+            </span>{" "}
+            by a team <span className="brackets">(</span>not just
+            <span className="brackets">)</span> from
           </h1>
           <div className="spark-about-us__strip--companies">
             <img src={zynga} alt="" />
@@ -35,16 +40,15 @@ function AboutUs() {
             <img src={IITD} alt="" />
           </div>
         </div>
-        <TeamGrid />
+        {/* <TeamGrid /> */}
         <TeamDescriptionSection />
         <BeliefSection />
         <MentorsSection />
         <section className="large-trial-card spark-about-us__career">
-          <h1 className="large-trial-card__header">Be a part of our Team!</h1>
+          <h1 className="large-trial-card__header">Join our Team!</h1>
           <p className="large-trial-card__content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            repellat in ab earum iste voluptatum eaque veniam excepturi
-            voluptatibus dolores.
+            We're on the lookout for smart, driven, individuals who believe they
+            can shape the future of education.
           </p>
           <input
             type="text"

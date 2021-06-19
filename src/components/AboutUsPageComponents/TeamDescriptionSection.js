@@ -4,25 +4,24 @@ import teamArtwork from "../../assets/teamArtwork.svg";
 function TeamDescriptionSection() {
   return (
     <div className="team-description__wrapper">
-      <HomepageSectionHeader headerContent="We are the best in our field" />
+      <HomepageSectionHeader headerContent="We'd like to know you better." />
       <div className="team-description">
         <div className="team-description__left">
+          <p>Being a parent is tough.</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-            sapiente quam nulla distinctio sint veniam! Laboriosam recusandae
-            modi sit? Dolore. ipsum dolor sit amet consectetur adipisicing elit.
-            Et, sapiente quam nulla dist
+            There are so many choices to make. Everyday. What does Rithika grow
+            up to be? What will Naaz's grades be like? Do we need to monitor
+            what they're watching on their devices? Did they finish their
+            homework on time?
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-            sapiente quam nulla distinctio sint veniam! Laboriosam recusandae
-            modi sit? Dolore. ipsum dolor sit amet consectetur adipisicing elit.
-            Et, sapiente quam nulla dist
+            We'd like to make your choices easy. 90% of our parents enjoy our
+            hands-free classes in the secure knowledge that their children are
+            learning skills that will last them a lifetime.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-            sapiente quam. dolor sit amet consectetur adipisicing elit. Et,
-            sapiente quam.
+            Let's make being parent rewarding. Let's spark your child's
+            learning.
           </p>
         </div>
         <div className="team-description__right">

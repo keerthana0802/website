@@ -47,8 +47,8 @@ function AboutUsBanner() {
     <div className="about-us-banner__wrapper">
       <div className="about-us-banner">
         <HomepageSectionHeader
-          headerContent="Our Team"
-          linerContent="The ones who made it possible"
+          headerContent="Founding Team"
+          linerContent="We love talking to you. Write into us."
         />
         {responsiveMode ? (
           <Swiper

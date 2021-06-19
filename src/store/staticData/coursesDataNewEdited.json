@@ -8,7 +8,11 @@
         "description": "",
         "num_classes": 12,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Confidence", "Communication", "Creativity"],
+        "tags": [
+            "Confidence",
+            "Communication",
+            "Creativity"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -114,7 +118,11 @@
         "description": null,
         "num_classes": 12,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Confidence", "Communication - Verbal & Non-Verbal", "Fluency"],
+        "tags": [
+            "Confidence",
+            "Communication",
+            "Fluency"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -138,10 +146,11 @@
         "social_proof": "Children find the classes fun and interactive, and dislike missing sessions.",
         "curriculum_liner": "In this course, the students will achieve the following outcomes",
         "curriculum_outcomes": [
-            "Understand different types of speeches", 
+            "Understand different types of speeches",
             "Learn to develop the structure of each speech",
             "Develop non-verbal skills to build a connection with the audience for an effective delivery",
-            "Understand the relevance of public speaking in a real-life scenario"],
+            "Understand the relevance of public speaking in a real-life scenario"
+        ],
         "curriculum_sessions": "12",
         "showcase_section_header": false,
         "showcase_section_content": false,
@@ -158,7 +167,11 @@
         "description": null,
         "num_classes": 12,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Confidence", "Expression", "Performance"],
+        "tags": [
+            "Confidence",
+            "Expression",
+            "Performance"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -264,7 +277,11 @@
         "description": null,
         "num_classes": 10,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Confidence", "Fluency", "Rebuttal"],
+        "tags": [
+            "Confidence",
+            "Fluency",
+            "Rebuttal"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -361,7 +378,11 @@
         "description": null,
         "num_classes": 10,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Tuning", "Performing and Composing Music", "Appreciating Music"],
+        "tags": [
+            "Tuning",
+            "Composing",
+            "Appreciating Music"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -380,7 +401,7 @@
         "class_size": "",
         "usp_of_course": "",
         "full_description": "",
-        "pitch": "",
+        "pitch": "Understand pitch and rhythm with appropriate guitar technique",
         "short_pitch": "",
         "social_proof": "Students are inviting their friends to attend this class with them so that they can jam together!",
         "curriculum_liner": "In this course, the students will achieve the following outcomes",
@@ -389,7 +410,8 @@
             "Learn and identify different parts of the guitar",
             "Learn basic terminology like volume, high and low pitch, short and long phrases and different finger positions",
             "Be able to play songs of different genres and cultures",
-            "Write a short piece and play their self-composed melody"],
+            "Write a short piece and play their self-composed melody"
+        ],
         "curriculum_sessions": false,
         "showcase_section_header": false,
         "showcase_section_content": false,
@@ -406,7 +428,11 @@
         "description": null,
         "num_classes": 10,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Tuning", "Performing and Composing Music", "Appreciating Music"],
+        "tags": [
+            "Tuning",
+            "Composing",
+            "Appreciating Music"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -434,7 +460,8 @@
             "Use the chords to play 5 fun songs with different strum patterns",
             "Learn to play simple melodies using 3 to 4 notes",
             "Be able to play 5 songs with these melodies",
-            "Write simple melodies using 2-4 notes and simple rhythms"],
+            "Write simple melodies using 2-4 notes and simple rhythms"
+        ],
         "curriculum_sessions": false,
         "showcase_section_header": false,
         "showcase_section_content": false,
@@ -451,7 +478,11 @@
         "description": null,
         "num_classes": 12,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Vocal Control", "Performing and Composing Music", "Learning Songs"],
+        "tags": [
+            "Vocal Control",
+            "Performing",
+            "Learning Songs"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -557,7 +588,11 @@
         "description": null,
         "num_classes": 12,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Vocal Control", "Performing and Composing Music", "Learning Songs"],
+        "tags": [
+            "Vocal Control",
+            "Composing",
+            "Learning Songs"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -705,7 +740,11 @@
         "description": null,
         "num_classes": 7,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Creativity", "Film Making", "Storytelling"],
+        "tags": [
+            "Creativity",
+            "Film Making",
+            "Storytelling"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -786,7 +825,11 @@
         "description": null,
         "num_classes": 10,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Creativity", "Film Making", "Storytelling"],
+        "tags": [
+            "Creativity",
+            "Film Making",
+            "Storytelling"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -826,7 +869,11 @@
         "description": null,
         "num_classes": 12,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Creativity", "Film Making", "Storytelling"],
+        "tags": [
+            "Creativity",
+            "Film Making",
+            "Storytelling"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -932,7 +979,11 @@
         "description": null,
         "num_classes": 7,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Creativity", "Confidence", "Communication"],
+        "tags": [
+            "Creativity",
+            "Confidence",
+            "Communication"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -1013,7 +1064,11 @@
         "description": null,
         "num_classes": 7,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Creativity", "Active Listening", "Confidence"],
+        "tags": [
+            "Creativity",
+            "Active Listening",
+            "Confidence"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,
@@ -1094,7 +1149,11 @@
         "description": null,
         "num_classes": 12,
         "session_duration_minutes": "60 Minutes",
-        "tags": ["Creativity", "Art Techniques", "Art Appreciation"],
+        "tags": [
+            "Creativity",
+            "Art Techniques",
+            "Art Appreciation"
+        ],
         "vertical_theme_color_light": null,
         "vertical_theme_color_dark": null,
         "experts_say_video_url": null,

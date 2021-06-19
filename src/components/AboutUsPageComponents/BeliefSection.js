@@ -16,23 +16,23 @@ function BeliefSection() {
     <div className="belief-section__wrapper">
       <div className="belief-section__left">
         <h1 className="belief-section__left--header">
-          <span>Our</span>Belief
+          <span>Our</span>Beliefs
         </h1>
 
         <BeliefCard
           index="1"
-          title="Holistic Development"
-          liner="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, minima!"
+          title="Create"
+          liner="Children are curious & imaginative. Our classes help them turn this into outcomes!"
         />
         <BeliefCard
           index="2"
-          title="Future Ready"
-          liner="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, minima!"
+          title="Curriculums"
+          liner="We build structured lesson plans for your child. Our teachers are hand-picked and meticulously trained."
         />
         <BeliefCard
           index="3"
-          title="Inculcating Creativity"
-          liner="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, minima!"
+          title="Cultivate"
+          liner="Our in-class and outside class activties ensure that your children maximise what they've learnt."
         />
       </div>
       <div className="belief-section__right">

@@ -44,6 +44,20 @@
       );
     }
   }
+  &--purple {
+    background: linear-gradient(
+      111.29deg,
+      #8469c0 -1.83%,
+      rgba(255, 255, 255, 0) 109.95%
+    );
+    .primary-button {
+      background: linear-gradient(
+        111.29deg,
+        rgba(255, 255, 255, 0) -1.83%,
+        #8469c0 66.87%
+      );
+    }
+  }
   display: flex;
   flex-direction: column;
   align-items: center;

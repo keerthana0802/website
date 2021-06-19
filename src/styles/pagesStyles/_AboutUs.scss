@@ -10,6 +10,18 @@
       font-size: 4rem;
       font-weight: 900;
       text-align: center;
+      span.heart {
+        display: inline-block;
+        margin: 0 1rem;
+        img {
+          width: 5rem;
+          transform: translateY(1rem);
+        }
+      }
+      span.brackets {
+        color: #f3705b;
+        margin: 0 0.5rem;
+      }
     }
     &--companies {
       display: flex;

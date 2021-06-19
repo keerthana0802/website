@@ -6,9 +6,9 @@ function LargeBookATrialCard() {
     <section className="large-trial-card">
       <h1 className="large-trial-card__header">Book a Free Trial Class</h1>
       <p className="large-trial-card__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-        repellat in ab earum iste voluptatum eaque veniam excepturi voluptatibus
-        dolores.
+        Want to know what your child’s favourite class is going to look like?
+        <br />
+        What are you waiting for?
       </p>
       <PrimaryButton
         buttonText="Book a FREE trial"

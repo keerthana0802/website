@@ -27,7 +27,8 @@ import CartDrawer from "../components/drawers/CartDrawer";
 import AuthSignUp from "../components/modals/AuthSignUp";
 import AuthLogin from "../components/modals/AuthLogin";
 import axios from "axios";
-import coursesDataNew from "../store/staticData/coursesDataNew.json";
+// import coursesDataNew from "../store/staticData/coursesDataNew.json";
+import coursesDataNew from "../store/staticData/coursesDataNewEdited.json";
 function NavFooterLayout({ children }) {
   // ! Redux states
   const cart = useSelector((state) => state.checkout.cart);

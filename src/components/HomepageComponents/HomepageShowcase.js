@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import ShowcaseModal from "../modals/ShowcaseModal";
 // import thumbnail from "../assets/videoThumbnail1.svg";
-import thumbnail from "../../assets/thumbnail.png";
-import thumbnail2 from "../../assets/thumbnail2.png";
-import thumbnail3 from "../../assets/thumbnail3.png";
+// import thumbnail from "../../assets/thumbnail.png";
+// import thumbnail2 from "../../assets/thumbnail2.png";
+// import thumbnail3 from "../../assets/thumbnail3.png";
 import play from "../../assets/playButton.svg";
 import PrimaryButton from "../buttons/PrimaryButton";
 function HomepageShowcase() {
@@ -13,15 +13,26 @@ function HomepageShowcase() {
   // ! function to open modal with a specific URL
   const [mediaUrl, setMediaUrl] = useState("");
   const [mediaType, setMediaType] = useState("");
+  const [width, setWidth] = useState("");
   useEffect(() => {
     if (mediaUrl !== "") {
       setShowModal(true);
     }
   }, [mediaUrl]);
+  const widthSetter = (wid) => {
+    if (window.innerWidth > 768) {
+      return `${wid}%`;
+    } else if (window.innerWidth <= 768 && window.innerWidth > 545) {
+      return `${wid * 1.5}%`;
+    } else if (window.innerWidth <= 545 && window.innerWidth > 360) {
+      return `${wid * 2.15}%`;
+    }
+  };
   // ! function to close modal
   const modalClose = () => {
     setShowModal(false);
     setMediaUrl("");
+    setWidth("");
   };
   return (
     <div className="homepage-showcase__wrapper">
@@ -36,29 +47,46 @@ function HomepageShowcase() {
             setMediaType("video");
             setMediaUrl(
               (mediaUrl) =>
-                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                `${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_video_1.mp4`
             );
           }}
         >
-          <img src={thumbnail} alt="video" />
+          <img
+            src={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_video_1_thumbnail`}
+            alt="video"
+          />
         </div>
         <div
           className="homepage-showcase__elements--two showcase-single-element"
           onClick={() => {
             setMediaType("image");
-            setMediaUrl((mediaUrl) => thumbnail2);
+            setMediaUrl(
+              (mediaUrl) =>
+                `${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_2`
+            );
+            setWidth(widthSetter(30));
           }}
         >
-          <img src={thumbnail2} alt="picture" />
+          <img
+            src={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_2`}
+            alt=""
+          />
         </div>
         <div
           className="homepage-showcase__elements--three showcase-single-element"
           onClick={() => {
             setMediaType("image");
-            setMediaUrl((mediaUrl) => thumbnail3);
+            setMediaUrl(
+              (mediaUrl) =>
+                `${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_1`
+            );
+            setWidth(widthSetter(30));
           }}
         >
-          <img src={thumbnail3} alt="picture" />
+          <img
+            src={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_1`}
+            alt=""
+          />
         </div>
         <div
           className="homepage-showcase__elements--four showcase-single-element showcase-single-element--video"
@@ -66,20 +94,30 @@ function HomepageShowcase() {
             setMediaType("video");
             setMediaUrl(
               (mediaUrl) =>
-                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                `${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_video_2.mp4`
             );
           }}
         >
-          <img src={thumbnail3} alt="video" />
+          <img
+            src={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_video_2_thumbnail`}
+            alt="video"
+          />
         </div>
         <div
           className="homepage-showcase__elements--five showcase-single-element"
           onClick={() => {
             setMediaType("image");
-            setMediaUrl((mediaUrl) => thumbnail2);
+            setMediaUrl(
+              (mediaUrl) =>
+                `${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_3`
+            );
+            setWidth(widthSetter(40));
           }}
         >
-          <img src={thumbnail2} alt="picture" />
+          <img
+            src={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_3`}
+            alt=""
+          />
         </div>
       </div>
       <PrimaryButton
@@ -92,6 +130,7 @@ function HomepageShowcase() {
           modalCloseFunction={modalClose}
           media={mediaUrl}
           mediaType={mediaType}
+          width={width}
         />
       ) : null}
     </div>

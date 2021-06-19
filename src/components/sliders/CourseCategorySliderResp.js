@@ -49,7 +49,7 @@ function CourseCatgorySliderResp({
               );
             })}
           </div>
-          <SecondaryButton buttonText="Experts Say" version="version-1" />
+          {/* <SecondaryButton buttonText="Experts Say" version="version-1" /> */}
         </div>
         <div className="course-category-slider__right">
           <Swiper

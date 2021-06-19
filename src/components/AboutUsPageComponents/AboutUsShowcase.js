@@ -34,16 +34,16 @@ function AboutUsShowcase({ verticalThemeColorDark }) {
       >
         <div className="showcase-section__left">
           <h1 className="showcase-section__left--header">
-            Take a look. <br />
-            This says it all.
+            Don't take our word for it. <br />
+            Take the kids' word.
           </h1>
           <p className="showcase-section__left--content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos impedit
-            vitae mollitia numquam accusamus ex eius soluta vel explicabo? Esse?
+            Here's what children aged 5 to 15 are making / creating at Spark
+            Studio.
           </p>
-          {typeof window === "object" && window.innerWidth > 992 ? (
+          {/* {typeof window === "object" && window.innerWidth > 992 ? (
             <PrimaryButton buttonText="See more" version="version-1" />
-          ) : null}
+          ) : null} */}
         </div>
         <div className="showcase-section__right">
           <Swiper
@@ -56,36 +56,29 @@ function AboutUsShowcase({ verticalThemeColorDark }) {
           >
             <SwiperSlide>
               <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
+                header="Ruhi, age 7"
+                liner="Photography"
+                mediaUrl={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_2`}
               />
             </SwiperSlide>
             <SwiperSlide>
               <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
+                header="Ruhi, age 7"
+                liner="Photography"
+                mediaUrl={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_1`}
               />
             </SwiperSlide>
             <SwiperSlide>
               <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BannerCard
-                header="something"
-                liner="other thing"
-                mediaUrl={yellow}
+                header="Anant, age 11"
+                liner="Photography"
+                mediaUrl={`${process.env.REACT_APP_ALL_HOMEPAGE_SHOWCASE_ASSETS_API}homepage_showcase_image_3`}
               />
             </SwiperSlide>
           </Swiper>
-          {typeof window === "object" && window.innerWidth <= 992 ? (
+          {/* {typeof window === "object" && window.innerWidth <= 992 ? (
             <PrimaryButton buttonText="See more" version="version-1" />
-          ) : null}
+          ) : null} */}
         </div>
       </div>
     </div>

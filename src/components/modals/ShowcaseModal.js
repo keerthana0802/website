@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import cross from "../../assets/cross.svg";
-function ShowcaseModal({ media, modalCloseFunction, mediaType }) {
+function ShowcaseModal({ media, modalCloseFunction, mediaType, width }) {
   const modalRef = useRef(null);
   const modalWrapperRef = useRef(null);
   const tweenRef = useRef(null);
@@ -30,7 +30,11 @@ function ShowcaseModal({ media, modalCloseFunction, mediaType }) {
       className="video-showcase-modal__wrapper  global-modal-wrapper"
       ref={modalWrapperRef}
     >
-      <div className="video-showcase-modal" ref={modalRef}>
+      <div
+        className="video-showcase-modal"
+        ref={modalRef}
+        style={{ maxWidth: width || "70%" }}
+      >
         {mediaType === "video" ? (
           <video
             src={media}

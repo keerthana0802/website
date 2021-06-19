@@ -140,7 +140,111 @@ function HomepageExpertsSection() {
           </div>
         ) : (
           <div className="homepage-experts-section" ref={squareRef}>
-            {renderCardsDesktop()}
+            <HomepageExpertCard
+              cardType="yellow"
+              cardName="Purna"
+              cardTitle="Music"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="blue"
+              cardName="Shantheri"
+              cardTitle="Communication"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="purple"
+              cardName="Rashmi Bidasria"
+              cardTitle="Art"
+              cardContent="Rashmi is a designer and an architect from the Royal College of Art, London."
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="purple"
+              cardName="Richa"
+              cardTitle="Art"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="blue"
+              cardName="Tirthankar"
+              cardTitle="Communication"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="purple"
+              cardName="Rohit"
+              cardTitle="Art"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="blue"
+              cardName="Priyanka Babbar"
+              cardTitle="Communication"
+              cardContent="Priyanka has conducted 200+ storytelling sessions globally! She's bubbly, engaging and a student favourite."
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="yellow"
+              cardName="Meera Desai"
+              cardTitle="Music"
+              cardContent="In 2020 Meera won the Indies for the Best Female Vocalist in India. She's a professinal singer and songwriter."
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="blue"
+              cardName="Rachita Rath"
+              cardTitle="Communication"
+              cardContent="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="blue"
+              cardName="Savita"
+              cardTitle="Communication"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="purple"
+              cardName="Divya"
+              cardTitle="Art"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="blue"
+              cardName="Raag Sethi"
+              cardTitle="Music"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="yellow"
+              cardName="Vivek Oswal"
+              cardTitle="Music"
+              cardContent="Vivek has 15 years of experience playing guitar, teaching and composing music."
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="blue"
+              cardName="Kumud"
+              cardTitle="Communication"
+              cardContent=""
+              cardImage={image1}
+            />
+            <HomepageExpertCard
+              cardType="purple"
+              cardName="Ruchika"
+              cardTitle="Art"
+              cardContent=""
+              cardImage={image1}
+            />
           </div>
         )}
       </div>

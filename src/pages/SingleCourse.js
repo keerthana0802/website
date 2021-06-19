@@ -39,7 +39,7 @@ function SingleCourse() {
       <div className="single-course-page__wrapper">
         <SingleCourseBanner
           courseName={courseName}
-          courseContent={courseDetails ? courseDetails.courseContent : ""}
+          courseContent={courseDetails ? courseDetails.pitch : ""}
           showcase={courseDetails?.showcaseData}
           courseType={
             courseDetails?.courseLevelCount === 1 ? "single" : "multilevel"

@@ -33,7 +33,7 @@ function MentorsSection() {
   return (
     <div className="mentors-section__wrapper">
       <div className="mentors-section">
-        <HomepageSectionHeader headerContent="Let’s meet our super cool mentors" />
+        <HomepageSectionHeader headerContent="Values, that are mirrored by our teachers." />
         <Swiper
           direction={direction}
           pagination={{
@@ -44,32 +44,40 @@ function MentorsSection() {
           <SwiperSlide>
             <MentorSlide
               fullName="Meera Desai"
-              position="Lead, Music"
-              content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, minima!dolor sit amet consectetur, adipisicing elit. Autem, minima!dolor sit amet consectetur, adipisicing elit. Autem, minima!"
+              position="Western Vocals"
+              content="In 2020 Meera won the Indies for the Best Female Vocalist in India. She's a professinal singer and songwriter."
               imageUrl={meera}
             />
           </SwiperSlide>
           <SwiperSlide>
             <MentorSlide
-              fullName="Meera Desai"
-              position="Lead, Music"
-              content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, minima!dolor sit amet consectetur, adipisicing elit. Autem, minima!dolor sit amet consectetur, adipisicing elit. Autem, minima!"
+              fullName="Rashmi Bidasria"
+              position="Animation"
+              content="Rashmi is a designer and an architect from the Royal College of Art, London."
               imageUrl={meera}
             />
           </SwiperSlide>
           <SwiperSlide>
             <MentorSlide
-              fullName="Meera Desai"
-              position="Lead, Music"
-              content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, minimadolor sit amet consectetur, adipisicing elit. Autem, minima!dolor sit amet consectetur, adipisicing elit. Autem, minima!!"
+              fullName="Priyanka Babbar"
+              position="Storytelling"
+              content="Priyanka has conducted 200+ storytelling sessions globally! She's bubbly, engaging and a student favourite."
               imageUrl={meera}
             />
           </SwiperSlide>
           <SwiperSlide>
             <MentorSlide
-              fullName="Meera Desai"
-              position="Lead, Music"
-              content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, minima!dolor sit amet consectetur, adipisicing elit. Autem, minima!dolor sit amet consectetur, adipisicing elit. Autem, minima!"
+              fullName="Rachita Rath"
+              position="Debate"
+              content="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
+              imageUrl={meera}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MentorSlide
+              fullName="Vivek Oswal"
+              position="Guitar"
+              content="Vivek has 15 years of experience playing guitar, teaching and composing music."
               imageUrl={meera}
             />
           </SwiperSlide>
