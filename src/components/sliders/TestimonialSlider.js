@@ -95,7 +95,7 @@ function TestimonialSlider() {
     <div className="testimonial-slider__wrapper">
       <HomepageSectionHeader
         headerContent="The Spark Experience"
-        linerContent="Parent Testimonials"
+        linerContent="Parent testimonials"
       />
       {responsiveMode ? (
         <Swiper

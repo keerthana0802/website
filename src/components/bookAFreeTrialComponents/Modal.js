@@ -134,9 +134,13 @@ function Modal({ slots, days, times, modalHandler, updateApi, custom }) {
             <button
               className="modal-confirm"
               onClick={() => {
-                custom || times.length === 0
-                  ? updateApi("custom")
-                  : updateApi("booking");
+                opacityRef.current.reverse();
+                tweenRef.current.reverse();
+                setTimeout(() => {
+                  custom || times.length === 0
+                    ? updateApi("custom")
+                    : updateApi("booking");
+                }, 600);
               }}
             >
               Confirm

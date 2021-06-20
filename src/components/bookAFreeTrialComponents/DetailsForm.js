@@ -16,6 +16,7 @@ import {
   bookTrialSubmitAttributes,
   bookTrialSuccessAttributes,
 } from "../../helpers/MoengageAttributeCreators";
+import SecondaryButton from "../buttons/SecondaryButton";
 function DetailsForm({ switchRoute, tabsStatus }) {
   // ! Redux
   const authToken = useSelector((state) => state.auth.authToken);
@@ -108,6 +109,7 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       dispatch(openLogin());
     }
   };
+
   // ! Number verification logic
   const [verificationTooltipClass, setVerificationTooltipClass] = useState(
     "verification-tooltip not-verified"
@@ -139,10 +141,10 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       setVerificationTooltipClass("verification-tooltip not-verified");
       setVerificationTooltipText("click to verify");
     }
-    if (countryCode !== "+91") {
-      setVerificationTooltipClass("verification-tooltip verified");
-      setVerificationTooltipText("verified");
-    }
+    // if (countryCode !== "+91") {
+    //   setVerificationTooltipClass("verification-tooltip verified");
+    //   setVerificationTooltipText("verified");
+    // }
     if (!initialRender) {
       if (phoneNumber[0] === "0") {
         console.log("from effect");
@@ -216,6 +218,17 @@ function DetailsForm({ switchRoute, tabsStatus }) {
         );
       });
   }
+  const [verified, setVerified] = useState(false);
+  useEffect(() => {
+    if (
+      verificationTooltipClass === "verification-tooltip verified" ||
+      verificationTooltipClassEmail === "verification-tooltip verified"
+    ) {
+      setVerified(true);
+    } else {
+      setVerified(false);
+    }
+  }, [verificationTooltipClass, verificationTooltipClassEmail]);
   return (
     <form action="" className="booking-form" autoComplete="on">
       <input
@@ -316,14 +329,14 @@ function DetailsForm({ switchRoute, tabsStatus }) {
           <div className={tooltipClass}>
             <span>{tooltipText}</span>
           </div>
-          {countryCode === "+91" ? (
+          {/* {countryCode === "+91" ? (
             <div
               className={verificationTooltipClass}
               onClick={() => verificationHandlerPhone(countryCode, phoneNumber)}
             >
               <span>{verificationTooltipText}</span>
             </div>
-          ) : null}
+          ) : null} */}
         </label>
       </div>
       <label htmlFor="email" className="email-label">
@@ -343,14 +356,14 @@ function DetailsForm({ switchRoute, tabsStatus }) {
             )
           }
         />
-        {countryCode !== "+91" ? (
+        {/* {countryCode !== "+91" ? (
           <div
             className={verificationTooltipClassEmail}
             onClick={() => verificationHandlerEmail(email)}
           >
             <span>{verificationTooltipTextEmail}</span>
           </div>
-        ) : null}
+        ) : null} */}
       </label>
 
       <input
@@ -394,19 +407,31 @@ function DetailsForm({ switchRoute, tabsStatus }) {
       childName &&
       childAge > 4 &&
       childAge < 16 &&
-      verificationTooltipClass === "verification-tooltip verified" ? (
-        <Link
-          className="select-courses"
-          onClick={handleSubmit}
-          // to="/courses-selection"
-        >
+      verified ? (
+        <Link className="select-courses" onClick={handleSubmit}>
           Select courses
         </Link>
-      ) : (
-        <Link to="#" className="select-courses hidden">
-          Select courses
-        </Link>
-      )}
+      ) : null}
+      {fullName &&
+      countryCode &&
+      phoneNumber &&
+      phoneNumber.length === phoneNumberLengthValidation(phoneNumber) &&
+      phoneNumber[0] !== "0" &&
+      email &&
+      childName &&
+      childAge > 4 &&
+      childAge < 16 &&
+      !verified ? (
+        <SecondaryButton
+          version="version-5"
+          buttonText={countryCode === "+91" ? "Verify Number" : "Verify Email"}
+          clickHandle={
+            countryCode === "+91"
+              ? () => verificationHandlerPhone(countryCode, phoneNumber)
+              : () => verificationHandlerEmail(email)
+          }
+        />
+      ) : null}
     </form>
   );
 }

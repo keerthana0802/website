@@ -49,18 +49,18 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    .primary-button {
-      font-size: 3rem;
-      height: 7rem;
-      width: 40rem;
-      img {
-        width: 6rem;
-        right: 0.5rem;
-      }
-    }
+    // .primary-button {
+    //   font-size: 1.8rem;
+    //   height: 4.5rem;
+    //   width: 40rem;
+    //   img {
+    //     width: 6rem;
+    //     right: 0.5rem;
+    //   }
+    // }
     &--header {
-      font-size: 4.2rem;
-      font-weight: 700;
+      font-size: 4rem;
+      font-weight: 800;
       span {
         color: #f3705b;
       }
@@ -68,6 +68,7 @@
     &--liner {
       font-weight: 400;
       font-size: 2.6rem;
+      color: #666;
     }
     @include bpm-md {
       &--header {

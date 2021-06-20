@@ -68,6 +68,8 @@
   }
   &__name {
     font-size: 2rem;
+    font-weight: 800;
+    color: #000632;
   }
   &__title {
     font-size: 1.6rem;
@@ -75,5 +77,6 @@
   &__content {
     font-size: 1.2rem;
     text-align: center;
+    color: #747474;
   }
 }

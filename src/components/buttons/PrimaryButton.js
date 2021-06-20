@@ -6,14 +6,16 @@ function PrimaryButton({ buttonText, version, linkTo, clickHandle }) {
       window.location.href = linkTo;
     }
     if (clickHandle) {
-      clickHandle()
+      clickHandle();
     }
   };
 
   return (
     <div className={`primary-button ${version}`} onClick={clickHandler}>
       {buttonText}
-      {version === "version-2" ? <img src={arrow} alt="arrow" /> : null}
+      {version === "version-2" ? (
+        <img src={arrow} className="primary-button-arrow" alt="arrow" />
+      ) : null}
     </div>
   );
 }

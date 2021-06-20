@@ -206,8 +206,8 @@ function AddressForm({ openPayment }) {
         </label>
         <button
           className={buttonClass}
-          onClick={async (ev) => {
-            await dispatch(
+          onClick={(ev) => {
+            dispatch(
               setAddress({
                 full_name: fullName,
                 email: email,
@@ -228,9 +228,18 @@ function AddressForm({ openPayment }) {
               city &&
               pin
             )
-              setTimeout(() => {
-                openPayment(ev);
-              }, 100);
+              // setTimeout(() => {
+              openPayment(ev, {
+                full_name: fullName,
+                email: email,
+                address_line_1: addressLineOne,
+                address_line_2: addressLineTwo,
+                city: city,
+                state: state,
+                country: country,
+                pin_code: pin,
+              });
+            // }, 200);
           }}
         >
           {`Pay ${totalAmount()}`} <img src={arrow} alt="" />

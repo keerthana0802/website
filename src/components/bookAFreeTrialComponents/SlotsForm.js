@@ -4,6 +4,7 @@ import SlotTimeCard from "./cards/SlotTimeCard";
 import moment from "moment";
 import axios from "axios";
 import Modal from "./Modal";
+import ConfirmationModal from "../modals/ConfirmationModal";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import moengageEvent from "../../helpers/MoengageEventTracking";
@@ -189,10 +190,10 @@ function SlotsForm() {
             { headers: { Authorization: authToken } }
           )
           .then(() => {
-            window.localStorage.clear();
+            // window.localStorage.clear();
           })
           .then(function (response) {
-            history.push("https://sparkstudio.co/booked/");
+            setShowBookedModal(true);
           })
           .catch(function (error) {});
         break;
@@ -210,9 +211,9 @@ function SlotsForm() {
               },
             }
           )
-          .then(() => window.localStorage.clear())
+          // .then(() => window.localStorage.clear())
           .then(function (response) {
-            history.push("https://sparkstudio.co/requested/");
+            setShowBookedModal(true);
           })
           .catch(function (error) {});
         break;
@@ -225,10 +226,24 @@ function SlotsForm() {
   const modalHandler = () => {
     setShowModal(!showModal);
   };
+  const [showBookedModal, setShowBookedModal] = useState(false);
+  const bookedModalHandler = () => {
+    setShowBookedModal(!showBookedModal);
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 600);
+  };
   // ! modal trigger from custom link
   const [customSlotModal, setCustomSlotModal] = useState(false);
   return (
     <div className="slots-form">
+      {showBookedModal ? (
+        <ConfirmationModal
+          modalText="Our team will get back to you!"
+          modalCloseFunction={bookedModalHandler}
+        />
+      ) : null}
+
       {showModal ? (
         <Modal
           slots={selectedSlots}

@@ -59,7 +59,7 @@ function Checkout() {
     },
   });
   var rzp1;
-  const getOrderDetails = async () => {
+  const getOrderDetails = async (address) => {
     const cartItems = await cart.map((item) => {
       return { course_id: item.courseId, quantity: item.qty };
     });
@@ -109,7 +109,8 @@ function Checkout() {
       currency: resp.data.order.currency,
       totalQty: totalQty,
     };
-    rzp1 = new window.Razorpay({
+
+    rzp1 = await new window.Razorpay({
       ...razorOptions,
       description: description,
       amount: resp.data.order.amount,
@@ -155,9 +156,9 @@ function Checkout() {
     }
   }, []);
 
-  const openPayment = async (ev) => {
+  const openPayment = async (ev, addressData) => {
     ev.preventDefault();
-    await getOrderDetails();
+    await getOrderDetails(addressData);
   };
   return (
     <NavFooterLayout>

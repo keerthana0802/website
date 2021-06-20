@@ -16,6 +16,7 @@ function Path({ courseThemeColorDark, steps, sessions }) {
   };
   const changeFunction = (ev) => {
     if (ev.target.checked) {
+      ev.target.focus();
       ev.target.parentElement.className = "active";
       ev.target.nextSibling.className = `${tooltipPositionClass(
         ev.target.value

@@ -4,6 +4,7 @@
     padding-top: 7rem;
     display: grid;
     @include bpm-xxl {
+      margin-bottom: -15rem;
       height: 60vw;
       grid-template-columns: 600px 1fr;
     }
@@ -11,10 +12,12 @@
       height: 56vw;
     }
     @include bpm-xl {
+      margin-bottom: -10rem;
       height: 63vw;
       grid-template-columns: 425px 1fr;
     }
     @include bpm-lg {
+      margin-bottom: -5rem;
       grid-template-columns: 375px 1fr;
       height: 60vw;
     }
@@ -51,7 +54,8 @@
     margin-top: 17rem;
     @include bpm-xxl {
       &--header {
-        font-size: 8rem;
+        font-size: 7.2rem;
+        font-weight: 800;
       }
     }
     @include bpm-xl {

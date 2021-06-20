@@ -46,4 +46,15 @@
     width: 7.5rem;
     height: 5rem;
   }
+  &.version-5 {
+    margin-top: 1rem;
+    border: 2px solid #f3705b;
+    border-radius: 5rem;
+    height: 4.5rem;
+    width: 15rem;
+    text-align: center;
+    background-color: transparent;
+    font-size: 1.6rem;
+    color: #f3705b;
+  }
 }
