@@ -66,6 +66,7 @@
       align-items: center;
       @include bpm-sm {
         justify-content: center;
+        max-width: 100vw;
       }
       > div {
         display: block;
@@ -75,9 +76,21 @@
         &:first-child {
           border-right: 2px solid black;
           padding-right: 1.7rem;
+          @include bpm-sm {
+            padding-right: 1.5rem;
+          }
         }
         &:nth-child(2) {
           padding-left: 1.7rem;
+          @include bpm-sm {
+            padding: 0 1.5rem;
+            border-right: 2px solid black;
+          }
+        }
+        &:nth-child(3) {
+          @include bpm-sm {
+            padding-left: 1.5rem;
+          }
         }
       }
       .keyword {

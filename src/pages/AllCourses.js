@@ -33,18 +33,19 @@ function AllCourses() {
     });
   };
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setResponsiveMode(true);
-      if (scrollToCourseCategory?.length > 0) {
-        scroller(`${scrollToCourseCategory.toLowerCase()}-section`, 240);
-        dispatch(setScrollToCourseCategory(""));
+    if (!initialRender)
+      if (window.innerWidth < 768) {
+        setResponsiveMode(true);
+        if (scrollToCourseCategory?.length > 0) {
+          scroller(`${scrollToCourseCategory.toLowerCase()}-section-resp`, 420);
+          dispatch(setScrollToCourseCategory(""));
+        }
+      } else {
+        if (scrollToCourseCategory?.length > 0) {
+          scroller(`${scrollToCourseCategory.toLowerCase()}-section`, -50);
+          dispatch(setScrollToCourseCategory(""));
+        }
       }
-    } else {
-      if (scrollToCourseCategory?.length > 0) {
-        scroller(`${scrollToCourseCategory.toLowerCase()}-section`, 440);
-        dispatch(setScrollToCourseCategory(""));
-      }
-    }
   }, [initialRender]);
   useEffect(() => {
     window.scrollTo(0, 0);

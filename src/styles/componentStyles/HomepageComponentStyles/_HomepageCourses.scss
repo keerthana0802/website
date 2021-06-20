@@ -6,6 +6,9 @@
     justify-content: space-evenly;
     margin-top: 4rem;
     margin-bottom: 4rem;
+    @include bpm-xs {
+      margin: 2.5rem 0;
+    }
   }
   &__liner {
     font-size: 1.6rem;

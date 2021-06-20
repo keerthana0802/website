@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CourseCatgorySlider from "../sliders/CourseCatgorySlider";
 import CourseCatgorySliderResp from "../sliders/CourseCategorySliderResp";
-import yellowCourse from "../../assets/yellowCourse.jpeg";
-import blueCourse from "../../assets/blueCourse.jpeg";
-import purpleCourse from "../../assets/purpleCourse.jpeg";
 function CourseCategorySection({ courseData }) {
   const [musicCourses, setMusicCourses] = useState([]);
   const [communicationCourses, setCommunicationCourses] = useState([]);
@@ -48,13 +45,15 @@ function CourseCategorySection({ courseData }) {
     <div className="course-category-section__wrapper">
       {responsiveMode ? (
         <>
-          <div className="course-category-section" id="communication-section">
+          <div
+            className="course-category-section"
+            id="communication-section-resp"
+          >
             <CourseCatgorySliderResp
-              tempImage={blueCourse}
               courseData={communicationCourses}
               courseSliderHeader={<p>Communication</p>}
               courseVertical="communication"
-              courseSliderDuration="60 minute session"
+              courseSliderDuration="60 minute classes"
               courseSliderContent="Develop the most sought after 21st century skill. Be an orator, an opinion leader, a storyteller."
               courseSliderKeywords={["Confidence", "Communication", "Logic"]}
               courseSliderExpertsVideoUrl=""
@@ -66,18 +65,12 @@ function CourseCategorySection({ courseData }) {
               }
             />
           </div>
-          <div className="course-category-section" id="art-section">
+          <div className="course-category-section" id="art-section-resp">
             <CourseCatgorySliderResp
-              tempImage={purpleCourse}
               courseData={artCourses}
-              courseSliderHeader={
-                <p>
-                  Photography &<br />
-                  Video
-                </p>
-              }
+              courseSliderHeader={<p>Visual Arts</p>}
               courseVertical="art"
-              courseSliderDuration="60 minute session"
+              courseSliderDuration="60 minute classes"
               courseSliderContent="Get a real art education as you learn the fundamentals of fine art, unlock your imagination and dabble in the exciting world of applied arts"
               courseSliderKeywords={[
                 "Creativity",
@@ -89,9 +82,8 @@ function CourseCategorySection({ courseData }) {
               courseCategoryColorLight={artCourses[0]?.verticalThemeColorLight}
             />
           </div>
-          <div className="course-category-section" id="music-section">
+          <div className="course-category-section" id="music-section-resp">
             <CourseCatgorySliderResp
-              tempImage={yellowCourse}
               courseData={musicCourses}
               courseSliderHeader={
                 <p>
@@ -100,7 +92,7 @@ function CourseCategorySection({ courseData }) {
                 </p>
               }
               courseVertical="music"
-              courseSliderDuration="60 minute session"
+              courseSliderDuration="60 minute classes"
               courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"
               courseSliderKeywords={[
                 "Performance",
@@ -115,15 +107,15 @@ function CourseCategorySection({ courseData }) {
             />
           </div>
         </>
-      ) : (
+      ) : null}
+      {!responsiveMode ? (
         <>
           <div className="course-category-section" id="communication-section">
             <CourseCatgorySlider
-              tempImage={blueCourse}
               courseData={communicationCourses}
               courseSliderHeader={<p>Communication</p>}
               courseVertical="communication"
-              courseSliderDuration="60 minute session"
+              courseSliderDuration="60 minute classes"
               courseSliderContent="Develop the most sought after 21st century skill. Be an orator, an opinion leader, a storyteller."
               courseSliderKeywords={["Confidence", "Communication", "Logic"]}
               courseSliderExpertsVideoUrl=""
@@ -137,16 +129,10 @@ function CourseCategorySection({ courseData }) {
           </div>
           <div className="course-category-section" id="art-section">
             <CourseCatgorySlider
-              tempImage={purpleCourse}
               courseData={artCourses}
-              courseSliderHeader={
-                <p>
-                  Photography &<br />
-                  Video
-                </p>
-              }
+              courseSliderHeader={<p>Visual Arts</p>}
               courseVertical="art"
-              courseSliderDuration="60 minute session"
+              courseSliderDuration="60 minute classes"
               courseSliderContent="Get a real art education as you learn the fundamentals of fine art, unlock your imagination and dabble in the exciting world of applied arts"
               courseSliderKeywords={[
                 "Creativity",
@@ -160,7 +146,6 @@ function CourseCategorySection({ courseData }) {
           </div>
           <div className="course-category-section" id="music-section">
             <CourseCatgorySlider
-              tempImage={yellowCourse}
               courseData={musicCourses}
               courseSliderHeader={
                 <p>
@@ -169,7 +154,7 @@ function CourseCategorySection({ courseData }) {
                 </p>
               }
               courseVertical="music"
-              courseSliderDuration="60 minute session"
+              courseSliderDuration="60 minute classes"
               courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"
               courseSliderKeywords={[
                 "Performance",
@@ -184,7 +169,7 @@ function CourseCategorySection({ courseData }) {
             />
           </div>
         </>
-      )}
+      ) : null}
     </div>
   );
 }

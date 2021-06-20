@@ -26,7 +26,7 @@ function BannerCard({ firstName, lastName, position, imageUrl }) {
           </h1>
         </div>
         <div className="banner-card__top--right">
-          <button>Read more</button>
+          {/* <button>Read more</button> */}
         </div>
       </div>
       <div className="banner-card__bottom">

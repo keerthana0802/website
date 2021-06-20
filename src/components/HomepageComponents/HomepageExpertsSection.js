@@ -42,7 +42,7 @@ function HomepageExpertsSection() {
             start: "200",
             end: "1800",
             toggleActions: "play none none none",
-            scrub: 2,
+            scrub: 1,
             pin: imageGridWRapperRef.current,
             // markers: true,
             ease: "ease-in",

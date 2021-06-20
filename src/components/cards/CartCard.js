@@ -31,7 +31,7 @@ function CartCard({
         <div className="cart-card">
           <h1 className="cart-card__name">{courseName}</h1>
           <h2 className="cart-card__category">
-            Duration: {courseDuration} sessions
+            Duration: {courseDuration} classes
           </h2>
           <p className="cart-card__age-group">
             AGE GROUP: {courseAgeGroup} Yrs

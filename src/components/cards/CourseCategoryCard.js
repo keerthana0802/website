@@ -53,7 +53,7 @@ function CourseCategoryCard({
             onClick={openCourse}
           >
             {courseCardName}
-            <span className="sessions">{courseCardSessions} Sessions</span>
+            <span className="sessions">{courseCardSessions} Classes</span>
           </h1>
           <h2
             className="course-category-card__bottom--category"

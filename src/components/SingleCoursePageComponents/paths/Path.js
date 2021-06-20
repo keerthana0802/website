@@ -45,19 +45,31 @@ function Path({ courseThemeColorDark, steps, sessions }) {
         return path14;
     }
   };
+  const firstNode = useRef(null);
   const sessionsRenderer = (steps) => {
     let arrayOfElements = [];
 
     for (let i = 0; i < steps; i++) {
       arrayOfElements.push(
         <label htmlFor="session">
-          <input
-            type="radio"
-            name="session"
-            value={i + 1}
-            onChange={changeFunction}
-            onBlur={blurFunction}
-          />
+          {i === 0 ? (
+            <input
+              type="radio"
+              name="session"
+              value={i + 1}
+              onChange={changeFunction}
+              onBlur={blurFunction}
+              ref={firstNode}
+            />
+          ) : (
+            <input
+              type="radio"
+              name="session"
+              value={i + 1}
+              onChange={changeFunction}
+              onBlur={blurFunction}
+            />
+          )}
           <div className={`${tooltipPositionClass(i + 1)}`}>
             <span>{sessions[i].title}</span>
             <p>{sessions[i].details}</p>
@@ -71,6 +83,7 @@ function Path({ courseThemeColorDark, steps, sessions }) {
   };
   useEffect(() => {
     pathRef.current.children[1].className = "active";
+    firstNode.current.click();
   }, []);
   return (
     <div

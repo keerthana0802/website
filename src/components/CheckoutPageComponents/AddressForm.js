@@ -22,7 +22,7 @@ function AddressForm({ openPayment }) {
   const [addressLineTwo, setAddressLineTwo] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [pin, setPin] = useState(null);
+  const [pin, setPin] = useState("");
   // ! Regex
   let numberRegex = new RegExp(/^[0-9]*$/);
   let countryCodeRegex = new RegExp(/^\+[0-9]*$/);
@@ -145,7 +145,9 @@ function AddressForm({ openPayment }) {
             placeholder="Pincode"
             value={pin}
             onChange={(ev) => {
-              if (numberRegex.test(ev.target.value)) setPin(ev.target.value);
+              if (numberRegex.test(ev.target.value)) {
+                setPin(ev.target.value);
+              }
             }}
             required
           />

@@ -190,7 +190,9 @@ function SlotsForm() {
             { headers: { Authorization: authToken } }
           )
           .then(() => {
-            // window.localStorage.clear();
+            // window.localStorage.setItem("detailsForm", "");
+            // window.localStorage.setItem("coursesForm", "");
+            // window.localStorage.setItem("slotLimit", "");
           })
           .then(function (response) {
             setShowBookedModal(true);
@@ -211,7 +213,11 @@ function SlotsForm() {
               },
             }
           )
-          // .then(() => window.localStorage.clear())
+          .then(() => {
+            // window.localStorage.setItem("detailsForm", "");
+            // window.localStorage.setItem("coursesForm", "");
+            // window.localStorage.setItem("slotLimit", "");
+          })
           .then(function (response) {
             setShowBookedModal(true);
           })
@@ -231,6 +237,11 @@ function SlotsForm() {
     setShowBookedModal(!showBookedModal);
     setTimeout(() => {
       window.location.href = "/";
+      setTimeout(() => {
+        window.localStorage.setItem("detailsForm", "");
+        window.localStorage.setItem("coursesForm", "");
+        window.localStorage.setItem("slotLimit", "");
+      }, 200);
     }, 600);
   };
   // ! modal trigger from custom link

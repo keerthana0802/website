@@ -1,6 +1,4 @@
 import React from "react";
-import PrimaryButton from "../buttons/PrimaryButton";
-import yellow from "../../assets/yellowCourse.jpeg";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";

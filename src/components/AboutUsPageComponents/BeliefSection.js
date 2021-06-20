@@ -21,17 +21,17 @@ function BeliefSection() {
 
         <BeliefCard
           index="1"
-          title="Create"
+          title="Nurture"
           liner="Children are curious & imaginative. Our classes help them turn this into outcomes!"
         />
         <BeliefCard
           index="2"
-          title="Curriculums"
+          title="Inspire"
           liner="We build structured lesson plans for your child. Our teachers are hand-picked and meticulously trained."
         />
         <BeliefCard
           index="3"
-          title="Cultivate"
+          title="Unleash"
           liner="Our in-class and outside class activties ensure that your children maximise what they've learnt."
         />
       </div>

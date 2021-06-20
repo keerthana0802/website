@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import ShowcaseModal from "../modals/ShowcaseModal";
-// import thumbnail from "../assets/videoThumbnail1.svg";
-// import thumbnail from "../../assets/thumbnail.png";
-// import thumbnail2 from "../../assets/thumbnail2.png";
-// import thumbnail3 from "../../assets/thumbnail3.png";
-import play from "../../assets/playButton.svg";
 import PrimaryButton from "../buttons/PrimaryButton";
 function HomepageShowcase() {
   // ! state for modal

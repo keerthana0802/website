@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SecondaryButton from "../buttons/SecondaryButton";
 import durationIcon from "../../assets/durationIcon.svg";
 import CourseCategoryCard from "../cards/CourseCategoryCard";
-import yellow from "../../assets/yellowCard.png";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";

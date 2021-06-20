@@ -1,6 +1,9 @@
 .section-header {
   position: relative;
   margin: 4rem 0;
+  @include bpm-xs {
+    margin: 2rem 0;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -17,6 +20,9 @@
   justify-content: space-evenly;
   width: 100%;
   height: 15rem;
+  @include bpm-lg {
+    height: 10rem;
+  }
   &__top {
     z-index: 2;
     font-size: 5rem;
@@ -26,6 +32,9 @@
     @include bpm-lg {
       font-size: 4rem;
     }
+    @include bpm-xs {
+      font-size: 3rem;
+    }
   }
   &__bottom {
     z-index: 2;
@@ -34,6 +43,9 @@
     text-align: center;
     @include bpm-lg {
       font-size: 1.8rem;
+    }
+    @include bpm-xs {
+      font-size: 1.6rem;
     }
   }
 }

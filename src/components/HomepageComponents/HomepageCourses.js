@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
 import { ageFilterAttributes } from "../../helpers/MoengageAttributeCreators";
 import { useSelector } from "react-redux";
-import yellowCourse from "../../assets/yellowCourse.jpeg";
-import blueCourse from "../../assets/blueCourse.jpeg";
-import purpleCourse from "../../assets/purpleCourse.jpeg";
 import PrimaryButton from "../buttons/PrimaryButton";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
@@ -69,7 +66,7 @@ function HomepageCourses() {
               setFilterRange([5, 15]);
             }}
           >
-            All ages
+            All Ages
           </li>
           <li
             className={setActiveClass([5, 7])}

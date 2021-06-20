@@ -6,11 +6,7 @@ import {
   searchExecuteAttributes,
 } from "../../helpers/MoengageAttributeCreators";
 import SecondaryButton from "../buttons/SecondaryButton";
-import yellowCourse from "../../assets/yellowCourse.jpeg";
-import blueCourse from "../../assets/blueCourse.jpeg";
-import purpleCourse from "../../assets/purpleCourse.jpeg";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
-import PrimaryButton from "../buttons/PrimaryButton";
 import moengageEvent from "../../helpers/MoengageEventTracking";
 let firstRow = true;
 function AllCoursesBannerFilter({ courseData }) {
@@ -122,7 +118,10 @@ function AllCoursesBannerFilter({ courseData }) {
   const [searchTerm, setSearchTerm] = useState("");
   const searchHandle = () => {
     let filteredCourses = courseData.filter((course) => {
-      return course.courseName.toLowerCase().includes(searchTerm.toLowerCase());
+      if (course.showOutside)
+        return course.courseName
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
     });
     moengageEvent(
       "Search_Execute",
@@ -202,7 +201,7 @@ function AllCoursesBannerFilter({ courseData }) {
               setFilterRange([5, 15]);
             }}
           >
-            All ages
+            All Ages
           </li>
           <li
             className={setActiveClass([5, 7])}

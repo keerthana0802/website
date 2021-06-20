@@ -7,7 +7,6 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { Pagination, A11y } from "swiper/core";
 import PrimaryButton from "../buttons/PrimaryButton";
-import yellow from "../../assets/yellowCourse.jpeg";
 import {
   addQtyToCart,
   addToCart,
@@ -64,7 +63,7 @@ function CourseDetailsSlide({
       <div className="course-details-slide__right">
         <h1 className="name">{courseName}</h1>
         <h2>
-          Course Duration: <span>{numberOfSessions + " sessions"}</span>
+          Course Duration: <span>{numberOfSessions + " classes"}</span>
         </h2>
         <h2>
           Session Duration: <span>{duration}</span>
@@ -72,7 +71,7 @@ function CourseDetailsSlide({
         <h2>
           Course Fee:{" "}
           <span>
-            INR {price} (INR {price / Number(numberOfSessions)}/session)
+            INR {price} (INR {price / Number(numberOfSessions)}/class)
           </span>
         </h2>
         <h2>

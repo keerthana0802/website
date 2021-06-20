@@ -4,7 +4,7 @@ function UspStrip({ sessions, background, activities }) {
   return (
     <div className="usp-strip" style={{ backgroundColor: background }}>
       <h2 className="usp-strip__item">
-        <span style={{ color: "#000072" }}>{sessions}</span> Sessions
+        <span style={{ color: "#000072" }}>{sessions}</span> Classes
       </h2>
       <h2 className="usp-strip__item">
         <span style={{ color: "#FCB444" }}>1:4</span> Live-class ratio

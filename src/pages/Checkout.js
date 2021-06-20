@@ -12,6 +12,7 @@ import {
   invokePaymentAttributes,
   paymentStatusAttributes,
 } from "../helpers/MoengageAttributeCreators";
+import PrimaryButton from "../components/buttons/PrimaryButton";
 function Checkout() {
   const dispatch = useDispatch();
   const orderDetailsRef = useRef(null);
@@ -167,7 +168,18 @@ function Checkout() {
       </Helmet> */}
       <div className="spark-checkout-page">
         <CartPreview />
-        <AddressForm openPayment={openPayment} />
+        {cart.length > 0 ? (
+          <AddressForm openPayment={openPayment} />
+        ) : (
+          <div className="spark-checkout-page__empty-cart">
+            <h1>Have a look at the amazing courses we offer.</h1>
+            <PrimaryButton
+              version="version-1"
+              buttonText="Explore Courses"
+              linkTo="/all-courses"
+            />
+          </div>
+        )}
       </div>
     </NavFooterLayout>
   );

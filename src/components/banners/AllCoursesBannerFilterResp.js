@@ -11,9 +11,6 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import SecondaryButton from "../buttons/SecondaryButton";
-import yellowCourse from "../../assets/yellowCourse.jpeg";
-import blueCourse from "../../assets/blueCourse.jpeg";
-import purpleCourse from "../../assets/purpleCourse.jpeg";
 import HomepageCourseCard from "../cards/HomepageCourseCard";
 import moengageEvent from "../../helpers/MoengageEventTracking";
 SwiperCore.use([Pagination, Navigation]);
@@ -108,7 +105,7 @@ function AllCoursesBannerFilterResp({ courseData }) {
               setFilterRange([5, 15]);
             }}
           >
-            All ages
+            All Ages
           </li>
           <li
             className={setActiveClass([5, 7])}

@@ -3,7 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
+    @include bp-sm {
+      margin-bottom: 10rem;
+    }
     .square {
       height: 30rem;
       width: 30rem;
