@@ -35,6 +35,7 @@ const getCourses = (coursesData) => {
       price: Number(course.price.split(".")[0]),
       minAge: course.min_age,
       maxAge: course.max_age,
+      classRatio: course.class_size,
       showOutside: course.show_outside,
       showOutsideMinAge: course.show_outside_min_age,
       showOutsideMaxAge: course.show_outside_max_age,

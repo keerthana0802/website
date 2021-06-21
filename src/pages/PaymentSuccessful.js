@@ -29,7 +29,7 @@ function PaymentSuccessful() {
               </h1>
               <div className="spark-payment-successful__right--top-status">
                 <span>Status: Payment successful</span>
-                <span>Date: April 12th, 2021, 14:42</span>
+                {/* <span>Date: April 12th, 2021, 14:42</span> */}
               </div>
             </div>
             <div className="spark-payment-successful__right--bottom">

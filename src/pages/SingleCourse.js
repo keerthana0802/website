@@ -82,9 +82,7 @@ function SingleCourse() {
           />
 
           <UspStrip
-            sessions={courseDetails.numberOfClasses}
-            background={courseDetails.verticalThemeColorLight}
-            activities={courseDetails.numberOfHomeActivities}
+            courseDetails={courseDetails}
           />
           <ParentsSection
             courseDetails={courseDetails}

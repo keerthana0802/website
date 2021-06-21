@@ -21,8 +21,11 @@ function Footer() {
           <div className="spark-footer__left--top">
             <img src={logo} alt="" className="spark-footer__left--top-logo" />
             <p className="spark-footer__left--top-content">
-              Online extracurriculars for your children. Why online? Easy. Get access to great teachers, superb curriculum & have your children interact with great minds from the comfort of your home. Why Spark Studio? We put outcomes first. Our kids create in class. They build, they debate, they express, they enjoy themselves in an
-              unaided manner, with little to no parent intervention. You can be at peace knowing your child is being taken care, be it making Among Us clay animation videos or strumming a guitar or learning communication while making friends.
+              Online extracurriculars for your kids. Why online? Easy. Great
+              teachers, superb lessons, children interacting with other great
+              minds, from the comfort of your home. Our kids create in our
+              classes. They draw, debate, express, enjoy, communicate, sing;
+              with almost no parent intervention.
             </p>
           </div>
           <div className="spark-footer__left--bottom">
