@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import HomepageBanner from "../components/banners/HomepageBanner";
 import HomepageCourses from "../components/HomepageComponents/HomepageCourses";
@@ -11,6 +11,9 @@ const HomepageCallback = lazy(() =>
 const HomepageExpertsSection = lazy(() =>
   import("../components/HomepageComponents/HomepageExpertsSection")
 );
+const HomepageExpertsSectionResp = lazy(() =>
+  import("../components/HomepageComponents/HomepageExpertsSectionResp")
+);
 const HomepageShowcase = lazy(() =>
   import("../components/HomepageComponents/HomepageShowcase")
 );
@@ -22,8 +25,12 @@ const TestimonialSlider = lazy(() =>
 );
 
 function Homepage() {
+  const [responsiveMode, setResponsiveMode] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (window.innerWidth < 992) {
+      setResponsiveMode(true);
+    }
   }, []);
   return (
     <NavFooterLayout>
@@ -37,7 +44,11 @@ function Homepage() {
           <HomepageShowcase />
         </Suspense>
         <Suspense fallback={<div></div>}>
-          <HomepageExpertsSection />
+          {responsiveMode ? (
+            <HomepageExpertsSectionResp />
+          ) : (
+            <HomepageExpertsSection />
+          )}
         </Suspense>
         <Suspense fallback={<div></div>}>
           <HomepageUspSection />

@@ -44,7 +44,6 @@ function HomepageCallback() {
     setInitialRender(false);
   }, []);
   useEffect(() => {
-    console.log(window.innerWidth);
     if (window.innerWidth < 769) {
       setResponsiveMode(true);
     }
@@ -92,7 +91,9 @@ function HomepageCallback() {
             name: fullName,
           },
         })
-        .then((res) => console.log(res))
+        .then((res) => {
+          // console.log(res);
+        })
         .then(() => {
           moengageEvent(
             "Request_Callback",
@@ -110,7 +111,9 @@ function HomepageCallback() {
           setPhoneNumber("");
           setTooltipClass("phone-validation-tooltip");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          // console.log(err);
+        });
     }
   };
   return (
@@ -208,7 +211,6 @@ function HomepageCallback() {
                   }}
                   onKeyPress={(ev) => {
                     if (ev.code === "Backspace") {
-                      console.log("here");
                       setPhoneNumber(ev.target.value);
                     }
                     if (ev.code === "Enter") {

@@ -140,7 +140,7 @@ function AuthSignUp() {
           phoneNumber: data.user.phone_no,
           email: data.user.email,
         };
-        console.log("from ax", userDetails);
+        // console.log("from ax", userDetails);
         let profiles = data.user.profiles;
         dispatch(saveAuthToken(authToken));
         dispatch(loginWithOtp({ userDetails, profiles }));
@@ -153,8 +153,10 @@ function AuthSignUp() {
       .catch((e) => {
         if (e.response.data.error.code === 42201) {
           alert(e.response.data.error.message);
+        } else if (e.response.data.error.code === 40100) {
+          alert(e.response.data.error.message);
         } else {
-          console.log("here", e.response.data);
+          console.log("error-here", e.response.data);
         }
       });
   };
@@ -243,7 +245,6 @@ function AuthSignUp() {
                   }}
                   onKeyPress={(ev) => {
                     if (ev.code === "Backspace") {
-                      console.log("here");
                       setPhoneNumber(ev.target.value);
                     }
                     if (ev.code === "Enter") {

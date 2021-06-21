@@ -57,24 +57,39 @@ function AboutUs() {
             value={linkedinUrl}
             onChange={(ev) => setLinkedinUrl(ev.target.value)}
           />
-          <PrimaryButton
-            buttonText="Connect with us"
-            version="version-2"
-            clickHandle={async () => {
-              await axios.post(process.env.REACT_APP_CAREERS_APPLICATION_API, {
-                linkedin_profile: linkedinUrl,
-              });
-              setShowModal(!showModal);
-              moengageEvent(
-                "Connect_With_Us",
-                connectWithUsAttributes(
-                  linkedinUrl.length > 0 ? 1 : 0,
-                  window.location.pathname,
-                  ""
-                )
-              );
-            }}
-          />
+          <div className="linkedin-button">
+            <PrimaryButton
+              buttonText="Connect with us"
+              version="version-2"
+              clickHandle={async () => {
+                if (linkedinUrl.length > 0) {
+                  await axios.post(
+                    process.env.REACT_APP_CAREERS_APPLICATION_API,
+                    {
+                      linkedin_profile: linkedinUrl,
+                    }
+                  );
+                  setShowModal(!showModal);
+                  moengageEvent(
+                    "Connect_With_Us",
+                    connectWithUsAttributes(
+                      linkedinUrl.length > 0 ? 1 : 0,
+                      window.location.pathname,
+                      ""
+                    )
+                  );
+                }
+              }}
+            />
+            {linkedinUrl.length > 0 ? null : (
+              <div className="linkedin-tooltip">
+                <span>
+                  Please enter a Linkedin URL <br />
+                  or Linkedin profile name
+                </span>
+              </div>
+            )}
+          </div>
 
           {showModal ? (
             <ConfirmationModal

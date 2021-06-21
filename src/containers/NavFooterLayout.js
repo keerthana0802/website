@@ -4,6 +4,7 @@ import logo from "../assets/sparkLogo.png";
 import cartIcon from "../assets/cartIconBlack.svg";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import SocialIcons from "../components/SocialIcons";
+import Footer from "./Footer";
 import hamburger from "../assets/hamburger.svg";
 import { Link } from "react-router-dom";
 import uuid from "react-uuid";
@@ -28,7 +29,7 @@ import AuthSignUp from "../components/modals/AuthSignUp";
 import AuthLogin from "../components/modals/AuthLogin";
 import axios from "axios";
 // import coursesDataNew from "../store/staticData/coursesDataNew.json";
-import coursesDataNew from "../store/staticData/coursesDataNewEdited.json";
+import coursesDataNew from "../store/staticData/coursesData.json";
 function NavFooterLayout({ children }) {
   // ! Redux states
   const cart = useSelector((state) => state.checkout.cart);
@@ -412,7 +413,8 @@ function NavFooterLayout({ children }) {
       {signupModalOpen ? <AuthSignUp /> : null}
       {loginModalOpen ? <AuthLogin /> : null}
 
-      <div className="footer-wrapper">
+      <Footer />
+      {/* <div className="footer-wrapper">
         <div className="footer">
           <div className="footer__top">
             <div className="footer__top--contact-us">
@@ -478,18 +480,13 @@ function NavFooterLayout({ children }) {
               <SocialIcons />
             </div>
             <div className="footer__bottom--terms">
-              <a
-                href="https://sparkstudio.co/tnc"
-                rel="noreferrer"
-                target="_blank"
-                className="terms"
-              >
+              <Link to="/terms-and-conditions" className="terms">
                 Terms & Conditions
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -86,7 +86,10 @@ const moengageEvent = async (eventName, eventAttributes = {}) => {
     initialAttributes.device_identifier = dev_id;
   }
   // console.log(eventName, { ...initialAttributes, ...eventAttributes });
-
+  window?.mixpanel?.track(eventName, {
+    ...initialAttributes,
+    ...eventAttributes,
+  });
   if (window.Moengage)
     window.Moengage.track_event(eventName, {
       ...initialAttributes,

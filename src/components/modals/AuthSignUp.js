@@ -108,7 +108,6 @@ function AuthSignUp() {
     }
   }, [phoneNumber]);
   const signUpHandle = () => {
-    
     dispatch(setTempFullName(fullName));
     dispatch(setTempEmail(email));
     if (countryCode === "+91") {
@@ -143,8 +142,8 @@ function AuthSignUp() {
       .post(`${process.env.REACT_APP_AUTH_API}/login_by_otp`, postBody)
       .then((response) => {
         // if (response.status > 400) throw Error(response.json());
-        console.log(response.status);
-        console.log("from ax", response.data);
+        // console.log(response.status);
+        // console.log("from ax", response.data);
         const data = response.data;
         let authToken = data.token;
         let userDetails = {
@@ -181,8 +180,10 @@ function AuthSignUp() {
       .catch((e) => {
         if (e.response.data.error.code === 42201) {
           alert(e.response.data.error.message);
+        } else if (e.response.data.error.code === 40100) {
+          alert(e.response.data.error.message);
         } else {
-          console.log("here", e.response.data);
+          console.log("error-here", e.response.data);
         }
       });
   };
@@ -292,7 +293,6 @@ function AuthSignUp() {
                 }}
                 onKeyPress={(ev) => {
                   if (ev.code === "Backspace") {
-                    console.log("here");
                     setPhoneNumber(ev.target.value);
                   }
                   if (ev.code === "Enter") {

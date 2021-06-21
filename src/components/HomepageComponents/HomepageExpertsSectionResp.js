@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
-import scrollTrigger from "gsap/ScrollTrigger";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import HomepageExpertCard from "../cards/HomepageExpertCard";
 import image1 from "../../assets/teacherImage1.svg";
@@ -11,53 +9,29 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 SwiperCore.use([Pagination]);
-gsap.registerPlugin(scrollTrigger);
-function HomepageExpertsSection() {
+function HomepageExpertsSectionResp() {
+  // ! States for responsive mode
+  const [slidersPerView, setSlidersPerView] = useState(3);
+  const [centeredSlides, setCenteredSlides] = useState(false);
   const pagination = {
     clickable: true,
   };
-  // ! Animation refs
-  const imageGridWRapperRef = useRef(null);
-  const squareRef = useRef(null);
-  const startingRef = useRef(null);
-  // ! Effect to register the timeline
   useEffect(() => {
-    // setTimeout(() => {
-    //   setRerendered(true);
-    // }, 3000);
-    // console.log(imageGridWRapperRef.current.getBoundingClientRect());
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: startingRef.current,
-    //       start: "200",
-    //       end: "1800",
-    //       toggleActions: "play none none none",
-    //       scrub: 1,
-    //       pin: imageGridWRapperRef.current,
-    //       // markers: true,
-    //       ease: "ease-in",
-    //     },
-    //   })
-    //   .set(squareRef.current, { scale: 2.9, ease: "ease-out" })
-    //   .to(squareRef.current, { scale: 1, ease: "ease-out" }, 0.001);
-  }, []);
+    if (window.innerWidth < 992) {
+      setCenteredSlides((centeredSlides) => true);
+      setSlidersPerView((slidersPerView) => "auto");
+    }
+  }, [centeredSlides, slidersPerView]);
 
   return (
     <>
-      {/* <hr ref={startingRef} /> */}
       <HomepageSectionHeader headerContent="Meet the experts" />
-      <div
-        className="homepage-experts-section__wrapper"
-        // ref={imageGridWRapperRef}
-      >
-        <div
-          className="homepage-experts-section"
-          // ref={squareRef}
-        >
+      <div className="homepage-experts-section__wrapper">
+        <div className="homepage-experts-section__responsive">
           <Swiper
-            slidesPerView={"auto"}
+            slidesPerView={slidersPerView}
             spaceBetween={0}
+            centeredSlides={centeredSlides}
             pagination={pagination}
             className="mySwiper"
           >
@@ -75,7 +49,7 @@ function HomepageExpertsSection() {
               <HomepageExpertCard
                 cardType="yellow"
                 cardName="Meera"
-                cardCourse="Western Vocals"
+                cardCourse="Western"
                 cardTitle="Music"
                 cardContent="In 2020 Meera won the Indies for the Best Female Vocalist in India. She's a professinal singer and songwriter."
                 cardImage={image1}
@@ -152,68 +126,6 @@ function HomepageExpertsSection() {
                 cardImage={image1}
               />
             </SwiperSlide>
-            {/* <SwiperSlide>
-              <HomepageExpertCard
-                cardType="purple"
-                cardName="Rohit"
-                cardCourse="Photography"
-                cardTitle="Art"
-                cardContent="A professional photographer with a Masters of Photography from National Institute of Design, visiting faculty at NIFT"
-                cardImage={image1}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomepageExpertCard
-                cardType="blue"
-                cardName="Savita"
-                cardCourse="Public Speaking"
-                cardTitle="Communication"
-                cardContent="Holds a Masters degree in Social Work, 5+ years of experience developing English literacy skills of students in 100+ schools"
-                cardImage={image1}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <HomepageExpertCard
-                cardType="purple"
-                cardName="Shreya"
-                cardCourse="Photography"
-                cardTitle="Art"
-                cardContent="An Aegean Centre for Fine Arts (Greece) Alumna, Work published in the National Geographic Traveller, Hindustan Times, DNA."
-                cardImage={image1}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <HomepageExpertCard
-                cardType="purple"
-                cardName="Avirukh"
-                cardCourse="Animation"
-                cardTitle="Art"
-                cardContent="A designer from Royal College of Art, London. His work has been featured in Forbes, Car Design News, Indian Express"
-                cardImage={image1}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomepageExpertCard
-                cardType="blue"
-                cardName="Kumud"
-                cardCourse="Storytelling"
-                cardTitle="Communication"
-                cardContent="20+ years of experience preparing students for language-based competitive exams such as CAT, GRE, SAT, IELTS"
-                cardImage={image1}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <HomepageExpertCard
-                cardType="purple"
-                cardName="Ruchika"
-                cardCourse="Art"
-                cardTitle="Art"
-                cardContent="5+ years facilitating art and theatre workshops for 1000s of children and adults. "
-                cardImage={image1}
-              />
-            </SwiperSlide> */}
           </Swiper>
         </div>
       </div>
@@ -221,4 +133,4 @@ function HomepageExpertsSection() {
   );
 }
 
-export default HomepageExpertsSection;
+export default HomepageExpertsSectionResp;

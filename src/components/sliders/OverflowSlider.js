@@ -62,9 +62,9 @@ function OverflowSlider({ children, cardWidth, paddingLeft }) {
     screenWidthRef.current = window.innerWidth;
     setRemaining(cardWidth * children.length - window.innerWidth + paddingLeft);
   }, []);
-  useEffect(() => {
-    console.log(remaining);
-  }, [remaining]);
+  // useEffect(() => {
+  //   console.log(remaining);
+  // }, [remaining]);
   return (
     <div
       className="overflow-slider__wrapper"

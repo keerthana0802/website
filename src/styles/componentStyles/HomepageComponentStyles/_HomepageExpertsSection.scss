@@ -8,10 +8,20 @@
       justify-content: center;
       overflow: hidden;
     }
-    margin: 0 auto;
-    grid-gap: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    // margin: 0 auto;
+    // grid-gap: 2rem;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    .swiper-container {
+      width: 100vw !important;
+      padding-bottom: 5rem !important;
+    }
+    .swiper-slide {
+      width: 25rem !important;
+    }
+    .swiper-pagination {
+      margin-bottom: 0 !important;
+    }
   }
   &__responsive {
     .swiper-slide {

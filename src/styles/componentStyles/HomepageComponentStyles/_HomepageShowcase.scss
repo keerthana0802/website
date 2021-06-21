@@ -1,6 +1,6 @@
 .homepage-showcase {
   &__wrapper {
-    min-height: 110rem;
+    min-height: 100rem;
     margin-top: 7rem;
     @include bp-md {
       margin-bottom: -4rem;
@@ -23,16 +23,16 @@
       transform: translateX(-50%);
     }
     @include bpm-lg {
-      min-height: 95rem;
+      min-height: 90rem;
     }
     @include bpm-md {
-      min-height: 85rem;
-    }
-    @include bpm-sm {
       min-height: 80rem;
     }
+    @include bpm-sm {
+      min-height: 75rem;
+    }
     @include bpm-xs {
-      min-height: 73rem;
+      min-height: 65rem;
     }
   }
   &__elements {
@@ -40,6 +40,8 @@
     margin: 0 auto;
     position: relative;
     margin-top: 4rem;
+
+    transform: scale(0.85);
     @include bpm-lg {
       transform: scale(0.75);
     }
@@ -48,6 +50,7 @@
       transform: scale(0.75);
     }
     @include bpm-custom(700px) {
+      margin-top: 0;
       max-width: 500px;
     }
     @include bpm-custom(500px) {

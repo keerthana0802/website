@@ -51,11 +51,11 @@ function LiveClassLogin() {
           })
         )
         .catch((errors) => {
-          console.log(errors);
+          // console.log(errors);
         });
     }
   }, [profiles]);
-  console.log(nextClass);
+  // console.log(nextClass);
   return (
     <NavFooterLayout>
       <div className="live-class-login__wrapper">

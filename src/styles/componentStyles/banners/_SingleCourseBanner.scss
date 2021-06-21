@@ -1,10 +1,10 @@
 .single-course-banner {
   &__wrapper {
-    height: 70vh;
+    // height: 70vh;
     padding: 0 7rem;
-    @include bpm-xl {
-      height: 60vh;
-    }
+    // @include bpm-xl {
+    //   height: 60vh;
+    // }
     @include bpm-md {
       height: auto;
       padding: 5rem;
@@ -68,7 +68,8 @@
   }
   &__right {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    padding: 4rem 0;
     justify-content: center;
     img.fallback-image {
       width: 70%;

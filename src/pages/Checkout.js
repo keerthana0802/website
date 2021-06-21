@@ -26,7 +26,7 @@ function Checkout() {
   // ! Payment success handler function
   const paymentSuccessHandler = async function (response) {
     window.localStorage.setItem("payment_id", response.razorpay_payment_id);
-    console.log("from success", userDetails);
+    // console.log("from success", userDetails);
     await axios.post(
       `${process.env.REACT_APP_RAZOR_API}/${uuidRef.current}/success`,
       { payment_response: response },
@@ -163,7 +163,7 @@ function Checkout() {
 
   const openPayment = async (ev, addressData) => {
     ev.preventDefault();
-    console.log("from open", userDetails);
+    // console.log("from open", userDetails);
     await getOrderDetails(addressData);
   };
   return (

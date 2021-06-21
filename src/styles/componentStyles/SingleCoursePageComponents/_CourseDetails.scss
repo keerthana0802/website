@@ -3,6 +3,10 @@
     // height: 60vh;
     padding: 2rem 0 5rem 0;
   }
+  @include bpm-xs {
+    display: flex;
+    justify-content: center;
+  }
   .course-details-slide {
     // height: 41rem;
     margin: 0 7rem 0 7rem;

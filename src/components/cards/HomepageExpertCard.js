@@ -1,6 +1,4 @@
 import React from "react";
-import blueCard from "../../assets/expertCardBlue.svg";
-import yellowCard from "../../assets/expertCardYellow.svg";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { useSelector, useDispatch } from "react-redux";
 import { setScrollToCourseCategory } from "../../store/actions/rootActions";
@@ -10,25 +8,21 @@ function HomepageExpertCard({
   cardName,
   cardTitle,
   cardContent,
-  cardImage,
+  cardCourse,
 }) {
   const dispatch = useDispatch();
   const history = useHistory();
-  const cardSelector = () => {
-    switch (cardType) {
-      case "blue":
-        return `url(${blueCard})`;
-      case "yellow":
-        return `url(${yellowCard})`;
-      default:
-        break;
-    }
-  };
+
   return (
     <div className={`expert-card expert-card--${cardType}`}>
-      <img src={cardImage} alt="" />
+      <img
+        src={`${
+          process.env.REACT_APP_ALL_EXPERTS_IMAGES_API
+        }${cardName.toLowerCase()}`}
+        alt=""
+      />
       <h1 className="expert-card__name">{cardName}</h1>
-      <h2 className="expert-card__title">{cardTitle}</h2>
+      <h2 className="expert-card__title">{cardCourse}</h2>
       <p className="expert-card__content">{cardContent}</p>
       <PrimaryButton
         buttonText={`Explore ${cardTitle}`}

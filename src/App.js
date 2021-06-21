@@ -50,17 +50,17 @@ function App() {
               <Faq />
             </Suspense>
           </Route>
-          <Route path="/tnc">
+          <Route path="/terms-and-conditions">
             <Suspense fallback={<div></div>}>
               <Tnc />
             </Suspense>
           </Route>
-          <Route path="/policy">
+          <Route path="/privacy-policy">
             <Suspense fallback={<div></div>}>
               <Policy />
             </Suspense>
           </Route>
-         
+
           <Route exact path="/live-class">
             <Suspense fallback={<div></div>}>
               <LiveClassLogin />

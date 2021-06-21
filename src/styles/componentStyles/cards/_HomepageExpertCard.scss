@@ -2,7 +2,7 @@
   height: 300px;
   width: 220px;
   border-radius: 3rem;
-
+  margin: 1.5rem 0;
   transition: all 0.1s linear;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
@@ -23,10 +23,11 @@
       rgba(255, 255, 255, 0.5) 97.11%
     );
     .primary-button {
+      color: #333;
       background: linear-gradient(
         113.87deg,
         rgba(255, 255, 255, 0.5) -9.5%,
-        #a0dce7 62.13%
+        #a0dce777 62.13%
       );
     }
   }
@@ -37,10 +38,11 @@
       rgba(255, 255, 255, 0) 109.95%
     );
     .primary-button {
+      color: #333;
       background: linear-gradient(
         111.29deg,
-        rgba(255, 255, 255, 0) -1.83%,
-        #fdcd4c 66.87%
+        rgba(255, 255, 255, 0.3) -1.83%,
+        #fdcd4c77 66.87%
       );
     }
   }
@@ -51,10 +53,11 @@
       rgba(255, 255, 255, 0) 109.95%
     );
     .primary-button {
+      color: #333;
       background: linear-gradient(
         111.29deg,
-        rgba(255, 255, 255, 0) -1.83%,
-        #8469c0 66.87%
+        rgba(255, 255, 255, 0.2) -1.83%,
+        #8469c077 66.87%
       );
     }
   }
@@ -64,7 +67,8 @@
   justify-content: space-evenly;
   padding: 0 1rem;
   img {
-    width: 50%;
+    width: 55%;
+    border-radius: 0.8rem;
   }
   &__name {
     font-size: 2rem;
@@ -77,6 +81,7 @@
   &__content {
     font-size: 1.2rem;
     text-align: center;
-    color: #747474;
+    color: #666;
+    padding: 0 1rem;
   }
 }

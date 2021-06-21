@@ -148,7 +148,7 @@ function DetailsForm({ switchRoute, tabsStatus }) {
     // }
     if (!initialRender) {
       if (phoneNumber[0] === "0") {
-        console.log("from effect");
+        // console.log("from effect");
         setTooltipClass("phone-validation-tooltip visible");
         setTooltipText(
           <>
@@ -304,7 +304,6 @@ function DetailsForm({ switchRoute, tabsStatus }) {
             }}
             onKeyPress={(ev) => {
               if (ev.code === "Backspace") {
-                console.log("here");
                 setPhoneNumber(ev.target.value);
               }
             }}
@@ -322,7 +321,6 @@ function DetailsForm({ switchRoute, tabsStatus }) {
                   </p>
                 );
               } else if (phoneNumber[0] === "0") {
-                console.log("from else");
                 setTooltipClass("phone-validation-tooltip visible");
                 setTooltipText(
                   <>

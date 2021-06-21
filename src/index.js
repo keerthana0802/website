@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+import mixpanel from "mixpanel-browser";
 // ! initialising react-redux
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -24,6 +25,14 @@ Sentry.init({
   tracesSampleRate: 1.0,
   environment: process.env.REACT_APP_ENV,
 });
+window.mixpanel = mixpanel;
+mixpanel.init("d4a75bc05ba5b818d6719609241d6ab9", {
+  debug: true,
+  ip: true,
+  ignore_dnt: true,
+  batch_flush_interval_ms: 10000,
+});
+// mixpanel.track("Sign up");
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

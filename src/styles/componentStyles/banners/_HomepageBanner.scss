@@ -4,7 +4,7 @@
     padding-top: 7rem;
     display: grid;
     @include bpm-xxl {
-      margin-bottom: -15rem;
+      margin-bottom: -7rem;
       height: 60vw;
       grid-template-columns: 600px 1fr;
     }
@@ -12,7 +12,7 @@
       height: 56vw;
     }
     @include bpm-xl {
-      margin-bottom: -10rem;
+      margin-bottom: -5rem;
       height: 63vw;
       grid-template-columns: 425px 1fr;
     }
@@ -51,33 +51,50 @@
       font-size: 6.5rem;
       margin-bottom: 8rem;
     }
-    margin-top: 17rem;
+    @include bp-lg {
+      .primary-button {
+        font-size: 2.8rem;
+        padding-left: 6rem;
+        width: 40rem;
+        height: 8rem;
+        img.primary-button-arrow {
+          width: 6.8rem;
+        }
+      }
+    }
+    margin-top: 8rem;
     @include bpm-xxl {
       &--header {
-        font-size: 7.2rem;
+        line-height: 10.5rem;
+        color: #000632;
+        font-size: 9.6rem;
         font-weight: 800;
       }
     }
     @include bpm-xl {
       &--header {
-        font-size: 6.2rem;
+        font-size: 7.2rem;
+        line-height: 8.5rem;
+        margin-bottom: 5rem;
       }
     }
     @include bpm-lg {
       &--header {
-        font-size: 5rem;
+        font-size: 6.5rem;
+        line-height: 7.5rem;
       }
     }
     @include bpm-md {
-      margin-top: 12rem;
+      margin-top: 6rem;
       &--header {
-        font-size: 4rem;
+        line-height: 6rem;
+        font-size: 5rem;
       }
     }
     @include bpm-sm {
-      margin-top: 7rem;
       &--header {
         font-size: 4rem;
+        line-height: 5rem;
       }
     }
     @include bpm-custom(600px) {

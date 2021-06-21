@@ -13,7 +13,7 @@ function Meeting() {
       history.push("/feedback");
     });
   };
-  console.log(meetingDetails);
+  // console.log(meetingDetails);
   return (
     <div>
       <DyteMeeting

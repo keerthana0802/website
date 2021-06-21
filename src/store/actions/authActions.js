@@ -4,9 +4,11 @@ const sendOtp = (body) => {
   axios
     .post(`${process.env.REACT_APP_AUTH_API}/send_otp`, body)
     .then((response) => {
-      console.log(response);
+      // console.log(response);
     })
-    .catch((e) => console.log(e));
+    .catch((e) => {
+      // console.log(e);
+    });
   return {
     type: "SEND_OTP",
     payload: body,

@@ -1,0 +1,216 @@
+.spark-footer {
+  &__wrapper {
+    background-color: #000632;
+    width: 100vw;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    .confetti {
+      position: absolute;
+      z-index: 3;
+      width: 60rem;
+      &-1 {
+        left: -30rem;
+        top: -10rem;
+      }
+      &-2 {
+        right: -30rem;
+        top: 10rem;
+      }
+    }
+  }
+  padding: 7rem;
+  * {
+    color: #fff;
+  }
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  @include bpm-custom(875px) {
+    padding: 7rem 3rem;
+  }
+  @include bpm-sm {
+    flex-direction: column;
+  }
+  &__left {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include bpm-sm {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    @include bpm-custom(490px) {
+      flex-direction: column;
+    }
+    &--top {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &-logo {
+        width: 20rem;
+      }
+      &-content {
+        font-size: 1.6rem;
+        width: 30rem;
+        margin: 3rem 0 4rem 0;
+        font-weight: 300;
+      }
+    }
+
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @include bpm-sm {
+        align-items: flex-end;
+      }
+      @include bpm-custom(490px) {
+        align-items: flex-start;
+      }
+      &-header {
+        font-size: 4rem;
+        font-weight: 900;
+        margin-bottom: 2.5rem;
+      }
+      a {
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 0.2rem;
+      }
+    }
+    @include bpm-custom(580px) {
+      &--top {
+        &-logo {
+          width: 15rem;
+        }
+        &-content {
+          width: 25rem;
+        }
+      }
+      &--bottom {
+        &-header {
+          font-size: 3rem;
+        }
+        a {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+  &__right {
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+    @include bpm-custom(875px) {
+      grid-gap: 3rem;
+    }
+    @include bpm-sm {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+    }
+    @include bpm-custom(490px) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    &--column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      &-item {
+        margin-bottom: 1.3rem;
+        // padding-bottom: 2px;
+        // &:hover {
+        //   padding-bottom: 2px;
+        //   border-bottom: 1px solid #fff;
+        // }
+        a {
+          font-size: 2rem;
+          font-weight: 300;
+        }
+        &-header {
+          font-size: 2.4rem;
+          font-weight: 800;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+  &__social {
+    background-color: #fff;
+    // height: 7rem;
+    padding: 3rem 7rem;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: "social call reserved";
+    justify-items: center;
+    align-items: center;
+    @include bpm-custom(1250px) {
+      //   grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "social call"
+        "reserved reserved";
+    }
+    @include bpm-md {
+      padding: 2rem 7rem;
+    }
+    @include bpm-custom(875px) {
+      padding: 2rem 3rem;
+      grid-template-areas: "social" "call" "reserved";
+    }
+    .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      justify-self: flex-start;
+      grid-area: social;
+      @include bpm-custom(875px) {
+        justify-self: center;
+        margin-bottom: 2rem;
+      }
+      img {
+        width: 4rem;
+        margin: 0 1rem;
+      }
+      a {
+        &:first-child {
+          img {
+            margin: 0 1rem 0 0;
+          }
+        }
+      }
+    }
+    .call {
+      font-size: 1.6rem;
+      font-weight: 900;
+      grid-area: call;
+      @include bpm-custom(1250px) {
+        justify-self: flex-end;
+      }
+      @include bpm-custom(875px) {
+        justify-self: center;
+      }
+    }
+    p {
+      font-size: 1.6rem;
+      font-weight: 900;
+      justify-self: flex-end;
+      grid-area: reserved;
+      @include bpm-custom(1250px) {
+        justify-self: center;
+      }
+      @include bpm-md {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

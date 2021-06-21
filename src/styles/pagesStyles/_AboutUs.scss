@@ -1,6 +1,33 @@
 .spark-about-us {
   &__wrapper {
     padding-top: 7rem;
+    .linkedin-button {
+      position: relative;
+      .linkedin-tooltip {
+        position: absolute;
+        bottom: -110%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        background-color: #fff;
+        border: 2px solid #f3705b;
+        border-radius: 5rem;
+        span {
+          font-size: 1.4rem;
+          text-align: center;
+          padding: 0.8rem 2rem;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          width: max-content;
+        }
+      }
+      &:hover {
+        .linkedin-tooltip {
+          display: block;
+        }
+      }
+    }
   }
   &__strip {
     margin: 5rem 0;

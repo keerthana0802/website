@@ -7,12 +7,17 @@ import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import meera from "../../assets/meera.svg";
 SwiperCore.use([Pagination]);
 
-function MentorSlide({ fullName, position, content, imageUrl }) {
+function MentorSlide({ fullName, position, content, imageUrl, imageUrlText }) {
   return (
     <div className="mentor-slide__wrapper">
       <div className="mentor-slide">
         <div className="mentor-slide__left">
-          <img src={imageUrl} alt="" />
+          <img
+            src={`${
+              process.env.REACT_APP_ALL_EXPERTS_IMAGES_API
+            }${imageUrlText.toLowerCase()}`}
+            alt=""
+          />
         </div>
         <div className="mentor-slide__right">
           <h1 className="mentor-slide__right--header">
@@ -44,6 +49,7 @@ function MentorsSection() {
           <SwiperSlide>
             <MentorSlide
               fullName="Meera Desai"
+              imageUrlText="meera"
               position="Western Vocals"
               content="In 2020 Meera won the Indies for the Best Female Vocalist in India. She's a professinal singer and songwriter."
               imageUrl={meera}
@@ -52,6 +58,7 @@ function MentorsSection() {
           <SwiperSlide>
             <MentorSlide
               fullName="Rashmi Bidasria"
+              imageUrlText="rashmi"
               position="Animation"
               content="Rashmi is a designer and an architect from the Royal College of Art, London."
               imageUrl={meera}
@@ -60,6 +67,7 @@ function MentorsSection() {
           <SwiperSlide>
             <MentorSlide
               fullName="Priyanka Babbar"
+              imageUrlText="priyanka"
               position="Storytelling"
               content="Priyanka has conducted 200+ storytelling sessions globally! She's bubbly, engaging and a student favourite."
               imageUrl={meera}
@@ -68,6 +76,7 @@ function MentorsSection() {
           <SwiperSlide>
             <MentorSlide
               fullName="Rachita Rath"
+              imageUrlText="rachita"
               position="Debate"
               content="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
               imageUrl={meera}
@@ -76,6 +85,7 @@ function MentorsSection() {
           <SwiperSlide>
             <MentorSlide
               fullName="Vivek Oswal"
+              imageUrlText="vivek"
               position="Guitar"
               content="Vivek has 15 years of experience playing guitar, teaching and composing music."
               imageUrl={meera}

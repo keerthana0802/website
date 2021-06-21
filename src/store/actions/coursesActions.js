@@ -49,7 +49,7 @@ const getCourses = (coursesData) => {
       courseCurrency: "INR",
       courseLevelCount: courseLevelCount(course.display_name),
       courseTags: course.tags,
-      numberOfHomeActivities: Number(course.number_of_home_activities),
+      numberOfHomeActivities: course.number_of_home_activities,
       classSize: Number(course.class_size),
       courseUsp: course.usp_of_course,
       fullDescription: course.full_description,
@@ -67,7 +67,7 @@ const getCourses = (coursesData) => {
     };
   });
   console.timeEnd("process-courses");
-  console.log("from action", allCourses);
+  // console.log("from action", allCourses);
   return {
     type: "SET_ALL_COURSES",
     payload: allCourses,
