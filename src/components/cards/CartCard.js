@@ -34,7 +34,7 @@ function CartCard({
             Duration: {courseDuration} classes
           </h2>
           <p className="cart-card__age-group">
-            AGE GROUP: {courseAgeGroup} Yrs
+            Age Group: {courseAgeGroup} years
           </p>
           <div className="cart-card__qty-price">
             <div className="quantity">
@@ -60,16 +60,15 @@ function CartCard({
         <div className="cart-card cart-card--large">
           <div className="cart-card--large-left">
             <h1 className="cart-card__name">{courseName}</h1>
-            <h2 className="cart-card__category">Category: {courseCategory}</h2>
             <p className="cart-card__age-group">
-              AGE GROUP: {courseAgeGroup} Yrs
+              Age Group: {courseAgeGroup} years
             </p>
             <p className="cart-card__course-duration">
               Course Duration: {courseDuration} Weeks (One session/week)
             </p>
-            <p className="cart-card__session-duration">
+            {/* <p className="cart-card__session-duration">
               Session Duration: {sessionDuration} minutes
-            </p>
+            </p> */}
           </div>
           <div className="cart-card__qty-price">
             <div className="quantity">
@@ -99,9 +98,9 @@ function CartCard({
             <p className="cart-card__course-duration">
               Course Duration: {courseDuration} Weeks (One session/week)
             </p>
-            <p className="cart-card__session-duration">
+            {/* <p className="cart-card__session-duration">
               Session Duration: {sessionDuration} minutes
-            </p>
+            </p> */}
           </div>
         </div>
       ) : null}

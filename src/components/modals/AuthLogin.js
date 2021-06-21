@@ -21,6 +21,7 @@ function AuthSignUp() {
   const authOtpRequested = useSelector((state) => state.auth.authOtpRequested);
   const tempCountryCode = useSelector((state) => state.auth.tempCountryCode);
   const tempPhoneNumber = useSelector((state) => state.auth.tempPhoneNumber);
+  const tempEmail = useSelector((state) => state.auth.tempEmail);
   const authOtpRequestBody = useSelector(
     (state) => state.auth.authOtpRequestBody
   );
@@ -64,7 +65,7 @@ function AuthSignUp() {
   // ! local states for the input fields
   const [countryCode, setCountryCode] = useState(tempCountryCode || "+91");
   const [phoneNumber, setPhoneNumber] = useState(tempPhoneNumber || "");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(tempEmail || "");
   const [OTP, setOTP] = useState("");
   // ! State to manage the phone validation tooltip
   const [tooltipClass, setTooltipClass] = useState("phone-validation-tooltip");
@@ -129,8 +130,8 @@ function AuthSignUp() {
       .post(`${process.env.REACT_APP_AUTH_API}/login_by_otp`, postBody)
       .then((response) => {
         // if (response.status > 400) throw Error(response.json());
-        console.log(response.status);
-        console.log("from ax", response.data);
+        // console.log(response.status);
+
         const data = response.data;
         let authToken = data.token;
         let userDetails = {
@@ -139,7 +140,7 @@ function AuthSignUp() {
           phoneNumber: data.user.phone_no,
           email: data.user.email,
         };
-
+        console.log("from ax", userDetails);
         let profiles = data.user.profiles;
         dispatch(saveAuthToken(authToken));
         dispatch(loginWithOtp({ userDetails, profiles }));

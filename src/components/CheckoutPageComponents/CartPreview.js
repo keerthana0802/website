@@ -12,9 +12,9 @@ function CartPreview() {
     <section className="cart-preview__wrapper">
       <div className="cart-preview">
         <div className="cart-preview--top">
-          <h1 className="cart-preview__customer-name">
+          {/* <h1 className="cart-preview__customer-name">
             Hey {userDetails?.fullName || "There"},
-          </h1>
+          </h1> */}
           <h2 className="cart-preview__liner">
             We are excited to have you on this journey with the Spark Studio
             community!

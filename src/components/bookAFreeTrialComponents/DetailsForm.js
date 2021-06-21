@@ -8,6 +8,7 @@ import {
   openLogin,
   sendOtp,
   setTempPhoneNumber,
+  setTempEmail,
 } from "../../store/actions/rootActions";
 import moengageEvent from "../../helpers/MoengageEventTracking";
 import {
@@ -253,8 +254,15 @@ function DetailsForm({ switchRoute, tabsStatus }) {
           placeholder="+91"
           value={countryCode}
           onChange={(ev) => {
-            if (countryCodeRegex.test(ev.target.value))
+            if (countryCodeRegex.test(ev.target.value)) {
               setCountryCode(ev.target.value);
+              dispatch(
+                setTempPhoneNumber({
+                  countryCode: ev.target.value,
+                  phoneNumber,
+                })
+              );
+            }
           }}
           autoComplete="on"
           onBlur={() =>
@@ -275,10 +283,22 @@ function DetailsForm({ switchRoute, tabsStatus }) {
                   setPhoneNumber((phoneNumber) => {
                     let numberArray = phoneNumber.split("");
                     numberArray.shift();
+                    dispatch(
+                      setTempPhoneNumber({
+                        countryCode,
+                        phoneNumber: numberArray.join(""),
+                      })
+                    );
                     return numberArray.join("");
                   });
                 } else {
                   setPhoneNumber(ev.target.value);
+                  dispatch(
+                    setTempPhoneNumber({
+                      countryCode,
+                      phoneNumber: ev.target.value,
+                    })
+                  );
                 }
               }
             }}
@@ -329,14 +349,6 @@ function DetailsForm({ switchRoute, tabsStatus }) {
           <div className={tooltipClass}>
             <span>{tooltipText}</span>
           </div>
-          {/* {countryCode === "+91" ? (
-            <div
-              className={verificationTooltipClass}
-              onClick={() => verificationHandlerPhone(countryCode, phoneNumber)}
-            >
-              <span>{verificationTooltipText}</span>
-            </div>
-          ) : null} */}
         </label>
       </div>
       <label htmlFor="email" className="email-label">
@@ -346,6 +358,7 @@ function DetailsForm({ switchRoute, tabsStatus }) {
           value={email}
           onChange={(ev) => {
             setEmail(ev.target.value);
+            dispatch(setTempEmail(ev.target.value));
           }}
           required
           autoComplete="on"

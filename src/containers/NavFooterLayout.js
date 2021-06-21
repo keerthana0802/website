@@ -374,14 +374,14 @@ function NavFooterLayout({ children }) {
                   }
                 />
               </li>{" "}
-              {/* {authToken?.length > 0 ? (
+              {authToken?.length > 0 ? (
                 <li
                   className="spark-layout-navbar__right--list-item"
                   onClick={() => dispatch(logoutUser())}
                 >
                   Logout
                 </li>
-              ) : null} */}
+              ) : null}
               {cart?.length > 0 ? (
                 <li
                   className="spark-layout-navbar__right--list-item cart-icon"
