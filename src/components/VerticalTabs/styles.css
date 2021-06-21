@@ -1,0 +1,114 @@
+.VERTICAL-TABS {
+    display: flex;
+    font-family: "Lato";
+    font-size: 14spx;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+  
+  .text {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: justify;
+    text-transform: capitalize;
+    width: auto;
+    color: black;
+    text-align: justify;
+  }
+  .txt {
+    font-family: Lato, sans-serif;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+  
+    padding: 100px;
+    display: block;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 400%;
+    line-height: 50px;
+  
+    color: white;
+  }
+  .box {
+    width: 100%;
+    height: 180px;
+  
+    background: #fcb444;
+  }
+  .text1 {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: justify;
+    text-transform: capitalize;
+    width: 93%;
+    color: #909090;
+    margin-top: -2%;
+  }
+  
+  .VERTICAL-TABS__label__element:focus {
+    outline: 0;
+    color: orange;
+  }
+  .VERTICAL-TABS__label {
+    width: 25%;
+    margin-left: 5%;
+    margin-right: 20px;
+    border-bottom: none;
+    border: solid none;
+  }
+  
+  .VERTICAL-TABS__label__element {
+    padding: 10px 20px;
+    text-align: right;
+    opacity: 0.5;
+  }
+  
+  .VERTICAL-TABS__label__element--active {
+    opacity: 1;
+  }
+  
+  .VERTICAL-TABS__content {
+    width: 65%;
+    border: none;
+  }
+  
+  .VERTICAL-TABS__content__catalog {
+    display: none;
+    padding: 30px;
+  }
+  
+  .VERTICAL-TABS__content__element {
+    padding: 30px;
+  }
+  
+  @media (max-width: 600px) {
+    .VERTICAL-TABS {
+      flex-wrap: wrap;
+    }
+  
+    .VERTICAL-TABS__label {
+      width: 100%;
+      padding: unset;
+    }
+  
+    .VERTICAL-TABS__label__element {
+      border-bottom: 2px solid grey;
+      text-align: center;
+    }
+  
+    .VERTICAL-TABS__content {
+      display: none;
+    }
+  
+    .VERTICAL-TABS__content__catalog {
+      display: flex;
+    }
+  }
+  

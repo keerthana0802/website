@@ -20,6 +20,8 @@ const Feedback = lazy(() => import("./pages/Feedback.js"));
 const LiveClassLogin = lazy(() => import("./pages/LiveClassLogin.js"));
 const Meeting = lazy(() => import("./pages/Meeting.js"));
 const Faq = lazy(() => import("./pages/Faq.js"));
+const Tnc = lazy(() => import("./pages/Tnc.js"));
+const Policy = lazy(() => import("./pages/Policy.js"));
 const SingleCourse = lazy(() => import("./pages/SingleCourse.js"));
 const AboutUs = lazy(() => import("./pages/AboutUs.js"));
 const BookTrial = lazy(() => import("./pages/BookTrial.js"));
@@ -48,6 +50,17 @@ function App() {
               <Faq />
             </Suspense>
           </Route>
+          <Route path="/tnc">
+            <Suspense fallback={<div></div>}>
+              <Tnc />
+            </Suspense>
+          </Route>
+          <Route path="/policy">
+            <Suspense fallback={<div></div>}>
+              <Policy />
+            </Suspense>
+          </Route>
+         
           <Route exact path="/live-class">
             <Suspense fallback={<div></div>}>
               <LiveClassLogin />
