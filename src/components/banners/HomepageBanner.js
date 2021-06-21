@@ -9,12 +9,13 @@ function HomepageBanner() {
     <div className="homepage-banner__wrapper">
       <div className="homepage-banner__left">
         <h1 className="homepage-banner__left--header">
-          High quality live online programs for children
+          Online extracurricular classes for ages 5 to 15
         </h1>
         <PrimaryButton
           buttonText="Book a FREE trial"
           version="version-2"
           linkTo="/book-a-trial"
+          shine={true}
         />
       </div>
       <div className="homepage-banner__right">

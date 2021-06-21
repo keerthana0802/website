@@ -1,6 +1,6 @@
 import React from "react";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
-import arjun from "../../assets/arjun.svg";
+// import arjun from "../../assets/arjun.svg";
 function SingleCard({ imageUrl, fullName, position }) {
   return (
     <div className="single-card">
@@ -21,6 +21,7 @@ function TeamGrid() {
           headerContent="Meet the rest of the Team"
           linerContent="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
+{/*         
         <div className="team-grid__grid">
           <SingleCard
             imageUrl={arjun}
@@ -83,6 +84,7 @@ function TeamGrid() {
             position="Design"
           />
         </div>
+       */}
       </div>
     </div>
   );

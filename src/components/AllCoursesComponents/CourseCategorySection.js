@@ -85,12 +85,7 @@ function CourseCategorySection({ courseData }) {
           <div className="course-category-section" id="music-section-resp">
             <CourseCatgorySliderResp
               courseData={musicCourses}
-              courseSliderHeader={
-                <p>
-                  Music &<br />
-                  Themes
-                </p>
-              }
+              courseSliderHeader={<p>Music</p>}
               courseVertical="music"
               courseSliderDuration="60 minute classes"
               courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"
@@ -147,12 +142,7 @@ function CourseCategorySection({ courseData }) {
           <div className="course-category-section" id="music-section">
             <CourseCatgorySlider
               courseData={musicCourses}
-              courseSliderHeader={
-                <p>
-                  Music &<br />
-                  Themes
-                </p>
-              }
+              courseSliderHeader={<p>Music</p>}
               courseVertical="music"
               courseSliderDuration="60 minute classes"
               courseSliderContent="Learn music the right way. Along with learning to sing or play an instrument, also understand music and explore music from around the world"

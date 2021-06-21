@@ -487,17 +487,11 @@
             "Certification and individual assessment"
         ],
         "full_description": "",
-        "pitch": "",
+        "pitch": "Learn to play the guitar the right way, with a fundamental understanding of music. Also learn to compose your own music!",
         "short_pitch": "",
         "social_proof": "Students are inviting their friends to attend this class with them so that they can jam together!",
         "curriculum_liner": "In this course, the students will achieve the following outcomes",
-        "curriculum_outcomes": [
-            "Understand pitch and rhythm with appropriate guitar technique",
-            "Learn and identify different parts of the guitar",
-            "Learn basic terminology like volume, high and low pitch, short and long phrases and different finger positions",
-            "Be able to play songs of different genres and cultures",
-            "Write a short piece and play their self-composed melody"
-        ],
+        "curriculum_outcomes": false,
         "curriculum_sessions": [
             {
                 "session_number": "1",
@@ -607,13 +601,7 @@
         "short_pitch": "",
         "social_proof": "Students are inviting their friends to attend this class with them so that they can jam together!",
         "curriculum_liner": "In this course, the students will achieve the following outcomes",
-        "curriculum_outcomes": [
-            "Learn to play two simple chords",
-            "Use the chords to play 5 fun songs with different strum patterns",
-            "Learn to play simple melodies using 3 to 4 notes",
-            "Be able to play 5 songs with these melodies",
-            "Write simple melodies using 2-4 notes and simple rhythms"
-        ],
+        "curriculum_outcomes": false,
         "curriculum_sessions": [
             {
                 "session_number": "1",

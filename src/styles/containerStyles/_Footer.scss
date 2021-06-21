@@ -15,7 +15,7 @@
       }
       &-2 {
         right: -30rem;
-        top: 10rem;
+        bottom: 10rem;
       }
     }
   }
@@ -55,10 +55,10 @@
         width: 20rem;
       }
       &-content {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         width: 30rem;
         margin: 3rem 0 4rem 0;
-        font-weight: 300;
+        font-weight: 500;
       }
     }
 
@@ -151,31 +151,31 @@
     padding: 3rem 7rem;
     width: 100vw;
     display: grid;
-    grid-template-areas: "social call reserved";
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     @include bpm-custom(1250px) {
       //   grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        "social call"
-        "reserved reserved";
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     @include bpm-md {
       padding: 2rem 7rem;
     }
     @include bpm-custom(875px) {
       padding: 2rem 3rem;
-      grid-template-areas: "social" "call" "reserved";
     }
+
     .social-icons {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       justify-self: flex-start;
-      grid-area: social;
-      @include bpm-custom(875px) {
-        justify-self: center;
-        margin-bottom: 2rem;
+      @include bpm-custom(1250px) {
+        margin: 2rem 0;
+        justify-content: center;
       }
       img {
         width: 4rem;
@@ -191,25 +191,48 @@
     }
     .call {
       font-size: 1.6rem;
-      font-weight: 900;
-      grid-area: call;
+      font-weight: 700;
       @include bpm-custom(1250px) {
         justify-self: flex-end;
       }
-      @include bpm-custom(875px) {
-        justify-self: center;
+      color: #333;
+    }
+    .contact {
+      display: flex;
+      align-items: center;
+      .separator {
+        height: 2rem;
+        width: 2px;
+        background-color: #000;
+        display: inline-block;
+        margin: 0 1rem;
       }
+      @include bpm-custom(475px) {
+        flex-direction: column;
+        align-items: center;
+        .separator {
+          height: 1px;
+          width: 25rem;
+          background-color: #aaa;
+          display: inline-block;
+          margin: 1rem 0;
+        }
+      }
+    }
+    .whatsapp {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #333;
     }
     p {
       font-size: 1.6rem;
-      font-weight: 900;
+      font-weight: 500;
       justify-self: flex-end;
-      grid-area: reserved;
+      color: #333;
       @include bpm-custom(1250px) {
         justify-self: center;
-      }
-      @include bpm-md {
-        margin-top: 2rem;
+        margin-top: 4rem;
+        text-align: center;
       }
     }
   }

@@ -1,11 +1,13 @@
 .cart-drawer {
   // position: fixed;
   &__wrapper {
+    -webkit-overflow-scrolling: touch;
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: flex-start;
+    height: calc(100vh - 6.9rem);
+    overflow-y: scroll;
   }
   position: relative;
   &__close-button {
@@ -23,6 +25,7 @@
     margin: 2rem 0;
   }
   &__bottom {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

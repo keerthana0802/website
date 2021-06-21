@@ -119,6 +119,7 @@ function HomepageShowcase() {
         buttonText="Book a FREE trial"
         version="version-2"
         linkTo="/book-a-trial"
+        shine={true}
       />
       {showModal ? (
         <ShowcaseModal

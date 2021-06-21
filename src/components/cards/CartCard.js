@@ -64,7 +64,7 @@ function CartCard({
               Age Group: {courseAgeGroup} years
             </p>
             <p className="cart-card__course-duration">
-              Course Duration: {courseDuration} Weeks (One session/week)
+              Duration: {courseDuration} sessions
             </p>
             {/* <p className="cart-card__session-duration">
               Session Duration: {sessionDuration} minutes

@@ -45,11 +45,11 @@ function HomepageExpertsSectionResp() {
                 cardImage={image1}
               />
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <HomepageExpertCard
                 cardType="yellow"
                 cardName="Meera"
-                cardCourse="Western"
+                cardCourse="Western Vocals"
                 cardTitle="Music"
                 cardContent="In 2020 Meera won the Indies for the Best Female Vocalist in India. She's a professinal singer and songwriter."
                 cardImage={image1}
@@ -64,7 +64,7 @@ function HomepageExpertsSectionResp() {
                 cardContent="Vivek has 15 years of experience playing guitar, teaching and composing music."
                 cardImage={image1}
               />
-            </SwiperSlide>
+            </SwiperSlide> */}
             <SwiperSlide>
               <HomepageExpertCard
                 cardType="purple"
@@ -95,7 +95,7 @@ function HomepageExpertsSectionResp() {
                 cardImage={image1}
               />
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <HomepageExpertCard
                 cardType="blue"
                 cardName="Shantheri"
@@ -104,7 +104,7 @@ function HomepageExpertsSectionResp() {
                 cardContent="12+ years of experience teaching, developing curriculum, and training teachers, 100+ storytelling classes "
                 cardImage={image1}
               />
-            </SwiperSlide>
+            </SwiperSlide> */}
 
             <SwiperSlide>
               <HomepageExpertCard
@@ -116,13 +116,54 @@ function HomepageExpertsSectionResp() {
                 cardImage={image1}
               />
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <HomepageExpertCard
                 cardType="blue"
                 cardName="Tirthankar"
                 cardCourse="Public Speaking"
                 cardTitle="Communication"
                 cardContent="Holds a Masters degree in Education, 6+ years of experience teaching and creating content for 1000s of schools"
+                cardImage={image1}
+              />
+            </SwiperSlide> */}
+
+            <SwiperSlide>
+              <HomepageExpertCard
+                cardType="blue"
+                cardName="Savita"
+                cardCourse="Public Speaking"
+                cardTitle="Communication"
+                cardContent="Holds a Masters degree in Social Work, 5+ years of experience developing English literacy skills of students in 100+ schools"
+                cardImage={image1}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <HomepageExpertCard
+                cardType="purple"
+                cardName="Rohit"
+                cardCourse="Photography"
+                cardTitle="Art"
+                cardContent="A professional photographer with a Masters of Photography from National Institute of Design, visiting faculty at NIFT"
+                cardImage={image1}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <HomepageExpertCard
+                cardType="purple"
+                cardName="Avirukh"
+                cardCourse="Animation"
+                cardTitle="Art"
+                cardContent="A designer from Royal College of Art, London. His work has been featured in Forbes, Car Design News, Indian Express"
+                cardImage={image1}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <HomepageExpertCard
+                cardType="blue"
+                cardName="Ankita"
+                cardCourse="Debate"
+                cardTitle="Communication"
+                cardContent="A lawyer from University Law College with over a decade of experience in the social impact sector."
                 cardImage={image1}
               />
             </SwiperSlide>

@@ -99,6 +99,7 @@
     }
     @include bpm-custom(600px) {
       margin-top: 3rem;
+      margin-bottom: 2rem;
       &--header {
         margin-bottom: 3rem;
         font-size: 4.5rem;

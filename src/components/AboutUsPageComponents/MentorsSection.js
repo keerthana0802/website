@@ -4,7 +4,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { Pagination } from "swiper/core";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
-import meera from "../../assets/meera.svg";
+
 SwiperCore.use([Pagination]);
 
 function MentorSlide({ fullName, position, content, imageUrl, imageUrlText }) {
@@ -46,7 +46,7 @@ function MentorsSection() {
           }}
           className="mentors-section__slider"
         >
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <MentorSlide
               fullName="Meera Desai"
               imageUrlText="meera"
@@ -54,35 +54,49 @@ function MentorsSection() {
               content="In 2020 Meera won the Indies for the Best Female Vocalist in India. She's a professinal singer and songwriter."
               imageUrl={meera}
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
           <SwiperSlide>
             <MentorSlide
-              fullName="Rashmi Bidasria"
-              imageUrlText="rashmi"
-              position="Animation"
-              content="Rashmi is a designer and an architect from the Royal College of Art, London."
-              imageUrl={meera}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <MentorSlide
-              fullName="Priyanka Babbar"
+              fullName="Priyanka"
               imageUrlText="priyanka"
               position="Storytelling"
               content="Priyanka has conducted 200+ storytelling sessions globally! She's bubbly, engaging and a student favourite."
-              imageUrl={meera}
             />
           </SwiperSlide>
           <SwiperSlide>
             <MentorSlide
-              fullName="Rachita Rath"
-              imageUrlText="rachita"
-              position="Debate"
-              content="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
-              imageUrl={meera}
+              fullName="Rashmi"
+              imageUrlText="rashmi"
+              position="Animation"
+              content="Rashmi is a designer and an architect from the Royal College of Art, London."
             />
           </SwiperSlide>
           <SwiperSlide>
+            <MentorSlide
+              fullName="Rachita"
+              imageUrlText="rachita"
+              position="Debate"
+              content="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
+            />{" "}
+          </SwiperSlide>
+          <SwiperSlide>
+            <MentorSlide
+              fullName="Purna"
+              imageUrlText="purna"
+              position="Western Vocals"
+              content="A professional Rock and Country singer, 10+ years of experience performing and teaching music."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MentorSlide
+              fullName="Richa"
+              imageUrlText="richa"
+              position="Art"
+              content="Singapore-based watercolour artist, conducted 100+ workshops for children and adults"
+            />
+          </SwiperSlide>
+
+          {/* <SwiperSlide>
             <MentorSlide
               fullName="Vivek Oswal"
               imageUrlText="vivek"
@@ -90,7 +104,7 @@ function MentorsSection() {
               content="Vivek has 15 years of experience playing guitar, teaching and composing music."
               imageUrl={meera}
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </div>

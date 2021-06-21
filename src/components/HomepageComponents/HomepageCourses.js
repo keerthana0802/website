@@ -187,6 +187,7 @@ function HomepageCourses() {
         buttonText="Book a FREE trial"
         version="version-2"
         linkTo="/book-a-trial"
+        shine={true}
       />
     </div>
   );

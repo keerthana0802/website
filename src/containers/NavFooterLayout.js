@@ -118,6 +118,7 @@ function NavFooterLayout({ children }) {
               buttonText="Book a FREE trial"
               version="version-1"
               linkTo="/book-a-trial"
+              shine={true}
               clickHandle={() =>
                 moengageEvent(
                   "Main_Menu_Click",
@@ -221,6 +222,7 @@ function NavFooterLayout({ children }) {
                     buttonText="Book a FREE trial"
                     version="version-1"
                     linkTo="/book-a-trial"
+                    shine={true}
                     clickHandle={() =>
                       moengageEvent(
                         "Main_Menu_Click",
@@ -360,6 +362,7 @@ function NavFooterLayout({ children }) {
                   buttonText="Book a FREE trial"
                   version="version-1"
                   linkTo="/book-a-trial"
+                  shine={true}
                   clickHandle={() =>
                     moengageEvent(
                       "Main_Menu_Click",
@@ -375,14 +378,14 @@ function NavFooterLayout({ children }) {
                   }
                 />
               </li>{" "}
-              {authToken?.length > 0 ? (
+              {/* {authToken?.length > 0 ? (
                 <li
                   className="spark-layout-navbar__right--list-item"
                   onClick={() => dispatch(logoutUser())}
                 >
                   Logout
                 </li>
-              ) : null}
+              ) : null} */}
               {cart?.length > 0 ? (
                 <li
                   className="spark-layout-navbar__right--list-item cart-icon"

@@ -6,7 +6,6 @@ import NavFooterLayout from "../containers/NavFooterLayout";
 import sparkLogoSquare from "../assets/sparkLogoSquare.jpeg";
 import { useSelector, useDispatch } from "react-redux";
 import { openLogin, paymentSuccessful } from "../store/actions/rootActions";
-
 import moengageEvent from "../helpers/MoengageEventTracking";
 import {
   invokePaymentAttributes,
@@ -159,6 +158,7 @@ function Checkout() {
     if (authToken.length === 0 || userDetails.id === undefined) {
       dispatch(openLogin());
     }
+    window.scrollTo(0, 0);
   }, []);
 
   const openPayment = async (ev, addressData) => {

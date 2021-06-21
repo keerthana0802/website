@@ -9,6 +9,10 @@ import ShowcaseSection from "../components/SingleCoursePageComponents/ShowcaseSe
 import ExpertSection from "../components/SingleCoursePageComponents/ExpertSection";
 import CurriculumSection from "../components/SingleCoursePageComponents/CurriculumSection";
 import { setActiveCourseOnCoursePage } from "../store/actions/coursesActions";
+// ! GSAP imports
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 function SingleCourse() {
   const [courseName, setCourseName] = useState(null);
   const [courseDetails, setCourseDetails] = useState(null);
@@ -18,7 +22,7 @@ function SingleCourse() {
     setCourseName(
       window.location.pathname.split("/").pop().split("-").join(" ")
     );
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, -350);
   }, []);
   useEffect(() => {
     if (courseName) {
@@ -32,29 +36,42 @@ function SingleCourse() {
       setCourseDetails(currentCourse);
       dispatch(setActiveCourseOnCoursePage(currentCourse?.courseId));
     }
+    // window.scrollTo(0, -350);
   }, [courseName]);
-  // console.log(courseDetails);
+  useEffect(() => {
+    if (courseDetails) {
+      gsap.to(window, {
+        scrollTo: document.getElementById("single-course-page-top").offsetTop,
+        ease: "ease-out",
+        duration: 0,
+        scrollBehavior: "smooth",
+      });
+    }
+  }, [courseDetails]);
   return (
     <NavFooterLayout>
-      <div className="single-course-page__wrapper">
-        <SingleCourseBanner
-          courseName={courseName}
-          courseContent={courseDetails ? courseDetails.pitch : ""}
-          showcase={courseDetails?.showcaseData}
-          courseType={
-            courseDetails?.courseLevelCount === 1 ? "single" : "multilevel"
-          }
-          courseThemeColorDark={courseDetails?.verticalThemeColorDark}
-        />
-        {courseName ? (
+      {courseDetails ? (
+        <div
+          className="single-course-page__wrapper"
+          id="single-course-page-top"
+        >
+          <SingleCourseBanner
+            courseName={courseName}
+            courseContent={courseDetails ? courseDetails.pitch : ""}
+            showcase={courseDetails?.showcaseData}
+            courseType={
+              courseDetails?.courseLevelCount === 1 ? "single" : "multilevel"
+            }
+            courseThemeColorDark={courseDetails?.verticalThemeColorDark}
+          />
+
           <CourseDetails
             courseName={courseName}
             courseType={
               courseDetails?.courseLevelCount === 1 ? "single" : "multilevel"
             }
           />
-        ) : null}
-        {courseDetails ? (
+
           <CurriculumSection
             courseDetails={courseDetails}
             dark={courseDetails.verticalThemeColorDark}
@@ -63,29 +80,24 @@ function SingleCourse() {
               courseDetails?.courseLevelCount === 1 ? "single" : "multilevel"
             }
           />
-        ) : null}
-        {courseDetails ? (
+
           <UspStrip
             sessions={courseDetails.numberOfClasses}
             background={courseDetails.verticalThemeColorLight}
             activities={courseDetails.numberOfHomeActivities}
           />
-        ) : null}
-        {courseDetails ? (
           <ParentsSection
             courseDetails={courseDetails}
             light={courseDetails.verticalThemeColorLight}
             dark={courseDetails.verticalThemeColorDark}
           />
-        ) : null}
-        {courseDetails ? (
           <ShowcaseSection
             courseDetails={courseDetails}
             verticalThemeColorDark={courseDetails.verticalThemeColorDark}
           />
-        ) : null}
-        {courseDetails ? <ExpertSection courseDetails={courseDetails} /> : null}
-      </div>
+          <ExpertSection courseDetails={courseDetails} />
+        </div>
+      ) : null}
     </NavFooterLayout>
   );
 }
