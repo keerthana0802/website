@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import Question from "./Question";
 import SecondaryButton from "../buttons/SecondaryButton";
 import moengageEvent from "../../helpers/MoengageEventTracking";
+import faqs from "./faq";
+
+
 import { searchExecuteAttributes } from "../../helpers/MoengageAttributeCreators";
 
 function Faqpage() {
@@ -13,8 +16,7 @@ function Faqpage() {
     }
   }, []);
   const [item, setItem] = useState(false);
-
-  const faqs = [
+  const faqs1 = [
     {
       question: "How many team members can I invite?",
       answer:
@@ -41,6 +43,7 @@ function Faqpage() {
         "Chat and email support is available 24/7. Phone lines are open during normal business hours.",
     },
   ];
+  
 
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState(faqs);
@@ -108,7 +111,7 @@ function Faqpage() {
               />
             </div>
 
-            <h2 className="faq__title">Trial Class</h2>
+            <h2 className="faq__title">Course Information</h2>
             <dl>
               {data.map((faq, index) => (
                 <Question
@@ -119,28 +122,8 @@ function Faqpage() {
                 />
               ))}
             </dl>
-            <h3 className="faq__title1">Book a Class</h3>
-            <dl>
-              {data.map((faq, index) => (
-                <Question
-                  index={index}
-                  key={index}
-                  question={faq.question}
-                  answer={faq.answer}
-                />
-              ))}
-            </dl>
-            <h4 className="faq__title2">Purchase</h4>
-            <dl>
-              {data.map((faq, index) => (
-                <Question
-                  index={index}
-                  key={index}
-                  question={faq.question}
-                  answer={faq.answer}
-                />
-              ))}
-            </dl>
+           
+          
           </div>
         </section>
       </div>
