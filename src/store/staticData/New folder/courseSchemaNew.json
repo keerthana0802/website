@@ -65,7 +65,7 @@
         }
     ],
     "expert_details": {
-        "image_url": "",
+        "image_url_name": "",
         "expert_position": "",
         "expert_description": "",
         "expert_usp_pointers": [

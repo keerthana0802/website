@@ -86,7 +86,7 @@ function Checkout() {
       invokePaymentAttributes(
         resp.data.order.razorpay_order_id,
         totalQty,
-        JSON.stringify(address),
+        Object.keys(address).length > 0 ? true : false,
         resp.data.order.amount,
         resp.data.order.currency
       )
@@ -109,7 +109,7 @@ function Checkout() {
       currency: resp.data.order.currency,
       totalQty: totalQty,
     };
-
+    console.log(userDetails);
     rzp1 = await new window.Razorpay({
       ...razorOptions,
       description: description,

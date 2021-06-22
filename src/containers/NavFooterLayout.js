@@ -29,7 +29,7 @@ import AuthSignUp from "../components/modals/AuthSignUp";
 import AuthLogin from "../components/modals/AuthLogin";
 import axios from "axios";
 // import coursesDataNew from "../store/staticData/coursesDataNew.json";
-import coursesDataNew from "../store/staticData/coursesDataEdited.json";
+import coursesDataNew from "../store/staticData/coursesDataRevised.json";
 function NavFooterLayout({ children }) {
   // ! Redux states
   const cart = useSelector((state) => state.checkout.cart);

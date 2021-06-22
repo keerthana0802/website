@@ -2,6 +2,33 @@ import React from "react";
 import confetti from "../../assets/Confetti.svg";
 
 function ExpertSection({ courseDetails }) {
+  console.log(courseDetails.expertDetails);
+  const capitalize = (s) => {
+    if (typeof s !== "string") return "";
+    return s.toLowerCase().charAt(0).toUpperCase() + s.toLowerCase().slice(1);
+  };
+  const titleCase = (string) => {
+    let result = string?.split(" ").map((word) => {
+      if (word.toLowerCase() === "of" || word.toLowerCase() === "in") {
+        return word;
+      } else {
+        return capitalize(word);
+      }
+    });
+    return result?.join(" ");
+  };
+  const colorSelector = (index) => {
+    switch (index) {
+      case 0:
+        return "#FF7171";
+      case 1:
+        return "#FFA724";
+      case 2:
+        return "#000072";
+      default:
+        break;
+    }
+  };
   return (
     <>
       {courseDetails.expertDetails ? (
@@ -11,29 +38,31 @@ function ExpertSection({ courseDetails }) {
             <h1 className="expert-section__header">Our Expert</h1>
             <div className="expert-section__bottom">
               <div className="expert-section__bottom--left">
-                <img src="" alt="" />
-                <h3>Meera Desai</h3>
-                <p>Verified Music Instructor</p>
+                <img
+                  src={`${
+                    process.env.REACT_APP_ALL_EXPERTS_IMAGES_API
+                  }${courseDetails.expertDetails.image_url_name.toLowerCase()}`}
+                  alt=""
+                />
+                <h3>
+                  {capitalize(courseDetails.expertDetails.image_url_name)}
+                </h3>
+                <p>{titleCase(courseDetails.expertDetails.expert_position)}</p>
               </div>
               <div className="expert-section__bottom--right">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Voluptates perspiciatis ipsam error totam minima, similique
-                  maiores necessitatibus molestiae voluptatum veniam ea odio,
-                  quaerat cumque animi?
-                </p>
-                <h2>
-                  <span style={{ backgroundColor: "#FF7171" }}></span>Senior
-                  level mentor
-                </h2>
-                <h2>
-                  <span style={{ backgroundColor: "#FFA724" }}></span>Highest
-                  rating in Music
-                </h2>
-                <h2>
-                  <span style={{ backgroundColor: "#000072" }}></span>6+ Years
-                  of experience
-                </h2>
+                <p>{courseDetails.expertDetails.expert_description}</p>
+                {courseDetails.expertDetails.expert_usp_pointers.map(
+                  (pointer, index) => {
+                    return (
+                      <h2 key={index}>
+                        <span
+                          style={{ backgroundColor: colorSelector(index) }}
+                        ></span>
+                        {pointer}
+                      </h2>
+                    );
+                  }
+                )}
               </div>
             </div>
           </div>

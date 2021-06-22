@@ -5,6 +5,7 @@
     > img {
       position: absolute;
       width: 35%;
+      opacity: 0.6;
       &:first-child {
         top: 0;
         left: -15%;
@@ -61,28 +62,41 @@
       p {
         font-size: 1.8rem;
       }
+      @include bpm-sm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
     &--right {
       padding-left: 4rem;
-      @include bpm-sm {
-        padding: 0;
-      }
+
       p {
         font-size: 1.8rem;
         font-weight: 500;
-        margin: 2rem 0;
+        margin: 0 0 2rem 0;
+      }
+      @include bpm-sm {
+        padding: 0;
+        p {
+          margin-top: 3rem;
+        }
       }
       h2 {
-        font-size: 2rem;
-        font-weight: 900;
+        font-size: 1.8rem;
+        font-weight: 700;
         display: flex;
         align-items: center;
-        margin: 0.5rem 0;
+        margin: 1rem 0;
+        position: relative;
+        margin-left: 2rem;
         span {
+          position: absolute;
+          left: -2rem;
           height: 1.2rem;
           width: 1.2rem;
           border-radius: 10rem;
-          margin-right: 1.5rem;
+          top: 0.5rem;
         }
       }
     }

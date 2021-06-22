@@ -137,7 +137,7 @@ function AuthSignUp() {
         let userDetails = {
           fullName: data.user.name,
           id: data.user.id,
-          phoneNumber: data.user.phone_no,
+          phoneNumber: data.user.phone_no || `${countryCode}-${phoneNumber}`,
           email: data.user.email,
         };
         // console.log("from ax", userDetails);
