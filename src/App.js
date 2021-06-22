@@ -20,6 +20,7 @@ const Feedback = lazy(() => import("./pages/Feedback.js"));
 const LiveClassLogin = lazy(() => import("./pages/LiveClassLogin.js"));
 const Meeting = lazy(() => import("./pages/Meeting.js"));
 const Faq = lazy(() => import("./pages/Faq.js"));
+const Teach = lazy(() => import("./pages/Teach.js"));
 const Tnc = lazy(() => import("./pages/Tnc.js"));
 const Policy = lazy(() => import("./pages/Policy.js"));
 const SingleCourse = lazy(() => import("./pages/SingleCourse.js"));
@@ -48,6 +49,11 @@ function App() {
           <Route path="/faq">
             <Suspense fallback={<div></div>}>
               <Faq />
+            </Suspense>
+          </Route>
+          <Route path="/teach">
+            <Suspense fallback={<div></div>}>
+              <Teach/>
             </Suspense>
           </Route>
           <Route path="/terms-and-conditions">
