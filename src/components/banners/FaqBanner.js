@@ -4,8 +4,9 @@ function FaqBanner() {
   return (
     <div className="all-courses-banner-filter__wrapper">
       <div className="all-courses-banner-filter">
-        <h1 className="all-courses-banner-filter__header">FAQ’s</h1>
+        <h1 className="all-courses-banner-filter__header1">FAQs</h1>
         <div className="all-courses-banner-filter__search"></div>
+        
       </div>
     </div>
   );

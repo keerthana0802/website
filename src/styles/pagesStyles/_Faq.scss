@@ -41,7 +41,7 @@
 }
 .faq__title {
   font-size: 50px;
-  margin-top: 150px;
+  margin-top: 50px;
   color: #ffa724;
 }
 .faq__title1 {
@@ -55,10 +55,16 @@
   color: #ffa724;
 }
 
+.all-courses-banner-filter__header1 {
+  font-size: 5rem;
+  font-weight: 800;
+ 
+  text-align: center;
+}
 .faq__button {
   padding: 1em 10px 1em 0;
   font-size: 26px;
-  width: 1111px;
+  width: 100%;
   border-bottom: 1px solid white;
   cursor: pointer;
   position: relative;
@@ -104,6 +110,7 @@
   color: #686868;
   font-size: 18px;
   padding: 1em 0;
+ 
 }
 
 @media screen and (max-width: 768px) {
@@ -159,4 +166,5 @@
 .box{
   background-color: orange;
 }
+
 
