@@ -8,7 +8,7 @@ export default class VerticalTabs extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = { view: undefined };
+    this.state = { view: 0 };
   }
 
   setView(view) {
