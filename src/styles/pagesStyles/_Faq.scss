@@ -58,7 +58,7 @@
 .all-courses-banner-filter__header1 {
   font-size: 5rem;
   font-weight: 800;
- 
+
   text-align: center;
 }
 .faq__button {
@@ -110,7 +110,6 @@
   color: #686868;
   font-size: 18px;
   padding: 1em 0;
- 
 }
 
 @media screen and (max-width: 768px) {
@@ -163,8 +162,31 @@
   border-radius: 8px;
 }
 
-.box{
+.box {
   background-color: orange;
 }
 
-
+.spark-faq {
+  .all-courses-banner-filter__wrapper {
+    padding-bottom: 0rem;
+    .all-courses-banner-filter__search {
+      display: none;
+    }
+  }
+  .faq__right {
+    .all-courses-banner-filter__search {
+      @include bpm-sm {
+        // justify-content: space-between;
+        padding: 0;
+      }
+      @include bp-custom(600) {
+        label {
+          width: 40rem;
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
