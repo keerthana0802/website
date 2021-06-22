@@ -3,14 +3,14 @@ import gsap from "gsap";
 import scrollTrigger from "gsap/ScrollTrigger";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import HomepageExpertCard from "../cards/HomepageExpertCard";
-import image1 from "../../assets/teacherImage1.svg";
-import image2 from "../../assets/teacherImage2.svg";
+
 // ! Swiper
-import SwiperCore, { Pagination } from "swiper/core";
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
-SwiperCore.use([Pagination]);
+import "swiper/components/navigation/navigation.min.css";
+SwiperCore.use([Pagination, Navigation]);
 gsap.registerPlugin(scrollTrigger);
 function HomepageExpertsSection() {
   const pagination = {
@@ -59,6 +59,7 @@ function HomepageExpertsSection() {
             slidesPerView={"auto"}
             spaceBetween={0}
             pagination={pagination}
+            // navigation={true}
             className="mySwiper"
           >
             <SwiperSlide>
@@ -68,7 +69,6 @@ function HomepageExpertsSection() {
                 cardCourse="Storytelling"
                 cardTitle="Communication"
                 cardContent="Priyanka has conducted 200+ storytelling sessions globally! She's bubbly, engaging and a student favourite."
-                cardImage={image1}
               />
             </SwiperSlide>
             {/* <SwiperSlide>
@@ -98,7 +98,6 @@ function HomepageExpertsSection() {
                 cardCourse="Animation"
                 cardTitle="Art"
                 cardContent="Rashmi is a designer and an architect from the Royal College of Art, London."
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -108,7 +107,6 @@ function HomepageExpertsSection() {
                 cardCourse="Debate"
                 cardTitle="Communication"
                 cardContent="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -118,7 +116,6 @@ function HomepageExpertsSection() {
                 cardCourse="Western Vocals"
                 cardTitle="Music"
                 cardContent="A professional Rock and Country singer, 10+ years of experience performing and teaching music."
-                cardImage={image1}
               />
             </SwiperSlide>
             {/* <SwiperSlide>
@@ -139,7 +136,6 @@ function HomepageExpertsSection() {
                 cardCourse="Art"
                 cardTitle="Art"
                 cardContent="Singapore-based watercolour artist, conducted 100+ workshops for children and adults"
-                cardImage={image1}
               />
             </SwiperSlide>
             {/* <SwiperSlide>
@@ -160,7 +156,6 @@ function HomepageExpertsSection() {
                 cardCourse="Public Speaking"
                 cardTitle="Communication"
                 cardContent="Holds a Masters degree in Social Work, 5+ years of experience developing English literacy skills of students in 100+ schools"
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -170,7 +165,6 @@ function HomepageExpertsSection() {
                 cardCourse="Photography"
                 cardTitle="Art"
                 cardContent="A professional photographer with a Masters of Photography from National Institute of Design, visiting faculty at NIFT"
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -180,7 +174,6 @@ function HomepageExpertsSection() {
                 cardCourse="Animation"
                 cardTitle="Art"
                 cardContent="A designer from Royal College of Art, London. His work has been featured in Forbes, Car Design News, Indian Express"
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -190,7 +183,6 @@ function HomepageExpertsSection() {
                 cardCourse="Debate"
                 cardTitle="Communication"
                 cardContent="A lawyer from University Law College with over a decade of experience in the social impact sector."
-                cardImage={image1}
               />
             </SwiperSlide>
             {/* <SwiperSlide>

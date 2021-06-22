@@ -6,6 +6,7 @@ import {
   setPromoCode,
   setAddress,
   openLogin,
+  setTempEmail,
 } from "../../store/actions/rootActions";
 function AddressForm({ openPayment }) {
   const dispatch = useDispatch();
@@ -93,6 +94,7 @@ function AddressForm({ openPayment }) {
           value={email}
           onChange={(ev) => {
             setEmail(ev.target.value);
+            dispatch(setTempEmail(ev.target.value));
           }}
           required
         />

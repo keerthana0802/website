@@ -58,6 +58,7 @@ const checkoutReducers = (state = initState, action) => {
         ? { ...state, cartTooltip: false, cart: [...currentCart] }
         : { ...state, cartTooltip: true, cart: [...currentCart] };
     case "PAYMENT_SUCCESSFUL":
+      window.location.href = "/payment-successful";
       return { ...state, paid: [...state.cart], cart: [] };
     case "SET_PROMO_CODE":
       return { ...state, promoCode: action.payload };

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import HomepageExpertCard from "../cards/HomepageExpertCard";
-import image1 from "../../assets/teacherImage1.svg";
-import image2 from "../../assets/teacherImage2.svg";
+
 // ! Swiper
 import SwiperCore, { Pagination } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -42,7 +41,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Storytelling"
                 cardTitle="Communication"
                 cardContent="Priyanka has conducted 200+ storytelling sessions globally! She's bubbly, engaging and a student favourite."
-                cardImage={image1}
               />
             </SwiperSlide>
             {/* <SwiperSlide>
@@ -72,7 +70,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Animation"
                 cardTitle="Art"
                 cardContent="Rashmi is a designer and an architect from the Royal College of Art, London."
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -82,7 +79,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Debate"
                 cardTitle="Communication"
                 cardContent="Rachita's a NIFT graduate, with 7 years of teaching experience, who guest lectures at NIFT."
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -92,7 +88,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Western Vocals"
                 cardTitle="Music"
                 cardContent="A professional Rock and Country singer, 10+ years of experience performing and teaching music."
-                cardImage={image1}
               />
             </SwiperSlide>
             {/* <SwiperSlide>
@@ -113,7 +108,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Art"
                 cardTitle="Art"
                 cardContent="Singapore-based watercolour artist, conducted 100+ workshops for children and adults"
-                cardImage={image1}
               />
             </SwiperSlide>
             {/* <SwiperSlide>
@@ -134,7 +128,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Public Speaking"
                 cardTitle="Communication"
                 cardContent="Holds a Masters degree in Social Work, 5+ years of experience developing English literacy skills of students in 100+ schools"
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -144,7 +137,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Photography"
                 cardTitle="Art"
                 cardContent="A professional photographer with a Masters of Photography from National Institute of Design, visiting faculty at NIFT"
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -154,7 +146,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Animation"
                 cardTitle="Art"
                 cardContent="A designer from Royal College of Art, London. His work has been featured in Forbes, Car Design News, Indian Express"
-                cardImage={image1}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -164,7 +155,6 @@ function HomepageExpertsSectionResp() {
                 cardCourse="Debate"
                 cardTitle="Communication"
                 cardContent="A lawyer from University Law College with over a decade of experience in the social impact sector."
-                cardImage={image1}
               />
             </SwiperSlide>
           </Swiper>

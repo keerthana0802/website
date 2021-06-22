@@ -1,7 +1,6 @@
 import React from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { useSelector, useDispatch } from "react-redux";
-import yellow from "../../assets/yellowCourse.jpeg";
 // ! GSAP imports
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -120,7 +119,8 @@ function SingleCourseBanner({
         </div>
         <div className="single-course-banner__right">
           {showcase ? (
-            <Swiper
+            {
+              /* <Swiper
               slidesPerView={"auto"}
               spaceBetween={0}
               centeredSlides={true}
@@ -155,7 +155,8 @@ function SingleCourseBanner({
                   mediaUrl={yellow}
                 />
               </SwiperSlide>
-            </Swiper>
+            </Swiper> */
+            }
           ) : (
             <img
               src={`${

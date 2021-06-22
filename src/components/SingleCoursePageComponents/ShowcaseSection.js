@@ -1,6 +1,5 @@
 import React from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
-import yellow from "../../assets/yellowCourse.jpeg";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -49,7 +48,7 @@ function ShowcaseSection({ verticalThemeColorDark, courseDetails }) {
               ) : null}
             </div>
             <div className="showcase-section__right">
-              <Swiper
+              {/* <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={0}
                 centeredSlides={true}
@@ -85,7 +84,7 @@ function ShowcaseSection({ verticalThemeColorDark, courseDetails }) {
                     mediaUrl={yellow}
                   />
                 </SwiperSlide>
-              </Swiper>
+              </Swiper> */}
               {typeof window === "object" && window.innerWidth <= 992 ? (
                 <PrimaryButton buttonText="See more" version="version-1" />
               ) : null}

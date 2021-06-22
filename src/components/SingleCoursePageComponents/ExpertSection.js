@@ -1,6 +1,6 @@
 import React from "react";
 import confetti from "../../assets/Confetti.svg";
-import meera from "../../assets/teacherImage2.svg";
+
 function ExpertSection({ courseDetails }) {
   return (
     <>
@@ -11,7 +11,7 @@ function ExpertSection({ courseDetails }) {
             <h1 className="expert-section__header">Our Expert</h1>
             <div className="expert-section__bottom">
               <div className="expert-section__bottom--left">
-                <img src={meera} alt="" />
+                <img src="" alt="" />
                 <h3>Meera Desai</h3>
                 <p>Verified Music Instructor</p>
               </div>

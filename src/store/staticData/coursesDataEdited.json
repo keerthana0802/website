@@ -1,0 +1,1555 @@
+[
+    {
+        "identifier": "CO111ST",
+        "display_name": "Art of Storytelling",
+        "category_name": "Communication",
+        "name": "Art of Storytelling",
+        "course_one_liner": null,
+        "description": "",
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Confidence",
+            "Communication",
+            "Creativity"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 5,
+        "max_age": 9,
+        "show_outside": true,
+        "show_outside_min_age": 5,
+        "show_outside_max_age": 9,
+        "level": 1,
+        "abbreviation": "ST",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Interactive, fun and activity-based",
+            "Showcase event to perform to an audience",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Children are natural storytellers. We help them engage their imagination and use words to structure and express their ideas. In this course, the students will learn to build a story with story elements, and practice delivery through expressions, voice modulation, tone and body language. It is structured as a group class to help students develop inter-personal and listening skills, and make new friends. With a play-based interactive approach, these sessions are designed to get even shy children to open up easily. They hone their comnunication skills and confidence, while engaging in fun activities. At the end of course, we organise a showcase where the students tell the story that they have created infront of an audience, online. Come, imagine and create with us!",
+        "pitch": "Learn to communicate ideas by learning to build stories. Practice narration and voice modulation. ",
+        "short_pitch": "What's more fun than making stories! Master the art of communicating ideas and bringing them to life with story elements. Practice story narration to develop confidence and oratorship.",
+        "social_proof": "This course is loved by 5-9 yrs old!",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Identify the various elements and structure of a story (e.g., character, setting, plot, problem, resolution)",
+            "Create a story using different elements ",
+            "Narrate a story in their own words with expression and modulation",
+            "Engage an audience in their story narration"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Introduction to Storytelling",
+                "details": "Create a short story and describe it to your peers."
+            },
+            {
+                "session_number": "2",
+                "title": "Plot of a Story",
+                "details": "Understand various elements of a plot and create one of their own."
+            },
+            {
+                "session_number": "3",
+                "title": "Types of Stories",
+                "details": "Learn about different types of stories - Fables, Anecdotes and Magical Stories."
+            },
+            {
+                "session_number": "4",
+                "title": "Building the Character",
+                "details": "Develop the characters and their actions for your own stories."
+            },
+            {
+                "session_number": "5",
+                "title": "Building the Setting",
+                "details": "Draw the setting of your story."
+            },
+            {
+                "session_number": "6",
+                "title": "Visuals in Storytelling",
+                "details": "Create character and setting props to enhance the storytelling experience for an audience."
+            },
+            {
+                "session_number": "7",
+                "title": "Monologues and Dialogues",
+                "details": "Create monologues and dialogues for your characters."
+            },
+            {
+                "session_number": "8",
+                "title": "Hooking the Audience",
+                "details": "Create engaging hooks for your story."
+            },
+            {
+                "session_number": "9",
+                "title": "Original Story",
+                "details": "Write an original story using all the elements."
+            },
+            {
+                "session_number": "10",
+                "title": "Group Rehearsal",
+                "details": "Practice in front of the class and learn to give feedback."
+            },
+            {
+                "session_number": "11",
+                "title": "Revision and Group Rehearsal",
+                "details": "Revise all the key concepts and continue practise for showcase."
+            },
+            {
+                "session_number": "12",
+                "title": "Showcase",
+                "details": "The budding storytellers will present an original story to an audience."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "CO212PS",
+        "display_name": "Public Speaking",
+        "category_name": "Communication",
+        "name": "Public Speaking",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Fluency",
+            "Confidence",
+            "Communication"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 6,
+        "max_age": 10,
+        "show_outside": true,
+        "show_outside_min_age": 6,
+        "show_outside_max_age": 10,
+        "level": 1,
+        "abbreviation": "PS",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Interactive, fun and activity-based",
+            "Showcase event to perform to an audience",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Children often shy away from speaking in public or even infront of their peers in class, while being talkative otherwise. In our course, we guide the children to overcome the hesitation of delivering speech infront of an audience. In this course, the students will practice different styles of public speaking such as improvisation, informative, and persuasive style of delivery, which they can apply in their everyday life â€“ such as speaking in class, in a school assembly or a poetry recital, participating in elocution or debate competitions. The course will enable them to deliver speech in a crisp, engaging, and a memorable way. We use topics which are relatable and topical for the children. At the end of the course, students deliver a speech on a given topic infront of an audience, online! In this course, the students will achieve the following outcomes-Understand different types of speeches-Learn to developthe structure of each speech-Develop non-verbal skills to build a connection with the audience for an effective delivery-Understand the relevance of public speaking in a real-life scenario",
+        "pitch": "Master the most sought-after 21st century skill - oratory, through interactive speaking activities",
+        "short_pitch": "The one skill that leaders have in common, it is the skill to speak confidently infront of an audience! This is what makes Public Speaking the most sought-after 21st century skill. Learn to create different types of speeches and practice to deliver them confidently.",
+        "social_proof": "Children find the classes fun and interactive, and dislike missing sessions.",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Understand different types of speeches",
+            "Learn to develop the structure of each speech",
+            "Develop non-verbal skills to build a connection with the audience for an effective delivery",
+            "Understand the relevance of public speaking in a real-life scenario"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Speech & Delivery",
+                "details": "Understand speech and delivery as two elements of Public Speaking."
+            },
+            {
+                "session_number": "2",
+                "title": "Improptu Speech",
+                "details": "Practice Impromptu Speech/No-Prep Speech using picture clues."
+            },
+            {
+                "session_number": "3",
+                "title": "Introduction to Persuasive Speech",
+                "details": "Practice writing a persuasive speech"
+            },
+            {
+                "session_number": "4",
+                "title": "Mini Project I",
+                "details": "Practice delivery of a persuasive speech."
+            },
+            {
+                "session_number": "5",
+                "title": "Introduction to Informative Speech",
+                "details": "Identify the importance of informative speech."
+            },
+            {
+                "session_number": "6",
+                "title": "Mini Project II",
+                "details": "Write and deliver an informative speech."
+            },
+            {
+                "session_number": "7",
+                "title": "Ideate",
+                "details": "Prepare an informative or a persuasive speech using visuals/words."
+            },
+            {
+                "session_number": "8",
+                "title": "Research, Revise & Edit",
+                "details": "Learn to research, revise and edit your speech."
+            },
+            {
+                "session_number": "9",
+                "title": "Non-Verbal Communication",
+                "details": "Learn the importance of non-verbal communication while delivering a speech."
+            },
+            {
+                "session_number": "10",
+                "title": "Rehearsal 1",
+                "details": "Rehearse your speech and get feedback from the teacher."
+            },
+            {
+                "session_number": "11",
+                "title": "Rehearsal 2",
+                "details": "Final practice before the delivery infront of an audience."
+            },
+            {
+                "session_number": "12",
+                "title": "Showcase",
+                "details": "Present final speeches to the audience."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "CO313DS",
+        "display_name": "Dramatic Storytelling",
+        "category_name": "Communication",
+        "name": "Dramatic Storytelling",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Expression",
+            "Performance",
+            "Confidence"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 6,
+        "max_age": 11,
+        "show_outside": true,
+        "show_outside_min_age": 6,
+        "show_outside_max_age": 11,
+        "level": 1,
+        "abbreviation": "DS",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Interactive, fun and activity-based",
+            "Showcase event to perform to an audience",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Lights, camera, action!! Any student who wants to perform in a play on stage, this course is the best way to build that foundation. In this course, the students will learn foundational elements of drama. These elements are the tone, costumes, body language, and the environment at the time of storytelling. They will develop stories, and learn to deliver them to make it engaging and immersive for the audience.  At the end of course, we organise a showcase where the students performance infront of an audience, online. In this course, the students will achieve the following outcomes â€“ Understand the use of different voices, pause, tone, pitch to communicate the feelings of the character in your story â€“ Learn to use non-verbal communication such as eye-contact, body language, facial expression, gesturesâ€“ Learn to create an experience for the audience by providing sound effects.â€“ Use props/costume to signify characters and their actions. ",
+        "pitch": "Ready for the spotlight? Develop voice modulation, expressions and body language to captivate audiences",
+        "short_pitch": "Witness live theatre experience at home with costumes, props, sound effects, and a whole lot of action! Learn how to bring different characters in a story to life through voice, expressions, and actions. Practice to overcome your fear of stage by performing infront of an audience. ",
+        "social_proof": "Children don't want this course to end!",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Understand the use of the voice and the body to bring different characters to life",
+            "Learn about a variety of engaging methods to grab the attention of the audience",
+            "Gain confidence to communicate with others in different situations",
+            "Application of all of these in real life presentations and performances at school"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Creating Characters",
+                "details": "Create unique characters based on different situations."
+            },
+            {
+                "session_number": "2",
+                "title": "Using the body to become a character",
+                "details": "Learn different techniques to incorporate the mannerisms and movements."
+            },
+            {
+                "session_number": "3",
+                "title": "Creating Dialogue",
+                "details": "Learn how to create dialogues for a story."
+            },
+            {
+                "session_number": "4",
+                "title": "The Story Structure & Storyboarding",
+                "details": "Learn to create a storyboard."
+            },
+            {
+                "session_number": "5",
+                "title": "The Body and the Voice",
+                "details": "Learn different techniques for modulating voice."
+            },
+            {
+                "session_number": "6",
+                "title": "Non-Verbal telling",
+                "details": "Learn to communicate through non-verbal methods using gestures and expressions."
+            },
+            {
+                "session_number": "7",
+                "title": " Object Play",
+                "details": "Learn the use of simple objects in the story to bring imagination to life. "
+            },
+            {
+                "session_number": "8",
+                "title": " Dress-Up!",
+                "details": "Learn to use simple items as costumes for the story performances."
+            },
+            {
+                "session_number": "9",
+                "title": "Gearing Up!",
+                "details": "Rehearse with costumes, stage & dialogues."
+            },
+            {
+                "session_number": "10",
+                "title": "Gearing Up!",
+                "details": "Rehearse with costumes, stage & dialogues."
+            },
+            {
+                "session_number": "11",
+                "title": "Gearing Up!",
+                "details": "Rehearse with costumes, stage & dialogues."
+            },
+            {
+                "session_number": "12",
+                "title": " It’s Showtime!!",
+                "details": "Present the performance in front of an audience."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "CO414DB",
+        "display_name": "Debate",
+        "category_name": "Communication",
+        "name": "Debate",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 10,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Critical Thinking",
+            "Confidence",
+            "Communication"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 8,
+        "max_age": 15,
+        "show_outside": true,
+        "show_outside_min_age": 8,
+        "show_outside_max_age": 15,
+        "level": 1,
+        "abbreviation": "DB",
+        "price": "4000",
+        "priority": 4,
+        "number_of_home_activities": "25+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Interactive, fun and activity-based",
+            "Showcase event to perform to an audience",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Debating is a powerful activity that develops cognitive and communication skills in children. Some of the most impressive public leaders are ex-debators â€“ from Barack Obama, Nelson Mandela, Jeff Bezos to Oprah Winfrey. Being a great orator is a key part of leadership. This course is designed to engage children through speaking activities which impart skills and techniques while making it super easy and fun to participate. Through structured debate sessions, children will also prepare with research, collaborate, practice their arguments and rebuttals. With each debate exercise, they also learn to view topics from multiple angles and develop the ability to navigate differences in opinion respectfully. No prior experience is required. At the end of the course, the students get in groups and debate on a topic in front of an audience, online. In this course, the students will achieve the following outcomes-Understand the debate format of communications and itâ€™s structure-Practice micro-skills used in debate - stating opinion, effective opening and closing, rebuttal-Develop critical thinking skills-Practice delivery with appropriate modulation and body language-Learn to research and prepare for a debate",
+        "pitch": "Got an opinion? Now learn to be a formidable communicator!",
+        "short_pitch": "Do you know what do Barack Obama, Nelson Mandela, and Oprah Winfrey have in common? All of them are legendary orators! Learn to structure your arguements, and practice delivering them in a respectful and assertive way. ",
+        "social_proof": "Students find it refreshing that an argument can be respectfully communicated.",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Understand the debate format of communications and it’s structure",
+            "Practice micro-skills used in debate - stating opinion, effective opening and closing, rebuttal",
+            "Develop critical thinking skills",
+            "Practice delivery with appropriate modulation and body language",
+            "Learn to research and prepare for a debate"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Opinion and Tall tale",
+                "details": "Practice stating an opinion and telling a tall tale."
+            },
+            {
+                "session_number": "2",
+                "title": "Descriptive Speech",
+                "details": "Practice narration and descriptive speech."
+            },
+            {
+                "session_number": "3",
+                "title": "Speech Fluency and Building an Argument",
+                "details": "Practice building an effective and persuasive argument."
+            },
+            {
+                "session_number": "4",
+                "title": "Rebuttal",
+                "details": "Learn about rebuttal and practice counter-arguments while being respectful."
+            },
+            {
+                "session_number": "5",
+                "title": "Effective Opening and Closing",
+                "details": "Build a strong opening and closing for your debate using techniques and formats."
+            },
+            {
+                "session_number": "6",
+                "title": "Impromptu Speech",
+                "details": "Practice to articulate clearly in impromptu (unprepared) speech occasions."
+            },
+            {
+                "session_number": "7",
+                "title": "Team Debate",
+                "details": "Learn and practice the structure of a team debate."
+            },
+            {
+                "session_number": "8",
+                "title": "Presentation Skills",
+                "details": "Learn to pay attention to body language and gestures, and use it to deliver different types of impact."
+            },
+            {
+                "session_number": "9",
+                "title": "Debate Preparation",
+                "details": "Prepare for the final debate with your team."
+            },
+            {
+                "session_number": "10",
+                "title": "Showcase",
+                "details": "Present final debate infront of an audience."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "MU117GB",
+        "display_name": "Guitar",
+        "category_name": "Music",
+        "name": "Guitar - Beginner",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Composition",
+            "Appreciation",
+            "Performance"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 7,
+        "max_age": 15,
+        "show_outside": true,
+        "show_outside_min_age": 7,
+        "show_outside_max_age": 15,
+        "level": 1,
+        "abbreviation": "GU",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:3",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Customised to match pace of learning",
+            "Go towards mastery with further levels",
+            "Certification and individual assessment"
+        ],
+        "full_description": "",
+        "pitch": "Learn to play the guitar the right way, with a fundamental understanding of music. Also learn to compose your own music!",
+        "short_pitch": "",
+        "social_proof": "Students are inviting their friends to attend this class with them so that they can jam together!",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": false,
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "2",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "3",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "4",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "5",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "6",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "7",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "8",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "9",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "10",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "11",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "12",
+                "title": "",
+                "details": ""
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "MU128GI",
+        "display_name": "Guitar",
+        "category_name": "Music",
+        "name": "Guitar - Intermediate",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 14,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Composition",
+            "Appreciation",
+            "Performance"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 7,
+        "max_age": 15,
+        "show_outside": false,
+        "show_outside_min_age": 7,
+        "show_outside_max_age": 15,
+        "level": 2,
+        "abbreviation": "GU",
+        "price": "5600",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:3",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Customised to match pace of learning",
+            "Go towards mastery with further levels",
+            "Certification and individual assessment"
+        ],
+        "full_description": "",
+        "pitch": "Learn to play the guitar the right way, with a fundamental understanding of music. Also learn to compose your own music!",
+        "short_pitch": "",
+        "social_proof": "Students are inviting their friends to attend this class with them so that they can jam together!",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": false,
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "2",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "3",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "4",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "5",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "6",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "7",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "8",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "9",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "10",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "11",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "12",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "13",
+                "title": "",
+                "details": ""
+            },
+            {
+                "session_number": "14",
+                "title": "",
+                "details": ""
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "MU215WVB",
+        "display_name": "Western Vocals",
+        "category_name": "Music",
+        "name": "Western Vocals - Beginner",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Performance",
+            "Composition",
+            "Appreciation"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 6,
+        "max_age": 15,
+        "show_outside": true,
+        "show_outside_min_age": 6,
+        "show_outside_max_age": 15,
+        "level": 1,
+        "abbreviation": "WV",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:5",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Customised to match pace of learning",
+            "Go towards mastery with further levels",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Neuroscientists have shown how music engages and strengthens practically every area of the brain. Learning music helps children build their linguistic and memory skills. That said, the joy of music is a gift that keeps on giving! The voice happens to be the one instrument we all grow up playing and using. We all sing from a young age and learn to appreciate the talent of those who have learnt to use it well. This will serve as the starting point for that journey, there are no pre-requisites and you don’t need to have any background in singing or any training in music theory. In this course, we will cover 3 pillars crucial to the development and interest in music and singing: Performing, appreciating and composing. The performing element is important for children to have fun singing their favourite songs. The appreciating element is important for children to listen to and understand different kinds of music, singers and genres. The composing element will allow children to use what they have learnt to make something unique to their voice. This course has two levels and as students progress from one level to the other, they build deeper understanding of music. The learning outcomes for the two levels are given below: Western Vocals Beginner:– Understand pitch and rhythm with appropriate singing technique– Learn about dynamics, phrasing and interpretation – Be able to sing songs of different genres and cultures– Write a short piece and sing a self-composed melody Western Vocals Intermediate:- Learn how to sing a major and minor arpeggio- Recognize melodies and difference in vocal tone, be able to repeat and retain them- Recognize visually and aurally the difference between subdivisions- Use and recognize kodaly rhythm syllables- Understand the vocabulary of rhythm notation- Recognize and sing three different notesNumber of sessions: 12 sessions + 12 at home materials for the student to do post session Duration of each session: 1 hour each",
+        "pitch": "Level up from bathroom singer! Learn to sing, appreciate and even compose music as you learn the fundamentals",
+        "short_pitch": "Level up from bathroom singer! Learn to sing, appreciate, and even compose music as you learn the fundamentals.  ",
+        "social_proof": "Total excitment about composing their own music.",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Understand pitch and rhythm with appropriate singing technique",
+            "Learn about dynamics, phrasing and interpretation",
+            "Be able to sing songs of different genres and cultures",
+            "Write a short piece and sing a self-composed melody"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Introduction to Major Scale",
+                "details": "Introduce building blocks of music - Melody, Rhythm and Solfege with hand signs."
+            },
+            {
+                "session_number": "2",
+                "title": "Introduction to Expression",
+                "details": "Learn about pitch, volume & tempo."
+            },
+            {
+                "session_number": "3",
+                "title": "Major Scale and Rhythm",
+                "details": "Sing the major scale along with rhythm using metronome."
+            },
+            {
+                "session_number": "4",
+                "title": "Learning a Song",
+                "details": "Learn a new song in English."
+            },
+            {
+                "session_number": "5",
+                "title": "Singing in a Group",
+                "details": "Practice all the verses of the song."
+            },
+            {
+                "session_number": "6",
+                "title": "Intervals ",
+                "details": "Practice all the verses of the song."
+            },
+            {
+                "session_number": "7",
+                "title": "Large and Small Intervals",
+                "details": "Distinguish between large and small intervals."
+            },
+            {
+                "session_number": "8",
+                "title": "Be a Composer",
+                "details": "Write a simple melody."
+            },
+            {
+                "session_number": "9",
+                "title": "Be a Composer",
+                "details": "Write a simple melody and set it to rhythm."
+            },
+            {
+                "session_number": "10",
+                "title": "Around the World",
+                "details": "Listen and practice songs in different languages."
+            },
+            {
+                "session_number": "11",
+                "title": "Sing in a New Language",
+                "details": "Learn a new song in a foreign language."
+            },
+            {
+                "session_number": "12",
+                "title": "Assessment",
+                "details": "Perform and receive feedback."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "MU226WVI",
+        "display_name": "Western Vocals",
+        "category_name": "Music",
+        "name": "Western Vocals - Intermediate",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Performance",
+            "Composition",
+            "Appreciation"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 6,
+        "max_age": 15,
+        "show_outside": false,
+        "show_outside_min_age": 6,
+        "show_outside_max_age": 15,
+        "level": 2,
+        "abbreviation": "WV",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:5",
+        "usp_of_course": [
+            "Small group classes with individual feedback",
+            "Customised to match pace of learning",
+            "Go towards mastery with further levels",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Neuroscientists have shown how music engages and strengthens practically every area of the brain. Learning music helps children build their linguistic and memory skills. That said, the joy of music is a gift that keeps on giving! The voice happens to be the one instrument we all grow up playing and using. We all sing from a young age and learn to appreciate the talent of those who have learnt to use it well. This will serve as the starting point for that journey, there are no pre-requisites and you don’t need to have any background in singing or any training in music theory. In this course, we will cover 3 pillars crucial to the development and interest in music and singing: Performing, appreciating and composing. The performing element is important for children to have fun singing their favourite songs. The appreciating element is important for children to listen to and understand different kinds of music, singers and genres. The composing element will allow children to use what they have learnt to make something unique to their voice. This course has two levels and as students progress from one level to the other, they build deeper understanding of music. The learning outcomes for the two levels are given below: Western Vocals Beginner: – Understand pitch and rhythm with appropriate singing technique – Learn about dynamics, phrasing and interpretation – Be able to sing songs of different genres and cultures – Write a short piece and sing a self-composed melody Western Vocals Intermediate:- Learn how to sing a major and minor arpeggio - Recognize melodies and difference in vocal tone, be able to repeat and retain them - Recognize visually and aurally the difference between subdivisions - Use and recognize kodaly rhythm syllables - Understand the vocabulary of rhythm notation - Recognize and sing three different notes",
+        "pitch": "Level up from bathroom singer! Learn to sing, appreciate and even compose music as you learn the fundamentals",
+        "short_pitch": "Level up from bathroom singer! Learn to sing, appreciate, and even compose music as you learn the fundamentals.  ",
+        "social_proof": "Total excitment about composing their own music. ",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Learn how to sing a major and minor arpeggio",
+            "Recognize melodies and difference in vocal tone, be able to repeat and retain them",
+            "Recognize visually and aurally the difference between subdivisions",
+            "Use and recognize kodaly rhythm syllables",
+            "Understand the vocabulary of rhythm notation",
+            "Recognize and sing three different notes"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Dynamics and Tempo",
+                "details": "Learn different dynamics and tempos in a song."
+            },
+            {
+                "session_number": "2",
+                "title": "Arpeggios and Chord",
+                "details": "Sing major and minor arpeggios. Learn minor and major chords."
+            },
+            {
+                "session_number": "3",
+                "title": "Melodies and Beat",
+                "details": "Recognise melodies and identify the starting beat of a song."
+            },
+            {
+                "session_number": "4",
+                "title": "Subdivisions",
+                "details": "Understand subdivisions - note values and read the syllables."
+            },
+            {
+                "session_number": "5",
+                "title": "Sight Reading and Time Signatures",
+                "details": "Read simple rhythm sight reading and identify time signatures."
+            },
+            {
+                "session_number": "6",
+                "title": "Minor Scale",
+                "details": "Understand the difference between the major and minor scale."
+            },
+            {
+                "session_number": "7",
+                "title": "Be a Composer",
+                "details": "Review sight reading of rhythm and write their own rhythm."
+            },
+            {
+                "session_number": "8",
+                "title": "Around the World",
+                "details": "Learn a composition in a different language and from a different culture."
+            },
+            {
+                "session_number": "9",
+                "title": "Pitch Reading",
+                "details": "Understand the concept of reading simple pitches along with rhythm."
+            },
+            {
+                "session_number": "10",
+                "title": "Practice Minor Scale",
+                "details": "Sing the minor scale independently"
+            },
+            {
+                "session_number": "11",
+                "title": "Recap and Assessment",
+                "details": "Practice singing major and minor scales, and a song independently."
+            },
+            {
+                "session_number": "12",
+                "title": "Assessment",
+                "details": "Perform and receive feedback"
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "MU319KBB",
+        "display_name": "Keyboard",
+        "category_name": "Music",
+        "name": "Keyboard - Beginner",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": null,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": false,
+        "min_age": 0,
+        "max_age": 0,
+        "show_outside": false,
+        "show_outside_min_age": 0,
+        "show_outside_max_age": 0,
+        "level": 0,
+        "abbreviation": "KB",
+        "price": "0",
+        "priority": 4,
+        "number_of_home_activities": "",
+        "class_size": "",
+        "usp_of_course": "",
+        "full_description": "",
+        "pitch": "",
+        "short_pitch": "",
+        "social_proof": "",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": false,
+        "curriculum_sessions": false,
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "VI1111AJ",
+        "display_name": "Stop Motion Animation",
+        "category_name": "Visual Arts",
+        "name": "Stop Motion Animation - Junior (Beginner)",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 7,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Creativity",
+            "Film Making",
+            "Storytelling"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 5,
+        "max_age": 9,
+        "show_outside": true,
+        "show_outside_min_age": 5,
+        "show_outside_max_age": 9,
+        "level": 1,
+        "abbreviation": "AJ",
+        "price": "2800",
+        "priority": 4,
+        "number_of_home_activities": "20+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Guaranteed to be the most fun class ever",
+            "Build your own portfolio",
+            "Go towards mastery with further levels",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Everyone loves a good story! Distracted by gadgets as we are today, why don’t we use those gadgets to our advantage? Stop Motion Animation course is ideal for your child to channel their imagination and creativity into making their own short film! Because of stop motion animation’s simple nature of capturing and showcasing stories, it becomes a super easy concept to grasp for kids of all ages. It allows children to enjoy unstructured play, sequencing and structuring their thoughts with immediate visual outputs. In this course, students will learn the basics of animation and then go deeper into the process to create sophisticated animated films. They will make detailed scenes and actions by employing professional methods and techniques used by top animation studios today. Students will engage in character building exercises, set-construction and work with different media like craft paper, clay, cardboard, felt, wires and many more. Light and sound techniques are essential elements to build stories and effects, students will learn to use these. Through this course, students will work on one animated story, layering it with more detail and elements over each class, to culminate into a high-quality animated film (As a side benefit, working across weeks on one ‘masterpiece’ also develops focus and patience in children, who are otherwise easily distracted!). They will also learn to use the technique in other fun ways such as flipbook and creating their own animated gifs. No prior experience is needed.",
+        "pitch": "Make your own animated films and let your imagination run wild. This is the most fun course. Ever!",
+        "short_pitch": "Everyone loves a good story! Distracted by gadgets as we are today, why don’t we use those gadgets to our advantage? Make your own animated films, Gifs, and flipbook, and let your imagination run wild. This is the most fun course. Ever!s",
+        "social_proof": "'Can I also attend this course with my child? It is a great way to learn a skill together' a parent after attending the trial class",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Students will understand stop motion animation and its structure",
+            "Build their visualization and storytelling skills.",
+            "Iterate and experiment with different materials and techniques.",
+            "Make their own short animated film, and one additional format (Gif/Flipbook)"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Rules of Stop Motion Animation",
+                "details": "Practice using the stop motion app and basic story building."
+            },
+            {
+                "session_number": "2",
+                "title": "Sequencing 2D & 3D",
+                "details": "Work with 2D and 3D media to create short animations."
+            },
+            {
+                "session_number": "3",
+                "title": "Working with multiple media",
+                "details": "Use different materials to create setting and characters of the story."
+            },
+            {
+                "session_number": "4",
+                "title": "Movie Set-Up",
+                "details": "Create a storyboard and plan characters, scenes and the set for the shoot."
+            },
+            {
+                "session_number": "5",
+                "title": "Movie - Shoot",
+                "details": "Shoot the film, add sound, and edit with post-production on the app."
+            },
+            {
+                "session_number": "6",
+                "title": "Make your Own GIF/Flipbook",
+                "details": "Develop GIFs or flipbook using the app."
+            },
+            {
+                "session_number": "7",
+                "title": "Make your Own GIF/Flipbook",
+                "details": "Develop GIF s or flipbook using the app."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "VI1212AJ",
+        "display_name": "Stop Motion Animation",
+        "category_name": "Visual Arts",
+        "name": "Stop Motion Animation - Junior (Advanced)",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 10,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Creativity",
+            "Film Making",
+            "Storytelling"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": "maybe",
+        "min_age": 5,
+        "max_age": 9,
+        "show_outside": false,
+        "show_outside_min_age": 5,
+        "show_outside_max_age": 9,
+        "level": 2,
+        "abbreviation": "AJ",
+        "price": "4000",
+        "priority": 4,
+        "number_of_home_activities": "20+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Guaranteed to be the most fun class ever",
+            "Build your own portfolio",
+            "Go towards mastery with further levels",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Everyone loves a good story! Distracted by gadgets as we are today, why don’t we use those gadgets to our advantage? Stop Motion Animation course is ideal for your child to channel their imagination and creativity into making their own short film! Because of stop motion animation’s simple nature of capturing and showcasing stories, it becomes a super easy concept to grasp for kids of all ages. It allows children to enjoy unstructured play, sequencing and structuring their thoughts with immediate visual outputs. In this course, students will learn the basics of animation and then go deeper into the process to create sophisticated animated films. They will make detailed scenes and actions by employing professional methods and techniques used by top animation studios today. Students will engage in character building exercises, set-construction and work with different media like craft paper, clay, cardboard, felt, wires and many more. Light and sound techniques are essential elements to build stories and effects, students will learn to use these. Through this course, students will work on one animated story, layering it with more detail and elements over each class, to culminate into a high-quality animated film (As a side benefit, working across weeks on one ‘masterpiece’ also develops focus and patience in children, who are otherwise easily distracted!). They will also learn to use the technique in other fun ways such as flipbook and creating their own animated gifs. No prior experience is needed.",
+        "pitch": "Make your own animated films and let your imagination run wild. This is the most fun course. Ever!",
+        "short_pitch": "Everyone loves a good story! Distracted by gadgets as we are today, why don’t we use those gadgets to our advantage? Make your own animated films, Gifs, and flipbook, and let your imagination run wild. This is the most fun course. Ever!",
+        "social_proof": "'Can I also attend this course with my child? It is a great way to learn a skill together' a parent after attending the trial class",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": false,
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Storyborard & Character Building",
+                "details": "Create characters and their actions as per the storyboard."
+            },
+            {
+                "session_number": "2",
+                "title": "Scenes & Sequences",
+                "details": "Create sequences & scenes for the shoot."
+            },
+            {
+                "session_number": "3",
+                "title": "Set for the shoot",
+                "details": "Create the set for the shoot."
+            },
+            {
+                "session_number": "4",
+                "title": "Lighting",
+                "details": "Create different settings for the movie."
+            },
+            {
+                "session_number": "5",
+                "title": "Sound",
+                "details": "Add narration and sound effects to the movie."
+            },
+            {
+                "session_number": "6",
+                "title": "Final Movie",
+                "details": "Edit with post production on the app."
+            },
+            {
+                "session_number": "7",
+                "title": "Make your Own GIF",
+                "details": "Develop GIFs using the app."
+            },
+            {
+                "session_number": "8",
+                "title": "Make your Own GIF",
+                "details": "Develop GIFs using the app."
+            },
+            {
+                "session_number": "9",
+                "title": "Make your Own Flipbook",
+                "details": "Develop their own flipbook using the app."
+            },
+            {
+                "session_number": "10",
+                "title": "Make your Own Flipbook",
+                "details": "Develop their own flipbook using the app."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "VI1215AS",
+        "display_name": "Stop Motion Animation",
+        "category_name": "Visual Arts",
+        "name": "Stop Motion Animation - Senior",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Storytelling",
+            "Creativity",
+            "Film Making"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": "Maybe",
+        "min_age": 10,
+        "max_age": 15,
+        "show_outside": false,
+        "show_outside_min_age": 10,
+        "show_outside_max_age": 15,
+        "level": 1,
+        "abbreviation": "AS",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "20+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Guaranteed to be the most fun class ever",
+            "Build your own portfolio",
+            "Learn to create GIFs and Flipbooks",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Everyone loves a good story! Distracted by gadgets as we are today, why don’t we use those gadgets to our advantage? Stop Motion Animation course is ideal for your child to channel their imagination and creativity into making their own short film! Because of stop motion animation’s simple nature of capturing and showcasing stories, it becomes a super easy concept to grasp for kids of all ages. It allows children to enjoy unstructured play, sequencing and structuring their thoughts with immediate visual outputs. In this course, students will learn the basics of animation and then go deeper into the process to create sophisticated animated films. They will make detailed scenes and actions by employing professional methods and techniques used by top animation studios today. Students will engage in character building exercises, set-construction and work with different media like craft paper, clay, cardboard, felt, wires and many more. Light and sound techniques are essential elements to build stories and effects, students will learn to use these. Through this course, students will work on one animated story, layering it with more detail and elements over each class, to culminate into a high-quality animated film (As a side benefit, working across weeks on one ‘masterpiece’ also develops focus and patience in children, who are otherwise easily distracted!). They will also learn to use the technique in other fun ways such as flipbook and creating their own animated gifs. No prior experience is needed.",
+        "pitch": "Make your own animated films and let your imagination run wild. This is the most fun course. Ever!",
+        "short_pitch": "Everyone loves a good story! Distracted by gadgets as we are today, why don’t we use those gadgets to our advantage? Make your own animated films, Gifs, and flipbook, and let your imagination run wild. This is the most fun course. Ever!",
+        "social_proof": "",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Gain an in-depth understanding of animation – materials and methods",
+            "Learn to work on character building and short film narratives ",
+            "Practice professional model building, light and photography techniques",
+            "Make their own short animated film, and create Gifs and flipbook"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Rules of Stop Motion Animation",
+                "details": "Practice using the stop motion app and basic story building."
+            },
+            {
+                "session_number": "2",
+                "title": "Sequencing 2D & 3D",
+                "details": "Work with 2D and 3D media to create short animations."
+            },
+            {
+                "session_number": "3",
+                "title": "Character Building",
+                "details": "Create characters and their actions in the story."
+            },
+            {
+                "session_number": "4",
+                "title": "Scenes & Sequences",
+                "details": "Create sequences & scenes for the shoot."
+            },
+            {
+                "session_number": "5",
+                "title": "Set for the shoot",
+                "details": "Create the set for the shoot."
+            },
+            {
+                "session_number": "6",
+                "title": "Light",
+                "details": "Create different settings for the movie."
+            },
+            {
+                "session_number": "7",
+                "title": "Sound",
+                "details": "Add narration and sound effects to the movie."
+            },
+            {
+                "session_number": "8",
+                "title": "Final Movie",
+                "details": "Edit with post production on the app."
+            },
+            {
+                "session_number": "9",
+                "title": "Make your own GIF",
+                "details": "Develop your own GIFs using the app."
+            },
+            {
+                "session_number": "10",
+                "title": "Make your own GIF",
+                "details": "Develop your own GIFs using the app."
+            },
+            {
+                "session_number": "11",
+                "title": "Make your own Flipbook",
+                "details": "Develop their own flipbook using the app."
+            },
+            {
+                "session_number": "12",
+                "title": "Make your own Flipbook   ",
+                "details": "Develop their own flipbook using the app."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "VI2113PH",
+        "display_name": "Photography",
+        "category_name": "Visual Arts",
+        "name": "Photography",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 7,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Creativity",
+            "Confidence",
+            "Communication"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 7,
+        "max_age": 15,
+        "show_outside": true,
+        "show_outside_min_age": 7,
+        "show_outside_max_age": 15,
+        "level": 1,
+        "abbreviation": "PH",
+        "price": "2800",
+        "priority": 4,
+        "number_of_home_activities": "20+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Learn the science behind clicking photographs with professional photographers",
+            "Small group classes with individual feedback",
+            "Build your own portfolio",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Photography is the perfect tool to harness a childâ€™s creativity and curiosity. Developing a keen eye at a young age can help enhance the way you view and interact with the world. Moreover, it is easy and fun. Photography course will cover key concepts such as composition, correctly balancing exposure and light, types of photography (portrait, silhouette, panorama) and a brief history of the medium. We will train the eye to really observe details, and equip students with the tools required to effectively capture the world around them, find beauty in the things they see (and see them in different ways), and tell a story through images. It is a hands-on course where students will be encouraged to explore their surroundings and apply what they learn in each session in a fun and stimulating way. No prior experience of photography is required. A basic digital camera is preferred, though a cell phone camera will also suffice. DSLRs are welcome too. Come, letâ€™s learn to see the magic in the ordinary.",
+        "pitch": "Put your unique lens on the world as you learn to capture stunning pictures armed with techniques and tricks",
+        "short_pitch": "Put your unique lens on the world as you learn to capture stunning pictures armed with techniques and tricks. All you need is a smartphone and a lot of imagination!",
+        "social_proof": "Anyone can learn to click beautiful photos, it is that simple!",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Understand the basics of photography",
+            "Learn to compose and shoot stunning images",
+            "Practice different styles of photography",
+            "Make their own collection of photographs"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Camera and Composition",
+                "details": "Learn how cameras work and rule of thirds."
+            },
+            {
+                "session_number": "2",
+                "title": "Viewpoint",
+                "details": "Learn about viewpoint and leading lines."
+            },
+            {
+                "session_number": "3",
+                "title": "Exposure and Aperture",
+                "details": "Learn about one exposure element, aperture and depth of field."
+            },
+            {
+                "session_number": "4",
+                "title": "Shutter Speed & ISO",
+                "details": "Learn about the remaining elements of exposure such as shutter speed and ISO."
+            },
+            {
+                "session_number": "5",
+                "title": "Landscape Photography",
+                "details": "Learn about types of shot and landscape photography."
+            },
+            {
+                "session_number": "6",
+                "title": "Portrait Photography",
+                "details": "Learn the difference between landscape and portrait photography."
+            },
+            {
+                "session_number": "7",
+                "title": "Showcase",
+                "details": "Present Photo Story to an Audience."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "VI3110AR",
+        "display_name": "Art",
+        "category_name": "Visual Arts",
+        "name": "Art Explorer",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 7,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Creativity",
+            "Active Listening",
+            "Confidence"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 5,
+        "max_age": 7,
+        "show_outside": true,
+        "show_outside_min_age": 5,
+        "show_outside_max_age": 15,
+        "level": 1,
+        "abbreviation": "AR",
+        "price": "2800",
+        "priority": 4,
+        "number_of_home_activities": "10+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Learn different types of media and mediums in art",
+            "Small group classes with individual feedback",
+            "Build your own portfolio",
+            "Certification and individual assessment"
+        ],
+        "full_description": "All children love art, and while it may appear as fun and games, children develop spatial intelligence and innovative, original thinking.  As the name suggests, the Art Explorer course is designed to help students explore various forms and media such as collage, finger painting, paper weaving, and clay. Exploring various art forms broadens the childâ€™s understanding of what art is and how they can â€˜createâ€™ in multiple ways. From exploring colours to 3D forms, each class brings a new way to look at art. Through the process, children will learn basic techniques and make connections with life around them. Students need no prior training for this course. The materials needed are basic art supplies such as drawing paper, colours (crayons/oil pastels, water colours), coloured paper, modeling clay and so on. The teacher will guide them at every step.",
+        "pitch": "Learn fundamentals techniques, explore and get inspired by global artists, and find your own artistic style.",
+        "short_pitch": "The ultimate exploration in art with a variety of media and styles to unlock creativity",
+        "social_proof": "Children love the vibe of this class and chit chat with teachers as they create art.",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Demonstrate appropriate use of different media to communicate themes and ideas in their work",
+            "Identify between elements and principles in own work and the works of others with focus on shape, colour, and texture",
+            "Discuss and identify how and where art is used in their everyday life",
+            "Make connections between the visual arts and learning in other curricula areas"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Collage Making",
+                "details": "Create collage using coloured paper."
+            },
+            {
+                "session_number": "2",
+                "title": "Paper Weaving",
+                "details": "Learn to weave paper to create different pattern."
+            },
+            {
+                "session_number": "3",
+                "title": "Scribbled Art",
+                "details": "Learn tricks of creating scribbled art."
+            },
+            {
+                "session_number": "4",
+                "title": "Clay",
+                "details": "Create different objects from clay."
+            },
+            {
+                "session_number": "5",
+                "title": "Shapes to Create",
+                "details": "Use cut-outs of shapes to create different objects."
+            },
+            {
+                "session_number": "6",
+                "title": "Watercolor",
+                "details": "Learn flatwash technique to create a painting."
+            },
+            {
+                "session_number": "7",
+                "title": "Showcase",
+                "details": "Present all the artwork to an audience."
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    },
+    {
+        "identifier": "VI3214AB",
+        "display_name": "Art",
+        "category_name": "Visual Arts",
+        "name": "Art Beginner",
+        "course_one_liner": null,
+        "description": null,
+        "num_classes": 12,
+        "session_duration_minutes": "60 Minutes",
+        "tags": [
+            "Creativity",
+            "Art Techniques",
+            "Appreciation"
+        ],
+        "vertical_theme_color_light": null,
+        "vertical_theme_color_dark": null,
+        "experts_say_video_url": null,
+        "image_url": null,
+        "is_live": true,
+        "min_age": 8,
+        "max_age": 15,
+        "show_outside": false,
+        "show_outside_min_age": 5,
+        "show_outside_max_age": 15,
+        "level": 1,
+        "abbreviation": "AB",
+        "price": "4800",
+        "priority": 4,
+        "number_of_home_activities": "30+",
+        "class_size": "1:6",
+        "usp_of_course": [
+            "Learn what's taught in college-level art degrees, with artists",
+            "Build your own portfolio",
+            "Small group classes with individual feedback",
+            "Certification and individual assessment"
+        ],
+        "full_description": "Art is a universal language to express ideas and emotions. Children love art, but rarely get a structured education on mastering techniques and unlocking creativity. In this course, students will learn powerful, yet simplified, concepts to make their drawing better and learn colour theory and techniques of application. They will also discuss artwork of famous artists such as Vincent Van Gogh, Claude Monet, Henri Matisse, Georges Seurat and Paul Signac, and learn art appreciation. Through learning and exploration, students are also encouraged to look at art in multiple ways, and evolve their own style. No prior training is required. ",
+        "pitch": "Learn fundamentals techniques, explore and get inspired by global artists, and find your own artistic style.s",
+        "short_pitch": "Learn the fundamental techniques, get inspired by artists from around the world, and find your own artistic style. ",
+        "social_proof": "Students define these classes as 'Perfect!'",
+        "curriculum_liner": "In this course, the students will achieve the following outcomes",
+        "curriculum_outcomes": [
+            "Understand lines, pattern and 2D and 3D drawing ",
+            "Understand colour theory and application techniques",
+            "Study artworks of known global artists ",
+            "Try different subjects such as single-point perspective, patterns in nature and 3D scenes"
+        ],
+        "curriculum_sessions": [
+            {
+                "session_number": "1",
+                "title": "Line and Curve",
+                "details": "Learn to draw different lines and curves."
+            },
+            {
+                "session_number": "2",
+                "title": "Introduction to 2D Forms",
+                "details": "Learn to draw 2D shapes and basic objects."
+            },
+            {
+                "session_number": "3",
+                "title": "Introduction to Colours",
+                "details": "Learn about primary and secondary colours."
+            },
+            {
+                "session_number": "4",
+                "title": "Introduction to Patterns",
+                "details": "Learn about patterns through exercises."
+            },
+            {
+                "session_number": "5",
+                "title": "Introduction to 3D Forms",
+                "details": "Learn to draw 3D shapes and basic objects."
+            },
+            {
+                "session_number": "6",
+                "title": "Colour & Shades",
+                "details": "Learn how to create colour shades, tones, and tints "
+            },
+            {
+                "session_number": "7",
+                "title": "Patterns in Nature",
+                "details": "Learn to identify patterns in nature and draw them. "
+            },
+            {
+                "session_number": "8",
+                "title": "Perspective (1 point)",
+                "details": "Learn about single-point-perspective and use it to draw simple 3D-scapes."
+            },
+            {
+                "session_number": "9",
+                "title": "Perspective (1 point)",
+                "details": "Learn to draw simple paintings using single-point-perspective. "
+            },
+            {
+                "session_number": "10",
+                "title": "Create Your Own Form",
+                "details": "Create forms based on your surroundings."
+            },
+            {
+                "session_number": "11",
+                "title": "Recap",
+                "details": "Revise key concepts of form, colour & pattern."
+            },
+            {
+                "session_number": "12",
+                "title": "Finale",
+                "details": "Create a painting using the techniques learnt in the course. "
+            }
+        ],
+        "showcase_section_header": false,
+        "showcase_section_content": false,
+        "showcase_data": false,
+        "testimonial_data": false,
+        "expert_details": false
+    }
+]

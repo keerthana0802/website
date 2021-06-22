@@ -1,5 +1,5 @@
 import React from "react";
-import successful from "../assets/paymentSuccessful.svg";
+import successful from "../assets/paymentSuccessful.webp";
 import NavFooterLayout from "../containers/NavFooterLayout";
 import { useSelector } from "react-redux";
 import PrimaryButton from "../components/buttons/PrimaryButton";
@@ -11,6 +11,7 @@ function PaymentSuccessful() {
   const coursesData = useSelector((state) => state.courses.allCourses);
   const paid = useSelector((state) => state.checkout.paid);
   const userDetails = useSelector((state) => state.auth.userDetails);
+  const tempEmail = useSelector((state) => state.auth.tempEmail);
   return (
     <NavFooterLayout>
       <div className="spark-payment-successful__wrapper">
@@ -62,7 +63,10 @@ function PaymentSuccessful() {
               <div className="spark-payment-successful__right--top-email-box">
                 <p className="email-info">
                   We will be sending out an email confirmation to <br />
-                  <span>{userDetails?.email || ""}</span>
+                  <span>
+                    {userDetails?.email?.toLowerCase() ||
+                      tempEmail?.toLowerCase()}
+                  </span>
                 </p>
                 {/* <button>Change email</button> */}
               </div>

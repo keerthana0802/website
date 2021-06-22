@@ -4,8 +4,8 @@ import NavFooterLayout from "../containers/NavFooterLayout";
 import zynga from "../assets/zynga.svg";
 import IIM from "../assets/IIM.svg";
 import leadSchool from "../assets/leadSchool.svg";
-import teachForIndia from "../assets/teachForIndia.svg";
-import IITD from "../assets/IITD.svg";
+import teachForIndia from "../assets/TeachForIndia.webp";
+import IITD from "../assets/IITD.webp";
 import TeamGrid from "../components/AboutUsPageComponents/TeamGrid";
 import TeamDescriptionSection from "../components/AboutUsPageComponents/TeamDescriptionSection";
 import BeliefSection from "../components/AboutUsPageComponents/BeliefSection";
@@ -33,11 +33,11 @@ function AboutUs() {
             <span className="brackets">)</span> from
           </h1>
           <div className="spark-about-us__strip--companies">
-            <img src={zynga} alt="" />
-            <img src={IIM} alt="" />
-            <img src={leadSchool} alt="" />
-            <img src={teachForIndia} alt="" />
-            <img src={IITD} alt="" />
+            <img src={zynga} alt="" className="company-1" />
+            <img src={IIM} alt="" className="company-2" />
+            <img src={leadSchool} alt="" className="company-3" />
+            <img src={teachForIndia} alt="" className="company-4" />
+            <img src={IITD} alt="" className="company-5" />
           </div>
         </div>
         {/* <TeamGrid /> */}

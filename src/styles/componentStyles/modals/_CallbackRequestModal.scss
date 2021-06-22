@@ -19,7 +19,7 @@
   display: none;
   @media screen and (max-width: 850px) {
     padding: 2rem 1.5rem;
-    margin: 0 1.5rem;
+    margin: 0 3.5rem;
     min-height: auto;
   }
   z-index: 3;
@@ -33,6 +33,9 @@
   &__content {
     font-size: 3rem;
     color: #fff;
+    @include bpm-xs {
+      font-size: 2.2rem;
+    }
   }
   overflow: visible;
   &__close {

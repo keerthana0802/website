@@ -90,8 +90,12 @@ function CoursesForm({ switchRoute, tabsStatus }) {
       return {
         course_name: course,
         course_id:
-          courseData.find((obj) => obj.courseName === course)?.courseId ||
-          courseData.find((obj) => obj.displayName === course).courseId,
+          courseData.find(
+            (obj) => obj.courseName.toLowerCase() === course.toLowerCase()
+          )?.courseId ||
+          courseData.find(
+            (obj) => obj.displayName.toLowerCase() === course.toLowerCase()
+          ).courseId,
       };
     });
     axios

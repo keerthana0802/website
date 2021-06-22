@@ -1,8 +1,8 @@
 import React from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
-import bannerImage1 from "../../assets/bannerImage2.png";
+import bannerImage1 from "../../assets/bannerImage2.webp";
 // import bannerImage2 from "../../assets/homeBannerImage2.webp";
-import bannerImage2 from "../../assets/homepageBannerImageGirl.png";
+import bannerImage2 from "../../assets/homepageBannerImageGirl.webp";
 // import bannerImageCombined from "../../assets/homepageBannerImageCombined.svg";
 function HomepageBanner() {
   return (

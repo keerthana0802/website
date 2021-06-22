@@ -43,10 +43,7 @@ function Checkout() {
       )
     );
 
-    window.location.href = "/payment-successful";
-    setTimeout(() => {
-      dispatch(paymentSuccessful());
-    }, 200);
+    dispatch(paymentSuccessful());
   };
   // ! Managing the orderID
   const [razorOptions, setRazorOptions] = useState({
