@@ -27,7 +27,7 @@ Sentry.init({
 });
 window.mixpanel = mixpanel;
 mixpanel.init("d4a75bc05ba5b818d6719609241d6ab9", {
-  debug: true,
+  debug: process.env.REACT_APP_MIXPANEL_DEBUG == 1 ? true : false,
   ip: true,
   ignore_dnt: true,
   batch_flush_interval_ms: 10000,
