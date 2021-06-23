@@ -31,8 +31,8 @@ function Footer() {
           <div className="spark-footer__left--bottom">
             <h1 className="spark-footer__left--bottom-header">Get Started</h1>
             <Link to="/book-a-trial">Book a FREE Trial</Link>
-            {/* <Link>Summer Fest</Link>
-            <Link>Workshops</Link> */}
+            <Link>Summer Fest</Link>
+            <Link>Workshops</Link>
           </div>
         </div>
         <div className="spark-footer__right spark-footer__sitemap">

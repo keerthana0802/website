@@ -2,7 +2,7 @@ import React from "react";
 import confetti from "../../assets/Confetti.svg";
 
 function ExpertSection({ courseDetails }) {
-  console.log(courseDetails.expertDetails);
+  // console.log(courseDetails.expertDetails);
   const capitalize = (s) => {
     if (typeof s !== "string") return "";
     return s.toLowerCase().charAt(0).toUpperCase() + s.toLowerCase().slice(1);

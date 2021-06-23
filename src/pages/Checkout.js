@@ -24,12 +24,16 @@ function Checkout() {
   const promoCode = useSelector((state) => state.checkout.promoCode);
   // ! Payment success handler function
   const paymentSuccessHandler = async function (response) {
-    window.localStorage.setItem("payment_id", response.razorpay_payment_id);
     // console.log("from success", userDetails);
-    await axios.post(
+    const successResponse = await axios.post(
       `${process.env.REACT_APP_RAZOR_API}/${uuidRef.current}/success`,
       { payment_response: response },
       { headers: { Authorization: authToken, "X-SSUID": userDetails.id } }
+    );
+    // console.log("success", successResponse.data.order.invoice_number);
+    window.localStorage.setItem(
+      "payment_id",
+      successResponse.data.order.invoice_number
     );
     moengageEvent(
       "Payment_Status",
@@ -109,7 +113,7 @@ function Checkout() {
       currency: resp.data.order.currency,
       totalQty: totalQty,
     };
-    console.log(userDetails);
+    // console.log(userDetails);
     rzp1 = await new window.Razorpay({
       ...razorOptions,
       description: description,

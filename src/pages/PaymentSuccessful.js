@@ -63,10 +63,7 @@ function PaymentSuccessful() {
               <div className="spark-payment-successful__right--top-email-box">
                 <p className="email-info">
                   We will be sending out an email confirmation to <br />
-                  <span>
-                    {userDetails?.email?.toLowerCase() ||
-                      tempEmail?.toLowerCase()}
-                  </span>
+                  <span>{tempEmail?.toLowerCase()}</span>
                 </p>
                 {/* <button>Change email</button> */}
               </div>
