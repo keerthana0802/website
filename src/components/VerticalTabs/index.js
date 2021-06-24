@@ -5,6 +5,7 @@ import classNames from "classnames";
 import "./styles.css";
 
 export default class VerticalTabs extends PureComponent {
+
   constructor(props) {
     super(props);
 
@@ -23,6 +24,7 @@ export default class VerticalTabs extends PureComponent {
       <div className="VERTICAL-TABS">
         <div className="VERTICAL-TABS__label">
           {children.map((item, index) => (
+           
             <div key={index} onClick={() => this.setView(index)}>
               <div
                 className={classNames("VERTICAL-TABS__label__element", {
