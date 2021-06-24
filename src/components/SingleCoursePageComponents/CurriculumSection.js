@@ -16,6 +16,7 @@ function CurriculumSection({ dark, courseDetails, courseType, courseName }) {
   const allCourses = useSelector((state) => state.courses.allCourses);
   const cart = useSelector((state) => state.checkout.cart);
   const cartDrawer = useSelector((state) => state.checkout.cartDrawer);
+  const currency = useSelector((state) => state.courses.currency);
   const dispatch = useDispatch();
   const addToCartHandle = (courseCardId, courseCardName) => {
     let found = cart.find((course) => course.courseId === courseCardId);
@@ -30,7 +31,11 @@ function CurriculumSection({ dark, courseDetails, courseType, courseName }) {
       if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
       MoengageEventTracking(
         "Add_to_Cart",
-        addToCartAttributes(courseCardId, courseCardName, foundPrice.price)
+        addToCartAttributes(
+          courseCardId,
+          courseCardName,
+          currency === "INR" ? foundPrice.priceInr : foundPrice.priceUsd
+        )
       );
     }
   };

@@ -2,6 +2,7 @@ const initState = {
   allCourses: [],
   activeCourseOnCoursePage: "",
   scrollToCourseCategory: "",
+  currency: "",
 };
 const coursesReducers = (state = initState, action) => {
   switch (action.type) {
@@ -11,6 +12,8 @@ const coursesReducers = (state = initState, action) => {
       return { ...state, activeCourseOnCoursePage: action.payload };
     case "SCROLL_TO_COURSE_CATEGORY":
       return { ...state, scrollToCourseCategory: action.payload };
+    case "SET_CURRENCY":
+      return { ...state, currency: action.payload };
     default:
       return state;
   }

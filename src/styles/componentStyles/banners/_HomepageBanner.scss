@@ -3,6 +3,11 @@
     padding-left: 7rem;
     padding-top: 7rem;
     display: grid;
+    @include bpm-custom(2560px) {
+      margin-bottom: -7rem;
+      height: 65vw;
+      grid-template-columns: 600px 1fr;
+    }
     @include bpm-xxl {
       margin-bottom: -7rem;
       height: 60vw;
@@ -63,6 +68,14 @@
       }
     }
     margin-top: 8rem;
+    @include bpm-custom(2560px) {
+      &--header {
+        line-height: 10.5rem;
+        color: #000632;
+        font-size: 9.6rem;
+        font-weight: 800;
+      }
+    }
     @include bpm-xxl {
       &--header {
         line-height: 10.5rem;
@@ -130,6 +143,15 @@
       bottom: 0rem;
       width: 85%;
       z-index: 2;
+    }
+    @include bpm-custom(2560px) {
+      &--image-1 {
+        width: 80%;
+      }
+      &--image-2 {
+        right: -15rem;
+        width: 50%;
+      }
     }
     @include bpm-xxl {
       &--image-1 {

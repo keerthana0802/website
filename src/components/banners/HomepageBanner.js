@@ -4,6 +4,8 @@ import bannerImage1 from "../../assets/bannerImage2.webp";
 // import bannerImage2 from "../../assets/homeBannerImage2.webp";
 import bannerImage2 from "../../assets/homepageBannerImageGirl.webp";
 // import bannerImageCombined from "../../assets/homepageBannerImageCombined.svg";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { buttonClickAttributes } from "../../helpers/MoengageAttributeCreators";
 function HomepageBanner() {
   return (
     <div className="homepage-banner__wrapper">
@@ -16,6 +18,20 @@ function HomepageBanner() {
           version="version-2"
           linkTo="/book-a-trial"
           shine={true}
+          clickHandle={() => {
+            moengageEvent(
+              "Button_Click",
+              buttonClickAttributes(
+                1,
+                "Book a FREE trial",
+                "/book-a-trial",
+                1,
+                4,
+                3,
+                "After Main Creative Banner"
+              )
+            );
+          }}
         />
       </div>
       <div className="homepage-banner__right">

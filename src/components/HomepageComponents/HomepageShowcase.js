@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import ShowcaseModal from "../modals/ShowcaseModal";
 import PrimaryButton from "../buttons/PrimaryButton";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { buttonClickAttributes } from "../../helpers/MoengageAttributeCreators";
 function HomepageShowcase() {
   // ! state for modal
   const [showModal, setShowModal] = useState(false);
@@ -25,6 +27,18 @@ function HomepageShowcase() {
   };
   // ! function to close modal
   const modalClose = () => {
+    moengageEvent(
+      "Button_Click",
+      buttonClickAttributes(
+        3,
+        "Dismiss Button",
+        "/",
+        10,
+        1,
+        3,
+        "In The Showcase Section on the Homepage Displaying Videos"
+      )
+    );
     setShowModal(false);
     setMediaUrl("");
     setWidth("");
@@ -39,6 +53,18 @@ function HomepageShowcase() {
         <div
           className="homepage-showcase__elements--one showcase-single-element showcase-single-element--video"
           onClick={() => {
+            moengageEvent(
+              "Button_Click",
+              buttonClickAttributes(
+                1,
+                "Play Icon",
+                "/",
+                10,
+                1,
+                3,
+                "In The Showcase Section on the Homepage Displaying Videos"
+              )
+            );
             setMediaType("video");
             setMediaUrl(
               (mediaUrl) =>
@@ -86,6 +112,18 @@ function HomepageShowcase() {
         <div
           className="homepage-showcase__elements--four showcase-single-element showcase-single-element--video"
           onClick={() => {
+            moengageEvent(
+              "Button_Click",
+              buttonClickAttributes(
+                1,
+                "Play Icon",
+                "/",
+                10,
+                1,
+                3,
+                "In The Showcase Section on the Homepage Displaying Videos"
+              )
+            );
             setMediaType("video");
             setMediaUrl(
               (mediaUrl) =>
@@ -120,6 +158,20 @@ function HomepageShowcase() {
         version="version-2"
         linkTo="/book-a-trial"
         shine={true}
+        clickHandle={() => {
+          moengageEvent(
+            "Button_Click",
+            buttonClickAttributes(
+              3,
+              "Book a FREE trial",
+              "/book-a-trial",
+              1,
+              4,
+              3,
+              "After Showcase Section"
+            )
+          );
+        }}
       />
       {showModal ? (
         <ShowcaseModal

@@ -17,11 +17,10 @@ import {
 import {
   cartDrawerOpen,
   cartTooltipClose,
-  openLogin,
-  openSignup,
   logoutUser,
   getCourses,
   changeNumber,
+  setCurrency,
 } from "../store/actions/rootActions";
 import { useSelector, useDispatch } from "react-redux";
 import CartDrawer from "../components/drawers/CartDrawer";
@@ -29,7 +28,7 @@ import AuthSignUp from "../components/modals/AuthSignUp";
 import AuthLogin from "../components/modals/AuthLogin";
 import axios from "axios";
 // import coursesDataNew from "../store/staticData/coursesDataNew.json";
-import coursesDataNew from "../store/staticData/coursesDataRevised.json";
+import coursesDataNew from "../store/staticData/coursesDataRevisedv2.json";
 function NavFooterLayout({ children }) {
   // ! Redux states
   const cart = useSelector((state) => state.checkout.cart);
@@ -68,17 +67,17 @@ function NavFooterLayout({ children }) {
     if (!window.localStorage.visitor_uuid) {
       window.localStorage.setItem("visitor_uuid", uuid());
     }
+    // ! Setting the courses data and currency on initial load
+
     if (allCourses?.length === 0) {
-      // console.log("from effect");
-      // axios
-      //   .get(process.env.REACT_APP_ALL_COURSES_API, {
-      //     headers: {
-      //       "Access-Control-Allow-Origin": "*",
-      //       "Content-Type": "application/json",
-      //     },
-      //   })
-      //   .then((res) => dispatch(getCourses(res.data)))
-      //   .catch((e) => console.log(e));
+      let isIndia;
+      if (window?.sessionStorage?.ipapi_response) {
+        let data = JSON.parse(window.sessionStorage.ipapi_response);
+        isIndia = data.country_code.toLowerCase() == "in" ? true : false;
+      } else {
+        isIndia = false;
+      }
+      dispatch(setCurrency(isIndia ? "INR" : "USD"));
       dispatch(getCourses(coursesDataNew));
     }
     if (authOtpRequested && authToken?.length === 0) dispatch(changeNumber());

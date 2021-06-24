@@ -3,7 +3,10 @@ import PrimaryButton from "../buttons/PrimaryButton";
 import artwork from "../../assets/puppyCallbackArtwork.svg";
 import axios from "axios";
 import moengageEvent from "../../helpers/MoengageEventTracking";
-import { requestCallbackAttributes } from "../../helpers/MoengageAttributeCreators";
+import {
+  requestCallbackAttributes,
+  buttonClickAttributes,
+} from "../../helpers/MoengageAttributeCreators";
 import ConfirmationModal from "../modals/ConfirmationModal";
 function HomepageCallback() {
   // ! State for responsive mode
@@ -105,6 +108,18 @@ function HomepageCallback() {
             )
           );
           setShowModal(true);
+          moengageEvent(
+            "Button_Click",
+            buttonClickAttributes(
+              window.location.pathname === "/" ? 6 : 7,
+              "Request Callback",
+              window.location.pathname,
+              2,
+              4,
+              3,
+              "In the Callback Section"
+            )
+          );
         })
         .then(() => {
           setFullName("");
@@ -136,6 +151,20 @@ function HomepageCallback() {
             version="version-2"
             linkTo="/book-a-trial"
             shine={true}
+            clickHandle={() => {
+              moengageEvent(
+                "Button_Click",
+                buttonClickAttributes(
+                  5,
+                  "Book a FREE trial",
+                  "/book-a-trial",
+                  2,
+                  4,
+                  3,
+                  "In the Callback Section"
+                )
+              );
+            }}
           />
         </div>
         {responsiveMode ? (

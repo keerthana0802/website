@@ -25,7 +25,8 @@
         "show_outside_max_age": 9,
         "level": 1,
         "abbreviation": "ST",
-        "price": "4800",
+        "price_inr": "4800",
+        "price_usd": "180",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:6",
@@ -112,16 +113,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "priyanka",
-            "expert_position": "Verified Communication Instructor",
-            "expert_description": "Priyanka Babbar has 12+ years of experience and has conducted 200+ storytelling sessions globally. She currently teaches Drama at NSS Hill Spring International School.",
-            "expert_usp_pointers": [
-                "Participated in Theatre Olympics in 2018",
-                "Professional Theatre Artist",
-                "Studied at London International School of Performing Arts"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "CO212PS",
@@ -149,7 +141,8 @@
         "show_outside_max_age": 10,
         "level": 1,
         "abbreviation": "PS",
-        "price": "4800",
+        "price_inr": "4800",
+        "price_usd": "180",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:6",
@@ -236,15 +229,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "tirthankar",
-            "expert_position": "Verified Communication Instructor",
-            "expert_description": "Tirthankar holds a Degree in Education from Azim Premji University and comes with a deep insight into curriculum development and pedagogical expertise through his experiences at Teach for India and LEAD School as an educator.",
-            "expert_usp_pointers": [
-                "Masters Degree in Education",
-                "6+ years of teaching and creating content for 1000s of schools"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "CO313DS",
@@ -272,7 +257,8 @@
         "show_outside_max_age": 11,
         "level": 1,
         "abbreviation": "DS",
-        "price": "4800",
+        "price_inr": "4800",
+        "price_usd": "180",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:6",
@@ -359,16 +345,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "priyanka",
-            "expert_position": "Verified Communication Instructor",
-            "expert_description": "Priyanka Babbar has 12+ years of experience and has conducted 200+ storytelling sessions globally. She currently teaches Drama at NSS Hill Spring International School.",
-            "expert_usp_pointers": [
-                "Participated in Theatre Olympics in 2018",
-                "Professional Theatre Artist",
-                "Studied at London International School of Performing Arts"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "CO414DB",
@@ -396,7 +373,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "DB",
-        "price": "4000",
+        "price_inr": "4000",
+        "price_usd": "150",
         "priority": 4,
         "number_of_home_activities": "25+",
         "class_size": "1:6",
@@ -474,15 +452,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "rachita",
-            "expert_position": "Verified Communication Instructor",
-            "expert_description": "Rachita Rath graduated from NIFT in 2007, and is now a guest faculty at NIFT, Bhubaneswar. She has over 7 years of experience in training and teaching students.",
-            "expert_usp_pointers": [
-                "7 years of experience teaching communication & textiles design",
-                "Guest faculty at NIFT"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "MU117GB",
@@ -510,7 +480,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "GU",
-        "price": "4800",
+        "price_inr": "4000",
+        "price_usd": "150",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:3",
@@ -592,16 +563,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "vivek",
-            "expert_position": "Verified Music Instructor",
-            "expert_description": "Vivek has been playing the guitar for over 15 years and loves teaching and composing music. He has taught students, designed curricula for different music instruments.",
-            "expert_usp_pointers": [
-                "5+ years of experience in designing curriculum",
-                "Performing guitarist with 15 years of playing for a band, teaching & composing music",
-                "His band is called 'The Malakar Experience'"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "MU128GI",
@@ -629,7 +591,8 @@
         "show_outside_max_age": 15,
         "level": 2,
         "abbreviation": "GU",
-        "price": "5600",
+        "price_inr": "5600",
+        "price_usd": "210",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:3",
@@ -721,16 +684,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "vivek",
-            "expert_position": "Verified Music Instructor",
-            "expert_description": "Vivek has been playing the guitar for over 15 years and loves teaching and composing music. He has taught students, designed curricula for different music instruments.",
-            "expert_usp_pointers": [
-                "5+ years of experience in designing curriculum",
-                "Performing guitarist with 15 years of playing for a band, teaching & composing music",
-                "His band is called 'The Malakar Experience'"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "MU215WVB",
@@ -758,7 +712,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "WV",
-        "price": "4800",
+        "price_inr": "4800",
+        "price_usd": "180",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:5",
@@ -845,16 +800,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "meera",
-            "expert_position": "Verified Music Instructor",
-            "expert_description": "Meera Desai is a singer and songwriter with 10+ years of experience. In New York, she received training in western classical and jazz.",
-            "expert_usp_pointers": [
-                "10+ years of singing and songwriting",
-                "Best Female Vocalist Award in 2020",
-                "Toured with bands such as Heat Sink"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "MU226WVI",
@@ -882,7 +828,8 @@
         "show_outside_max_age": 15,
         "level": 2,
         "abbreviation": "WV",
-        "price": "4800",
+        "price_inr": "4800",
+        "price_usd": "180",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:5",
@@ -971,16 +918,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "meera",
-            "expert_position": "Verified Music Instructor",
-            "expert_description": "Meera Desai is a singer and songwriter with 10+ years of experience. In New York, she received training in western classical and jazz.",
-            "expert_usp_pointers": [
-                "10+ years of singing and songwriting",
-                "Best Female Vocalist Award in 2020",
-                "Toured with bands such as Heat Sink"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "MU319KBB",
@@ -1004,7 +942,8 @@
         "show_outside_max_age": 0,
         "level": 0,
         "abbreviation": "KB",
-        "price": "0",
+        "price_inr": "0",
+        "price_usd": "0",
         "priority": 4,
         "number_of_home_activities": "",
         "class_size": "",
@@ -1048,7 +987,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "AJ",
-        "price": "2800",
+        "price_inr": "2800",
+        "price_usd": "105",
         "priority": 4,
         "number_of_home_activities": "20+",
         "class_size": "1:6",
@@ -1110,16 +1050,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "rashmi",
-            "expert_position": "Verified Visual Arts Instructor",
-            "expert_description": "Rashmi Bidasaria is a designer and an architect from Royal College of Art, London. Her work includes projects with IDEO, London.",
-            "expert_usp_pointers": [
-                "Multi-Disciplinary Designer from Royal College of Art, London",
-                "Executed projects such as Infinity Box and FreePlay",
-                "Work exhibited in London Design Festival and Dutch Design Week"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "VI1212AJ",
@@ -1147,7 +1078,8 @@
         "show_outside_max_age": 9,
         "level": 2,
         "abbreviation": "AJ",
-        "price": "4000",
+        "price_inr": "4000",
+        "price_usd": "150",
         "priority": 4,
         "number_of_home_activities": "20+",
         "class_size": "1:6",
@@ -1219,16 +1151,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "rashmi",
-            "expert_position": "Verified Visual Arts Instructor",
-            "expert_description": "Rashmi Bidasaria is a designer and an architect from Royal College of Art, London. Her work includes projects with IDEO, London.",
-            "expert_usp_pointers": [
-                "Multi-Disciplinary Designer from Royal College of Art, London",
-                "Executed projects such as Infinity Box and FreePlay",
-                "Work exhibited in London Design Festival and Dutch Design Week"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "VI1215AS",
@@ -1256,7 +1179,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "AS",
-        "price": "4800",
+        "price_inr": "4800",
+        "price_usd": "180",
         "priority": 4,
         "number_of_home_activities": "20+",
         "class_size": "1:6",
@@ -1343,16 +1267,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "rashmi",
-            "expert_position": "Verified Visual Arts Instructor",
-            "expert_description": "Rashmi Bidasaria is a designer and an architect from Royal College of Art, London. Her work includes projects with IDEO, London.",
-            "expert_usp_pointers": [
-                "Multi-Disciplinary Designer from Royal College of Art, London",
-                "Executed projects such as Infinity Box and FreePlay",
-                "Work exhibited in London Design Festival and Dutch Design Week"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "VI2113PH",
@@ -1380,7 +1295,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "PH",
-        "price": "2800",
+        "price_inr": "2800",
+        "price_usd": "105",
         "priority": 4,
         "number_of_home_activities": "20+",
         "class_size": "1:6",
@@ -1442,16 +1358,7 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "rohit",
-            "expert_position": "Verified Photography Instructor",
-            "expert_description": "Rohit Saha is a visual artist and was a professor at NIFT. He completed his Masters in Photography from the National Institute of Design, Gandhinagar. He has been published in notable publications including Indian Express and The Caravan.",
-            "expert_usp_pointers": [
-                "Photojournalist",
-                "Masters of Photography from National Institute of Design (NID)",
-                "Visiting faculty, NIFT"
-            ]
-        }
+        "expert_details": false
     },
     {
         "identifier": "VI3110AR",
@@ -1479,7 +1386,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "AR",
-        "price": "2800",
+        "price_inr": "2800",
+        "price_usd": "105",
         "priority": 4,
         "number_of_home_activities": "10+",
         "class_size": "1:6",
@@ -1569,7 +1477,8 @@
         "show_outside_max_age": 15,
         "level": 1,
         "abbreviation": "AB",
-        "price": "4800",
+        "price_inr": "4800",
+        "price_usd": "180",
         "priority": 4,
         "number_of_home_activities": "30+",
         "class_size": "1:6",
@@ -1656,14 +1565,6 @@
         "showcase_section_content": false,
         "showcase_data": false,
         "testimonial_data": false,
-        "expert_details": {
-            "image_url_name": "richa",
-            "expert_position": "Verified Visual Arts Instructor",
-            "expert_description": "Richa is a watercolor artist in Singapore. She is a trained dentist and has been dabbling in art for the 5 years. She has conducted 100s of workshops for children and adults in Singapore.",
-            "expert_usp_pointers": [
-                "Singapore-Based Watercolor Artist",
-                "Conducted 100+ workshops for children & adults"
-            ]
-        }
+        "expert_details": false
     }
 ]

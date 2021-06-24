@@ -20,8 +20,8 @@ const courseLevelCount = (displayName) => {
 
 // ! courses actions
 const getCourses = (coursesData) => {
-  console.time("process-courses");
   let allCourses = coursesData.map((course) => {
+    // console.log("from here", course.identifier);
     return {
       courseId: course.identifier,
       courseInitials: course.abbreviation,
@@ -32,7 +32,8 @@ const getCourses = (coursesData) => {
       courseLevel: course.level,
       numberOfClasses: course.num_classes,
       sessionDuration: course.session_duration_minutes,
-      price: Number(course.price.split(".")[0]),
+      priceInr: Number(course.price_inr.split(".")[0]),
+      priceUsd: Number(course.price_usd.split(".")[0]),
       minAge: course.min_age,
       maxAge: course.max_age,
       classRatio: course.class_size,
@@ -67,7 +68,7 @@ const getCourses = (coursesData) => {
       expertDetails: course.expert_details,
     };
   });
-  console.timeEnd("process-courses");
+
   // console.log("from action", allCourses);
   return {
     type: "SET_ALL_COURSES",
@@ -87,4 +88,15 @@ const setScrollToCourseCategory = (category) => {
     payload: category,
   };
 };
-export { getCourses, setActiveCourseOnCoursePage, setScrollToCourseCategory };
+const setCurrency = (currency) => {
+  return {
+    type: "SET_CURRENCY",
+    payload: currency,
+  };
+};
+export {
+  getCourses,
+  setActiveCourseOnCoursePage,
+  setScrollToCourseCategory,
+  setCurrency,
+};

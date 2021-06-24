@@ -16,7 +16,7 @@ const pageVisitAttributes = (kingdom, genus) => {
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -38,7 +38,7 @@ const ageFilterAttributes = (kingdom, filter) => {
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -60,7 +60,7 @@ const addToCartAttributes = (courseCardId, courseCardName, coursePrice) => {
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -82,7 +82,7 @@ const clickToHomepageAttributes = () => {
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -111,7 +111,7 @@ const mainMenuClickAttributes = (
     species: destinationPageId,
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -133,7 +133,7 @@ const categoryFilterAttributes = (categoryId, categoryTitle) => {
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -161,7 +161,7 @@ const searchExecuteAttributes = (
     species: "",
     sub_c_1: searchType,
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -191,7 +191,7 @@ const checkoutAttributes = (
     species: promoCode,
     sub_c_1: discountVisible,
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -213,7 +213,7 @@ const bookTrialViewAttributes = () => {
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -235,7 +235,7 @@ const bookTrialFieldFilledAttributes = (fieldId, fieldTitle, fieldValue) => {
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -262,7 +262,7 @@ const bookTrialSubmitAttributes = (
     species: nextStageId,
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -290,7 +290,7 @@ const bookTrialSuccessAttributes = (
     species: nextStageId,
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -320,7 +320,7 @@ const invokePaymentAttributes = (
     species: promoCode,
     sub_c_1: discountVisible,
     sub_c_2: currency,
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -351,7 +351,7 @@ const paymentStatusAttributes = (
     species: promoCode,
     sub_c_1: discountVisible,
     sub_c_2: currency,
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -378,7 +378,7 @@ const requestCallbackAttributes = (
     species: "",
     sub_c_1: "",
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -404,7 +404,7 @@ const connectWithUsAttributes = (
     species: "",
     sub_c_1: linkedinUrl,
     sub_c_2: "",
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -422,7 +422,7 @@ const joinClassAttributes = (
   return {
     event_id: "1001045",
     event_type: "Click",
-    funnel_stage: "Consumbtion",
+    funnel_stage: "Consumption",
     event_category: "Class",
     feature_set: "Base",
     event_priority: "High",
@@ -435,7 +435,7 @@ const joinClassAttributes = (
     species: classDate,
     sub_c_1: classTiming,
     sub_c_2: sessionNo,
-    app_version: "0.0.0",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -453,7 +453,7 @@ const leaveClassAttributes = (
   return {
     event_id: "1001046",
     event_type: "Click",
-    funnel_stage: "Consumbtion",
+    funnel_stage: "Consumption",
     event_category: "Class",
     feature_set: "Base",
     event_priority: "High",
@@ -466,7 +466,37 @@ const leaveClassAttributes = (
     species: classDate,
     sub_c_1: classTiming,
     sub_c_2: sessionNo,
-    app_version: "0.0.0",
+    app_version: "0.1.1",
+    a_b_variant: "a",
+  };
+};
+// ! Moengage button click event attributes (1001005)
+const buttonClickAttributes = (
+  buttonId,
+  buttonTitle,
+  destinationUrl,
+  buttonTypeId,
+  leadScore,
+  destinationPageId,
+  location
+) => {
+  return {
+    event_id: "1001005",
+    event_type: "Click",
+    funnel_stage: "Consideration",
+    event_category: "Browsing",
+    feature_set: "Base",
+    event_priority: "High",
+    kingdom: buttonId,
+    phylum: buttonTitle,
+    class: destinationUrl,
+    order: buttonTypeId,
+    family: "1001005",
+    genus: leadScore,
+    species: destinationPageId,
+    sub_c_1: location,
+    sub_c_2: "",
+    app_version: "0.1.1",
     a_b_variant: "a",
   };
 };
@@ -489,4 +519,5 @@ export {
   connectWithUsAttributes,
   joinClassAttributes,
   leaveClassAttributes,
+  buttonClickAttributes,
 };

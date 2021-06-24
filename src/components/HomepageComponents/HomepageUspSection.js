@@ -8,6 +8,8 @@ import uspReversed6 from "../../assets/uspCardReversed6.svg";
 import PrimaryButton from "../buttons/PrimaryButton";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import HomepageUspCard from "../cards/HomepageUspCard";
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { buttonClickAttributes } from "../../helpers/MoengageAttributeCreators";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -150,6 +152,20 @@ function HomepageUspSection() {
         version="version-2"
         linkTo="/book-a-trial"
         shine={true}
+        clickHandle={() => {
+          moengageEvent(
+            "Button_Click",
+            buttonClickAttributes(
+              4,
+              "Book a FREE trial",
+              "/book-a-trial",
+              1,
+              4,
+              3,
+              "After Attributes Section"
+            )
+          );
+        }}
       />
     </div>
   );

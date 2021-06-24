@@ -1,6 +1,7 @@
 import React from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
-
+import moengageEvent from "../../helpers/MoengageEventTracking";
+import { buttonClickAttributes } from "../../helpers/MoengageAttributeCreators";
 function LargeBookATrialCard() {
   return (
     <section className="large-trial-card">
@@ -15,6 +16,20 @@ function LargeBookATrialCard() {
         version="version-2"
         linkTo="/book-a-trial"
         shine={true}
+        clickHandle={() => {
+          moengageEvent(
+            "Button_Click",
+            buttonClickAttributes(
+              12,
+              "Book a FREE trial",
+              "/book-a-trial",
+              1,
+              4,
+              3,
+              "After Activity Section"
+            )
+          );
+        }}
       />
     </section>
   );

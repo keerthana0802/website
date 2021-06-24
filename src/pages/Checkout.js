@@ -67,9 +67,17 @@ function Checkout() {
     const cartItems = await cart.map((item) => {
       return { course_id: item.courseId, quantity: item.qty };
     });
+    let isIndia;
+    if (window?.sessionStorage?.ipapi_response) {
+      let data = JSON.parse(window.sessionStorage.ipapi_response);
+      isIndia = data.country_code.toLowerCase() == "in" ? true : false;
+    } else {
+      isIndia = false;
+    }
     const resp = await axios.post(
       process.env.REACT_APP_RAZOR_API,
       {
+        is_inr: isIndia,
         order: {
           visitor_uuid: window.localStorage.visitor_uuid,
           items: cartItems,

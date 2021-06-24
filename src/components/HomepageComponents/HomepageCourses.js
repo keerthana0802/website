@@ -3,7 +3,10 @@ import HomepageCourseCard from "../cards/HomepageCourseCard";
 import HomepageSectionHeader from "../headers/HomepageSectionHeader";
 import { Link } from "react-router-dom";
 import MoengageEventTracking from "../../helpers/MoengageEventTracking";
-import { ageFilterAttributes } from "../../helpers/MoengageAttributeCreators";
+import {
+  ageFilterAttributes,
+  buttonClickAttributes,
+} from "../../helpers/MoengageAttributeCreators";
 import { useSelector } from "react-redux";
 import PrimaryButton from "../buttons/PrimaryButton";
 // ! Swiper
@@ -12,6 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
+import moengageEvent from "../../helpers/MoengageEventTracking";
 SwiperCore.use([Pagination, Navigation]);
 
 function HomepageCourses() {
@@ -111,6 +115,20 @@ function HomepageCourses() {
           <Link
             className="homepage-courses__age-filter-item--see-all"
             to="/all-courses"
+            onClick={() =>
+              moengageEvent(
+                "Button_Click",
+                buttonClickAttributes(
+                  13,
+                  "See All",
+                  "/all-courses",
+                  11,
+                  2,
+                  2,
+                  "On the Homepage"
+                )
+              )
+            }
           >
             SEE ALL
           </Link>
@@ -188,6 +206,20 @@ function HomepageCourses() {
         version="version-2"
         linkTo="/book-a-trial"
         shine={true}
+        clickHandle={() => {
+          MoengageEventTracking(
+            "Button_Click",
+            buttonClickAttributes(
+              2,
+              "Book a FREE trial",
+              "/book-a-trial",
+              1,
+              4,
+              3,
+              "After Course Carousel"
+            )
+          );
+        }}
       />
     </div>
   );

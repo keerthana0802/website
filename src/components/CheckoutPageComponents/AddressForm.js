@@ -12,6 +12,7 @@ function AddressForm({ openPayment }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.checkout.cart);
   const coursesData = useSelector((state) => state.courses.allCourses);
+  const currency = useSelector((state) => state.courses.currency);
   const promoCode = useSelector((state) => state.checkout.promoCode);
   const userDetails = useSelector((state) => state.auth.userDetails);
   const authToken = useSelector((state) => state.auth.authToken);
@@ -29,11 +30,13 @@ function AddressForm({ openPayment }) {
   let countryCodeRegex = new RegExp(/^\+[0-9]*$/);
   let textRegex = new RegExp(/^[A-Za-z -]*$/);
   const totalAmount = () => {
-    let currency;
     let amount = cart.reduce((a, course) => {
       let found = coursesData.find((item) => item.courseId === course.courseId);
-      if (!currency) currency = found.courseCurrency;
-      return a + found.price * course.qty;
+      if (currency === "INR") {
+        return a + found.priceInr * course.qty;
+      } else {
+        return a + found.priceUsd * course.qty;
+      }
     }, 0);
     return `${currency || ""} ${amount}`;
   };

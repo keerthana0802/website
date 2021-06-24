@@ -6,6 +6,7 @@ function CartPreview() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.checkout.cart);
   const coursesData = useSelector((state) => state.courses.allCourses);
+  const currency = useSelector((state) => state.courses.currency);
   const promoCode = useSelector((state) => state.checkout.promoCode);
   const userDetails = useSelector((state) => state.auth.userDetails);
   return (
@@ -30,8 +31,10 @@ function CartPreview() {
                     courseName={found.displayName}
                     courseCategory={found.vertical}
                     courseAgeGroup={`${found.minAge}-${found.maxAge}`}
-                    courseCurrency={found.courseCurrency}
-                    coursePrice={found.price}
+                    courseCurrency={currency}
+                    coursePrice={
+                      currency === "INR" ? found.priceInr : found.priceUsd
+                    }
                     courseQty={course.qty}
                     courseColor={found.verticalThemeColorDark}
                     courseId={course.courseId}
@@ -45,12 +48,16 @@ function CartPreview() {
           <div className="cart-preview__cart-cards--total">
             <span>Total payable amount</span>
             <span>
-              INR{" "}
+              {currency}{" "}
               {cart.reduce((a, course) => {
                 let found = coursesData.find(
                   (item) => item.courseId === course.courseId
                 );
-                return a + found.price * course.qty;
+                if (currency === "INR") {
+                  return a + found.priceInr * course.qty;
+                } else {
+                  return a + found.priceUsd * course.qty;
+                }
               }, 0)}
             </span>
           </div>

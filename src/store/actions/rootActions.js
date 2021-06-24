@@ -27,6 +27,7 @@ import {
   getCourses,
   setActiveCourseOnCoursePage,
   setScrollToCourseCategory,
+  setCurrency,
 } from "./coursesActions";
 export {
   // ! checkout actions
@@ -56,4 +57,5 @@ export {
   getCourses,
   setActiveCourseOnCoursePage,
   setScrollToCourseCategory,
+  setCurrency,
 };

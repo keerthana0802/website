@@ -51,6 +51,7 @@ function SingleCourseBanner({
   const cart = useSelector((state) => state.checkout.cart);
   const cartDrawer = useSelector((state) => state.checkout.cartDrawer);
   const allCourses = useSelector((state) => state.courses.allCourses);
+  const currency = useSelector((state) => state.courses.currency);
   const dispatch = useDispatch();
   // ! Scroll-to function
   const scroller = () => {
@@ -74,7 +75,11 @@ function SingleCourseBanner({
       if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
       MoengageEventTracking(
         "Add_to_Cart",
-        addToCartAttributes(courseCardId, courseCardName, foundPrice.price)
+        addToCartAttributes(
+          courseCardId,
+          courseCardName,
+          currency === "INR" ? foundPrice.priceInr : foundPrice.priceUsd
+        )
       );
     }
   };

@@ -1,11 +1,13 @@
 import React from "react";
 import bin from "../../assets/binIcon.svg";
 import plus from "../../assets/plusIcon.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addQtyToCart,
   removeQtyFromCart,
 } from "../../store/actions/rootActions";
+import rupee from "../../assets/rupee.svg";
+import dollar from "../../assets/dollar.svg";
 function CartCard({
   courseName,
   courseCategory,
@@ -19,6 +21,7 @@ function CartCard({
   courseDuration,
   sessionDuration,
 }) {
+  const currency = useSelector((state) => state.courses.currency);
   const dispatch = useDispatch();
   return (
     <div
@@ -51,7 +54,12 @@ function CartCard({
               />
             </div>
             <span className="price">
-              {courseCurrency} {coursePrice * courseQty}
+              {courseCurrency === "INR" ? (
+                <img src={rupee} alt="" className="currency-icon" />
+              ) : (
+                <img src={dollar} alt="" className="currency-icon" />
+              )}{" "}
+              {coursePrice * courseQty}
             </span>
           </div>
         </div>
@@ -85,7 +93,12 @@ function CartCard({
               />
             </div>
             <span className="price">
-              {courseCurrency} {coursePrice * courseQty}
+              {courseCurrency === "INR" ? (
+                <img src={rupee} alt="" className="currency-icon" />
+              ) : (
+                <img src={dollar} alt="" className="currency-icon" />
+              )}{" "}
+              {coursePrice * courseQty}
             </span>
           </div>
         </div>

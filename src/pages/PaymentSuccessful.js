@@ -10,6 +10,7 @@ import { clickToHomepageAttributes } from "../helpers/MoengageAttributeCreators"
 function PaymentSuccessful() {
   const coursesData = useSelector((state) => state.courses.allCourses);
   const paid = useSelector((state) => state.checkout.paid);
+  const currency = useSelector((state) => state.courses.currency);
   const userDetails = useSelector((state) => state.auth.userDetails);
   const tempEmail = useSelector((state) => state.auth.tempEmail);
   return (
@@ -49,7 +50,9 @@ function PaymentSuccessful() {
                         courseCategory={found.vertical}
                         courseAgeGroup={`${found.minAge}-${found.maxAge}`}
                         courseCurrency={found.courseCurrency}
-                        coursePrice={found.price}
+                        coursePrice={
+                          currency === "INR" ? found.priceInr : found.priceUsd
+                        }
                         courseQty={course.qty}
                         courseColor={found.verticalThemeColorDark}
                         courseId={course.courseId}

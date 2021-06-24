@@ -16,6 +16,10 @@
       &-2 {
         right: -30rem;
         bottom: 10rem;
+
+        @include bpm-custom(768px) {
+          bottom: 20rem;
+        }
       }
     }
   }

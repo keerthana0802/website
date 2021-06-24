@@ -31,6 +31,7 @@ function CourseDetailsSlide({
   const activeCourseOnCoursePage = useSelector(
     (state) => state.courses.activeCourseOnCoursePage
   );
+  const currency = useSelector((state) => state.courses.currency);
   const dispatch = useDispatch();
   const addToCartHandle = (courseCardId, courseCardName) => {
     let found = cart.find((course) => course.courseId === courseCardId);
@@ -45,7 +46,11 @@ function CourseDetailsSlide({
       if (!cartDrawer) dispatch(cartDrawerOpen(courseCardName));
       MoengageEventTracking(
         "Add_to_Cart",
-        addToCartAttributes(courseCardId, courseCardName, foundPrice.price)
+        addToCartAttributes(
+          courseCardId,
+          courseCardName,
+          currency === "INR" ? foundPrice.priceInr : foundPrice.priceUsd
+        )
       );
     }
   };
@@ -71,7 +76,8 @@ function CourseDetailsSlide({
         <h2>
           Course Fee:{" "}
           <span>
-            INR {price} (INR {price / Number(numberOfSessions)}/class)
+            {currency} {price} ({currency} {price / Number(numberOfSessions)}
+            /class)
           </span>
         </h2>
         <h2>
@@ -93,6 +99,7 @@ function CourseDetailsSlide({
 }
 function CourseDetails({ courseName, courseType }) {
   const allCourses = useSelector((state) => state.courses.allCourses);
+  const currency = useSelector((state) => state.courses.currency);
   const dispatch = useDispatch();
   const activeCourseOnCoursePage = useSelector(
     (state) => state.courses.activeCourseOnCoursePage
@@ -140,7 +147,9 @@ function CourseDetails({ courseName, courseType }) {
                   <CourseDetailsSlide
                     numberOfSessions={course.numberOfClasses}
                     duration={course.sessionDuration || "45 minutes"}
-                    price={course.price}
+                    price={
+                      currency === "INR" ? course.priceInr : course.priceUsd
+                    }
                     imageUrl={`${
                       process.env.REACT_APP_ALL_COURSES_IMAGES_API
                     }${activeCourseOnCoursePage?.toLowerCase()}`}
@@ -158,7 +167,7 @@ function CourseDetails({ courseName, courseType }) {
                 <CourseDetailsSlide
                   numberOfSessions={course.numberOfClasses}
                   duration={course.sessionDuration || "45 minutes"}
-                  price={course.price}
+                  price={currency === "INR" ? course.priceInr : course.priceUsd}
                   imageUrl={`${
                     process.env.REACT_APP_ALL_COURSES_IMAGES_API
                   }${activeCourseOnCoursePage?.toLowerCase()}`}

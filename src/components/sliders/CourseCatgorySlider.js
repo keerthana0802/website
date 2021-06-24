@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import durationIcon from "../../assets/durationIcon.svg";
 import CourseCategoryCard from "../cards/CourseCategoryCard";
+import { useSelector } from "react-redux";
 // ! Swiper
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,6 +21,7 @@ function CourseCatgorySlider({
   tempImage,
   courseVertical,
 }) {
+  const currency = useSelector((state) => state.courses.currency);
   return (
     <div
       className="course-category-slider__wrapper"
@@ -76,7 +78,9 @@ function CourseCatgorySlider({
                         process.env.REACT_APP_ALL_COURSES_IMAGES_API
                       }${course.courseId.toLowerCase()}`}
                       courseCardId={course.courseId}
-                      coursePrice={course.price}
+                      coursePrice={
+                        currency === "INR" ? course.priceInr : course.priceUsd
+                      }
                     />
                   </SwiperSlide>
                 );

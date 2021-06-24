@@ -11,12 +11,17 @@ function CartDrawer({ selectedCourses }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const coursesData = useSelector((state) => state.courses.allCourses);
+  const currency = useSelector((state) => state.courses.currency);
   const goToCheckout = () => {
     let totalQty = selectedCourses.reduce((acc, course) => acc + course.qty, 0);
 
     let cartTotal = selectedCourses.reduce((acc, course) => {
       let found = coursesData.find((item) => item.courseId === course.courseId);
-      return acc + course.qty * found.price;
+      if (currency === "INR") {
+        return acc + course.qty * found.priceInr;
+      } else {
+        return acc + course.qty * found.priceUsd;
+      }
     }, 0);
     moengageEvent(
       "Checkout",
@@ -59,8 +64,10 @@ function CartDrawer({ selectedCourses }) {
                     courseName={found.displayName}
                     courseCategory={found.vertical}
                     courseAgeGroup={`${found.minAge}-${found.maxAge}`}
-                    courseCurrency={found.courseCurrency}
-                    coursePrice={found.price}
+                    courseCurrency={currency}
+                    coursePrice={
+                      currency === "INR" ? found.priceInr : found.priceUsd
+                    }
                     courseQty={course.qty}
                     courseColor={found.verticalThemeColorDark}
                     courseId={course.courseId}
