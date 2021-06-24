@@ -22,6 +22,7 @@ const Meeting = lazy(() => import("./pages/Meeting.js"));
 const Faq = lazy(() => import("./pages/Faq.js"));
 const Teach = lazy(() => import("./pages/Teach.js"));
 const Tnc = lazy(() => import("./pages/Tnc.js"));
+const Workshop = lazy(() => import("./pages/Workshop.js"));
 const Policy = lazy(() => import("./pages/Policy.js"));
 const SingleCourse = lazy(() => import("./pages/SingleCourse.js"));
 const AboutUs = lazy(() => import("./pages/AboutUs.js"));
@@ -51,6 +52,12 @@ function App() {
               <Faq />
             </Suspense>
           </Route>
+          <Route path="/workshop">
+            <Suspense fallback={<div></div>}>
+              <Workshop />
+            </Suspense>
+          </Route>
+         
           <Route path="/teach">
             <Suspense fallback={<div></div>}>
               <Teach/>
