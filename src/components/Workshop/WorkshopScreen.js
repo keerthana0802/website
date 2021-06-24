@@ -246,7 +246,7 @@ b) 4:00 pm – 5:00 pm IST, Sat, 26 June </p>
    <br/> <br/> <br/> <br/> <br/>
    <div className="des"> <p >All kids love art. Beyond fun, engaging in art also develops motor skills, builds a child’s ability to interact with the world around them,<br/> and provides a new set of skills for self-expression and communication.
 
-In this workshop, students will enjoy playing with colors and learn the technique of finger painting to create their own art work..<br/><b>Requirements:</b> Drawing sheets, pencil, eraser, paints, brushes, bowl of water and a cloth to wipe brushes.<br/><br/>
+In this workshop, students will enjoy playing with colors and learn the technique of finger painting to create their own art work..<br/><br/><br/>
 <p className="des1">Available Time Slots:</p><p className="des2">a) 4:00 – 5:00 pm IST, Sat, 26 June </p>
 </p>
 <a className="bookbtn" href="https://at.sparkstudio.co/book-workshop/" target="_self"  >
@@ -342,7 +342,7 @@ b) 6:30 – 7:30 pm IST, Sun, 27 June</p>
    <p className="para1"><img  src={Vector} alt="person"></img> 10+ years</p>
    <p className="para2"><img src="http://localhost:3000/static/media/durationIcon.8f545a06.svg" alt="person"></img> 1 session, 60 minutes</p>
    <br/> <br/> <br/> <br/> <br/>
-   <div className="des"> <p >Some of the most impressive public leaders are ex-debators – from Barack Obama, Nelson Mandela and Jeff Bezos to Oprah Winfrey.<br/> Debating is a powerful activity that develops cognitive and communication skills in children. Children learn to speak confidently in public, and express their thoughts with clarity and logic.<br/>
+   <div className="des"> <p >Some of the most impressive public leaders are ex-debators – from Barack Obama, Nelson Mandela and Jeff Bezos to Oprah Winfrey. Debating is a powerful activity that develops cognitive and communication skills in children. Children learn to speak confidently in public, and express their thoughts with clarity and logic.
 
 In this workshop, students will learn how to express their opinion.
 
